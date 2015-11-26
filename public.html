@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="publicApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Public App</title>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="static/js/vendor/pnotify/pnotify.custom.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <script src="static/js/vendor/angular-strap.min.js"></script>
+    <script src="static/js/vendor/angular-strap.tpl.min.js"></script>
+    <script src="static/js/helpers.js"></script>
+    <script src="static/js/vendor/angular-file-upload.js"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/js/vendor/ionicons-2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/js/vendor/pnotify/pnotify.custom.min.css">
+    <link rel="stylesheet" href="static/css/animate.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="static/js/publicApp.js"></script>
+    <script src="static/js/controllers/publicCtrl.js"></script>
+    <script src="static/js/vendor/ui-bootstrap-tpls-0.14.3.min.js"></script>
+
+</head>
+<body ng-controller="publicCtrl">
+<nav class="navbar navbar-default" role="navigation" bs-navbar>
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Sharmit</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="#/projects">Projects</a></li>
+        <li><a href="#/general">General</a></li>
+        <li><a href="#/carousel">Carousel</a></li>
+    </ul>
+</nav>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <!-- Carousel Section -->
+        <div style="height: 305px">
+            <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+                <uib-slide ng-repeat="slide in carouselImages" active="slide.active">
+                    <img class="carouselImage" ng-src="{{slide.imagePath}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <h4>{{slide.title}}</h4>
+                        <p>{{slide.text}}</p>
+                    </div>
+                </uib-slide>
+            </uib-carousel>
+        </div>
+
+        <!-- End Carousel Section -->
+    </div>
+</div>
+
+<div   style="margin-top: 15px" class="row">
+    <div  style="text-align: center" class="col-md-10 col-md-offset-1 myCategoryFilter">
+        <span  ng-click="setActiveCategoryFilter(category)" ng-class="{'active': activeCategoryFilterId === category.id}" class="categoryFilter clickable" ng-repeat="category in categories">
+              {{category.title}}
+        </span>
+    </div>
+</div>
+<div   style="margin-top: 15px" class="row">
+    <div  style="text-align: center" class="col-md-8 col-md-offset-2">
+       <div ng-repeat="project in projects" class="col-md-4 clickable">
+           <img style="width: 100%" class="testimonialImage img-thumbnail" ng-src="{{project.imagePath}}">
+           <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
+       </div>
+        </div>
+</div>
+<div   style="margin-top: 15px" class="row">
+    <div  style="text-align: center" class="col-xs-12 rtl">
+        <h1> {{generalSettings.whoWeAreTitle}}</h1>
+    </div>
+</div>
+<div   style="margin-top: 30px" class="row">
+
+    <div  style="text-align: center" class="col-xs-12 col-md-offset-2 col-md-4 alignRight  rtl">
+        <h3 class="rtl alignRight"> {{generalSettings.whoWeAreLeftSectionTitle}}</h3>
+        <p>  {{generalSettings.whoWeAreLeftSectionText1}} </p>
+        <p>  {{generalSettings.whoWeAreLeftSectionText2}} </p>
+        <p>  {{generalSettings.whoWeAreLeftSectionText3}} </p>
+    </div>
+    <div  style="text-align: center" class="col-xs-12 col-md-4   alignRight rtl">
+        <h3> {{generalSettings.whoWeAreRightSectionTitle}}</h3>
+        <p>  {{generalSettings.whoWeAreRightSectionText1}} </p>
+        <p>  {{generalSettings.whoWeAreRightSectionText2}}</p>
+        <p>  {{generalSettings.whoWeAreRightSectionText3}}</p>
+    </div>
+</div>
+<div   style="margin-top: 15px" class="row">
+    <div  style="text-align: center" class="col-xs-12 rtl">
+        <h1> {{generalSettings.testimonialsTitle}}</h1>
+    </div>
+</div>
+<div   style="margin-top: 15px" class="row">
+    <div   class="col-xs-12 col-md-6 col-md-offset-3 rtl">
+        <div class="row">
+            <div  style="margin-bottom: 30px" class="col-md-12">
+                <h3> {{selectedTestimonial.title}}  </h3>
+                <p> {{selectedTestimonial.subTitle}}</p>
+            </div>
+            <div ng-click="setTestimonial(item)" ng-repeat="item in testimonials | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-md-4 col-xs-4">
+                <img class="img img-circle testimonialSmallImage animated bounceInLeft clickable" ng-src="{{item.imagePath}}">
+            </div>
+            <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                Previous
+            </button>
+            {{currentPage+1}}/{{numberOfPages()}}
+            <button ng-disabled="currentPage >= testimonials.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                Next
+            </button>
+
+        </div>
+    </div>
+</div>
+<div   style="margin-top: 30px" class="row">
+
+    <div  style="text-align: center" class="col-xs-12 col-md-offset-1 col-md-5 alignRight  rtl">
+      Image
+    </div>
+    <div  style="text-align: center" class="col-xs-12 col-md-4   alignRight rtl">
+        <h3 class="rtl alignRight"> בואו נדבר </h3>
+        <p style="margin-bottom: 0"> חושבים לעשות שיפוץ בבית,הרחבה או תוספת בפהים או בחוץ? הגעתם למקום הנכון.  </p>
+        <p>  צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
+        <form name="contactUsForm">
+            <div class="form-group">
+                <label for="exampleInputEmail1">שם מלא</label>
+                <input required ng-model="contact.fullName" type="text" class="form-control" id="exampleInputEmail1" placeholder="הכנס/י את שמך המלא כאן">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">טלפון</label>
+                <input required ng-model="contact.phone" type="text" class="form-control" id="exampleInputPassword1" placeholder="הכנס/י את מספר הטלפון כאן">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">אימייל</label>
+                <input required ng-model="contact.email" type="email" class="form-control" id="exampleInputPassword1" placeholder="הכנס/י את כתובת האי מייל כאן">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">אימייל</label>
+                <textarea rows="5" ng-model="contact.howCanWeHelp" type="text" class="form-control" id="exampleInputPassword1" placeholder="הכנס/י את כתובת האי מייל כאן"> </textarea>
+            </div>
+
+            <button style="float: left" class="btn btn-warning">שלח אותי </button>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+.carouselImage .actions {
+    top: 50%;
+    left: 50%;
+    margin-top: -17px;
+    margin-left: -42px;
+    position: absolute;
+}
+
+input , textarea{
+    direction: rtl; !important
+}
+
+.stickIcon{
+    max-height: 80px;
+
+}
+
+.projectImage{
+    max-height: 200px;
+}
+
+.testimonialImage{
+    max-height: 150px;
+}
+
+.testimonialSmallImage{
+   max-width: 11vw;
+}
+
+
+.alignRight{
+    text-align: right !important;
+}
+
+.carouselImage{
+    height: 300px !important;
+}
+
+.categoryFilter{
+    margin-left: 15px;
+    font-family: 'Open Sans';
+    font-size: 22px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 15.4px;
+
+}
+
+.myCategoryFilter .active {
+    color : blue !important;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.rtl{
+    direction: rtl !important;
+
+}
+
+.alignRight{
+    text-align: right !important;
+}

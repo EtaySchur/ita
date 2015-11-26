@@ -1,0 +1,160 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-success col-xs-2" ng-click="addNewProject()"><i style="margin-right: 5px" class="fa fa-plus-circle"></i>New</button>
+        <span style="margin-left: 30px" class="btn-group col-xs-5">
+            <label ng-repeat='category in categories' class="btn btn-primary" ng-model="$parent.filteredCategory" btn-radio="'{{category.id}}'" uncheckable>{{category.title}}</label>
+        </span>
+        <div class="input-group col-xs-4">
+            <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
+            <input ng-model="query"type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+        </div>
+    </div>
+</div>
+<div style="margin-top: 30px" class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class="list-group">
+            <a ng-init="getTitles(item)" ng-repeat="item in projects | isCategory:filteredCategory | filter:query" class="list-group-item row">
+                <div class="col-md-4">
+                     <span>
+                      <h4>{{item.title}}  </h4>
+                      <p> {{item.description}}</p>
+                </span>
+                </div>
+                <div class="col-md-3">
+                     <span>
+                      <h4>{{item.categoryTitle}}  </h4>
+                      <p> {{item.subCategoryTitle}}</p>
+                </span>
+                </div>
+                <div class="col-md-3">
+                      <span>
+                     <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail stickIcon">
+                </span>
+                </div>
+                <div style="display: table;" class="col-md-2">
+                    <button ng-click="openEditProjectModal('md' , item)" style="margin-right: 5px" class="btn btn-primary">
+                        <i  class="fa fa-pencil "></i>
+                    </button>
+                    <button ng-click="deleteProject(item)" class="btn btn-danger">
+                        <i  class="fa fa-trash"></i>
+                    </button>
+                </div>
+
+
+            </a>
+        </div>
+    </div>
+</div>
+
+<div>
+    <script type="text/ng-template" id="addNewProjectModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Add New Project</h3>
+        </div>
+        <div class="modal-body">
+            <form name="addNewProjectForm">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Project Title</label>
+                    <input required ng-model="item.title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Image Title">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Description</label>
+                    <input required ng-model="item.description" type="text" class="form-control" id="exampleInputPassword1" placeholder="Image Description">
+                </div>
+                <div ng-if="url == null && imageId != null" class="form-group">
+                    <img ng-src="{{image.imagePath}}" alt="..." class="img-thumbnail projectImage">
+                </div>
+                <div ng-if="url != null" class="form-group">
+                    <img ng-src="{{url}}" alt="..." class="img-thumbnail projectImage">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Category</label>
+                    <select required ng-change="selectCategory(item.categoryId)" ng-model="item.categoryId" class="form-control">
+                        <option ng-value="category.id" ng-repeat="category in categories">{{category.title}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Sub Category</label>
+                    <select required ng-change="selectSubCategory(item.subCategoryId)" ng-model="item.subCategoryId" class="form-control">
+                        <option ng-value="subCategory.id" ng-repeat="subCategory in selectedCategory.subCategories">{{subCategory.title}}</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="!addNewProjectForm.$valid" class="btn btn-primary" type="button" ng-click="ok(item)">Save <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+
+
+<div>
+    <script type="text/ng-template" id="editProjectModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Edit Project {{item.title}}</h3>
+        </div>
+        <div class="modal-body">
+            <form name="editProjectForm">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Project Title</label>
+                    <input required ng-model="item.title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Image Title">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Description</label>
+                    <input required ng-model="item.description" type="text" class="form-control" id="exampleInputPassword1" placeholder="Image Description">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Project Image</label>
+                    <div style="text-align: center" ng-if="url == null && item.imagePath != null" class="form-group">
+                        <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail projectImage">
+                    </div>
+                    <div style="text-align: center" ng-if="url != null" class="form-group">
+                        <img ng-src="{{url}}" alt="..." class="img-thumbnail projectImage">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Category</label>
+                    <select  ng-options="category.id as category.title for category in categories" required ng-change="selectCategory(item.categoryId)" ng-model="item.categoryId" class="form-control">
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Sub Category</label>
+                    <select  ng-init="selectCategory(item.categoryId)" ng-options="subCategory.id as subCategory.title for subCategory in selectedCategory.subCategories" required ng-change="selectCategory(item.categoryId)" ng-model="item.subCategoryId" class="form-control">
+
+                    </select>
+
+                </div>
+
+                <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="!editProjectForm.$valid" class="btn btn-primary" type="button" ng-click="ok(item)">Save <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+
+<div>
+    <script type="text/ng-template" id="deleteProject.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Delete Project</h3>
+        </div>
+        <div class="modal-body">
+            Are You Sure You Want To Delete This Project ?
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger" type="button" ng-click="ok()">Delete <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>

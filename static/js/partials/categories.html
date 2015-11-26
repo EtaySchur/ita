@@ -1,0 +1,140 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-success" ng-click="open('md' , null)"><i style="margin-right: 5px" class="fa fa-plus-circle"></i>New Category</button>
+    </div>
+</div>
+<div class="row">
+    <div style="margin-top: 30px" class="col-xs-10 col-xs-offset-1">
+        <uib-accordion close-others="oneAtATime">
+            <uib-accordion-group ng-repeat="category in categories" heading="{{category.title}}">
+                <div ng-repeat="item in category.subCategories">
+                    <div class="row">
+                    <div style="margin-left: 10px" class="list-group col-xs-9">
+                            <input disabled ng-model="item.title" type="text" class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-primary" ng-click="openEditSubCategoryModal('md' , item)"><i style="margin-right: 5px" class="fa fa-pencil"></i></button>
+                        <button type="button" class="btn btn-danger" ng-click="openDeleteSubCategoryModal('md' , item , category)"><i style="margin-right: 5px" class="fa fa-trash"></i></button>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <button style="margin-left: 10px" type="button" class="btn btn-success btn-sm" ng-click="openAddSubCategoryModal( null , item , category)">Add Sub Category</button>
+                    <button style="margin-left: 10px" type="button" class="btn btn-primary btn-sm" ng-click="openEditCategoryModal( null , category)">Edit Category Name</button>
+                    <button style="float: right;margin-right: 10px" type="button" class="btn btn-danger btn-sm" ng-click="openDeleteCategoryModal( null , category)">Delete Category</button>
+                </div>
+
+
+
+            </uib-accordion-group>
+
+            </uib-accordion>
+    </div>
+
+</div>
+
+<div>
+    <script type="text/ng-template" id="addCategory.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Add Category</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Category Name</label>
+                <input ng-model="item.title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Category Name">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">Add Category <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+
+<div>
+    <script type="text/ng-template" id="editSubCategory.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Edit Category</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Category Name</label>
+                <input ng-model="item.title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Category Name">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">Save Category <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+   `     </div>
+    </script>
+</div>
+
+<div>
+    <script type="text/ng-template" id="editCategory.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Edit Category</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Category Name</label>
+                <input ng-model="item.title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Category Name">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">Save Sub Category <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+
+<div>
+    <script type="text/ng-template" id="addSubCategory.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Add Sub Category</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Sub Category Name</label>
+                <input ng-model="item.title" type="text" class="form-control" id="exampleInputEmail12" placeholder="Sub Category Name">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">Add Category <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+
+<div>
+    <script type="text/ng-template" id="deleteCategory.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Delete Category {{item.title}}</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Are You Sure You Want To Delete This Category ?</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger" type="button" ng-click="ok()">Delete Category <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+
+
+<div>
+    <script type="text/ng-template" id="deleteSubCategory.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Delete Sub Category {{item.title}}</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Are You Sure You Want To Delete This Sub Category ?</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger" type="button" ng-click="ok()">Delete Sub Category <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
