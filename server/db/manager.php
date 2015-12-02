@@ -79,6 +79,17 @@ class DbManager {
         $sql->execute();
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $result;
+
+        exit;
+    }
+
+    public static  function getProject($projectId){
+        $conn = self::connectToDb();
+        $sql = $conn->prepare("SELECT * from `projects` WHERE `id` = $projectId");
+        $sql->execute();
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
         exit;
     }
 
@@ -138,6 +149,12 @@ class DbManager {
     }
 
     public static  function editProject($data){
+        if($data->featured == 1){
+            $data->featured = true;
+        }else{
+            $data->featured = false;
+        }
+
         return self::updateDb("projects" , $data);
         exit;
 
@@ -175,7 +192,7 @@ class DbManager {
     public static function getCategories(){
         $result = array();
         $conn = self::connectToDb();
-        $sql = $conn->prepare("SELECT * from `categories` WHERE `isDeleted` = 0");
+        $sql = $conn->prepare("SELECT * from `categories` WHERE `isDeleted` = 0 ORDER BY `order` ASC");
         $sql->execute();
         $categories = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -276,6 +293,7 @@ class DbManager {
     }
 
     public static function insertToDb($tableName, $data) {
+
         // Convert The Data from Object to Key - Value Array
         $dataArray = (array) $data;
         // Get Last Item Key

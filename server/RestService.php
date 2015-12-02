@@ -82,10 +82,16 @@ if (($_POST) || (isset($_POST))) {
             $result = DbManager::editProject($request->data);
             echo json_encode($result);
             exit;
+        case  "getProject" :
+             $result = DbManager::getProject($request->data);
+            echo json_encode($result);
+            exit;
         case "editCarouselImage"  :
             $result = DbManager::editCarouselImage($request->data);
             echo json_encode($result);
             exit;
+
+
 
 
     }

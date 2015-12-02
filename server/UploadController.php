@@ -117,9 +117,9 @@ if (isset($_FILES['file'])) {
 
                     //$response = DbManager::editCarouselImage("server/static/images/" . PROJECTS_PATH.$timestamp.".".$file_ext , $imageId);
                     $response = array();
-                    $response['imagePath'] = $imagePath;
-                }
 
+                }
+                $response['imagePath'] = $imagePath;
                 echo json_encode($response);
             } else {
                 print_r($errors);

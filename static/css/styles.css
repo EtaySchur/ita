@@ -6,6 +6,8 @@
     position: absolute;
 }
 
+
+
 input , textarea{
     direction: rtl; !important
 }
@@ -27,6 +29,16 @@ input , textarea{
    max-width: 11vw;
 }
 
+.projectsContainer .hovered{
+    opacity: 0.75;
+    filter: alpha(opacity=75); /* msie */
+}
+
+.imageContainer{
+    background-color: #292929 !important;
+}
+
+
 
 .alignRight{
     text-align: right !important;
@@ -47,8 +59,54 @@ input , textarea{
 
 }
 
+.projectTitle{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top:35%;
+
+
+}
+
+.projectCta{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top:50%;
+
+}
+
+.borderon{
+    height: 1px;
+    width: 72px;
+    border-width: 6px 0px 0px 0px;
+    border-style: solid;
+    border-color: #f6a721;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.borderinon{
+    height: 1px;
+    width:56px;
+    border-width: 4px 0px 0px 0px;
+    border-style: solid;
+    border-color: #4e4e4e;
+    float: right;
+}
+
 .myCategoryFilter .active {
-    color : blue !important;
+    font-family: myBold;
+    font-size: 18px;
+    color: #4e4e4e !important;
+    border-width: 3px 0px 0px 0px;
+    border-style: solid;
+    border-color: #f6a721;
+
 }
 
 .clickable{
@@ -63,3 +121,254 @@ input , textarea{
 .alignRight{
     text-align: right !important;
 }
+
+@font-face {
+    font-family: myBold;
+    src: url(fonts/OpenSansHebrew-Bold.ttf);
+}
+
+@font-face {
+    font-family: myBoldItalic;
+    src: url(fonts/OpenSansHebrew-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: myRegular;
+    src: url(fonts/OpenSansHebrew-Regular.ttf);
+}
+
+
+.boldHeader{
+    font-family: myBold;
+    font-size: 80px;
+    color: white;
+}
+
+.boldSubHeader{
+    font-family: myBold;
+    font-size: 28px;
+    color: white;
+}
+
+.boldTitle{
+    font-family: myBold;
+    font-size: 24px;
+    color: white;
+}
+
+.boldMiniHeader{
+    font-family: myBold;
+    font-size:60px;
+}
+
+.bold{
+    font-family: myBold;
+}
+
+.regularSubtitle{
+    font-family: myRegular;
+    font-size: 18px;
+    color: white;
+}
+
+.regularTitle{
+    font-family: myRegular;
+    font-size: 32px;
+}
+
+.regularText{
+    font-family: myRegular;
+    font-size: 18px;
+
+}
+
+.regularSmallText{
+    font-family: myRegular;
+    font-size: 16px;
+
+}
+
+.regularExtraSmallText{
+    font-family: myRegular;
+    font-size: 14px;
+}
+
+
+.boldExtraSmallText{
+    font-family: myBold !important;
+    font-size: 14px;
+}
+
+.regularBigText{
+    font-family: myBold;
+    font-size: 26px;
+}
+
+.regularMediumText{
+    font-family: myRegular;
+    font-size: 24px;
+}
+
+.boldSubtitle{
+    font-family: myBold;
+    font-size: 18px;
+}
+
+
+
+.boldSubtitle .active{
+    font-family: myBold;
+    font-size: 18px;
+    color: #4e4e4e;
+}
+
+
+
+.carousel-caption{
+    top : 20px !important;
+}
+
+
+
+.myButton{
+    width: 234px;
+    height: 55px;
+    background: #f6a721;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+.buttonWrapper  {
+
+}
+
+.myGrey{
+    color: #4e4e4e !important;
+}
+
+.myYellow{
+  color : #f6a721 !important;
+}
+
+.myOtherGrey{
+    color: #666666 !important;
+}
+
+.myOtherWhite{
+    color : #ababab !important;
+}
+
+.contactUsContainer{
+    background-color: #ececec;
+
+}
+
+.fancyBackground{
+    background-image: url('../assets/Black_bg.jpg');
+    height: 626px;
+}
+
+.carouselCheviLeft{
+    position: absolute;
+    left:0;
+    top : 65%;
+    border: 0 !important;
+    background: white !important;
+}
+
+.carouselCheviRight .disabled{
+    color: #cbcbcb !important;
+}
+
+.carouselCheviLeft .disabled{
+    color: #cbcbcb !important;
+}
+
+
+.carouselCheviRight{
+    position: absolute;
+    right:0;
+    top : 65%;
+    border: 0 !important;
+    background: white !important;
+
+}
+
+.projectsContainer .col-md-4 {
+    float: right !important;
+}
+
+.myThumb   {
+    border: 3px solid #cbcbcb !important;
+}
+
+.testImageContainer .actived  {
+    border: 3px solid #2e2e2e !important;
+}
+
+.serviceSvg{
+    height:68px;
+    fill: white;
+}
+
+.carousel-indicators{
+
+}
+
+.carousel-indicators li{
+    border-radius: 0 !important;
+    height: 16px;
+    width: 16px;
+    margin: 0;
+    margin-left: 3px;
+    opacity: 0.7;
+    border-width: 3px;
+    background: white;
+
+
+
+}
+
+.carousel-indicators .active{
+    height: 16px;
+    width: 16px;
+    margin: 0;
+    margin-left: 3px;
+    background: transparent;
+
+    opacity: 1;
+
+}
+
+svg{
+    fill : blue;
+}
+
+.navbar {
+    position: fixed;
+    left:0;
+    right: 0;
+    top : 0;
+    z-index: 100000000000;
+    opacity: 0.9;
+}
+.commaImageRight{
+    position: absolute;
+    right: 0;
+
+}
+
+.commaImageLeft{
+    position: absolute;
+    left: 0;
+    background-image: url('../assets/commas.svg');
+
+}
+
+.commaImageRight path {
+    fill: #ff0000;
+
+}
+

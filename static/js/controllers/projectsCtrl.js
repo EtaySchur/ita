@@ -37,6 +37,7 @@ app.controller('ProjectsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' , func
             animation: $scope.animationsEnabled,
             templateUrl: 'editProjectModal.html',
             controller: 'EditProjectModalCtrl',
+            size : 'lg',
             resolve: {
                 item: function () {
                     return project;
@@ -644,6 +645,7 @@ app.controller('ProjectModalCtrl', function ($scope, $uibModalInstance, item , $
         $scope.project = null;
     }
     $scope.ok = function (item) {
+
         $scope.uploadingImage = true;
         if($scope.newCarouselImage == undefined){
             var restCallManager = new RestCallManager();
@@ -659,6 +661,7 @@ app.controller('ProjectModalCtrl', function ($scope, $uibModalInstance, item , $
                 }
             }
         }else{
+            $scope.initCategoryName(item);
             $scope.upload = $upload.upload({
                 url : 'server/UploadController.php',
                 data : {
@@ -686,6 +689,25 @@ app.controller('ProjectModalCtrl', function ($scope, $uibModalInstance, item , $
 
 
     };
+
+    $scope.initCategoryName = function(item){
+        if($scope.categories != undefined){
+            for(var i = 0 ; i < $scope.categories.length ; i++){
+                if($scope.categories[i].id == item.categoryId){
+                    item.categoryTitle = $scope.categories[i].title;
+                    for(var j = 0 ; j < $scope.categories[i].subCategories.length ; j++){
+                        if($scope.categories[i].subCategories[j].id === item.subCategoryId){
+                            item.subCategoryTitle = $scope.categories[i].subCategories[j].title;
+
+                        }
+                    }
+
+                }
+            }
+        }else{
+        }
+
+    }
 
 
     $scope.selectCategory = function(categoryId){

@@ -1,0 +1,45 @@
+<div style="margin-top: 90px;margin-bottom: 90px" class="row">
+        <div  style="text-align: center" class="col-xs-12 rtl">
+            <div class="borderon"></div>
+            <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{selectedProject.title}}</h1>
+        </div>
+</div>
+<div style="margin-bottom: 90px" class="row">
+        <div   class="col-xs-12 col-md-8 col-md-offset-2 rtl">
+            <div class="row">
+
+                <div  class="col-md-7">
+                    <div  style="margin-bottom: 30px" class="regularTitle myGrey">
+                        כמה מילים על הפרוייקט
+                    </div>
+                    <div class="regularExtraSmallText myOtherGrey">
+                        {{selectedProject.aboutMe}}
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+                    <img ng-src="{{selectedProject.imagePath}}">
+                </div>
+            </div>
+            <div style="margin-top: 60px" class="row">
+                <div class="col-md-12  rtl col-xs-12">
+                    <div   class="regularTitle myGrey">
+                        הסבר על תהליך העבודה
+                    </div>
+                    <div class="regularExtraSmallText myOtherGrey">
+                        {{selectedProject.explainMe}}
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 60px" class="row">
+                <div class="col-md-12  rtl col-xs-12">
+                    <div   class="regularTitle myGrey">
+                        {{selectedProject.anotherTitle}}
+                    </div>
+                    <div class="regularExtraSmallText myOtherGrey">
+                        {{selectedProject.anotherText}}
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

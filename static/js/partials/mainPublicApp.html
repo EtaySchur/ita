@@ -1,0 +1,191 @@
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <!-- Carousel Section -->
+        <div style="height: 305px">
+            <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+                <uib-slide ng-repeat="slide in carouselImages" active="slide.active">
+                    <img class="carouselImage" ng-src="{{slide.imagePath}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <div class="boldHeader" >{{slide.title}}</div>
+                        <p class="boldSubHeader">{{slide.text}}</p>
+                        <div class="row">
+                            <div class="myButton clickable">
+                                <div style="color: white;padding-top: 14px" class="boldSubtitle">
+                                    לצפייה בעבודות שלנו
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </uib-slide>
+            </uib-carousel>
+        </div>
+
+        <!-- End Carousel Section -->
+    </div>
+</div>
+
+<div  id="projectsSection"  style="margin-top: 60px" class="row">
+    <div  style="text-align: center;" class="col-md-10 col-md-offset-1 myCategoryFilter">
+        <span  style="color: #a8a8a8;margin-left: 50px" ng-click="setActiveCategoryFilter(category)" ng-class="{'active': activeCategoryFilterId === category.id , 'hovered':hoverEdit}" class="categoryFilter clickable boldSubtitle" ng-repeat="category in categories">
+              {{category.title}}
+        </span>
+    </div>
+</div>
+<div   style="margin-top: 40px" class="row">
+    <div  style="text-align: center" class="col-md-8 col-md-offset-2 projectsContainer">
+        <div     class="col-md-4">
+            <div  style="position: relative" ng-if="$index == 0 && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+                <div ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
+                <div ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                <div ng-class="{ 'imageContainer':hoverEdit}" >
+                    <img ng-click="projectSelected(project)" ng-class="{ 'hovered':hoverEdit}" style="width: 100%" class="animated" ng-src="{{project.imagePath}}">
+                </div>
+                <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
+            </div>
+        </div>
+        <div     class="col-md-4">
+            <div      style="position: relative" ng-if="($index == 1 || $index == 3)  && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+                <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
+                <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                <div ng-class="{ 'imageContainer':hoverEdit}" >
+                    <img ng-click="projectSelected(project)" ng-class="{ 'hovered':hoverEdit}" style="width: 100%" class="animated" ng-src="{{project.imagePath}}">
+                </div>
+                <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
+            </div>
+        </div>
+        <div     class="col-md-4">
+            <div    style="position: relative" ng-if="($index == 2 || $index == 4) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+                <div ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
+                <div ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                <div ng-class="{ 'imageContainer':hoverEdit}" >
+                    <img ng-click="projectSelected(project)" ng-class="{ 'hovered':hoverEdit}" style="width: 100%" class="animated" ng-src="{{project.imagePath}}">
+                </div>
+                <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div   id="whoWeAreSection" style="margin-top: 90px" class="row">
+    <div  style="text-align: center" class="col-xs-12 rtl">
+        <div class="borderon"></div>
+        <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{generalSettings.whoWeAreTitle}}</h1>
+    </div>
+</div>
+<div   style="margin-top: 130px" class="row">
+    <div  style="text-align: center" class="col-xs-12 col-md-offset-2 col-md-4 alignRight  rtl">
+        <h3 style="margin-bottom: 55px" class="rtl alignRigh regularTitle myGrey"> {{generalSettings.whoWeAreLeftSectionTitle}}</h3>
+        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText1}} </p>
+        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText2}} </p>
+        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText3}} </p>
+    </div>
+    <div  style="text-align: center" class="col-xs-12 col-md-4   alignRight rtl">
+        <h3 style="margin-bottom: 55px" class="regularTitle myGrey"> {{generalSettings.whoWeAreRightSectionTitle}}</h3>
+        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText1}} </p>
+        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText2}}</p>
+        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText3}}</p>
+    </div>
+</div>
+<div style="margin-top:90px" class="row fancyBackground">
+    <div style="text-align: center;" class="col-xs-12">
+        <div style="font-size: 29px;color: white;margin-top: 85px" class="regularText">ישנם אלפי אדריכלי שיפוץ בארץ </div>
+        <div  style="margin-top: 25px" class="boldMiniHeader myYellow">ישנם אלפי אדריכלי שיפוץ בארץ </div>
+    </div>
+    <div style="margin-top: 110px" class="col-md-10 col-md-offset-1">
+        <div class="row">
+            <div style="float: right;" class="col-md-3 alignRight">
+                <div style="margin-bottom: 20px" class="imageHolder">
+                    <img class="serviceSvg" src="static/assets/Services_1.svg">
+                </div>
+                <div style="color: white;margin-bottom: 20px;margin-top: 20px" class="regularMediumText">
+                    'פרוייקטים מ-א' ועד ת
+                </div>
+                <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
+                    משלב התכנון ההתחלתי וההדמיות ועד לביצוע הבנייה ועבודות הגמר, אנחנו פה אתכם ובשבילכם בכל רגע.
+                </div>
+                <div class="boldExtraSmallText myOtherWhite">
+                    אתם תמנעו מכאבי ראש ועלויות של עבודה מול מספר נותני שירות במקביל.
+                </div>
+            </div>
+
+
+
+            <div style="float: right;" class="col-md-3 alignRight">
+                <div style="margin-bottom: 20px" class="imageHolder">
+                    <img class="serviceSvg" src="static/assets/Services_2.svg">
+                </div>
+                <div style="color: white;margin-bottom: 20px" class="regularMediumText">
+                    עבודות בנייה מדוייקות
+                </div>
+                <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
+                    אנחנו עובדים על פי סטנדרטים אמריקאיים של ביצוע עבודות עם דיוק ברמת המילימטר.
+                </div>
+                <div class="boldExtraSmallText myOtherWhite">
+                    למה? כי בעינינו אין דרך אחרת לעבוד.
+                </div>
+            </div>
+
+
+
+            <div style="float: right;" class="col-md-3 alignRight">
+                <div style="margin-bottom: 20px" class="imageHolder">
+                    <img class="serviceSvg" src="static/assets/Services_3.svg">
+                </div>
+                <div style="color: white;margin-bottom: 20px" class="regularMediumText">
+                    ייעוץ מקצועי
+                </div>
+                <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
+                    יש לכם שאלה לגבי פרוייקט שיפוץ מסויים? רוצים לקבל חוות דעת שניה לגבי חידוש הבית?
+                </div>
+                <div class="boldExtraSmallText myOtherWhite">
+                    אנחנו נספק חוות דעת מקצועית ואובייקטיבית עבורכם.
+                </div>
+            </div>
+
+
+
+            <div style="float: right;" class="col-md-3 alignRight">
+                <div style="margin-bottom: 20px" class="imageHolder">
+                    <img class="serviceSvg" src="static/assets/Services_4.svg">
+                </div>
+                <div style="color: white;margin-bottom: 20px" class="regularMediumText">
+                    טיפול באישורים וניירת
+                </div>
+                <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
+                    אנחנו מומחים בהכנה, הגשה וטיפול באישורי הבנייה השונים, בעבודה מול הרשויות ובהסדרת הניירת הדרושה.
+                </div>
+                <div class="boldExtraSmallText myOtherWhite">
+                    וכל זאת כלול במחיר הפרוייקט.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div   id="testimonialsSection" style="margin-top: 90px;margin-bottom: 80px" class="row">
+    <div  style="text-align: center" class="col-xs-12 rtl">
+        <div class="borderon"></div>
+        <h1 class="boldMiniHeader" style="color:#4e4e4e"> {{generalSettings.testimonialsTitle}}</h1>
+    </div>
+</div>
+<div   style="margin-bottom: 80px;" class="row">
+    <div   class="col-xs-12 col-md-6 col-md-offset-3 rtl">
+        <div  style="margin-bottom: 30px;text-align: center">
+            <img class="commaImageRight" style="height: 38px;float: right" src="static/assets/commas.svg">
+            <div class="regularBigText" style="color: #cbcbcb"> {{selectedTestimonial.title}}  </div>
+            <p class="regularText myGrey"> {{selectedTestimonial.subTitle}}</p>
+            <img xlink:href="assets/commas.svg" class="commaImageLeft" style="height: 38px;float: left">
+        </div>
+        <div style="text-align: center" ng-click="setTestimonial(item)" ng-repeat="item in testimonials | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-md-4 col-xs-4 testImageContainer">
+            <img ng-class="{ 'actived': selectedTestimonial.id == item.id}" class="img img-circle img-thumbnail myThumb testimonialSmallImage animated bounceInLeft clickable" ng-src="{{item.imagePath}}">
+        </div>
+        <button class="carouselCheviLeft" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+            <i ng-class="{'disabled':currentPage == 0 }" class="fa fa-chevron-left myGrey"></i>
+        </button>
+
+        <button class="carouselCheviRight" ng-disabled="currentPage >= testimonials.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+            <i   ng-class="{'disabled':currentPage >= testimonials.length/pageSize - 1}" class="fa fa-chevron-right myGrey"></i>
+        </button>
+
+
+    </div>
+</div>

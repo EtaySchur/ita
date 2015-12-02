@@ -33,7 +33,12 @@ app.controller('TestimonialsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' ,f
         });
 
         modalInstance.result.then(function (testimonial) {
-            $scope.testimonials.push(testimonial);
+            if(item == null){
+                $scope.testimonials.push(testimonial);
+            }else{
+                item = testimonial;
+            }
+
         });
     }
 
@@ -85,6 +90,7 @@ app.controller('addTestimonialCtrl', function ($scope, $uibModalInstance, item ,
             restCallManager.post(callback , $http, item , "editTestimonial");
             function callback(result , status , success) {
                 if (success) {
+
                     $scope.uploadingImage = false;
                     $uibModalInstance.close(item);
                     alertMe( "success" ,"Edit Testimonial Success");
@@ -107,7 +113,7 @@ app.controller('addTestimonialCtrl', function ($scope, $uibModalInstance, item ,
                 // file is uploaded successfully
                 item.id = data.id;
                 item.imagePath = data.imagePath;
-
+                console.log("This is the result ",data);
 
                 alertMe( "success" ,"Create New Testimonials Success");
                 $scope.uploadingImage = false;
