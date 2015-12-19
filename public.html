@@ -23,74 +23,58 @@
     <link rel="stylesheet" href="static/js/vendor/pnotify/pnotify.custom.min.css">
     <link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/glyphter-font/css/Glyphter.css">
     <script src="static/js/publicApp.js"></script>
     <script src="static/js/controllers/publicCtrl.js"></script>
     <script src="static/js/vendor/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
 </head>
-<body>
-<nav class="navbar navbar-default" role="navigation" bs-navbar>
+<body scroll ng-controller="MainCtrl">
+<nav  ng-class="{'navBarTopped ': imTopped}" class="navbar navbar-default myNavbar" role="navigation" bs-navbar>
     <div class="navbar-header">
-        <a class="navbar-brand" href="#/">
+        <a ng-if="imTopped && !imProjected" class="navbar-brand" href="#/">
             <img src="static/assets/Logo.png">
         </a>
+        <a ng-if="!imTopped || imProjected" class="navbar-brand" href="#/">
+            <img src="static/assets/Logo_black.png">
+        </a>
     </div>
-    <ul style="float: right;direction: rtl" class="nav navbar-nav">
-        <li><a ng-click="gotoElement('contactUsSection')" href="#/contactUs">צור קשר</a></li>
-        <li><a ng-click="gotoElement('testimonialsSection')"  href="#/testimonialsSection">לקוחות ממליצים</a></li>
-        <li><a ng-click="gotoElement('whoWeAreSection')" href="#/whoWeAreSection">קצת עלינו</a></li>
-        <li><a ng-click="gotoElement('projectsSection')"  href="#/projects">פרוייקטים</a></li>
+    <ul  style="float: right;direction: rtl" class="nav navbar-nav">
+
+        <li   ng-if="navHoverEdit || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('contactUsSection')">צור קשר</a></li>
+        <li ng-if="navHoverEdit || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('testimonialsSection')">לקוחות ממליצים</a></li>
+        <li ng-if="navHoverEdit || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('whoWeAreSection')">קצת עלינו</a></li>
+        <li ng-if="navHoverEdit || !imTopped && !imProjected " class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('projectsSection')">פרוייקטים</a></li>
+        <li   ng-if="imTopped && !navHoverEdit && !imProjected" ng-mouseleave="navHoverOut()" ng-mouseover="navHoverIn()" class="clickable">
+            <a class="myGrey boldSmallText">
+                <i style="color: white" class="icon-Menu"></i>
+            </a>
+        </li>
+
+        <li   ng-if="imProjected && !showSideProjects" ng-mouseleave="projectNavHoverOut()" ng-mouseover="projectNavHoverIn()" class="clickable">
+            <a ng-click="toggleSideMenu(true)" class="myGrey boldSmallText"> לצפייה בכל הפרוייקטים</a>
+        </li>
+        <li   ng-if="imProjected  && !showSideProjects" ng-mouseleave="projectNavHoverOut()" ng-mouseover="projectNavHoverIn()" class="clickable">
+            <a ng-click="toggleSideMenu(true)" class="myGrey boldSmallText">
+                <i  style="color: black" class="fa fa-th"></i>
+            </a>
+
+        </li>
+        <li   ng-if="imProjected && showSideProjects" ng-mouseleave="projectNavHoverOut()" ng-mouseover="projectNavHoverIn()" class="clickable">
+            <a ng-click="toggleSideMenu(false)" class="myGrey boldSmallText">
+                <i  style="color: black"  class="fa fa-times"></i>
+            </a>
+        </li>
+
+
+
     </ul>
 </nav>
-<div class="col-xs-12">
+<div style="padding-left: 0;padding-right: 0" class="col-xs-12">
     <div ng-view></div>
 </div>
 
-<div   id="contactUsSection" style="margin-top: 30px" class="row contactUsContainer">
 
-    <div  style="text-align: center" class="col-xs-12 col-md-offset-1 col-md-5 alignRight  rtl">
-      <img src="static/assets/Footer_bg.jpg">
-    </div>
-    <div  style="text-align: center" class="col-xs-12 col-md-4 col-md-offset-1   alignRight rtl">
-        <div class="row">
-            <h3 style="font-size: 46px;margin-top: 55px;margin-bottom: 30px" class="rtl alignRight bold myGrey"> בואו נדבר </h3>
-        </div>
-
-        <div style="margin-bottom: 30px" class="row">
-            <div  class="borderinon"></div>
-        </div>
-        <div  class="row">
-            <p style="margin-up: 30px" class="regularText myGrey" style="margin-bottom: 10px"> חושבים לעשות שיפוץ בבית,הרחבה או תוספת בפנים או בחוץ? הגעתם למקום הנכון</p>
-        </div>
-        <div style="margin-bottom: 30px" class="row">
-            <p  class="regularText myGrey">  צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
-        </div>
-        <div class="row">
-            <form class="regularText" name="contactUsForm">
-                <div class="form-group">
-                    <label  class="regularText myGrey" for="exampleInputEmail1">שם מלא</label>
-                    <input required ng-model="contact.fullName" type="text" class="form-control myGrey" id="exampleInputEmail1" placeholder="הכנס/י את שמך המלא כאן">
-                </div>
-                <div style="margin-bottom: 30px" class="form-group">
-                    <label  class="regularText myGrey" for="exampleInputPassword1">טלפון</label>
-                    <input required ng-model="contact.phone" type="text" class="form-control myGrey " id="exampleInputPassword1" placeholder="הכנס/י את מספר הטלפון כאן">
-                </div>
-                <div style="margin-bottom: 30px" class="form-group">
-                    <label  class="regularText myGrey" for="exampleInputPassword1">אימייל</label>
-                    <input required ng-model="contact.email" type="email" class="form-control myGrey" id="exampleInputPassword1" placeholder="הכנס/י את כתובת האי מייל כאן">
-                </div>
-                <div style="margin-bottom: 20px" class="form-group">
-                    <label class="regularText myGrey" for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
-                    <textarea rows="5" ng-model="contact.howCanWeHelp" type="text" class="form-control myGrey" id="exampleInputPassword1" > </textarea>
-                </div>
-
-                <button style="float: left" class="btn btn-warning">שלח אותי </button>
-
-            </form>
-        </div>
-
-    </div>
-</div>
 
 </body>
 </html>

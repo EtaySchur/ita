@@ -1,4 +1,13 @@
-
+<div class="row">
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">Main Email address</label>
+        <input ng-model="general.email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="exampleInputPassword1">Main Phone Number</label>
+        <input ng-model="general.phone" type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+</div>
 <div class="row">
     <h1> Who We Are ?</h1>
     <div class="form-group">
@@ -49,7 +58,13 @@
         <label>Testimonials Title</label>
         <input ng-model="general.testimonialsTitle" type="text" class="form-control"  placeholder="Title">
     </div>
-    </form>
+</div>
+<div class="row">
+    <h1> Carousel </h1>
+    <div class="form-group col-md-3">
+        <label>Carousel Interval Time ( In Seconds )</label>
+        <input ng-model="general.carouselInterval" type="text" class="form-control"  placeholder="Interval">
+    </div>
 </div>
 <div class="row">
     <button type="button" class="btn btn-success" ng-click="save(general)">Save</button>

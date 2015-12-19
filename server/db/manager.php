@@ -63,10 +63,8 @@ class DbManager {
 
     }
 
-    public static function saveNewTestimonial($imagePath , $data){
-        $data->imagePath = $imagePath;
+    public static function saveNewTestimonial($data){
         return self::insertToDb('testimonials' , $data);
-
         exit;
 
     }
@@ -94,8 +92,7 @@ class DbManager {
     }
 
 
-    public static function saveNewProject($imagePath , $data){
-        $data->imagePath = $imagePath;
+    public static function saveNewProject($data){
         return self::insertToDb('projects' , $data);
 
         exit;
@@ -161,8 +158,10 @@ class DbManager {
     }
 
 
+
+
     public static  function saveGeneralSettings($data){
-        return self::updateDb("general" , $data);
+        return self::updateSettings("general" , $data);
         exit;
 
     }
@@ -236,6 +235,11 @@ class DbManager {
         return self::insertToDb("carouselImages" , $image);
     }
 
+    public static function insertContactInfo($data){
+         return self::insertToDb('contactUs' , $data);
+                exit;
+    }
+
 
 
 
@@ -266,29 +270,59 @@ class DbManager {
         exit;
     }
 
+     public static function updateSettings($tableName , $data){
+                $conn = self::connectToDb();
+                $sql = "UPDATE ".$tableName." SET";
+                $comma = " ";
+                $whitelist = array(
+
+                );
+                foreach($data as $key => $val) {
+                    if( ! empty($val)) {
+                        $sql .= $comma . $key . " = '" .(trim($val)) . "'";
+                        $comma = ", ";
+                    }
+                }
+
+                if(isset($data->id)){
+                    $sql .=" WHERE id = ".$data->id;
+                }
+                $stmt = $conn->query($sql);
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+                return $result;
+
+        }
+
 
     /* Generic Section */
     public static function updateDb($tableName , $data){
-        $conn = self::connectToDb();
-        $sql = "UPDATE ".$tableName." SET";
-        $comma = " ";
-        $whitelist = array(
+        if(!isset($data->id)){
+            return null;
+        }else{
+            $conn = self::connectToDb();
+            $sql = "UPDATE ".$tableName." SET";
+            $comma = " ";
+            $whitelist = array(
 
-        );
-        foreach($data as $key => $val) {
-            if( ! empty($val)) {
-                $sql .= $comma . $key . " = '" .(trim($val)) . "'";
-                $comma = ", ";
+            );
+            foreach($data as $key => $val) {
+                if( ! empty($val)) {
+                    $sql .= $comma . $key . " = '" .(trim($val)) . "'";
+                    $comma = ", ";
+                }
             }
+
+            if(isset($data->id)){
+                $sql .=" WHERE id = ".$data->id;
+            }
+            $stmt = $conn->query($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
         }
 
-        if(isset($data->id)){
-            $sql .=" WHERE id = $data->id";
-        }
-        $stmt = $conn->query($sql);
-        $stmt->execute();
-        $result = $stmt->fetchAll();
-        return $result;
+
 
     }
 

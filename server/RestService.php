@@ -86,6 +86,10 @@ if (($_POST) || (isset($_POST))) {
              $result = DbManager::getProject($request->data);
             echo json_encode($result);
             exit;
+          case  "insertContactUs" :
+                     $result = DbManager::insertContactInfo($request->data);
+                    echo json_encode($result);
+                    exit;
         case "editCarouselImage"  :
             $result = DbManager::editCarouselImage($request->data);
             echo json_encode($result);

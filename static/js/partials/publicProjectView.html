@@ -1,10 +1,21 @@
-<div style="margin-top: 90px;margin-bottom: 90px" class="row">
+<div ng-show="showSideProjects" style="background: rgba(255, 255, 255, 0.8);height: 100vh;width: 200px" ng-class="{'bounceOutRight' : !showSideProjects}" class="floatingNavBar animated bounceInRight">
+    <div style="margin-top: 80px" class="imagesContainer">
+
+        <div    ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()"  ng-click="gotoElement('sideProject'+$index)" ng-class="{'sideProjectHovered' : hoverEdit}" width="100%" style="position: relative;text-align: center;width: 100%;margin-bottom: 28px"  class="clickable" ng-repeat="project in mySideProjects | limitTo : 4">
+            <div ng-show="hoverEdit" style="color: white;position: absolute;top : 40%;width: 100%;text-align: center" class="boldSubtitle"> {{project.title}}</div>
+            <img style="height: auto;width: 100%" ng-src="{{project.imagePath}}">
+        </div>
+    </div>
+
+</div>
+<div ng-click="toggleSideMenu(False)" class="wrapper">
+    <div style="margin-top: 90px;margin-bottom: 90px" class="row">
         <div  style="text-align: center" class="col-xs-12 rtl">
             <div class="borderon"></div>
             <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{selectedProject.title}}</h1>
         </div>
-</div>
-<div style="margin-bottom: 90px" class="row">
+    </div>
+    <div style="margin-bottom: 90px" class="row">
         <div   class="col-xs-12 col-md-8 col-md-offset-2 rtl">
             <div class="row">
 
@@ -15,10 +26,27 @@
                     <div class="regularExtraSmallText myOtherGrey">
                         {{selectedProject.aboutMe}}
                     </div>
-
+                    <div style="margin-top: 60px;margin-bottom: 60px" ng-if="selectedProject.imageCircle1" class="circleImageContainer row">
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{selectedProject.imageCircle1}}">
+                            <p style="margin-top: 10px">  {{selectedProject.imageCircle1Text}} </p>
+                        </div>
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{selectedProject.imageCircle2}}">
+                            <p style="margin-top: 10px">  {{selectedProject.imageCircle2Text}} </p>
+                        </div>
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{selectedProject.imageCircle3}}">
+                            <p style="margin-top: 10px">  {{selectedProject.imageCircle3Text}} </p>
+                        </div>
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{selectedProject.imageCircle4}}">
+                            <p style="margin-top: 10px">  {{selectedProject.imageCircle4Text}} </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-5">
-                    <img ng-src="{{selectedProject.imagePath}}">
+                    <img style="width: 100%" ng-src="{{selectedProject.imagePath}}">
                 </div>
             </div>
             <div style="margin-top: 60px" class="row">
@@ -28,6 +56,40 @@
                     </div>
                     <div class="regularExtraSmallText myOtherGrey">
                         {{selectedProject.explainMe}}
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 80px" class="row">
+                <div style="float: right" class="col-md-3  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{selectedProject.image1}}">
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{selectedProject.image1Text}}
+                        </div>
+                    </div>
+                </div>
+                <div style="float: right" class="col-md-3  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{selectedProject.image2}}">
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{selectedProject.image2Text}}
+                        </div>
+                    </div>
+                </div>
+                <div style="float: right" class="col-md-3  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{selectedProject.image3}}">
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{selectedProject.image3Text}}
+                        </div>
+                    </div>
+                </div>
+                <div style="float: right"class="col-md-3  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{selectedProject.image4}}">
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{selectedProject.image4Text}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,5 +103,182 @@
                     </div>
                 </div>
             </div>
+            <div style="margin-top: 60px" class="row">
+                <div class="col-md-12  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{selectedProject.bigImage}}">
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div id="sideProject{{$index}}" ng-repeat="item in mySideProjects" style="margin-bottom: 90px" class="row">
+        <div style="margin-top: 90px;margin-bottom: 90px" class="row">
+            <div  style="text-align: center" class="col-xs-12 rtl">
+                <div class="borderon"></div>
+                <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{item.title}}</h1>
+            </div>
+        </div>
+        <div   class="col-xs-12 col-md-8 col-md-offset-2 rtl">
+            <div class="row">
+
+                <div  class="col-md-7">
+                    <div  style="margin-bottom: 30px" class="regularTitle myGrey">
+                        כמה מילים על הפרוייקט
+                    </div>
+                    <div class="regularExtraSmallText myOtherGrey">
+                        {{item.aboutMe}}
+                    </div>
+                    <div style="margin-top: 60px;margin-bottom: 60px" ng-if="item.imageCircle1" class="circleImageContainer row">
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{item.imageCircle1}}">
+                            <p style="margin-top: 10px">  {{item.imageCircle1Text}} </p>
+                        </div>
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{item.imageCircle2}}">
+                            <p style="margin-top: 10px">  {{item.imageCircle2Text}} </p>
+                        </div>
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{item.imageCircle3}}">
+                            <p style="margin-top: 10px">  {{item.imageCircle3Text}} </p>
+                        </div>
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{item.imageCircle4}}">
+                            <p style="margin-top: 10px">  {{item.imageCircle4Text}} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img style="width: 100%" ng-src="{{item.imagePath}}">
+                </div>
+            </div>
+            <div style="margin-top: 60px" class="row">
+                <div class="col-md-12  rtl col-xs-12">
+                    <div   class="regularTitle myGrey">
+                        הסבר על תהליך העבודה
+                    </div>
+                    <div class="regularExtraSmallText myOtherGrey">
+                        {{item.explainMe}}
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 80px" class="row">
+                <div style="float: right" class="col-md-3  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{item.image1}}">
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{item.image1Text}}
+                        </div>
+                    </div>
+                </div>
+                <div style="float: right" class="col-md-3  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{item.image2}}">
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{item.image2Text}}
+                        </div>
+                    </div>
+                </div>
+                <div style="float: right" class="col-md-3  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{item.image3}}">
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{item.image3Text}}
+                        </div>
+                    </div>
+                </div>
+                <div style="float: right"class="col-md-3  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{item.image4}}">
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{item.image4Text}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 60px" class="row">
+                <div class="col-md-12  rtl col-xs-12">
+                    <div   class="regularTitle myGrey">
+                        {{item.anotherTitle}}
+                    </div>
+                    <div class="regularExtraSmallText myOtherGrey">
+                        {{item.anotherText}}
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 60px" class="row">
+                <div class="col-md-12  rtl col-xs-12">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{item.bigImage}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div   style="margin-left: 0;margin-right: 0" id="contactUsSection"  class="row contactUsContainer">
+        <div  style="text-align: center" class="col-xs-12  col-md-6 alignRight  rtl">
+            <div class="outWrap">
+                <div style="text-align: center" class="innerWrap">
+                      <div style="margin-bottom: 20px;margin-top: 5px" class="myGrey boldBigText">
+איתמר משה
+                      </div>
+                    <div style="width: 20px;border-bottom: 3px solid #4e4e4e;margin-bottom: 20px " class="liner myGrey"> </div>
+                    <div class="myGrey boldSemiText">
+{{generalSettings.email}}
+                    </div>
+                    <div class="myGrey boldSemiText">
+                        {{generalSettings.phone}}
+                    </div>
+                </div>
+            </div>
+            <img src="static/assets/Footer_bg.jpg">
+        </div>
+        <div  style="text-align: center" class="col-xs-12 col-md-4 col-md-offset-1   alignRight rtl">
+            <div class="row">
+                <h3 style="font-size: 46px;margin-top: 55px;margin-bottom: 30px" class="rtl alignRight bold myGrey"> בואו נדבר </h3>
+            </div>
+
+            <div style="margin-bottom: 30px" class="row">
+                <div  class="borderinon"></div>
+            </div>
+            <div  class="row">
+                <p style="margin-up: 30px" class="regularText myGrey" style="margin-bottom: 10px"> חושבים לעשות שיפוץ בבית,הרחבה או תוספת בפנים או בחוץ? הגעתם למקום הנכון</p>
+            </div>
+            <div style="margin-bottom: 30px" class="row">
+                <p  class="regularText myGrey">  צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
+            </div>
+            <div class="row">
+                <form style="width: 510px" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
+                    <div class="form-group">
+                        <label  class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
+                        <input  name="fullNameInput"  required ng-model="contact.fullName" type="text" class="form-control myGrey contactUsInput" id="exampleInputEmail1" placeholder="הכנס/י את שמך המלא כאן">
+                        <p ng-show="!contactUsForm.fullNameInput.$valid && validateAll" style="color: red"> שדה חובה </p>
+                    </div>
+                    <div style="margin-bottom: 30px" class="form-group">
+                        <label  class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
+                        <input  name="phoneInput" required ng-model="contact.phone" type="text" class="form-control myGrey contactUsInput" id="exampleInputPassword1" placeholder="הכנס/י את מספר הטלפון כאן">
+                        <p ng-show="!contactUsForm.phoneInput.$valid && validateAll" style="color: red"> שדה חובה </p>
+                    </div>
+                    <div style="margin-bottom: 30px" class="form-group">
+                        <label  class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
+                        <input name="emailInput" required ng-model="contact.email" type="email" class="form-control myGrey contactUsInput" id="exampleInputPassword1" placeholder="הכנס/י את כתובת האי מייל כאן">
+                        <p ng-show="!contactUsForm.emailInput.$valid && validateAll" style="color: red"> שדה חובה </p>
+                    </div>
+                    <div style="margin-bottom: 20px" class="form-group">
+                        <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
+                        <textarea  rows="5" ng-model="contact.howCanWeHelp" type="text" class="form-control myGrey contactUsTextArea" id="exampleInputPassword1" > </textarea>
+                    </div>
+                    <div style="margin-top: 30px;margin-bottom: 55px" class="clickable">
+                        <div ng-click="sendMail(contact)" style="padding: 5px 10px;float: left" class="boldSubtitle contactUsButton">
+                            שלח אותי
+               </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
 </div>

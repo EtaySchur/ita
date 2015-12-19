@@ -1,15 +1,15 @@
 <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-12 myCarousel">
         <!-- Carousel Section -->
-        <div style="height: 305px">
+        <div>
             <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
                 <uib-slide ng-repeat="slide in carouselImages" active="slide.active">
                     <img class="carouselImage" ng-src="{{slide.imagePath}}" style="margin:auto;">
                     <div class="carousel-caption">
-                        <div class="boldHeader" >{{slide.title}}</div>
-                        <p class="boldSubHeader">{{slide.text}}</p>
+                        <div style="margin-bottom: 20px;margin-top: 250px" class="boldHeader" >{{slide.title}}</div>
+                        <p style="margin-bottom: 76px" class="boldSubHeader">{{slide.text}}</p>
                         <div class="row">
-                            <div class="myButton clickable">
+                            <div ng-click="gotoElement('projectsSection')" class="myButton clickable">
                                 <div style="color: white;padding-top: 14px" class="boldSubtitle">
                                     לצפייה בעבודות שלנו
                                 </div>
@@ -35,7 +35,7 @@
 <div   style="margin-top: 40px" class="row">
     <div  style="text-align: center" class="col-md-8 col-md-offset-2 projectsContainer">
         <div     class="col-md-4">
-            <div  style="position: relative" ng-if="$index == 0 && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+            <div  style="position: relative" ng-if="($index == 0 || $index == 3) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
                 <div ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
                 <div ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
                 <div ng-class="{ 'imageContainer':hoverEdit}" >
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div     class="col-md-4">
-            <div      style="position: relative" ng-if="($index == 1 || $index == 3)  && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+            <div      style="position: relative" ng-if="($index == 1 || $index == 4)  && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
                 <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
                 <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
                 <div ng-class="{ 'imageContainer':hoverEdit}" >
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div     class="col-md-4">
-            <div    style="position: relative" ng-if="($index == 2 || $index == 4) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+            <div    style="position: relative" ng-if="($index == 2 || $index == 6) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
                 <div ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
                 <div ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
                 <div ng-class="{ 'imageContainer':hoverEdit}" >
@@ -92,12 +92,15 @@
         <div  style="margin-top: 25px" class="boldMiniHeader myYellow">ישנם אלפי אדריכלי שיפוץ בארץ </div>
     </div>
     <div style="margin-top: 110px" class="col-md-10 col-md-offset-1">
-        <div class="row">
+        <div style="direction: rtl" class="row">
             <div style="float: right;" class="col-md-3 alignRight">
-                <div style="margin-bottom: 20px" class="imageHolder">
-                    <img class="serviceSvg" src="static/assets/Services_1.svg">
+                <div  class="imageHolder">
+                    <i class="fuadIcon icon-Services_1">
+
+                    </i>
+                    <!--img class="serviceSvg" src="static/assets/Services_1_Fix.svg"-->
                 </div>
-                <div style="color: white;margin-bottom: 20px;margin-top: 20px" class="regularMediumText">
+                <div style="color: white;margin-bottom: 20px;" class="regularMediumText">
                     'פרוייקטים מ-א' ועד ת
                 </div>
                 <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
@@ -112,7 +115,9 @@
 
             <div style="float: right;" class="col-md-3 alignRight">
                 <div style="margin-bottom: 20px" class="imageHolder">
-                    <img class="serviceSvg" src="static/assets/Services_2.svg">
+                    <i class="fuadIcon icon-Services_2">
+
+                    </i>
                 </div>
                 <div style="color: white;margin-bottom: 20px" class="regularMediumText">
                     עבודות בנייה מדוייקות
@@ -129,7 +134,9 @@
 
             <div style="float: right;" class="col-md-3 alignRight">
                 <div style="margin-bottom: 20px" class="imageHolder">
-                    <img class="serviceSvg" src="static/assets/Services_3.svg">
+                    <i class="fuadIcon icon-Services_3">
+
+                    </i>
                 </div>
                 <div style="color: white;margin-bottom: 20px" class="regularMediumText">
                     ייעוץ מקצועי
@@ -146,7 +153,9 @@
 
             <div style="float: right;" class="col-md-3 alignRight">
                 <div style="margin-bottom: 20px" class="imageHolder">
-                    <img class="serviceSvg" src="static/assets/Services_4.svg">
+                    <i class="fuadIcon icon-Services_4">
+
+                    </i>
                 </div>
                 <div style="color: white;margin-bottom: 20px" class="regularMediumText">
                     טיפול באישורים וניירת
@@ -170,13 +179,14 @@
 <div   style="margin-bottom: 80px;" class="row">
     <div   class="col-xs-12 col-md-6 col-md-offset-3 rtl">
         <div  style="margin-bottom: 30px;text-align: center">
-            <img class="commaImageRight" style="height: 38px;float: right" src="static/assets/commas.svg">
+            <i style="color: #cbcbcb;font-size: 40px" class="icon-commas commaImageRight"> </i>
             <div class="regularBigText" style="color: #cbcbcb"> {{selectedTestimonial.title}}  </div>
             <p class="regularText myGrey"> {{selectedTestimonial.subTitle}}</p>
-            <img xlink:href="assets/commas.svg" class="commaImageLeft" style="height: 38px;float: left">
+            <i style="color: #cbcbcb;font-size: 40px" class="icon-commas commaImageLeft"> </i>
         </div>
         <div style="text-align: center" ng-click="setTestimonial(item)" ng-repeat="item in testimonials | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-md-4 col-xs-4 testImageContainer">
-            <img ng-class="{ 'actived': selectedTestimonial.id == item.id}" class="img img-circle img-thumbnail myThumb testimonialSmallImage animated bounceInLeft clickable" ng-src="{{item.imagePath}}">
+            <img ng-class="{ 'actived': selectedTestimonial.id == item.id}" class="img img-circle img-thumbnail myThumb testimonialSmallImage  bounceInLeft clickable" ng-src="{{getImagePath(item)}}">
+            <p style="margin-top: 5px">{{item.description}}</p>
         </div>
         <button class="carouselCheviLeft" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
             <i ng-class="{'disabled':currentPage == 0 }" class="fa fa-chevron-left myGrey"></i>
@@ -186,6 +196,71 @@
             <i   ng-class="{'disabled':currentPage >= testimonials.length/pageSize - 1}" class="fa fa-chevron-right myGrey"></i>
         </button>
 
+
+    </div>
+</div>
+<div   id="contactUsSection"  class="row contactUsContainer">
+    <div  style="text-align: center" class="col-xs-12  col-md-6 alignRight  rtl">
+        <div class="outWrap">
+            <div style="text-align: center" class="innerWrap">
+                <div style="margin-bottom: 20px;margin-top: 5px" class="myGrey boldBigText">
+                    איתמר משה
+                </div>
+                <div style="width: 20px;border-bottom: 3px solid #4e4e4e;margin-bottom: 20px " class="liner myGrey"> </div>
+                <div class="myGrey boldSemiText">
+                    {{generalSettings.email}}
+                </div>
+                <div class="myGrey boldSemiText">
+                    {{generalSettings.phone}}
+                </div>
+            </div>
+        </div>
+        <img src="static/assets/Footer_bg.jpg">
+    </div>
+    <div  style="text-align: center" class="col-xs-12 col-md-4 col-md-offset-1   alignRight rtl">
+        <div class="row">
+            <h3 style="font-size: 46px;margin-top: 55px;margin-bottom: 30px" class="rtl alignRight bold myGrey"> בואו נדבר </h3>
+        </div>
+
+        <div style="margin-bottom: 30px" class="row">
+            <div  class="borderinon"></div>
+        </div>
+        <div  class="row">
+            <p style="margin-up: 30px" class="regularText myGrey" style="margin-bottom: 10px"> חושבים לעשות שיפוץ בבית,הרחבה או תוספת בפנים או בחוץ? הגעתם למקום הנכון</p>
+        </div>
+        <div style="margin-bottom: 30px" class="row">
+            <p  class="regularText myGrey">  צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
+        </div>
+        <div class="row">
+            <form style="width: 510px" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
+                <div class="form-group">
+                    <label  class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
+                    <input  name="fullNameInput"  required ng-model="contact.fullName" type="text" class="form-control myGrey contactUsInput" id="exampleInputEmail1" placeholder="הכנס/י את שמך המלא כאן">
+                    <p ng-show="!contactUsForm.fullNameInput.$valid && validateAll" style="color: red"> שדה חובה </p>
+                </div>
+                <div style="margin-bottom: 30px" class="form-group">
+                    <label  class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
+                    <input  name="phoneInput" required ng-model="contact.phone" type="text" class="form-control myGrey contactUsInput" id="exampleInputPassword1" placeholder="הכנס/י את מספר הטלפון כאן">
+                    <p ng-show="!contactUsForm.phoneInput.$valid && validateAll" style="color: red"> שדה חובה </p>
+                </div>
+                <div style="margin-bottom: 30px" class="form-group">
+                    <label  class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
+                    <input name="emailInput" required ng-model="contact.email" type="email" class="form-control myGrey contactUsInput" id="exampleInputPassword1" placeholder="הכנס/י את כתובת האי מייל כאן">
+                    <p ng-show="!contactUsForm.emailInput.$valid && validateAll" style="color: red"> שדה חובה </p>
+                </div>
+                <div style="margin-bottom: 20px" class="form-group">
+                    <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
+                    <textarea  rows="5" ng-model="contact.howCanWeHelp" type="text" class="form-control myGrey contactUsTextArea" id="exampleInputPassword1" > </textarea>
+                </div>
+                <div style="margin-top: 30px;margin-bottom: 55px" class="clickable">
+                    <div ng-click="sendMail(contact)" style="padding: 5px 10px;float: left" class="boldSubtitle contactUsButton">
+                        שלח אותי
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
 
     </div>
 </div>

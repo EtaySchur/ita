@@ -33,6 +33,12 @@ app.controller('ProjectsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' , func
     }
 
     $scope.openEditProjectModal = function(size , project){
+        if(project.id){
+            var isNew = false;
+        }else{
+            var isNew = true;
+        }
+        console.log("Edit this project ", project);
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'editProjectModal.html',
@@ -48,8 +54,18 @@ app.controller('ProjectsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' , func
             }
         });
 
-        modalInstance.result.then(function (project) {
-            $scope.projects.push(project);
+        modalInstance.result.then(function (editedProject) {
+            refreshProjects();
+            function refreshProjects(){
+                var restCallManager = new RestCallManager();
+                restCallManager.post(callbackMe , $http, null , "getProjects");
+                function callbackMe(result , status , success) {
+                    if (success) {
+                        console.log("Override PROJECTS ??");
+                        $scope.projects = result;
+                    }
+                }
+            }
         });
     }
 
@@ -555,6 +571,20 @@ app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, item , 
 });
 
 app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item , $upload , categories, $http ) {
+    $scope.tabs = [
+        {
+            'title' : 'Texts',
+            'active' : true
+        },
+        {
+            'title' : 'Images',
+            'active' : false
+        },
+        {
+            'title' : 'Extras',
+            'active' : false
+        }
+    ]
     $scope.item = item;
     $scope.categories = categories;
     $scope.uploadingImage = false;
@@ -566,13 +596,15 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
     }
     $scope.ok = function (item) {
         $scope.uploadingImage = true;
-        if($scope.newCarouselImage == undefined){
+        if(!isNeedToUploadImages()){
+            console.log("Editing project");
             var restCallManager = new RestCallManager();
             restCallManager.post(callback , $http, item , "editProject");
             function callback(result , status , success) {
                 if (success) {
                     $scope.uploadingImage = false;
                     $uibModalInstance.close(item);
+
                     alertMe( "success" ,"Edit Testimonial Success");
                 } else {
                     $scope.uploadingImage = false;
@@ -580,15 +612,58 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
                 }
             }
         }else{
+            console.log("Ipload project");
+            console.log("My Item " , item);
+            var data = {
+                action : 'uploadProjectImage',
+                project : item
+            }
+
+            if($scope.newCarouselImage != undefined){
+                data['file'] = $scope.newCarouselImage;
+            }
+
+            if($scope.newBigImage != undefined){
+                console.log("Insert Big Image ",$scope.newBigImage);
+                data['bigImage'] = $scope.newBigImage;
+            }
+
+            if($scope.newDetailedImageUrl1 != undefined){
+                data['file1'] = $scope.newDetailedImageUrl1;
+            }
+
+            if($scope.newDetailedImageUrl2 != undefined){
+                data['file2'] = $scope.newDetailedImageUrl2;
+            }
+
+            if($scope.newDetailedImageUrl3 != undefined){
+                data['file3'] = $scope.newDetailedImageUrl3;
+            }
+
+            if($scope.newDetailedImageUrl4 != undefined){
+                data['file4'] = $scope.newDetailedImageUrl4;
+            }
+
+            if($scope.newCircleImageUrl1 != undefined){
+                data['file5'] = $scope.newCircleImageUrl1;
+            }
+
+            if($scope.newCircleImageUrl2 != undefined){
+                data['file6'] = $scope.newCircleImageUrl2;
+            }
+
+            if($scope.newCircleImageUrl3 != undefined){
+                data['file7'] = $scope.newCircleImageUrl3;
+            }
+
+            if($scope.newCircleImageUrl4 != undefined){
+                data['file8'] = $scope.newCircleImageUrl4;
+            }
+
             $scope.upload = $upload.upload({
                 url : 'server/UploadController.php',
-                data : {
-                    fname : $scope.newCarouselImage.name,
-                    action : 'uploadProjectImage',
-                    project : item
-                },
+                data : data
 
-                file : $scope.newCarouselImage
             }).success(function(data, status, headers, config) {
                 // file is uploaded successfully
                 item.id = data.id;
@@ -598,12 +673,17 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
                 alertMe( "success" ,"Create New Project Success");
                 $scope.uploadingImage = false;
                 $uibModalInstance.close(item);
-                return;
+
+
             }).error(function(data, status, headers, config){
                 alertMe( "danger" ,"My Text");
                 $scope.uploadingImage = false;
             });
         }
+
+
+
+
 
     };
 
@@ -617,20 +697,142 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
         }
     }
 
+
+
+
+    $scope.selectTab = function(tab){
+
+        for(var i = 0 ; i < $scope.tabs.length ; i++){
+            if($scope.tabs[i].title == tab){
+                $scope.tabs[i].active = true;
+            }
+        }
+        $scope.selectedTab = tab;
+    }
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
 
     $scope.onCampaignMainImageSelect = function ($files){
         var file = $files[0];
+        if(validImage(file)){
+            $scope.url = URL.createObjectURL(file);
+            $scope.newCarouselImage  = $files[0];
+        }
 
+
+    }
+
+    $scope.onProjectBigImageSelect = function ($files){
+        var file = $files[0];
+        if(validImage(file)){
+            $scope.bigImageurl = URL.createObjectURL(file);
+            $scope.newBigImage  = $files[0];
+        }
+
+
+    }
+
+    $scope.onDetailedCircleImage1Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.detailedImageCircleUrl1 = URL.createObjectURL(file);
+            $scope.newCircleImageUrl1  = $files[0];
+        }
+
+    }
+
+    $scope.onDetailedCircleImage4Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.detailedImageCircleUrl4 = URL.createObjectURL(file);
+            $scope.newCircleImageUrl4  = $files[0];
+        }
+
+    }
+
+
+    $scope.onDetailedCircleImage2Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.detailedImageCircleUrl2 = URL.createObjectURL(file);
+            $scope.newCircleImageUrl2  = $files[0];
+        }
+
+    }
+
+
+    $scope.onDetailedCircleImage3Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.detailedImageCircleUrl3 = URL.createObjectURL(file);
+            $scope.newCircleImageUrl3  = $files[0];
+        }
+
+    }
+
+
+
+
+    $scope.onDetailedImage1Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.detailedImageUrl1 = URL.createObjectURL(file);
+            $scope.newDetailedImageUrl1  = $files[0];
+        }
+    }
+
+    $scope.onDetailedImage2Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.detailedImageUrl2 = URL.createObjectURL(file);
+            $scope.newDetailedImageUrl2  = $files[0];
+        }
+    }
+
+    $scope.onDetailedImage3Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.detailedImageUrl3 = URL.createObjectURL(file);
+            $scope.newDetailedImageUrl3  = $files[0];
+        }
+    }
+
+    $scope.onDetailedImage4Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.detailedImageUrl4 = URL.createObjectURL(file);
+            $scope.newDetailedImageUrl4  = $files[0];
+        }
+    }
+
+
+
+    function validImage(file){
         if (file.type.indexOf('image') == -1) {
             $scope.mainImageErrorText = 'image extension not allowed, please choose a JPEG or PNG file.'
             $scope.mainImageError = true;
             return false;
+        }else{
+            return true;
         }
-        $scope.url = URL.createObjectURL(file);
-        $scope.newCarouselImage  = $files[0];
+    }
+
+    function isNeedToUploadImages(){
+        if($scope.newCarouselImage == undefined
+            && $scope.newDetailedImageUrl1 == undefined
+            && $scope.newDetailedImageUrl2 == undefined
+            && $scope.newDetailedImageUrl3 == undefined
+            && $scope.newDetailedImageUrl4 == undefined
+            && $scope.newCircleImageUrl1 == undefined
+            && $scope.newCircleImageUrl2 == undefined
+            && $scope.newCircleImageUrl3 == undefined
+            && $scope.newCircleImageUrl4 == undefined
+            && $scope.newBigImage == undefined){
+            return false;
+        }else{
+            return true;
+        }
     }
 });
 
@@ -645,7 +847,6 @@ app.controller('ProjectModalCtrl', function ($scope, $uibModalInstance, item , $
         $scope.project = null;
     }
     $scope.ok = function (item) {
-
         $scope.uploadingImage = true;
         if($scope.newCarouselImage == undefined){
             var restCallManager = new RestCallManager();

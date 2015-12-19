@@ -57,15 +57,51 @@
                     <label for="exampleInputPassword1">Testimonial Sub Title</label>
                     <textarea required ng-model="item.subTitle" type="text" class="form-control" id="exampleInputPassword1" placeholder="Testimonial Subtitle"> </textarea>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Selected</label>
+                            <div  ng-if="image == null && item.imagePath != null" class="form-group">
+                                <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div style="text-align: center" ng-if="image != null" class="form-group">
+                                <img ng-src="{{url}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Unselected ( Black & White )</label>
+                            <div  ng-if="blackImagePath == null && item.blackImagePath != null" class="form-group">
+                                <img ng-src="{{item.blackImagePath}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div style="text-align: center" ng-if="blackImage != null" class="form-group">
+                                <img ng-src="{{blackImage}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onBlackImageSelected($files)">Upload Image File</button>
+                    </div>
+                </div>
+
+                <!--div ng-if="url == null && imageId != null" class="form-group">
+                    <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail projectImage">
+                </div>
+                <div ng-if="url != null" class="form-group">
+                    <img ng-src="{{url}}" alt="..." class="img-thumbnail projectImage">
+                </div>
+                <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
                 <div ng-if="url == null && imageId != null" class="form-group">
                     <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail projectImage">
                 </div>
                 <div ng-if="url != null" class="form-group">
                     <img ng-src="{{url}}" alt="..." class="img-thumbnail projectImage">
                 </div>
+                <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button-->
 
 
-                <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
+
 
             </form>
         </div>
@@ -110,15 +146,33 @@
                     <label for="exampleInputEmail1">Testimonial Description</label>
                     <input required ng-model="item.description" type="text" class="form-control" id="exampleInputEmail123" placeholder="Testimonial Title">
                 </div>
-                <div ng-if="url == null && item.imagePath" class="form-group">
-                    <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail projectImage">
-                </div>
-                <div ng-if="url != null" class="form-group">
-                    <img ng-src="{{url}}" alt="..." class="img-thumbnail projectImage">
-                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Selected</label>
+                            <div  ng-if="image == null && item.imagePath != null" class="form-group">
+                                <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div ng-if="image != null" class="form-group">
+                                <img ng-src="{{url}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
+                    </div>
 
-
-                <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Unselected ( Black & White )</label>
+                            <div  ng-if="blackImage == null && item.blackImagePath != null" class="form-group">
+                                <img ng-src="{{item.blackImagePath}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div  ng-if="blackImage != null" class="form-group">
+                                <img ng-src="{{blackImage}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onBlackImageSelected($files)">Upload Image File</button>
+                    </div>
+                </div>
 
             </form>
         </div>

@@ -44,9 +44,7 @@ input , textarea{
     text-align: right !important;
 }
 
-.carouselImage{
-    height: 300px !important;
-}
+
 
 .categoryFilter{
     margin-left: 15px;
@@ -137,11 +135,20 @@ input , textarea{
     src: url(fonts/OpenSansHebrew-Regular.ttf);
 }
 
+.liner{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .boldHeader{
     font-family: myBold;
     font-size: 80px;
     color: white;
+}
+
+.boldBigText{
+    font-family: myBold;
+    font-size: 40px;
 }
 
 .boldSubHeader{
@@ -151,9 +158,15 @@ input , textarea{
 }
 
 .boldTitle{
+     font-family: myBold;
+     font-size: 24px;
+     color: white;
+ }
+
+.boldSemiText{
     font-family: myBold;
-    font-size: 24px;
-    color: white;
+    font-size: 20px;
+
 }
 
 .boldMiniHeader{
@@ -163,6 +176,11 @@ input , textarea{
 
 .bold{
     font-family: myBold;
+}
+
+.fuadIcon{
+    font-size: 68px;
+    color: white;
 }
 
 .regularSubtitle{
@@ -213,6 +231,17 @@ input , textarea{
     font-family: myBold;
     font-size: 18px;
 }
+
+.boldSmallText{
+    font-family: myBold;
+    font-size: 16px;
+}
+
+.whiteText{
+    color: white !important;
+}
+
+
 
 
 
@@ -326,6 +355,7 @@ input , textarea{
     opacity: 0.7;
     border-width: 3px;
     background: white;
+    margin-right: 10px;
 
 
 
@@ -337,6 +367,7 @@ input , textarea{
     margin: 0;
     margin-left: 3px;
     background: transparent;
+    margin-right: 10px;
 
     opacity: 1;
 
@@ -346,13 +377,15 @@ svg{
     fill : blue;
 }
 
-.navbar {
+.myNavbar {
     position: fixed;
     left:0;
     right: 0;
     top : 0;
     z-index: 100000000000;
     opacity: 0.9;
+    border-radius: 0;
+    border: 0;
 }
 .commaImageRight{
     position: absolute;
@@ -363,7 +396,6 @@ svg{
 .commaImageLeft{
     position: absolute;
     left: 0;
-    background-image: url('../assets/commas.svg');
 
 }
 
@@ -372,3 +404,134 @@ svg{
 
 }
 
+.projectImageContainer img{
+    width: 100%;
+}
+
+.myCarousel .glyphicon-chevron-right{
+    display: none !important;
+}
+
+.myCarousel .glyphicon-chevron-left{
+    display: none !important;
+}
+
+.contactUsSection .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.myNavbar .navbar-nav>li>a{
+    padding-bottom: 21px;
+    padding-top: 21px;
+}
+
+
+.navBarTopped{
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+}
+
+
+.navBarTopped .navbar-nav>li>a {
+    color: white;
+}
+
+.outWrap{
+    width: 406px;
+    height:202px;
+    border-width: 3px;
+    border-color: #4e4e4e;
+    border-radius: 0;
+    border-style: solid;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top:247px;
+
+}
+
+.innerWrap {
+    width: 386px;
+    height: 182px;
+    border-width: 2px;
+    border-color: #4e4e4e;
+    border-radius: 0;
+    border-style: solid;
+    margin: 7px;
+}
+
+.contactUsTextArea{
+    border-width: 2px;
+    border-color: #4e4e4e;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    width: 510px !important;
+}
+.contactUsInput{
+    display: inline-block !important;
+    width: 450px !important;
+    padding-right: 20px;
+    border-width: 0 0 2px 0;
+    border-color: #4e4e4e;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    margin-right: -5px;
+}
+
+.contactUsButton{
+    border-width: 2px;
+    border-color: #4e4e4e;
+    border-radius: 0;
+    border-style: solid;
+}
+
+.contactUsTextArea:focus{
+    outline: 0;
+    border-width: 2px;
+    border-color: #4e4e4e;
+    border-radius: 0;
+    box-shadow: none;
+
+}
+
+.contactUsInput:focus{
+    outline: 0;
+    border-width: 0 0 2px 0;
+    border-color: #4e4e4e;
+    border-radius: 0;
+    box-shadow: none;
+
+}
+
+.contactUsLabel{
+    width:60px;
+    border-width: 0 0 2px 0;
+    border-color: #4e4e4e;
+    border-style: solid;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+
+}
+.floatingNavBar{
+    position: fixed;
+    top : 0;
+    bottom: 0;
+    right:30px;
+}
+
+
+
+.floatMeRight {
+    float : right !important;
+}
+
+.sideProjectHovered{
+    background: rgb(41,41,41) !important;
+    opacity: 0.8;
+}

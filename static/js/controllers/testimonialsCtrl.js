@@ -5,14 +5,22 @@
 app.controller('TestimonialsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' ,function($scope , $http , $uibModal , $log) {
     $scope.animationsEnabled = true;
 
-    var restCallManager = new RestCallManager();
-    restCallManager.post(getCategoriesCallback , $http, null , "getTestimonials");
-    function getCategoriesCallback(result , status , success) {
-        if (success) {
-            $scope.testimonials = result;
-        } else {
+
+    $scope.getData = function(){
+        var restCallManager = new RestCallManager();
+        restCallManager.post(getCategoriesCallback , $http, null , "getTestimonials");
+        function getCategoriesCallback(result , status , success) {
+            if (success) {
+                $scope.testimonials = result;
+            } else {
+            }
         }
     }
+
+    $scope.getData();
+
+
+
 
     $scope.addNewTestimonial = function(item){
         if(item == null){
@@ -33,12 +41,7 @@ app.controller('TestimonialsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' ,f
         });
 
         modalInstance.result.then(function (testimonial) {
-            if(item == null){
-                $scope.testimonials.push(testimonial);
-            }else{
-                item = testimonial;
-            }
-
+            $scope.getData();
         });
     }
 
@@ -85,7 +88,7 @@ app.controller('addTestimonialCtrl', function ($scope, $uibModalInstance, item ,
     }
     $scope.ok = function (item) {
         $scope.uploadingImage = true;
-        if($scope.newCarouselImage == undefined){
+        if($scope.image == undefined && $scope.blackImageFile == undefined){
             var restCallManager = new RestCallManager();
             restCallManager.post(callback , $http, item , "editTestimonial");
             function callback(result , status , success) {
@@ -100,15 +103,22 @@ app.controller('addTestimonialCtrl', function ($scope, $uibModalInstance, item ,
                 }
             }
         }else{
+            var data = {
+                action : 'uploadTestimonialImage',
+                testimonial : item
+            }
+
+            if($scope.image != undefined){
+                data['file'] = $scope.image;
+            }
+
+            if($scope.blackImageFile != undefined){
+                data['blackImage'] = $scope.blackImageFile;
+            }
+
             $scope.upload = $upload.upload({
                 url : 'server/UploadController.php',
-                data : {
-                    fname : $scope.newCarouselImage.name | null,
-                    action : 'uploadTestimonialImage',
-                    testimonial : item
-                },
-
-                file : $scope.newCarouselImage
+                data : data
             }).success(function(data, status, headers, config) {
                 // file is uploaded successfully
                 item.id = data.id;
@@ -142,6 +152,24 @@ app.controller('addTestimonialCtrl', function ($scope, $uibModalInstance, item ,
         $uibModalInstance.dismiss('cancel');
     };
 
+    $scope.onBlackImageSelected = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.blackImage = URL.createObjectURL(file);
+            $scope.blackImageFile  = $files[0];
+        }
+    }
+
+    function validImage(file){
+        if (file.type.indexOf('image') == -1) {
+            $scope.mainImageErrorText = 'image extension not allowed, please choose a JPEG or PNG file.'
+            $scope.mainImageError = true;
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     $scope.onCampaignMainImageSelect = function ($files){
         var file = $files[0];
 
@@ -151,6 +179,6 @@ app.controller('addTestimonialCtrl', function ($scope, $uibModalInstance, item ,
             return false;
         }
         $scope.url = URL.createObjectURL(file);
-        $scope.newCarouselImage  = $files[0];
+        $scope.image  = $files[0];
     }
 });

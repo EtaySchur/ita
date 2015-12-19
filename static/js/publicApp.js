@@ -150,3 +150,17 @@ publicApp.filter('isCategory', function() {
         }
     };
 });
+
+publicApp.directive("scroll", function ($window , $rootScope) {
+    return function(scope, element, attrs) {
+        angular.element($window).bind("scroll", function() {
+            if (this.pageYOffset >= 100) {
+                $rootScope.imTopped = false;
+                $rootScope.navHoverEdit = false;
+            } else {
+                $rootScope.imTopped = true;
+            }
+            $rootScope.$apply();
+        });
+    };
+});
