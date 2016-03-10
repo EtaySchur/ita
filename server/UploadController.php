@@ -151,6 +151,38 @@ if (true) {
                 $project->imageCircle4 = moveProjectImageFile($file8);
             }
 
+            if(isset($_FILES["file9"])){
+                $file8 =  $_FILES["file9"];
+                $project->miniCarouselImage1 = moveProjectImageFile($file8);
+            }
+
+            if(isset($_FILES["file10"])){
+                $file8 =  $_FILES["file10"];
+                $project->miniCarouselImage2 = moveProjectImageFile($file8);
+            }
+
+            if(isset($_FILES["file11"])){
+                $file8 =  $_FILES["file11"];
+                $project->miniCarouselImage3 = moveProjectImageFile($file8);
+            }
+
+            if(isset($_FILES["file12"])){
+                $file8 =  $_FILES["file12"];
+                $project->miniCarouselImage4 = moveProjectImageFile($file8);
+            }
+
+            if(isset($_FILES["file13"])){
+                $file8 =  $_FILES["file13"];
+                $project->miniCarouselImage5 = moveProjectImageFile($file8);
+            }
+
+            if(isset($_FILES["file14"])){
+                $file8 =  $_FILES["file14"];
+                $project->miniCarouselImage6 = moveProjectImageFile($file8);
+            }
+
+
+
 
 
             /*

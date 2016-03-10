@@ -12,6 +12,11 @@ body {
     position: absolute;
 }
 
+.miniCarouselWrappar .col-md-2 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
 
 
 input , textarea{
@@ -71,6 +76,8 @@ input , textarea{
 
 }
 
+
+
 .projectTitle{
     position: absolute;
     margin-left: auto;
@@ -80,6 +87,11 @@ input , textarea{
     top:35%;
 
 
+}
+
+.projectView .row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
 }
 
 .projectCta{
@@ -558,7 +570,7 @@ svg{
     position: fixed;
     top : 0;
     bottom: 0;
-    right:30px;
+    right:0px;
 }
 
 

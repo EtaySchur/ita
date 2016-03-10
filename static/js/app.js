@@ -9,6 +9,7 @@ var app = angular.module("mainApp", ['ui.bootstrap' ,
     'ngAnimate',
     'ngSanitize',
     'angularFileUpload',
+     'ui.bootstrap',
     'ui.tree']);
 
 app.config(function($modalProvider) {

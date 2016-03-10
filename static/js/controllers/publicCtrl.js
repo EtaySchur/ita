@@ -293,8 +293,8 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     $scope.selectedProject = result[0];
                     console.log("This is my Selected Project ",$scope.selectedProject);
                     var restCallManager = new RestCallManager();
-                    restCallManager.post(getProjects , $http, null , "getProjects");
-                    function getProjects(result1 , status , success) {
+                    restCallManager.post(getAllProjects , $http, null , "getProjects");
+                    function getAllProjects(result1 , status , success) {
                         $scope.projects = result1;
                         console.log($scope.projects);
                         $scope.mySideProjects = [];
@@ -304,8 +304,12 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                                 console.log($scope.selectedProject.subCategoryId);
                                if(project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
                                    console.log("Pushing !!!!!!!!!!!!!");
+                                   project.slides = getMiniCarousel(project);
                                    $scope.mySideProjects.push(project);
                                }
+
+                               $scope.slides = getMiniCarousel($scope.selectedProject);
+                                console.log("This is my slides ",$scope.slides);
 
                             });
                             console.log("This is my projects original , " , $scope.mySideProjects);
@@ -337,6 +341,35 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
             }
         }
         return null;
+    }
+
+    function getMiniCarousel(project){
+        var array = [];
+        if(project.miniCarouselImage1){
+            array.push(project.miniCarouselImage1)
+        }
+
+        if(project.miniCarouselImage2){
+            array.push(project.miniCarouselImage2)
+        }
+
+        if(project.miniCarouselImage3){
+            array.push(project.miniCarouselImage3)
+        }
+
+        if(project.miniCarouselImage4){
+            array.push(project.miniCarouselImage4)
+        }
+
+        if(project.miniCarouselImage5){
+            array.push(project.miniCarouselImage5)
+        }
+
+        if(project.miniCarouselImage6){
+            array.push(project.miniCarouselImage6)
+        }
+
+        return array;
     }
 
 

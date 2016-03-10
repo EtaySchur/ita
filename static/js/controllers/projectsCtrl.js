@@ -614,8 +614,9 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
     $scope.ok = function (item) {
         $scope.uploadingImage = true;
         if(!isNeedToUploadImages()){
-            console.log("Editing project");
+            console.log("Editing project ",item);
             var restCallManager = new RestCallManager();
+
             restCallManager.post(callback , $http, item , "editProject");
             function callback(result , status , success) {
                 if (success) {
@@ -680,6 +681,32 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
             if($scope.newCircleImageUrl4 != undefined){
                 data['file8'] = $scope.newCircleImageUrl4;
             }
+
+            if($scope.scopeCarouselImage1 != undefined){
+                data['file9'] = $scope.scopeCarouselImage1;
+            }
+
+            if($scope.scopeCarouselImage2 != undefined){
+                data['file10'] = $scope.scopeCarouselImage2;
+            }
+
+
+            if($scope.scopeCarouselImage3 != undefined){
+                data['file11'] = $scope.scopeCarouselImage3;
+            }
+
+            if($scope.scopeCarouselImage4 != undefined){
+                data['file12'] = $scope.scopeCarouselImage4;
+            }
+
+            if($scope.scopeCarouselImage5 != undefined){
+                data['file13'] = $scope.scopeCarouselImage5;
+            }
+
+            if($scope.scopeCarouselImage6 != undefined){
+                data['file14'] = $scope.scopeCarouselImage6;
+            }
+
 
             $scope.upload = $upload.upload({
                 url : 'server/UploadController.php',
@@ -836,6 +863,64 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
     }
 
 
+    $scope.onMiniCarousel1Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.detailedImageUrl4 = URL.createObjectURL(file);
+            $scope.newDetailedImageUrl4  = $files[0];
+        }
+    }
+
+    $scope.onMiniCarousel1Select = function($files){
+        console.log("Setting Fiest File");
+        var file = $files[0];
+        if(validImage){
+            $scope.scopeCarouselImageUrl1 = URL.createObjectURL(file);
+            $scope.scopeCarouselImage1  = $files[0];
+        }
+    }
+
+    $scope.onMiniCarousel2Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.scopeCarouselImageUrl2 = URL.createObjectURL(file);
+            $scope.scopeCarouselImage2  = $files[0];
+        }
+    }
+
+    $scope.onMiniCarousel3Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.scopeCarouselImageUrl3 = URL.createObjectURL(file);
+            $scope.scopeCarouselImage3  = $files[0];
+        }
+    }
+
+    $scope.onMiniCarousel4Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.scopeCarouselImageUrl4 = URL.createObjectURL(file);
+            $scope.scopeCarouselImage4  = $files[0];
+        }
+    }
+
+    $scope.onMiniCarousel5Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.scopeCarouselImageUrl5 = URL.createObjectURL(file);
+            $scope.scopeCarouselImage5  = $files[0];
+        }
+    }
+
+    $scope.onMiniCarousel6Select = function($files){
+        var file = $files[0];
+        if(validImage){
+            $scope.scopeCarouselImageUrl6 = URL.createObjectURL(file);
+            $scope.scopeCarouselImage6  = $files[0];
+        }
+    }
+
+
 
     function validImage(file){
         if (file.type.indexOf('image') == -1) {
@@ -858,7 +943,14 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
             && $scope.newCircleImageUrl3 == undefined
             && $scope.newCircleImageUrl4 == undefined
             && $scope.newBigImage == undefined
-            && $scope.bannarImage == undefined){
+            && $scope.bannarImage == undefined
+            && $scope.scopeCarouselImage1 == undefined
+            && $scope.scopeCarouselImage2 == undefined
+            && $scope.scopeCarouselImage3 == undefined
+            && $scope.scopeCarouselImage4 == undefined
+            && $scope.scopeCarouselImage5 == undefined
+            && $scope.scopeCarouselImage6 == undefined
+        ){
             return false;
         }else{
             return true;

@@ -405,6 +405,90 @@
                         </div>
                     </div>
                 </uib-tab>
+            <uib-tab  style="margin-bottom: 30px" ng-click="tabs[3].active = true" heading="Carousel" active="tabs[3].active" disable="tab.disabled">
+                <div class="miniCarouselWrappar">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">#1</label>
+                            <div style="text-align: center" ng-if="scopeCarouselImageUrl1 == null && item.miniCarouselImage1 != null" class="form-group">
+                                <img ng-src="{{item.miniCarouselImage1}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div style="text-align: center" ng-if="scopeCarouselImage1 != null" class="form-group">
+                                <img ng-src="{{scopeCarouselImageUrl1}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onMiniCarousel1Select($files)">Upload Image File</button>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">#2</label>
+                            <div style="text-align: center" ng-if="scopeCarouselImage2 == null && item.miniCarouselImage2 != null" class="form-group">
+                                <img ng-src="{{item.miniCarouselImage2}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div style="text-align: center" ng-if="scopeCarouselImageUrl2 != null" class="form-group">
+                                <img ng-src="{{scopeCarouselImageUrl2}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onMiniCarousel2Select($files)">Upload Image File</button>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">#3</label>
+                            <div style="text-align: center" ng-if="scopeCarouselImageUrl3 == null && item.miniCarouselImage3 != null" class="form-group">
+                                <img ng-src="{{item.miniCarouselImage3}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div style="text-align: center" ng-if="scopeCarouselImage3 != null" class="form-group">
+                                <img ng-src="{{scopeCarouselImageUrl3}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onMiniCarousel3Select($files)">Upload Image File</button>
+                    </div>
+
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">#4</label>
+                            <div style="text-align: center" ng-if="scopeCarouselImageUrl4 == null && item.miniCarouselImage4 != null" class="form-group">
+                                <img ng-src="{{item.miniCarouselImage4}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div style="text-align: center" ng-if="scopeCarouselImage4 != null" class="form-group">
+                                <img ng-src="{{scopeCarouselImageUrl4}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onMiniCarousel4Select($files)">Upload Image File</button>
+                    </div>
+
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">#5</label>
+                            <div style="text-align: center" ng-if="scopeCarouselImageUrl5 == null && item.miniCarouselImage5 != null" class="form-group">
+                                <img ng-src="{{item.miniCarouselImage5}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div style="text-align: center" ng-if="scopeCarouselImageUrl5 != null" class="form-group">
+                                <img ng-src="{{scopeCarouselImageUrl5}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onMiniCarousel5Select($files)">Upload Image File</button>
+                    </div>
+
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">#6</label>
+                            <div style="text-align: center" ng-if="scopeCarouselImageUrl6 == null && item.miniCarouselImage6 != null" class="form-group">
+                                <img ng-src="{{item.miniCarouselImage1}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div style="text-align: center" ng-if="scopeCarouselImageUrl6 != null" class="form-group">
+                                <img ng-src="{{scopeCarouselImageUrl6}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onMiniCarousel6Select($files)">Upload Image File</button>
+                    </div>
+                </div>
+                </uib-tab>
             </uib-tabset>
             </form>
         </div>
