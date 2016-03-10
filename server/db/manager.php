@@ -294,6 +294,27 @@ class DbManager {
 
         }
 
+        public static function getMiniProjects(){
+             $conn = self::connectToDb();
+                    $sql = $conn->prepare("SELECT * from `miniProjects` WHERE `isDeleted` = 0");
+                    $sql->execute();
+                    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    return $result;
+                    exit;
+        }
+
+
+
+   public static function saveNewMiniProject($data){
+
+            return self::insertToDb('miniProjects' , $data);
+                exit;
+    }
+
+      public static function editMiniProject($data){
+                return self::updateDb('miniProjects' , $data);
+                    exit;
+        }
 
     /* Generic Section */
     public static function updateDb($tableName , $data){
@@ -325,6 +346,8 @@ class DbManager {
 
 
     }
+
+
 
     public static function insertToDb($tableName, $data) {
 

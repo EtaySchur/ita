@@ -15,6 +15,16 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
     };
 
+    var restCallManager = new RestCallManager();
+    restCallManager.post(getMiniProjects , $http, null , "getMiniProjects");
+    function getMiniProjects(result , status , success) {
+        if (success) {
+            $rootScope.miniProjects = result;
+        } else {
+
+        }
+    }
+
     $scope.setFormScope= function(scope){
         this.contactUsForm = scope;
     }
@@ -83,6 +93,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     function getGeneralSettings(result , status , success) {
         if (success) {
             $rootScope.generalSettings = result[0];
+            $scope.myInterval = $rootScope.generalSettings.carouselInterval * 1000;
             console.log($rootScope.generalSettings);
         } else {
 
@@ -94,6 +105,12 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     }, function (scrollY) {
    $scope.scrollY = scrollY;
     });
+
+    $rootScope.showNav = false;
+    $rootScope.toggleNav = function (){
+        console.log("Toggling ? ");
+        $scope.showNav = !$scope.showNav;
+    }
 
     $rootScope.navHoverIn = function(){
         console.log("Hover In");
@@ -116,14 +133,14 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
 
 publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' ,  function($scope , $http , anchorSmoothScroll , $location , $rootScope) {
-    $scope.myInterval = 6000;
+
     $scope.noWrapSlides = false;
     $scope.currentPage = 0;
     $scope.pageSize = 3;
     $rootScope.imProjected = false;
 
     $scope.getImagePath = function(item){
-        if($scope.selectedTestimonial.id != item.id){
+        if($scope.selectedTestimonial.id == item.id){
             return item.imagePath;
         }else{
             return item.blackImagePath;
@@ -179,6 +196,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     function getCarouselImages(result , status , success) {
         if (success) {
             $scope.carouselImages = result;
+
             console.log($scope.carouselImages);
         } else {
 
@@ -200,6 +218,19 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
             });
 
+            var restCallManager = new RestCallManager();
+            restCallManager.post(getCategories , $http, null , "getCategories");
+            function getCategories(result , status , success) {
+                if (success) {
+                    $scope.categories = result;
+                    if($scope.categories.length > 0){
+                        $scope.activeCategoryFilterId = $scope.categories[2].id;
+                    }
+                } else {
+
+                }
+            }
+
             console.log("This is my projects original , " , $scope.allCategories);
 
 
@@ -208,18 +239,6 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         }
     }
 
-    var restCallManager = new RestCallManager();
-    restCallManager.post(getCategories , $http, null , "getCategories");
-    function getCategories(result , status , success) {
-        if (success) {
-            $scope.categories = result;
-            if($scope.categories.length > 0){
-                $scope.activeCategoryFilterId = $scope.categories[2].id;
-            }
-        } else {
-
-        }
-    }
 
     var restCallManager = new RestCallManager();
     restCallManager.post(getTestimonials , $http, null , "getTestimonials");
@@ -237,10 +256,13 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 
 
+
+
 }]);
 
 publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window) {
     $rootScope.showSideProjects = false;
+    $scope.currentPage = 0;
     console.log($rootScope.showSideProjects);
     $window.scrollTo(0,0)
     $scope.hoverIn = function(){
@@ -249,6 +271,14 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
     $scope.hoverOut = function(){
         this.hoverEdit = false;
+    };
+
+    $scope.hoverTesteminalIn = function(item){
+       $scope.hoveredTestimonal = item;
+    };
+
+    $scope.hoverTesteminalOut = function(item){
+        $scope.hoveredTestimonal = {};
     };
 
 
@@ -308,6 +338,8 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
         }
         return null;
     }
+
+
 
 
 

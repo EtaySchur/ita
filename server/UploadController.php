@@ -15,7 +15,7 @@ $action = $_POST["action"];
 
 
 if (true) {
-    if($action == 'uploadNewCarouselImage' ){
+    if($action == 'uploadNewCarouselImage' || $action == 'uploadNewMiniProjectImage'){
         //The error validation could be done on the javascript client side.
         $errors = array();
         $file_name = $_FILES['file']['name'];
@@ -26,10 +26,43 @@ if (true) {
         $extensions = array("jpeg", "jpg", "png", "png");
         $date = new DateTime();
         $timestamp = $date->getTimestamp();
+
     }
 
     switch ($action) {
+      case 'uploadNewMiniProjectImage' :
+     $image = json_decode($_POST["image"]);
+            if (in_array($file_ext, $extensions) === false) {
+                $errors[] = "image extension not allowed, please choose a JPEG or PNG file.";
+            }
+            if ($file_size > 2097152) {
+                $errors[] = 'File size cannot exceed 2 MB';
+            }
+            if (empty($errors) == true) {
+                if (!file_exists("static/images/".CAROUSEL_PATH)) {
+                    var_dump("Making dir");
+                    mkdir("static/images/".CAROUSEL_PATH, 0777, true);
+                } else {
+
+                }
+                move_uploaded_file($file_tmp, "static/images/" . CAROUSEL_PATH.$timestamp.".".$file_ext);
+                $imagePath = "server/static/images/" . CAROUSEL_PATH.$timestamp.".".$file_ext;
+                if(!isset($image->id)){
+
+                    $image->imagePath = "server/static/images/" . CAROUSEL_PATH.$timestamp.".".$file_ext;
+                    $response = DbManager::saveNewMiniProject($image);
+                }else{
+                    $image->imagePath =  "server/static/images/" . CAROUSEL_PATH.$timestamp.".".$file_ext;
+                    $response = DbManager::editMiniProject( $image);
+                }
+                $response['imagePath'] = $imagePath;
+                echo json_encode($response);
+            } else {
+                print_r($errors);
+            }
+            break;
         case 'uploadNewCarouselImage' :
+
             $image = json_decode($_POST["image"]);
 
             if (in_array($file_ext, $extensions) === false) {
@@ -76,6 +109,11 @@ if (true) {
                 $bigImage =  $_FILES["bigImage"];
                 $project->bigImage = moveProjectImageFile($bigImage);
             }
+
+             if(isset($_FILES["bannarImage"])){
+                            $bannarImage =  $_FILES["bannarImage"];
+                            $project->bannarImage = moveProjectImageFile($bannarImage);
+                        }
 
             if(isset($_FILES["file2"])){
                 $file2 =  $_FILES["file2"];

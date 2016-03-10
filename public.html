@@ -24,13 +24,14 @@
     <link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/css/styles.css">
     <link rel="stylesheet" href="static/css/glyphter-font/css/Glyphter.css">
+    <link rel="stylesheet" href="static/css/2/css/Glyphter.css">
     <script src="static/js/publicApp.js"></script>
     <script src="static/js/controllers/publicCtrl.js"></script>
     <script src="static/js/vendor/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
 </head>
 <body scroll ng-controller="MainCtrl">
-<nav  ng-class="{'navBarTopped ': imTopped}" class="navbar navbar-default myNavbar" role="navigation" bs-navbar>
+<nav  ng-class="{'navBarTopped ': imTopped && !imProjected}" class="navbar navbar-default myNavbar" role="navigation" bs-navbar>
     <div class="navbar-header">
         <a ng-if="imTopped && !imProjected" class="navbar-brand" href="#/">
             <img src="static/assets/Logo.png">
@@ -41,12 +42,12 @@
     </div>
     <ul  style="float: right;direction: rtl" class="nav navbar-nav">
 
-        <li   ng-if="navHoverEdit || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('contactUsSection')">צור קשר</a></li>
-        <li ng-if="navHoverEdit || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('testimonialsSection')">לקוחות ממליצים</a></li>
-        <li ng-if="navHoverEdit || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('whoWeAreSection')">קצת עלינו</a></li>
-        <li ng-if="navHoverEdit || !imTopped && !imProjected " class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('projectsSection')">פרוייקטים</a></li>
-        <li   ng-if="imTopped && !navHoverEdit && !imProjected" ng-mouseleave="navHoverOut()" ng-mouseover="navHoverIn()" class="clickable">
-            <a class="myGrey boldSmallText">
+        <li   ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('contactUsSection')">צור קשר</a></li>
+        <li ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('testimonialsSection')">לקוחות ממליצים</a></li>
+        <li ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('whoWeAreSection')">קצת עלינו</a></li>
+        <li ng-if="showNav || !imTopped && !imProjected " class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped  }" class="boldSmallText" ng-click="gotoElement('projectsSection')">פרוייקטים</a></li>
+        <li   ng-if="imTopped && !showNav && !imProjected"  class="clickable">
+            <a  ng-click="toggleNav()">
                 <i style="color: white" class="icon-Menu"></i>
             </a>
         </li>
@@ -56,13 +57,13 @@
         </li>
         <li   ng-if="imProjected  && !showSideProjects" ng-mouseleave="projectNavHoverOut()" ng-mouseover="projectNavHoverIn()" class="clickable">
             <a ng-click="toggleSideMenu(true)" class="myGrey boldSmallText">
-                <i  style="color: black" class="fa fa-th"></i>
+                <i  style="color: black" class="icon-Projects"></i>
             </a>
 
         </li>
         <li   ng-if="imProjected && showSideProjects" ng-mouseleave="projectNavHoverOut()" ng-mouseover="projectNavHoverIn()" class="clickable">
             <a ng-click="toggleSideMenu(false)" class="myGrey boldSmallText">
-                <i  style="color: black"  class="fa fa-times"></i>
+                <i  style="color: black"  class="icon-Close"></i>
             </a>
         </li>
 

@@ -38,8 +38,11 @@
                     <button ng-click="openEditProjectModal('md' , item)" style="margin-right: 5px" class="btn btn-primary">
                         <i  class="fa fa-pencil "></i>
                     </button>
-                    <button ng-click="deleteProject(item)" class="btn btn-danger">
+                    <button  style="margin-right: 5px" ng-click="deleteProject(item)" class="btn btn-danger">
                         <i  class="fa fa-trash"></i>
+                    </button>
+                    <button ng-click="togglePublish(item)" ng-class="{'btn-default' : item.published == 0 , 'btn-success' : item.published == 1 }" class="btn">
+                        <i ng-class="{'fa-toggle-off' : item.published == 0 , 'fa-toggle-on' : item.published == 1 }" class="fa"></i>
                     </button>
                 </div>
 
@@ -207,6 +210,18 @@
                             </div>
                             <button class="btn btn-default" ng-file-select="onProjectBigImageSelect($files)">Upload Image File</button>
                         </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Project Bannar Image</label>
+                                <div style="text-align: center" ng-if="bannarUrl == null && item.bannarImage != null" class="form-group">
+                                    <img ng-src="{{item.bannarImage}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                                <div style="text-align: center" ng-if="bannarUrl != null" class="form-group">
+                                    <img ng-src="{{bannarUrl}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                            </div>
+                            <button class="btn btn-default" ng-file-select="onProjectBannarImageSelect($files)">Upload Image File</button>
+                        </div>
 
 
                     </div>
@@ -285,72 +300,108 @@
                     </div>
                 </uib-tab>
                 <uib-tab  ng-click="tabs[2].active = true" heading="Extras" active="tabs[2].active" disable="tab.disabled">
-                    <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">#1</label>
-                        <div style="text-align: center" ng-if="detailedImageCircleUrl1 == null && item.imageCircle1 != null" class="form-group">
-                            <img ng-src="{{item.imageCircle1}}" alt="..." class="img-thumbnail projectImage">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">#1</label>
+                                <div style="text-align: center" ng-if="detailedImageCircleUrl1 == null && item.imageCircle1 != null" class="form-group">
+                                    <img ng-src="{{item.imageCircle1}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                                <div style="text-align: center" ng-if="detailedImageCircleUrl1 != null" class="form-group">
+                                    <img ng-src="{{detailedImageCircleUrl1}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                            </div>
+                            <button class="btn btn-default" ng-file-select="onDetailedCircleImage1Select($files)">Upload Image File</button>
+                            <div style="margin-top: 15px" class="form-group">
+                                <label for="exampleInputPassword1">Circled Image #1 Text</label>
+                                <input   ng-model="item.imageCircle1Text" type="text" class="form-control" id="exampleInputPassword1d235" placeholder="Enter Image Text"></input>
+                            </div>
                         </div>
-                        <div style="text-align: center" ng-if="detailedImageCircleUrl1 != null" class="form-group">
-                            <img ng-src="{{detailedImageCircleUrl1}}" alt="..." class="img-thumbnail projectImage">
-                        </div>
-                    </div>
-                    <button class="btn btn-default" ng-file-select="onDetailedCircleImage1Select($files)">Upload Image File</button>
-                    <div style="margin-top: 15px" class="form-group">
-                        <label for="exampleInputPassword1">Circled Image #1 Text</label>
-                        <input   ng-model="item.imageCircle1Text" type="text" class="form-control" id="exampleInputPassword1d235" placeholder="Enter Image Text"></input>
-                    </div>
-                </div>
 
 
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">#2</label>
-                            <div style="text-align: center" ng-if="detailedImageCircleUrl2 == null && item.imageCircle2 != null" class="form-group">
-                                <img ng-src="{{item.imageCircle2}}" alt="..." class="img-thumbnail projectImage">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">#2</label>
+                                <div style="text-align: center" ng-if="detailedImageCircleUrl2 == null && item.imageCircle2 != null" class="form-group">
+                                    <img ng-src="{{item.imageCircle2}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                                <div style="text-align: center" ng-if="detailedImageCircleUrl2 != null" class="form-group">
+                                    <img ng-src="{{detailedImageCircleUrl2}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
                             </div>
-                            <div style="text-align: center" ng-if="detailedImageCircleUrl2 != null" class="form-group">
-                                <img ng-src="{{detailedImageCircleUrl2}}" alt="..." class="img-thumbnail projectImage">
+                            <button class="btn btn-default" ng-file-select="onDetailedCircleImage2Select($files)">Upload Image File</button>
+                            <div style="margin-top: 15px" class="form-group">
+                                <label for="exampleInputPassword1">Detailed Image #2 Text</label>
+                                <input   ng-model="item.imageCircle2Text" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Image Text"></input>
                             </div>
                         </div>
-                        <button class="btn btn-default" ng-file-select="onDetailedCircleImage2Select($files)">Upload Image File</button>
-                        <div style="margin-top: 15px" class="form-group">
-                            <label for="exampleInputPassword1">Detailed Image #2 Text</label>
-                            <input   ng-model="item.imageCircle2Text" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Image Text"></input>
-                        </div>
-                    </div>
 
 
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">#3</label>
-                            <div style="text-align: center" ng-if="detailedImageCircleUrl3 == null && item.imageCircle3 != null" class="form-group">
-                                <img ng-src="{{item.imageCircle3}}" alt="..." class="img-thumbnail projectImage">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">#3</label>
+                                <div style="text-align: center" ng-if="detailedImageCircleUrl3 == null && item.imageCircle3 != null" class="form-group">
+                                    <img ng-src="{{item.imageCircle3}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                                <div style="text-align: center" ng-if="detailedImageCircleUrl3 != null" class="form-group">
+                                    <img ng-src="{{detailedImageCircleUrl3}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
                             </div>
-                            <div style="text-align: center" ng-if="detailedImageCircleUrl3 != null" class="form-group">
-                                <img ng-src="{{detailedImageCircleUrl3}}" alt="..." class="img-thumbnail projectImage">
+                            <button class="btn btn-default" ng-file-select="onDetailedCircleImage3Select($files)">Upload Image File</button>
+                            <div style="margin-top: 15px" class="form-group">
+                                <label for="exampleInputPassword1">Detailed Image #3 Text</label>
+                                <input   ng-model="item.imageCircle3Text" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Image Text"></input>
                             </div>
                         </div>
-                        <button class="btn btn-default" ng-file-select="onDetailedCircleImage3Select($files)">Upload Image File</button>
-                        <div style="margin-top: 15px" class="form-group">
-                            <label for="exampleInputPassword1">Detailed Image #3 Text</label>
-                            <input   ng-model="item.imageCircle3Text" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Image Text"></input>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">#4</label>
+                                <div style="text-align: center" ng-if="detailedImageCircleUrl4 == null && item.imageCircle4 != null" class="form-group">
+                                    <img ng-src="{{item.imageCircle4}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                                <div style="text-align: center" ng-if="detailedImageCircleUrl4 != null" class="form-group">
+                                    <img ng-src="{{detailedImageCircleUrl4}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                            </div>
+                            <button class="btn btn-default" ng-file-select="onDetailedCircleImage4Select($files)">Upload Image File</button>
+                            <div style="margin-top: 15px" class="form-group">
+                                <label for="exampleInputPassword1">Detailed Image #4 Text</label>
+                                <input   ng-model="item.imageCircle4Text" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Image Text"></input>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">#4</label>
-                            <div style="text-align: center" ng-if="detailedImageCircleUrl4 == null && item.imageCircle4 != null" class="form-group">
-                                <img ng-src="{{item.imageCircle4}}" alt="..." class="img-thumbnail projectImage">
-                            </div>
-                            <div style="text-align: center" ng-if="detailedImageCircleUrl4 != null" class="form-group">
-                                <img ng-src="{{detailedImageCircleUrl4}}" alt="..." class="img-thumbnail projectImage">
+                    <div style="margin-top: 30px;padding-top: 15px;border-top: 1px solid #e5e5e5" class="row">
+                        <div class="col-sm-12">
+                            <label for="exampleInputPassword1">Bordered Text Title</label>
+                            <input   ng-model="item.borderTextTitle" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Border Text Title"></input>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">#1 Bordered Text</label>
+                                <input   ng-model="item.borderText1" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Border Text"></input>
+
                             </div>
                         </div>
-                        <button class="btn btn-default" ng-file-select="onDetailedCircleImage4Select($files)">Upload Image File</button>
-                        <div style="margin-top: 15px" class="form-group">
-                            <label for="exampleInputPassword1">Detailed Image #4 Text</label>
-                            <input   ng-model="item.imageCircle4Text" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Image Text"></input>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">#2 Bordered Text</label>
+                                <input   ng-model="item.borderText2" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Border Text"></input>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">#3 Bordered Text</label>
+                                <input   ng-model="item.borderText3" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Border Text"></input>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">#4 Bordered Text</label>
+                                <input   ng-model="item.borderText4" type="text" class="form-control" id="exampleInputPassword1235" placeholder="Enter Border Text"></input>
+
+                            </div>
                         </div>
                     </div>
                 </uib-tab>

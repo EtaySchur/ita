@@ -6,11 +6,16 @@ var RestCallManager = function( callback , http) {
 
 };
 
-RestCallManager.prototype.post = function( callback , http , data , action ){
+RestCallManager.prototype.post = function( callback , http , data , action , table ){
+
     $('html').css('cursor' , 'progress');
+    if(!table){
+        table = null;
+    }
     http.post('server/RestService.php', {
         "action" : action,
-        "data" : data
+        "data" : data ,
+        "table" : table
     }).
         success(function(data, status) {
             callback(data , status , true);

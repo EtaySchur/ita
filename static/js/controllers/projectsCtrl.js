@@ -5,7 +5,25 @@
 app.controller('ProjectsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' , function($scope , $http , $uibModal , $log) {
     $scope.animationsEnabled = true;
 
+$scope.togglePublish = function (item){
+    item.published = !item.published;
+    var restCallManager = new RestCallManager();
+    restCallManager.post( cb , $http, item , "updateObject" , "projects");
+    function cb(result , status , success) {
+        if (success) {
+            if(item.published){
+                alertMe( "success" ,"Publish  Project Success");
+            }else{
+                alertMe( "success" ,"Un publish  Project Success");
+            }
 
+        } else {
+            alertMe( "danger" ,"Delete Mini Project Fail");
+        }
+    }
+
+
+}
 
     var restCallManager = new RestCallManager();
     restCallManager.post(callback , $http, null , "getProjects");
@@ -156,8 +174,7 @@ app.controller('ProjectsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' , func
 }]);
 
 
-app.controller('GeneralCtrl', ['$scope', function($scope) {
-}]);
+
 
 app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,function($scope , $http , $uibModal, $log) {
     $scope.animationsEnabled = true;
@@ -628,6 +645,10 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
                 data['bigImage'] = $scope.newBigImage;
             }
 
+            if($scope.bannarImage != undefined){
+                data['bannarImage'] = $scope.bannarImage;
+            }
+
             if($scope.newDetailedImageUrl1 != undefined){
                 data['file1'] = $scope.newDetailedImageUrl1;
             }
@@ -733,6 +754,14 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
 
     }
 
+    $scope.onProjectBannarImageSelect = function ($files){
+        var file = $files[0];
+        if(validImage(file)){
+            $scope.bannarUrl = URL.createObjectURL(file);
+            $scope.bannarImage  = $files[0];
+        }
+    }
+
     $scope.onDetailedCircleImage1Select = function($files){
         var file = $files[0];
         if(validImage){
@@ -828,7 +857,8 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
             && $scope.newCircleImageUrl2 == undefined
             && $scope.newCircleImageUrl3 == undefined
             && $scope.newCircleImageUrl4 == undefined
-            && $scope.newBigImage == undefined){
+            && $scope.newBigImage == undefined
+            && $scope.bannarImage == undefined){
             return false;
         }else{
             return true;

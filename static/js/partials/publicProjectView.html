@@ -1,16 +1,19 @@
-<div ng-show="showSideProjects" style="background: rgba(255, 255, 255, 0.8);height: 100vh;width: 200px" ng-class="{'bounceOutRight' : !showSideProjects}" class="floatingNavBar animated bounceInRight">
+<div ng-show="showSideProjects" style="background: rgba(255, 255, 255, 0.8);height: 100vh;width: 200px;z-index: 100000" ng-class="{'bounceOutRight' : !showSideProjects}" class="floatingNavBar animated bounceInRight">
     <div style="margin-top: 80px" class="imagesContainer">
 
         <div    ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()"  ng-click="gotoElement('sideProject'+$index)" ng-class="{'sideProjectHovered' : hoverEdit}" width="100%" style="position: relative;text-align: center;width: 100%;margin-bottom: 28px"  class="clickable" ng-repeat="project in mySideProjects | limitTo : 4">
             <div ng-show="hoverEdit" style="color: white;position: absolute;top : 40%;width: 100%;text-align: center" class="boldSubtitle"> {{project.title}}</div>
-            <img style="height: auto;width: 100%" ng-src="{{project.imagePath}}">
+            <img style="height: 135px;width: 226px" ng-src="{{project.imagePath}}">
         </div>
     </div>
 
 </div>
+
 <div ng-click="toggleSideMenu(False)" class="wrapper">
-    <div style="margin-top: 90px;margin-bottom: 90px" class="row">
-        <div  style="text-align: center" class="col-xs-12 rtl">
+    <div class="bannar">
+        <img ng-src="{{selectedProject.bannarImage}}">
+    <div style="margin-top: 90px;margin-bottom: 90px" class="row noLeftRightMargin">
+        <div  style="text-align: center;padding-right: 0" class="col-xs-12 rtl">
             <div class="borderon"></div>
             <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{selectedProject.title}}</h1>
         </div>
@@ -27,24 +30,40 @@
                         {{selectedProject.aboutMe}}
                     </div>
                     <div style="margin-top: 60px;margin-bottom: 60px" ng-if="selectedProject.imageCircle1" class="circleImageContainer row">
-                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight regularExtraSmallText">
                             <img ng-src="{{selectedProject.imageCircle1}}">
                             <p style="margin-top: 10px">  {{selectedProject.imageCircle1Text}} </p>
                         </div>
-                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight regularExtraSmallText">
                             <img ng-src="{{selectedProject.imageCircle2}}">
                             <p style="margin-top: 10px">  {{selectedProject.imageCircle2Text}} </p>
                         </div>
-                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight regularExtraSmallText">
                             <img ng-src="{{selectedProject.imageCircle3}}">
                             <p style="margin-top: 10px">  {{selectedProject.imageCircle3Text}} </p>
                         </div>
-                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight regularExtraSmallText">
                             <img ng-src="{{selectedProject.imageCircle4}}">
                             <p style="margin-top: 10px">  {{selectedProject.imageCircle4Text}} </p>
                         </div>
                     </div>
+                    <div class="borderedTextSection row">
+                        <h3> {{selectedProject.borderTextTitle}} </h3>
+                        <div style="border-right-width: 2px" class="col-md-3 borderedText regularExtraSmallText floatMeRight">
+                            {{selectedProject.borderText1}}
+                        </div>
+                        <div class="col-md-3 borderedText regularExtraSmallText floatMeRight">
+                            {{selectedProject.borderText2}}
+                        </div>
+                        <div class="col-md-3 borderedText regularExtraSmallText floatMeRight">
+                            {{selectedProject.borderText3}}
+                        </div>
+                        <div class="col-md-3 borderedText regularExtraSmallText floatMeRight">
+                            {{selectedProject.borderText4}}
+                        </div>
+                    </div>
                 </div>
+
                 <div class="col-md-5">
                     <img style="width: 100%" ng-src="{{selectedProject.imagePath}}">
                 </div>
@@ -114,8 +133,8 @@
     </div>
 
     <div id="sideProject{{$index}}" ng-repeat="item in mySideProjects" style="margin-bottom: 90px" class="row">
-        <div style="margin-top: 90px;margin-bottom: 90px" class="row">
-            <div  style="text-align: center" class="col-xs-12 rtl">
+        <div style="margin-top: 90px;margin-bottom: 90px" class="row noLeftRightMargin">
+            <div  style="text-align: center;padding-right: 0" class="col-xs-12 rtl">
                 <div class="borderon"></div>
                 <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{item.title}}</h1>
             </div>
@@ -216,8 +235,35 @@
             </div>
         </div>
     </div>
+    <div ng-if="miniProjects.length > 0" style="margin-top: 90px;margin-bottom: 90px" class="row noLeftRightMargin">
+        <div  style="text-align: center;padding-right: 0" class="col-xs-12 rtl">
+            <div class="borderon"></div>
+            <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e">  פרוייקטים נוספים </h1>
+        </div>
+        <div>
+            <div   style="margin-bottom: 80px; class="row noLeftRightMargin">
+                <div   style="margin-top: 30px" class="col-xs-12 col-md-6 col-md-offset-3 rtl">
+
+                    <div style="text-align: center" ng-repeat="item in miniProjects | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-md-4 col-xs-4 ">
+                        <img  style="width: 100%" class="img    bounceInLeft clickable" ng-src="{{item.imagePath}}">
+
+                        <p style="margin-top: 5px">{{item.description}}</p>
+                    </div>
+                    <button ng-if="currentPage != 0" class="carouselCheviLeft miniProjectChevi"  ng-click="currentPage=currentPage-1">
+                        <i style="top : 50%" ng-class="{'disabled':currentPage == 0 }" class="icon-Arrow_left myGrey"></i>
+                    </button>
+
+                    <button ng-if="currentPage < testimonials.length/pageSize - 1" class="carouselCheviRight miniProjectChevi" ng-click="currentPage=currentPage+1">
+                        <i    style="top : 50%" ng-class="{'disabled':currentPage >= testimonials.length/pageSize - 1}" class="icon-Arrow_right myGrey"></i>
+                    </button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div   style="margin-left: 0;margin-right: 0" id="contactUsSection"  class="row contactUsContainer">
-        <div  style="text-align: center" class="col-xs-12  col-md-6 alignRight  rtl">
+        <div  style="text-align: center;padding: 0" class="col-xs-12  col-md-6 alignRight  rtl">
             <div class="outWrap">
                 <div style="text-align: center" class="innerWrap">
                       <div style="margin-bottom: 20px;margin-top: 5px" class="myGrey boldBigText">
@@ -232,7 +278,7 @@
                     </div>
                 </div>
             </div>
-            <img src="static/assets/Footer_bg.jpg">
+            <img style="width: 100%" src="static/assets/Footer_bg.jpg">
         </div>
         <div  style="text-align: center" class="col-xs-12 col-md-4 col-md-offset-1   alignRight rtl">
             <div class="row">
@@ -262,8 +308,8 @@
                     </div>
                     <div style="margin-bottom: 30px" class="form-group">
                         <label  class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
-                        <input name="emailInput" required ng-model="contact.email" type="email" class="form-control myGrey contactUsInput" id="exampleInputPassword1" placeholder="הכנס/י את כתובת האי מייל כאן">
-                        <p ng-show="!contactUsForm.emailInput.$valid && validateAll" style="color: red"> שדה חובה </p>
+                        <input name="emailInput"  ng-model="contact.email" type="email" class="form-control myGrey contactUsInput" id="exampleInputPassword1" placeholder="הכנס/י את כתובת האי מייל כאן">
+                        <!--p ng-show="!contactUsForm.emailInput.$valid && validateAll" style="color: red"> שדה חובה </p-->
                     </div>
                     <div style="margin-bottom: 20px" class="form-group">
                         <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
