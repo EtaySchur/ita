@@ -411,7 +411,7 @@ class DbManager {
         $values.= ")";
         $query = "INSERT INTO " . $tableName . " " . $cols . " VALUES " . $values;
         $conn = self::connectToDb();
-
+        var_dump($conn); exit;
         $q = $conn->prepare($query);
         $q->execute($dataArray);
         var_dump("Adding Category ",$conn->lastInsertId()); exit;
@@ -419,7 +419,7 @@ class DbManager {
         return array('id' => $conn->lastInsertId(), 'creation_date' => date("Y-m-d H:i:s", time()));
     }
     private static function deleteFromDb($table , $whereCol , $whereVal){
-        $conn = self::connectToDb();
+
         if($whereCol == null){
             $sql = "DELETE FROM ".$table;
             $q = $conn->query($sql);
