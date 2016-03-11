@@ -210,6 +210,7 @@ class DbManager {
     }
 
     public static function addCategory($category){
+        var_dump("Adding Category ",$category); exit;
         return self::insertToDb("categories" , $category);
     }
 
@@ -269,6 +270,7 @@ class DbManager {
     }
 
     public static function saveNewCarouselImage($filePath , $image){
+
         $image->imagePath = $filePath;
         return self::insertToDb("carouselImages" , $image);
     }

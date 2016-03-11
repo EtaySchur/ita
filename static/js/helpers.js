@@ -52,7 +52,7 @@ function dangerMe ( type , text){
     new PNotify({
         title: 'Fail',
         text: text,
-        type: 'error'
+        type: 'danger'
     });
 
     return;
