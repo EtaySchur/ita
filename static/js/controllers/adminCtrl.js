@@ -46,6 +46,28 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
         }
     }
 
+    $scope.getSubCategoryName = function(subCategoryId){
+        if($scope.subCategories != undefined){
+            for(var i = 0 ; i < $scope.subCategories.length ; i++){
+                if($scope.subCategories[i].id === subCategoryId){
+                    return $scope.subCategories[i].title;
+                }
+            }
+        }
+
+    }
+
+    var restSubCategoriesCallManager = new RestCallManager();
+    restSubCategoriesCallManager.post(getSubCategoriesCb , $http, null , "getSubCategories");
+    function getSubCategoriesCb(result , status , success) {
+        if (success) {
+            $scope.subCategories = result;
+            console.log("MY Mini Projects ",$scope.miniProjects);
+        } else {
+
+        }
+    }
+
     $scope.openDeleteModal = function(item){
         var modalInstance = $uibModal.open({
             animation: true,
@@ -82,10 +104,13 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
     function getMiniProjects(result , status , success) {
         if (success) {
             $scope.miniProjects = result;
+            console.log("MY Mini Projects ",$scope.miniProjects);
         } else {
 
         }
     }
+
+
 
     var restCallManager1 = new RestCallManager();
     restCallManager1.post(cb , $http, null , "getSubCategories");
@@ -118,6 +143,7 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
         });
 
         modalInstance.result.then(function (newMiniProject) {
+            console.log("My Mini Project ? ", newMiniProject);
             // TODO - Reload Data ?
             if(miniProject == null){
                 $scope.miniProjects.push(newMiniProject);
@@ -146,6 +172,8 @@ app.controller('MiniProjectModalInstanceCtrl', function ($scope, $uibModalInstan
         $scope.item = {};
     }
 
+
+
     $scope.ok = function () {
 
         $scope.uploadingImage = true;
@@ -156,11 +184,9 @@ app.controller('MiniProjectModalInstanceCtrl', function ($scope, $uibModalInstan
                 function getMiniProjects(result , status , success) {
                     if (success) {
                         alertMe( "success" ,"Create New Carousel Image Success");
-                        var newImage = {
-                            'id' : result.id
-                        }
+                        $scope.item.id = result.id;
                         $scope.uploadingImage = false;
-                        $uibModalInstance.close(newImage);
+                        $uibModalInstance.close($scope.item);
                     } else {
 
                     }
@@ -198,13 +224,13 @@ app.controller('MiniProjectModalInstanceCtrl', function ($scope, $uibModalInstan
             }).success(function(data, status, headers, config) {
 
                 // file is uploaded successfully
-                var newImage = {
-                    'id' : data.id ,
-                    'imagePath' : data.imagePath
-                }
+
+
+                $scope.item.id = data.id;
+                $scope.item.imagePath = data.imagePath;
                 alertMe( "success" ,"Create New Carousel Image Success");
                 $scope.uploadingImage = false;
-                $uibModalInstance.close(newImage);
+                $uibModalInstance.close($scope.item);
                 return;
             }).error(function(data, status, headers, config){
                 alertMe( "danger" ,"My Text");

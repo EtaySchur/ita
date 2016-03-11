@@ -40,9 +40,12 @@
 <div   style="margin-top: 40px" class="row noLeftRightMargin">
     <div style="text-align: center" class="col-md-8 col-md-offset-2 projectsContainer">
         <div      class="col-md-4">
-            <div   ng-class="{ 'hovered':hoverEdit}" style="position: relative" ng-if="($index == 0) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
-                <div ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
-                <div ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+            <div   style="position: relative" ng-if="($index == 0) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+                <div  ng-show="hoverEdit" class="imageMask"> </div>
+                <div class="floatingContainer">
+                    <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
+                    <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                </div>
                 <div ng-class="{ 'imageContainer':hoverEdit}" >
                     <img ng-click="projectSelected(project)"  style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
                 </div>
@@ -50,19 +53,25 @@
             </div>
         </div>
         <div     class="col-md-4">
-            <div      ng-class="{ 'hovered':hoverEdit}" style="position: relative" ng-if="($index == 1 || $index == 3)  && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
-                <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
-                <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+            <div      style="position: relative" ng-if="($index == 1 || $index == 3)  && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+                <div  ng-show="hoverEdit" class="imageMask"> </div>
+                <div class="floatingContainer">
+                    <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
+                    <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                </div>
                 <div ng-class="{ 'imageContainer':hoverEdit}" >
-                    <img ng-click="projectSelected(project)"  style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
+                    <img  ng-click="projectSelected(project)"  style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
                 </div>
                 <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
             </div>
         </div>
         <div     class="col-md-4">
-            <div    ng-class="{ 'hovered':hoverEdit}" style="position: relative" ng-if="($index == 2 || $index == 4) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
-                <div ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
-                <div ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+            <div    style="position: relative" ng-if="($index == 2 || $index == 4) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+                <div  ng-show="hoverEdit" class="imageMask"> </div>
+                <div class="floatingContainer">
+                    <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
+                    <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                </div>
                 <div ng-class="{ 'imageContainer':hoverEdit}" >
                     <img ng-click="projectSelected(project)" style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
                 </div>

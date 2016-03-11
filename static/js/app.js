@@ -102,3 +102,21 @@ app.filter('isCategory', function() {
         }
     };
 });
+
+
+app.filter('isSubCategory', function() {
+    return function(input, category) {
+        if(input != undefined){
+            if(category == undefined){
+                return input;
+            }else{
+                var out = [];
+                for (var i = 0; i < input.length; i++){
+                    if(input[i].subCategoryId == category)
+                        out.push(input[i]);
+                }
+                return out;
+            }
+        }
+    };
+});

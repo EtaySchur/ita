@@ -264,6 +264,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
         this.hoverEdit = true;
     };
 
+    $rootScope.showNav = false;
     $scope.nextPage = function(){
         $scope.currentPage += 1;
     }

@@ -1,28 +1,42 @@
-<div class="row">
-    <div class="col-xs-12">
-        <button type="button" class="btn btn-success" ng-click="open('md' , null)"><i style="margin-right: 5px" class="fa fa-plus-circle"></i>New</button>
+<div style="margin-bottom: 30px" class="row">
+    <div class="col-md-2">
+        <button type="button" class="btn btn-success" ng-click="open('md' , null)"><i style="margin-right: 5px" class="fa fa-plus-circle"></i> New </button>
+    </div>
+    <div class="col-md-8 btn-group">
+        <label ng-repeat='subCategory in subCategories' class="btn btn-primary" ng-model="$parent.filteredSubCategory" btn-radio="'{{subCategory.id}}'" uncheckable>{{subCategory.title}}</label>
+    </div>
+    <div class="col-md-2 btn-group">
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
+            <input ng-model="query"type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+        </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 carouselImage">
-        <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="image in miniProjects" class="col-xs-3 animated slideInUp">
-            <div ng-show="hoverEdit" class="actions animated  fadeIn">
-                <div ng-click="open('md' , image)" style="margin-right: 5px" class="btn btn-primary">
-                    <i  class="fa fa-pencil "></i>
-                </div>
-                <div ng-click="openDeleteModal(image)" class="btn btn-danger">
-                    <i  class="fa fa-trash"></i>
-                </div>
-            </div>
-            <img ng-src="{{image.imagePath}}" alt="..." class="img-thumbnail">
-            <div class="regularTitle">
-            {{image.title}}
-        </div>
-            <div class="">
-                {{image.text}}
-            </div>
-        </div>
+    <div class="col-xs-10 col-xs-offset-1 miniProjectImages rtl">
+        <div class="row">
+            <div style="margin-bottom: 30px" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="image in miniProjects | isSubCategory:filteredSubCategory | filter:query " class="col-md-4 slideInUp">
+                <div ng-show="hoverEdit" class="actions   fadeIn">
 
+                    <div ng-click="open('md' , image)" style="margin-right: 5px" class="btn btn-primary">
+                        <i  class="fa fa-pencil "></i>
+                    </div>
+                    <div ng-click="openDeleteModal(image)" class="btn btn-danger">
+                        <i  class="fa fa-trash"></i>
+                    </div>
+                </div>
+                <div style="text-align: right" class="">
+                    {{getSubCategoryName(image.subCategoryId)}}
+                </div>
+                <img style="width: 100%;height: auto" ng-src="{{image.imagePath}}" alt="..." class="img-thumbnail">
+                <div style="text-align: right" class="regularTitle">
+                    {{image.title}}
+                </div>
+                <div style="text-align: right" class="">
+                    {{image.text}}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
