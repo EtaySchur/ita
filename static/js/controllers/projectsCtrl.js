@@ -212,13 +212,17 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
 
     $scope.openDeleteCategoryModal = function(size , category){
         var modalInstance = $uibModal.open({
-            animation: $scope.animationsEnabled,
+            animation: true,
             templateUrl: 'deleteCategory.html',
             controller: 'addSubCategoryModalCtrl',
             resolve: {
                 item: function () {
                     return category;
+                },
+                type : function(){
+                    return 'category'
                 }
+
             }
         });
 
@@ -250,6 +254,9 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
             resolve: {
                 item: function () {
                     return subCategory;
+                },
+                type : function(){
+                    return 'subCategory'
                 }
             }
         });
@@ -309,6 +316,9 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
             resolve: {
                 item: function () {
                     return category;
+                },
+                type : function(){
+                    return 'category'
                 }
             }
         });
@@ -340,6 +350,9 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
             resolve: {
                 item: function () {
                     return subCategory;
+                },
+                type : function(){
+                    return 'subCategory'
                 }
             }
         });
