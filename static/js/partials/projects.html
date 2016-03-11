@@ -29,20 +29,23 @@
                       <p> {{item.subCategoryTitle}}</p>
                 </span>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                       <span>
                      <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail stickIcon">
                 </span>
                 </div>
-                <div style="display: table;" class="col-md-2">
+                <div style="display: table;" class="col-md-3">
                     <button ng-click="openEditProjectModal('md' , item)" style="margin-right: 5px" class="btn btn-primary">
                         <i  class="fa fa-pencil "></i>
                     </button>
                     <button  style="margin-right: 5px" ng-click="deleteProject(item)" class="btn btn-danger">
                         <i  class="fa fa-trash"></i>
                     </button>
-                    <button ng-click="togglePublish(item)" ng-class="{'btn-default' : item.published == 0 , 'btn-success' : item.published == 1 }" class="btn">
+                    <button style="margin-right: 5px" ng-click="togglePublish(item)" ng-class="{'btn-default' : item.published == 0 , 'btn-success' : item.published == 1 }" class="btn">
                         <i ng-class="{'fa-toggle-off' : item.published == 0 , 'fa-toggle-on' : item.published == 1 }" class="fa"></i>
+                    </button>
+                    <button  ng-click="updateFeatured(item)" ng-init="isFeatured(item)" type="button" class="btn btn-primary" ng-model="item.featured" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                        <i class="fa fa-star"></i>
                     </button>
                 </div>
 
@@ -127,7 +130,7 @@
 
                     <div style="margin-top: 20px" class="form-group">
                         <div>
-                            <button type="button" class="btn btn-primary" ng-model="item.featured" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                            <button  ng-init="isFeatured(item)" type="button" class="btn btn-primary" ng-model="item.featured" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
                                 <i class="fa fa-star"></i>
                             </button>
                         </div>
@@ -138,6 +141,15 @@
                         <div  ng-if="item.featured == 1"  class="form-group">
                             <label for="exampleInputPassword1">Description</label>
                             <input required ng-model="item.description" type="text" class="form-control" id="exampleInputPassword132" placeholder="Project Description">
+                        </div>
+                        <div ng-if="item.featured == 1" class="form-group">
+                            <label for="exampleInputPassword1">Featured Image Image</label>
+                            <div style="text-align: center" ng-if="bigImageurl == null && item.bigImage != null" class="form-group">
+                                <img ng-src="{{item.bigImage}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
+                            <div style="text-align: center" ng-if="bigImageurl != null" class="form-group">
+                                <img ng-src="{{bigImageurl}}" alt="..." class="img-thumbnail projectImage">
+                            </div>
                         </div>
 
 
@@ -201,18 +213,7 @@
                             </div>
                             <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Side Menu Image</label>
-                                <div style="text-align: center" ng-if="bigImageurl == null && item.bigImage != null" class="form-group">
-                                    <img ng-src="{{item.bigImage}}" alt="..." class="img-thumbnail projectImage">
-                                </div>
-                                <div style="text-align: center" ng-if="bigImageurl != null" class="form-group">
-                                    <img ng-src="{{bigImageurl}}" alt="..." class="img-thumbnail projectImage">
-                                </div>
-                            </div>
-                            <button class="btn btn-default" ng-file-select="onProjectBigImageSelect($files)">Upload Image File</button>
-                        </div>
+
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Project Bannar Image</label>
@@ -226,7 +227,18 @@
                             <button class="btn btn-default" ng-file-select="onProjectBannarImageSelect($files)">Upload Image File</button>
                         </div>
 
-
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Sidebar Image</label>
+                                <div style="text-align: center" ng-if="sidebarImageUrl == null && item.sideBarImage != null" class="form-group">
+                                    <img ng-src="{{item.sideBarImage}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                                <div style="text-align: center" ng-if="sideBarImage != null" class="form-group">
+                                    <img ng-src="{{sidebarImageUrl}}" alt="..." class="img-thumbnail projectImage">
+                                </div>
+                            </div>
+                            <button class="btn btn-default" ng-file-select="onSideBarImageSelect($files)">Upload Image File</button>
+                        </div>
                     </div>
                     <div style="margin-top: 15px" class="row">
                         <div class="col-md-3">

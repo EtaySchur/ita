@@ -51,6 +51,28 @@ $scope.togglePublish = function (item){
        $scope.initCategoryName(item);
     }
 
+    $scope.updateFeatured = function(item){
+        var restCallManager = new RestCallManager();
+
+        restCallManager.post(callback , $http, item , "editProject");
+        function callback(result , status , success) {
+            if (success) {
+                alertMe( "success" ,"Edit Featured Project Success");
+            } else {
+                $scope.uploadingImage = false;
+                dangerMe( "danger" ,"Edit Featured Project Fail");
+            }
+        }
+    }
+
+    $scope.isFeatured = function(item){
+        if(item.featured == 1){
+            item.featured = true;
+        }else{
+            item.featured = false;
+        }
+    }
+
     $scope.openEditProjectModal = function(size , project){
         if(project.id){
             var isNew = false;
@@ -162,7 +184,7 @@ $scope.togglePublish = function (item){
                     $scope.projects.splice( index , 1);
                     alertMe( "success" ,"Delete Projecte Success");
                 } else {
-                    alertMe( "danger" ,"Delete Project Fail");
+                    dangerMe( "danger" ,"Delete Project Fail");
                 }
             }
         }, function () {
@@ -209,7 +231,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
                     $scope.categories.splice( index , 1);
                     alertMe( "success" ,"Delete Category Success");
                 } else {
-                    alertMe( "danger" ,"Delete Category Fail");
+                    dangerMe( "danger" ,"Delete Category Fail");
                 }
             }
 
@@ -575,6 +597,9 @@ app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, item , 
 
 
 
+
+
+
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
@@ -607,7 +632,19 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
             'active' : false
         }
     ]
+
+
+
     $scope.item = item;
+
+    if($scope.item.featured == 1){
+        $scope.item.featured = true;
+    }else{
+        $scope.item.featured = false;
+    }
+
+
+
     $scope.categories = categories;
     $scope.uploadingImage = false;
     if(item != null){
@@ -647,9 +684,13 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
             }
 
             if($scope.newBigImage != undefined){
-                console.log("Insert Big Image ",$scope.newBigImage);
                 data['bigImage'] = $scope.newBigImage;
             }
+
+            if($scope.sideBarImage != undefined){
+                data['sideBarImage'] = $scope.sideBarImage;
+            }
+
 
             if($scope.bannarImage != undefined){
                 data['bannarImage'] = $scope.bannarImage;
@@ -781,6 +822,16 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
         if(validImage(file)){
             $scope.bigImageurl = URL.createObjectURL(file);
             $scope.newBigImage  = $files[0];
+        }
+
+
+    }
+
+    $scope.onSideBarImageSelect = function ($files){
+        var file = $files[0];
+        if(validImage(file)){
+            $scope.sidebarImageUrl = URL.createObjectURL(file);
+            $scope.sideBarImage  = $files[0];
         }
 
 
@@ -955,6 +1006,7 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
             && $scope.scopeCarouselImage4 == undefined
             && $scope.scopeCarouselImage5 == undefined
             && $scope.scopeCarouselImage6 == undefined
+            && $scope.sideBarImage == undefined
         ){
             return false;
         }else{

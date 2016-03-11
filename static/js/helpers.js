@@ -30,7 +30,7 @@ RestCallManager.prototype.post = function( callback , http , data , action , tab
 
 function alertMe ( type , text){
     new PNotify({
-        title: 'Regular Success',
+        title: 'Success',
         text: text,
         type: type
     });
@@ -47,4 +47,26 @@ function alertMe ( type , text){
     });
     */
 }
+
+function dangerMe ( type , text){
+    new PNotify({
+        title: 'Fail',
+        text: text,
+        type: 'error'
+    });
+
+    return;
+    /*
+     var info_div =  $('#info_alert');
+     $(info_div).addClass('alert-'+type);
+     $(info_div).text(text);
+     $('.alert_section').css('display' , 'block');
+     $('.alert_section').fadeOut( 3000, function() {
+     $('.alert_section').css('display' , 'none');
+
+     });
+     */
+}
+
+
 

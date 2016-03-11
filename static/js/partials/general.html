@@ -13,9 +13,9 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 miniProjectImages rtl">
+    <div class="col-md-10 col-md-offset-1 miniProjectImages rtl">
         <div class="row">
-            <div style="margin-bottom: 30px" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="image in miniProjects | isSubCategory:filteredSubCategory | filter:query " class="col-md-4 slideInUp">
+            <div style="margin-bottom: 30px" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="image in miniProjects | isSubCategory:filteredSubCategory | filter:query " class="col-md-3 slideInUp noLeftRightPadding">
                 <div ng-show="hoverEdit" class="actions   fadeIn">
 
                     <div ng-click="open('md' , image)" style="margin-right: 5px" class="btn btn-primary">

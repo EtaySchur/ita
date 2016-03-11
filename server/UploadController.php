@@ -110,6 +110,11 @@ if (true) {
                 $project->bigImage = moveProjectImageFile($bigImage);
             }
 
+            if(isset($_FILES["sideBarImage"])){
+                $sideBarImage =  $_FILES["sideBarImage"];
+                $project->sideBarImage = moveProjectImageFile($sideBarImage);
+            }
+
              if(isset($_FILES["bannarImage"])){
                             $bannarImage =  $_FILES["bannarImage"];
                             $project->bannarImage = moveProjectImageFile($bannarImage);

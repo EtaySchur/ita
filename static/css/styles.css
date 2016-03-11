@@ -74,7 +74,9 @@ input , textarea{
     border-width: 2px 0px 2px 2px ;
 }
 
-
+.miniProjectCarousel .carousel-indicators{
+    bottom: 30px !important;
+}
 
 .alignRight{
     text-align: right !important;
@@ -374,6 +376,11 @@ input , textarea{
 .noLeftRightMargin {
     margin-left: 0 !important;
     margin-right: 0 !important;
+}
+
+.noLeftRightPadding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .carouselCheviRight .disabled{
