@@ -414,7 +414,7 @@ class DbManager {
 
         $q = $conn->prepare($query);
         $q->execute($dataArray);
-        var_dump("Adding Category "); exit;
+        var_dump("Adding Category ",$conn->lastInsertId()); exit;
 
         return array('id' => $conn->lastInsertId(), 'creation_date' => date("Y-m-d H:i:s", time()));
     }
