@@ -24,6 +24,7 @@ if (($_POST) || (isset($_POST))) {
             exit;
         case "addCategory" :
             $result = DbManager::addCategory($request->data);
+            var_dump("my resut ",$result);
             echo json_encode($result);
             exit;
         case "getCategories" :
