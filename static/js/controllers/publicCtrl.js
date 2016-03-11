@@ -15,15 +15,11 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
     };
 
-    var restCallManager = new RestCallManager();
-    restCallManager.post(getMiniProjects , $http, null , "getMiniProjects");
-    function getMiniProjects(result , status , success) {
-        if (success) {
-            $rootScope.miniProjects = result;
-        } else {
 
-        }
-    }
+    $scope.currentPage = 0;
+    $scope.pageSize = 3;
+
+
 
     $scope.setFormScope= function(scope){
         this.contactUsForm = scope;
@@ -106,7 +102,8 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
    $scope.scrollY = scrollY;
     });
 
-    $rootScope.showNav = false;
+    $rootScope.showNav = true;
+    $rootScope.imTopped = true;
     $rootScope.toggleNav = function (){
         console.log("Toggling ? ");
         $scope.showNav = !$scope.showNav;
@@ -135,8 +132,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' ,  function($scope , $http , anchorSmoothScroll , $location , $rootScope) {
 
     $scope.noWrapSlides = false;
-    $scope.currentPage = 0;
-    $scope.pageSize = 3;
+
     $rootScope.imProjected = false;
 
     $scope.getImagePath = function(item){
@@ -212,7 +208,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                 if(!$scope.allCategories.hasOwnProperty(project.categoryId)){
                     $scope.allCategories[project.categoryId] = [];
                 }
-                if(project.featured){
+                if(project.featured == 1){
                     $scope.allCategories[project.categoryId].push(project);
                 }
 
@@ -224,7 +220,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                 if (success) {
                     $scope.categories = result;
                     if($scope.categories.length > 0){
-                        $scope.activeCategoryFilterId = $scope.categories[2].id;
+                        $scope.activeCategoryFilterId = $scope.categories[1].id;
                     }
                 } else {
 
@@ -262,12 +258,23 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window) {
     $rootScope.showSideProjects = false;
-    $scope.currentPage = 0;
     console.log($rootScope.showSideProjects);
     $window.scrollTo(0,0)
     $scope.hoverIn = function(){
         this.hoverEdit = true;
     };
+
+    $scope.nextPage = function(){
+        $scope.currentPage += 1;
+    }
+
+    $scope.prevPage = function(){
+        $scope.currentPage -= 1;
+    }
+
+
+    $scope.currentPage = 0;
+    $scope.pageSize = 3;
 
     $scope.hoverOut = function(){
         this.hoverEdit = false;
@@ -291,6 +298,20 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
             if (success) {
                 if(result.length > 0){
                     $scope.selectedProject = result[0];
+
+                    var restMiniProjectCallManager = new RestCallManager();
+                    restMiniProjectCallManager.post(getMiniProjects , $http, $scope.selectedProject.subCategoryId , "getMiniProjects");
+                    function getMiniProjects(result , status , success) {
+                        if (success) {
+
+                            $rootScope.miniProjects = result;
+                            console.log("My Mioni Projects ", $rootScope.miniProjects);
+                        } else {
+
+                        }
+                    }
+
+
                     console.log("This is my Selected Project ",$scope.selectedProject);
                     var restCallManager = new RestCallManager();
                     restCallManager.post(getAllProjects , $http, null , "getProjects");
@@ -303,16 +324,25 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                                 console.log(project.subCategoryId);
                                 console.log($scope.selectedProject.subCategoryId);
                                if(project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
-                                   console.log("Pushing !!!!!!!!!!!!!");
                                    project.slides = getMiniCarousel(project);
                                    $scope.mySideProjects.push(project);
                                }
 
                                $scope.slides = getMiniCarousel($scope.selectedProject);
-                                console.log("This is my slides ",$scope.slides);
 
                             });
-                            console.log("This is my projects original , " , $scope.mySideProjects);
+                        } else {
+
+                        }
+                    }
+
+
+                    var restCallManagerSubCategory = new RestCallManager();
+                    restCallManagerSubCategory.post( cb , $http, $scope.selectedProject.subCategoryId , "getSubCategory");
+                    function cb(result2 , status , success) {
+                        if (success) {
+                            $scope.subCategory = result2[0];
+                            console.log("i have desc ? ",$scope.subCategoryDesc);
                         } else {
 
                         }

@@ -15,7 +15,14 @@
                 </div>
             </div>
             <img ng-src="{{image.imagePath}}" alt="..." class="img-thumbnail">
+            <div class="regularTitle">
+            {{image.title}}
         </div>
+            <div class="">
+                {{image.text}}
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -26,9 +33,26 @@
             <h3 class="modal-title">Add New Mini Project</h3>
         </div>
         <div class="modal-body">
-            <form ng-init="item.title = 'nothing'">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mini Project Title</label>
+                    <input ng-model="item.title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Mini Project Title">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mini Project Text</label>
+                    <input ng-model="item.text" type="text" class="form-control" id="exampleInputEmail1" placeholder=">Mini Project Additional Text">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword13">Sub Category</label>
+                    <select  id="exampleInputPassword13" ng-options="subCategory.id as subCategory.title for subCategory in subCategories" required  ng-model="item.subCategoryId" class="form-control">
+
+                    </select>
+                </div>
+
                 <div ng-if="url == null && imageId != null" class="form-group">
-                    <img ng-src="{{image.imagePath}}" alt="..." class="img-thumbnail">
+                    <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail">
                 </div>
                 <div ng-if="url != null" class="form-group">
                     <img ng-src="{{url}}" alt="..." class="img-thumbnail">

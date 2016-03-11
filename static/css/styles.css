@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Open Sans' !important;
+    font-family: myRegular !important;
 }
 
 
@@ -43,7 +43,7 @@ input , textarea{
 .projectsContainer .hovered{
     opacity: 0.75;
     filter: alpha(opacity=75); /* msie */
-    transform: scale(1.1);
+    transform: scale(1);
 }
 
 .imageContainer{
@@ -74,6 +74,10 @@ input , textarea{
     font-weight: 500;
     line-height: 15.4px;
 
+}
+
+.categoryFilter:hover{
+    color: #4e4e4e !important;
 }
 
 
@@ -161,6 +165,14 @@ input , textarea{
     src: url(fonts/OpenSansHebrew-Regular.ttf);
 }
 
+.regularFont{
+    font-family: myRegular !important;
+}
+
+
+.navbar-brand{
+ padding: 8px 15px !important;
+}
 .liner{
     margin-left: auto;
     margin-right: auto;
@@ -200,6 +212,11 @@ input , textarea{
     font-size:60px;
 }
 
+.regular29Text{
+    font-size: 29px;
+    font-family: myRegular;
+}
+
 .bold{
     font-family: myBold;
 }
@@ -224,7 +241,7 @@ input , textarea{
 
 .regularText{
     font-family: myRegular;
-    font-size: 18px;
+    font-size: 18px !important;
 
 }
 
@@ -247,6 +264,11 @@ input , textarea{
 
 .regularBigText{
     font-family: myBold;
+    font-size: 26px;
+}
+
+.regularLargeText {
+    font-family: myRegular;
     font-size: 26px;
 }
 
@@ -283,6 +305,7 @@ input , textarea{
 
 .carousel-caption{
     top : 20px !important;
+     text-shadow: none !important;
 }
 
 
@@ -334,7 +357,8 @@ input , textarea{
     left:0;
     top : 65%;
     border: 0 !important;
-    background: white !important;
+    background: transparent !important;
+    font-size: 22px;
 }
 
 .noLeftRightMargin {
@@ -356,12 +380,13 @@ input , textarea{
     right:0;
     top : 65%;
     border: 0 !important;
-    background: white !important;
+    background: transparent !important;
+    font-size: 22px;
 
 }
 
 .miniProjectChevi {
-    top : 40% !important;
+    top: 63px !important;
 }
 
 .projectsContainer .col-md-4 {
@@ -416,6 +441,11 @@ svg{
     fill : blue;
 }
 
+.detailsImagesRow .col-md-4 {
+    padding-right: 30px !important;
+   padding-left: 30px !important;
+}
+
 .myNavbar {
     position: fixed;
     left:0;
@@ -425,6 +455,7 @@ svg{
     opacity: 0.9;
     border-radius: 0;
     border: 0;
+    background: #ffffff;
 }
 .commaImageRight{
     position: absolute;
@@ -435,6 +466,7 @@ svg{
 .commaImageLeft{
     position: absolute;
     left: 0;
+    top : 50px;
 
 }
 
@@ -478,6 +510,14 @@ svg{
 
 }
 
+.subCategoryDesc{
+    position: absolute;
+    top : calc(50% - 40px);
+    left: 0;
+    right: 0;
+
+}
+
 .testimonialSmallImage  {
     padding: 0 !important;
 }
@@ -485,6 +525,12 @@ svg{
 
 .navBarTopped .navbar-nav>li>a {
     color: white;
+}
+
+.circleImageContainer p {
+    font-family: myRegular;
+    font-size: 14px;
+    color : #4e4e4e !important;
 }
 
 .outWrap{
@@ -498,7 +544,7 @@ svg{
     left: 0;
     right: 0;
     margin: 0 auto;
-    top:276px;
+    top:calc(50% - 91px);
 
 }
 

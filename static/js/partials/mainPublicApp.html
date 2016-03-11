@@ -40,31 +40,31 @@
 <div   style="margin-top: 40px" class="row noLeftRightMargin">
     <div style="text-align: center" class="col-md-8 col-md-offset-2 projectsContainer">
         <div      class="col-md-4">
-            <div   ng-class="{ 'hovered':hoverEdit}" style="position: relative" ng-if="($index == 0 || $index == 3) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+            <div   ng-class="{ 'hovered':hoverEdit}" style="position: relative" ng-if="($index == 0) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
                 <div ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
                 <div ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
                 <div ng-class="{ 'imageContainer':hoverEdit}" >
-                    <img ng-click="projectSelected(project)"  style="width: 100%" class="animated" ng-src="{{project.imagePath}}">
+                    <img ng-click="projectSelected(project)"  style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
                 </div>
                 <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
             </div>
         </div>
         <div     class="col-md-4">
-            <div      ng-class="{ 'hovered':hoverEdit}" style="position: relative" ng-if="($index == 1 || $index == 4)  && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+            <div      ng-class="{ 'hovered':hoverEdit}" style="position: relative" ng-if="($index == 1 || $index == 3)  && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
                 <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
                 <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
                 <div ng-class="{ 'imageContainer':hoverEdit}" >
-                    <img ng-click="projectSelected(project)"  style="width: 100%" class="animated" ng-src="{{project.imagePath}}">
+                    <img ng-click="projectSelected(project)"  style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
                 </div>
                 <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
             </div>
         </div>
         <div     class="col-md-4">
-            <div    ng-class="{ 'hovered':hoverEdit}" style="position: relative" ng-if="($index == 2 || $index == 6) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+            <div    ng-class="{ 'hovered':hoverEdit}" style="position: relative" ng-if="($index == 2 || $index == 4) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
                 <div ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
                 <div ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
                 <div ng-class="{ 'imageContainer':hoverEdit}" >
-                    <img ng-click="projectSelected(project)" style="width: 100%" class="animated" ng-src="{{project.imagePath}}">
+                    <img ng-click="projectSelected(project)" style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
                 </div>
                 <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
             </div>
@@ -93,10 +93,10 @@
 </div>
 <div style="margin-top:90px;margin-right: 0;margin-left: 0" class="row fancyBackground">
     <div style="text-align: center;" class="col-xs-12">
-        <div style="font-size: 29px;color: white;margin-top: 85px" class="regularText">ישנם אלפי אדריכלי שיפוץ בארץ </div>
-        <div  style="margin-top: 25px" class="boldMiniHeader myYellow">ישנם אלפי אדריכלי שיפוץ בארץ </div>
+        <div style="font-size: 29px;color: white;margin-top: 85px" class="regular29Text">ישנם אלפי אדריכלי שיפוץ בארץ </div>
+        <div  style="margin-top: 25px" class="boldMiniHeader myYellow">אנחנו עובדים אחרת</div>
     </div>
-    <div style="margin-top: 110px" class="col-md-10 col-md-offset-1">
+    <div style="margin-top: 60px" class="col-md-10 col-md-offset-1">
         <div style="direction: rtl" class="row">
             <div style="float: right;" class="col-md-3 alignRight">
                 <div  class="imageHolder">
@@ -175,7 +175,7 @@
         </div>
     </div>
 </div>
-<div   id="testimonialsSection" style="margin-top: 90px;margin-bottom: 80px;margin-left: 0;margin-right: 0" class="row">
+<div   id="testimonialsSection" style="margin-top: 90px;margin-bottom: 30px;margin-left: 0;margin-right: 0" class="row">
     <div  style="text-align: center" class="col-xs-12 rtl">
         <div class="borderon"></div>
         <h1 class="boldMiniHeader" style="color:#4e4e4e"> {{generalSettings.testimonialsTitle}}</h1>
@@ -183,16 +183,16 @@
 </div>
 <div   style="margin-bottom: 80px;" class="row noLeftRightMargin">
     <div   class="col-xs-12 col-md-6 col-md-offset-3 rtl">
-        <div  style="margin-bottom: 30px;text-align: center">
+        <div  style="margin-bottom: 30px;text-align: center;padding-left: 40px;padding-right: 40px">
             <i style="color: #cbcbcb;font-size: 40px" class="icon-commas commaImageRight"> </i>
-            <div class="regularBigText" style="color: #cbcbcb"> {{selectedTestimonial.title}}  </div>
-            <p class="regularText myGrey"> {{selectedTestimonial.subTitle}}</p>
+            <div class="regularLargeText myGrey"> {{selectedTestimonial.title}}  </div>
+            <p class="regularText myOtherGrey"> {{selectedTestimonial.subTitle}}</p>
             <i style="color: #cbcbcb;font-size: 40px" class="icon-commas commaImageLeft"> </i>
         </div>
-        <div style="text-align: center" ng-click="setTestimonial(item)" ng-repeat="item in testimonials | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-md-4 col-xs-4 testImageContainer">
+        <div style="text-align: center;margin-top: 30px" ng-click="setTestimonial(item)" ng-repeat="item in testimonials | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-md-4 col-xs-4 testImageContainer">
             <img ng-class="{ 'actived': selectedTestimonial.id == item.id}" class="img img-circle img-thumbnail myThumb testimonialSmallImage  bounceInLeft clickable" ng-src="{{getImagePath(item)}}">
 
-            <p style="margin-top: 5px">{{item.description}}</p>
+            <p class="regularText myGrey" style="margin-top: 5px">{{item.description}}</p>
         </div>
         <button class="carouselCheviLeft" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
             <i ng-class="{'disabled':currentPage == 0 }" class="icon-Arrow_left myGrey"></i>

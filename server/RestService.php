@@ -30,8 +30,17 @@ if (($_POST) || (isset($_POST))) {
             $result = DbManager::getCategories();
             echo json_encode($result);
             exit;
+        case "getSubCategory" :
+            $result = DbManager::getSubCategory($request->data);
+            echo json_encode($result);
+            exit;
         case "addSubCategory":
             $result = DbManager::addSubCategory($request->data);
+            echo json_encode($result);
+            exit;
+
+        case "getSubCategories" :
+            $result = DbManager::getSubCategories();
             echo json_encode($result);
             exit;
         case "editCategoryTitle" :
@@ -44,6 +53,10 @@ if (($_POST) || (isset($_POST))) {
             exit;
         case "deleteSubCategory" :
             $result = DbManager::deleteSubCategory($request->data);
+            echo json_encode($result);
+            exit;
+        case "editMiniProject" :
+            $result = DbManager::editMiniProject($request->data);
             echo json_encode($result);
             exit;
         case "editSubCategoryTitle" :
@@ -66,12 +79,21 @@ if (($_POST) || (isset($_POST))) {
              $result = DbManager::deleteTestimonial($request->data);
              echo json_encode($result);
              exit;
+        case 'saveNewProject' :
+            $result = DbManager::saveNewProject($request->data);
+            echo json_encode($result);
+            exit;
         case 'getTestimonials' :
             $result = DbManager::getTestimonials();
             echo json_encode($result);
             exit;
         case "getProjects" :
             $result = DbManager::getProjects($request->data);
+            echo json_encode($result);
+            exit;
+
+        case "getProject" :
+            $result = DbManager::getProject($request->data);
             echo json_encode($result);
             exit;
         case "editTestimonial"  :
@@ -82,8 +104,8 @@ if (($_POST) || (isset($_POST))) {
             $result = DbManager::editProject($request->data);
             echo json_encode($result);
             exit;
-        case  "getProject" :
-             $result = DbManager::getProject($request->data);
+        case  "getManageProjects" :
+             $result = DbManager::getManageProject($request->data);
             echo json_encode($result);
             exit;
           case  "insertContactUs" :
@@ -91,7 +113,7 @@ if (($_POST) || (isset($_POST))) {
                     echo json_encode($result);
                     exit;
         case "getMiniProjects" :
-         $result = DbManager::getMiniProjects();
+         $result = DbManager::getMiniProjects($request->data);
                     echo json_encode($result);
                     exit;
         case "editCarouselImage"  :
@@ -102,6 +124,10 @@ if (($_POST) || (isset($_POST))) {
              $result = DbManager::updateDb($request->table , $request->data);
                         echo json_encode($result);
                         exit;
+        case "getAdminMiniProjects":
+            $result = DbManager::getAdminMiniProjects($request->table , $request->data);
+            echo json_encode($result);
+            exit;
 
 
 

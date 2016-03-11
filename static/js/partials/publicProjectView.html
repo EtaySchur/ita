@@ -16,7 +16,16 @@
 </div>
 
 <div ng-click="toggleSideMenu(False)" class="wrapper projectView">
-<div class="bannar">
+<div style="position: relative;text-align: center" class="bannar">
+    <div style="direction: rtl" class="subCategoryDesc">
+        <div style="color: #ffffff" class="boldMiniHeader">
+            {{subCategory.title}}
+        </div>
+        <div style="color: #ffffff" class="regularTitle">
+            {{subCategory.description}}
+        </div>
+    </div>
+
     <img  style="width: 100%;height: auto" ng-src="{{selectedProject.bannarImage}}">
 </div>
 <div style="margin-top: 90px;margin-bottom: 90px" class="row noLeftRightMargin">
@@ -59,19 +68,19 @@
                     <p style="margin-top: 10px"> {{selectedProject.imageCircle4Text}} </p>
                 </div>
             </div>
-            <div ng-if="selectedProject.borderText1" class="borderedTextSection row">
-                <h3> {{selectedProject.borderTextTitle}} </h3>
+            <div  ng-if="selectedProject.borderText1" class="borderedTextSection row">
+                <div style="font-size: 22px;margin-bottom: 10px" class="myGrey regularFont"> {{selectedProject.borderTextTitle}} </div>
 
-                <div style="border-right-width: 2px" class="col-md-3 borderedText regularExtraSmallText floatMeRight">
+                <div style="border-right-width: 2px;font-size: 16px" ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}" class="borderedText regularExtraSmallText floatMeRight">
                     {{selectedProject.borderText1}}
                 </div>
-                <div class="col-md-3 borderedText regularExtraSmallText floatMeRight">
+                <div style="font-size: 16px" ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}" class="borderedText regularExtraSmallText floatMeRight">
                     {{selectedProject.borderText2}}
                 </div>
-                <div class="col-md-3 borderedText regularExtraSmallText floatMeRight">
+                <div   style="font-size: 16px" ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}" class="borderedText regularExtraSmallText floatMeRight">
                     {{selectedProject.borderText3}}
                 </div>
-                <div class="col-md-3 borderedText regularExtraSmallText floatMeRight">
+                <div  style="font-size: 16px" ng-if="selectedProject.borderText4" ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}" class="borderedText regularExtraSmallText floatMeRight">
                     {{selectedProject.borderText4}}
                 </div>
             </div>
@@ -91,8 +100,8 @@
             </div>
         </div>
     </div>
-    <div style="margin-top: 80px" class="row">
-        <div style="float: right" class="col-md-3  rtl col-xs-12">
+    <div style="margin-top: 80px" class="row detailsImagesRow">
+        <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}" style="float: right" class="rtl col-xs-12">
             <div class="projectImageContainer">
                 <img ng-src="{{selectedProject.image1}}">
 
@@ -101,7 +110,7 @@
                 </div>
             </div>
         </div>
-        <div style="float: right" class="col-md-3  rtl col-xs-12">
+        <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}" style="float: right" class="rtl">
             <div class="projectImageContainer">
                 <img ng-src="{{selectedProject.image2}}">
 
@@ -110,7 +119,7 @@
                 </div>
             </div>
         </div>
-        <div style="float: right" class="col-md-3  rtl col-xs-12">
+        <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}" style="float: right" class="rtl">
             <div class="projectImageContainer">
                 <img ng-src="{{selectedProject.image3}}">
 
@@ -119,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div style="float: right" class="col-md-3  rtl col-xs-12">
+        <div ng-if="selectedProject.image4" ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}" style="float: right" class="rtl">
             <div class="projectImageContainer">
                 <img ng-src="{{selectedProject.image4}}">
 
@@ -139,7 +148,7 @@
             </div>
         </div>
     </div>
-    <div style="margin-top: 60px;margin-bottom: 270px" class="row">
+    <div ng-if="slides.length > 0" style="margin-top: 60px;margin-bottom:60px" class="row">
         <div class="col-md-12  rtl col-xs-12">
             <div>
                 <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
@@ -211,8 +220,8 @@
                 </div>
             </div>
         </div>
-        <div style="margin-top: 80px" class="row noLeftRightMargin">
-            <div style="float: right" class="col-md-3  rtl col-xs-12">
+        <div style="margin-top: 80px" class="row noLeftRightMargin detailsImagesRow">
+            <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
                 <div class="projectImageContainer">
                     <img ng-src="{{item.image1}}">
 
@@ -221,7 +230,7 @@
                     </div>
                 </div>
             </div>
-            <div style="float: right" class="col-md-3  rtl col-xs-12">
+            <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
                 <div class="projectImageContainer">
                     <img ng-src="{{item.image2}}">
 
@@ -230,7 +239,7 @@
                     </div>
                 </div>
             </div>
-            <div style="float: right" class="col-md-3  rtl col-xs-12">
+            <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
                 <div class="projectImageContainer">
                     <img ng-src="{{item.image3}}">
 
@@ -239,7 +248,7 @@
                     </div>
                 </div>
             </div>
-            <div style="float: right" class="col-md-3  rtl col-xs-12">
+            <div ng-if="item.image4" ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
                 <div class="projectImageContainer">
                     <img ng-src="{{item.image4}}">
 
@@ -259,7 +268,7 @@
                 </div>
             </div>
         </div>
-        <div style="margin-top: 60px" class="row">
+        <div ng-if="item.slides.length > 0" style="margin-top: 60px" class="row">
             <div class="col-md-12  rtl col-xs-12">
                 <div>
                     <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
@@ -286,17 +295,17 @@
                      ng-repeat="item in miniProjects | startFrom:currentPage*pageSize | limitTo:pageSize"
                      class="col-md-4 col-xs-4 ">
                     <img style="width: 100%" class="img    bounceInLeft clickable" ng-src="{{item.imagePath}}">
-
-                    <p style="margin-top: 5px">{{item.description}}</p>
+                    <p style="margin-top: 5px;text-align: right;font-size: 22px;">{{item.title}}</p>
+                    <p style="margin-top: 5px;text-align: right">{{item.text}}</p>
                 </div>
-                <button ng-if="currentPage != 0" class="carouselCheviLeft miniProjectChevi"
-                        ng-click="currentPage=currentPage-1">
-                    <i style="top : 50%" ng-class="{'disabled':currentPage == 0 }" class="icon-Arrow_left myGrey"></i>
+                <button  style="left: -10px" ng-if="currentPage != 0" class="carouselCheviLeft miniProjectChevi"
+                        ng-click="prevPage()">
+                    <i style="font-size: 22px" ng-class="{'disabled':currentPage == 0 }" class="icon-Arrow_left myGrey"></i>
                 </button>
 
-                <button ng-if="currentPage < testimonials.length/pageSize - 1"
-                        class="carouselCheviRight miniProjectChevi" ng-click="currentPage=currentPage+1">
-                    <i style="top : 50%" ng-class="{'disabled':currentPage >= testimonials.length/pageSize - 1}"
+                <button style="right: -10px" ng-if="currentPage < miniProjects.length/pageSize - 1"
+                        class="carouselCheviRight miniProjectChevi" ng-click="nextPage()">
+                    <i style="font-size: 22px" ng-class="{'disabled':currentPage >= miniProjects.length/pageSize - 1}"
                        class="icon-Arrow_right myGrey"></i>
                 </button>
 
@@ -342,7 +351,7 @@
         </div>
         <div class="row">
             <form style="width: 510px" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
-                <div class="form-group">
+                <div  style="margin-bottom: 30px" class="form-group">
                     <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
                     <input name="fullNameInput" required ng-model="contact.fullName" type="text"
                            class="form-control myGrey contactUsInput" id="exampleInputEmail1"

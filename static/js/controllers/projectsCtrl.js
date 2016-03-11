@@ -26,10 +26,11 @@ $scope.togglePublish = function (item){
 }
 
     var restCallManager = new RestCallManager();
-    restCallManager.post(callback , $http, null , "getProjects");
+    restCallManager.post(callback , $http, null , "getManageProjects");
     function callback(result , status , success) {
         if (success) {
             $scope.projects = result;
+            console.log("This is my projects ",$scope.projects);
             var restCallManager = new RestCallManager();
             restCallManager.post(getCategoriesCallback , $http, null , "getCategories");
             function getCategoriesCallback(result , status , success) {
@@ -256,6 +257,9 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
             resolve: {
                 item: function () {
                     return subCategory;
+                },
+                type : function(){
+                    return 'subCategory'
                 }
             }
         });
@@ -484,7 +488,8 @@ app.controller('CarouselCtrl', ['$scope' , '$http', '$uibModal' , '$log', 'fileU
 
 
 
-app.controller('addSubCategoryModalCtrl', function ($scope, $uibModalInstance, item) {
+app.controller('addSubCategoryModalCtrl', function ($scope, $uibModalInstance, item , type) {
+    $scope.type = type;
     $scope.item = item;
     $scope.ok = function () {
         $uibModalInstance.close($scope.item);
@@ -959,7 +964,7 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
 });
 
 
-app.controller('ProjectModalCtrl', function ($scope, $uibModalInstance, item , $upload , categories ) {
+app.controller('ProjectModalCtrl', function ($scope, $uibModalInstance, item , $upload , categories , $http ) {
     $scope.categories = categories;
     $scope.uploadingImage = false;
     if(item != null){
@@ -972,7 +977,7 @@ app.controller('ProjectModalCtrl', function ($scope, $uibModalInstance, item , $
         $scope.uploadingImage = true;
         if($scope.newCarouselImage == undefined){
             var restCallManager = new RestCallManager();
-            restCallManager.post(callback , $http, item , "editProject");
+            restCallManager.post(callback , $http, item , "saveNewProject");
             function callback(result , status , success) {
                 if (success) {
                     $scope.uploadingImage = false;

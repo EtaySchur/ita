@@ -23,6 +23,17 @@ class DbManager {
         return $pdo;
     }
 
+    public static function getSubCategory($id){
+        $conn = self::connectToDb();
+        $sql = $conn->prepare("SELECT * from `subCategories` WHERE `id` = $id");
+        $sql->execute();
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+        exit;
+    }
+
+
+
     public static function getCarouselImages(){
         $conn = self::connectToDb();
         $sql = $conn->prepare("SELECT * from `carouselImages` WHERE `isDeleted` = 0");
@@ -31,6 +42,17 @@ class DbManager {
         return $result;
         exit;
     }
+
+
+    public static function getAdminMiniProjects(){
+        $conn = self::connectToDb();
+        $sql = $conn->prepare("SELECT * from `miniProjects` WHERE `isDeleted` = 0");
+        $sql->execute();
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+        exit;
+    }
+
 
     public static function getTestimonials(){
         $conn = self::connectToDb();
@@ -72,6 +94,16 @@ class DbManager {
 
 
     public static function getProjects(){
+        $conn = self::connectToDb();
+        $sql = $conn->prepare("SELECT * from `projects` WHERE `isDeleted` = 0 AND `published` = 1");
+        $sql->execute();
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
+        exit;
+    }
+
+    public static  function getManageProject($projectId){
         $conn = self::connectToDb();
         $sql = $conn->prepare("SELECT * from `projects` WHERE `isDeleted` = 0");
         $sql->execute();
@@ -203,6 +235,17 @@ class DbManager {
         exit;
     }
 
+    public static function getSubCategories(){
+        $conn = self::connectToDb();
+        $sql = $conn->prepare("SELECT * from `subCategories` WHERE `isDeleted` = 0");
+        $sql->execute();
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
+
+        exit;
+    }
+
     private static function getCategorySubCategories($categoryId){
         $conn = self::connectToDb();
         $sql = $conn->prepare("SELECT * from `subCategories` WHERE `categoryId` = $categoryId AND isDeleted = 0");
@@ -221,12 +264,7 @@ class DbManager {
     }
 
     public static function editSubCategoryTitle($subCategory){
-        $conn = self::connectToDb();
-        $sql = "UPDATE `subCategories` SET `title` = '".$subCategory->title."' WHERE id=$subCategory->id";
-        $stmt = $conn->query($sql);
-        $stmt->execute();
-        $result = $stmt->fetchAll();
-        return $result;
+        return self::updateDb("subCategories" , $subCategory);
         exit;
     }
 
@@ -294,9 +332,9 @@ class DbManager {
 
         }
 
-        public static function getMiniProjects(){
+        public static function getMiniProjects($subCategoryId){
              $conn = self::connectToDb();
-                    $sql = $conn->prepare("SELECT * from `miniProjects` WHERE `isDeleted` = 0");
+                    $sql = $conn->prepare("SELECT * from `miniProjects` WHERE `isDeleted` = 0 AND subCategoryId = $subCategoryId");
                     $sql->execute();
                     $result = $sql->fetchAll(PDO::FETCH_ASSOC);
                     return $result;
@@ -306,7 +344,6 @@ class DbManager {
 
 
    public static function saveNewMiniProject($data){
-
             return self::insertToDb('miniProjects' , $data);
                 exit;
     }
@@ -328,7 +365,8 @@ class DbManager {
 
             );
             foreach($data as $key => $val) {
-                if( ! empty($val)) {
+
+                if( isset($val)) {
                     $sql .= $comma . $key . " = '" .(trim($val)) . "'";
                     $comma = ", ";
                 }

@@ -78,7 +78,7 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
 
 
     var restCallManager = new RestCallManager();
-    restCallManager.post(getMiniProjects , $http, null , "getMiniProjects");
+    restCallManager.post(getMiniProjects , $http, null , "getAdminMiniProjects");
     function getMiniProjects(result , status , success) {
         if (success) {
             $scope.miniProjects = result;
@@ -86,6 +86,19 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
 
         }
     }
+
+    var restCallManager1 = new RestCallManager();
+    restCallManager1.post(cb , $http, null , "getSubCategories");
+    function cb(result1 , status , success) {
+        if (success) {
+            console.log("res" ,  result1);
+            $scope.subCategories = result1;
+        } else {
+
+        }
+    }
+
+
 
     $scope.animationsEnabled = true;
 
@@ -97,6 +110,9 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
             resolve: {
                 item: function () {
                     return miniProject;
+                },
+                subCategories : function(){
+                    return   $scope.subCategories
                 }
             }
         });
@@ -106,7 +122,7 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
             if(miniProject == null){
                 $scope.miniProjects.push(newMiniProject);
             }else{
-                miniProject.imagePath = newMiniProject.imagePath;
+                //miniProject.imagePath = newMiniProject.imagePath;
             }
 
         }, function () {
@@ -117,22 +133,41 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
 }]);
 
 
-app.controller('MiniProjectModalInstanceCtrl', function ($scope, $uibModalInstance, item , $upload, $http ) {
+app.controller('MiniProjectModalInstanceCtrl', function ($scope, $uibModalInstance, item , $upload, $http ,   subCategories ) {
 
     $scope.uploadingImage = false;
-
+    $scope.subCategories = subCategories;
     if(item != null){
         $scope.imageId = item.id;
-        $scope.image = item;
+        $scope.item = item;
 
     }else{
         $scope.imageId = null;
+        $scope.item = {};
     }
 
     $scope.ok = function () {
 
         $scope.uploadingImage = true;
         if($scope.newMiniProjectImage == undefined){
+            if($scope.item.id){
+                var restCallManager = new RestCallManager();
+                restCallManager.post(getMiniProjects , $http,  $scope.item , "editMiniProject");
+                function getMiniProjects(result , status , success) {
+                    if (success) {
+                        alertMe( "success" ,"Create New Carousel Image Success");
+                        var newImage = {
+                            'id' : result.id
+                        }
+                        $scope.uploadingImage = false;
+                        $uibModalInstance.close(newImage);
+                    } else {
+
+                    }
+                }
+            }else{
+
+            }
             /*
             var restCallManager = new RestCallManager();
             restCallManager.post(callback , $http, item , "editCarouselImage");
@@ -147,15 +182,16 @@ app.controller('MiniProjectModalInstanceCtrl', function ($scope, $uibModalInstan
                 }
             }
             */
+
         }else{
 
-            console.log("This is my uplaod item ",item);
+            console.log("This is my uplaod item ",  $scope.item);
             $scope.upload = $upload.upload({
                 url : 'server/UploadController.php',
                 data : {
                     fname : $scope.newMiniProjectImage.name,
                     action : 'uploadNewMiniProjectImage',
-                    image : item
+                    image :  $scope.item
                 },
 
                 file : $scope.newMiniProjectImage

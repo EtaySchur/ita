@@ -63,10 +63,7 @@
                     <label for="exampleInputEmail1">Project Title</label>
                     <input required ng-model="item.title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Image Title">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Description</label>
-                    <input required ng-model="item.description" type="text" class="form-control" id="exampleInputPassword1" placeholder="Image Description">
-                </div>
+
                 <div ng-if="url == null && imageId != null" class="form-group">
                     <img ng-src="{{image.imagePath}}" alt="..." class="img-thumbnail projectImage">
                 </div>
@@ -97,16 +94,21 @@
                         <input ng-if="item.featured == 1" required ng-model="item.myOrder" type="text" class="form-control" id="exampleInputPassword1" placeholder="Project Order">
                     </div>
 
+                    <div ng-if="item.featured == 1" class="form-group">
+                        <label for="exampleInputPassword1">Description</label>
+                        <input required ng-model="item.description" type="text" class="form-control" id="exampleInputPassword1" placeholder="Image Description">
+                    </div>
+
 
                 </div>
 
 
-                <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
+                <!--<button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>-->
 
             </form>
         </div>
         <div class="modal-footer">
-            <button ng-disabled="!addNewProjectForm.$valid" class="btn btn-primary" type="button" ng-click="ok(item)">Save <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button class="btn btn-primary" type="button" ng-click="ok(item)">Save <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
     </script>
@@ -133,6 +135,10 @@
                             <label ng-if="item.featured == 1" for="exampleInputPassword1">Order</label>
                             <input ng-if="item.featured == 1" required ng-model="item.myOrder" type="text" class="form-control" id="exampleInputPassword121" placeholder="Project Order">
                         </div>
+                        <div  ng-if="item.featured == 1"  class="form-group">
+                            <label for="exampleInputPassword1">Description</label>
+                            <input required ng-model="item.description" type="text" class="form-control" id="exampleInputPassword132" placeholder="Project Description">
+                        </div>
 
 
                     </div>
@@ -142,10 +148,7 @@
                                 <label for="exampleInputEmail1">Project Title</label>
                                 <input required ng-model="item.title" type="text" class="form-control" id="exampleInputEmail121" placeholder="Project Title">
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Description</label>
-                                <input required ng-model="item.description" type="text" class="form-control" id="exampleInputPassword132" placeholder="Project Description">
-                            </div>
+
                             <div class="form-group">
                                 <label for="exampleInputPassword1">About Me</label>
                                 <textarea col="4" required ng-model="item.aboutMe" type="text" class="form-control" id="exampleInputPassword143" placeholder="Project About Me"></textarea>
@@ -200,7 +203,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Project Big Image</label>
+                                <label for="exampleInputPassword1">Side Menu Image</label>
                                 <div style="text-align: center" ng-if="bigImageurl == null && item.bigImage != null" class="form-group">
                                     <img ng-src="{{item.bigImage}}" alt="..." class="img-thumbnail projectImage">
                                 </div>
@@ -493,7 +496,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button ng-disabled="!editProjectForm.$valid" class="btn btn-primary" type="button" ng-click="ok(item)">Save <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
+            <button  class="btn btn-primary" type="button" ng-click="ok(item)">Save <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
     </script>
