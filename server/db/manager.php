@@ -365,16 +365,18 @@ class DbManager {
 
             );
             foreach($data as $key => $val) {
-
                 if( isset($val)) {
-                    $sql .= $comma . $key . " = '" .(trim($val)) . "'";
+                    $sql .= $comma . $key . ' = "' .(trim($val)) . '"';
                     $comma = ", ";
                 }
             }
 
+
+
             if(isset($data->id)){
                 $sql .=" WHERE id = ".$data->id;
             }
+            $conn->quote($sql);
             $stmt = $conn->query($sql);
             $stmt->execute();
             $result = $stmt->fetchAll();

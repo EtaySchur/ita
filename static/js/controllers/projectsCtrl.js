@@ -2,7 +2,7 @@
  * Created by EtaySchur on 23/11/2015.
  */
 
-app.controller('ProjectsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' , function($scope , $http , $uibModal , $log) {
+app.controller('ProjectsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' , '$sanitize' , function($scope , $http , $uibModal , $log , $sanitize) {
     $scope.animationsEnabled = true;
 
 $scope.togglePublish = function (item){
