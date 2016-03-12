@@ -258,6 +258,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window) {
     $rootScope.showSideProjects = false;
+    $rootScope.imProjected = true;
     console.log($rootScope.showSideProjects);
     $window.scrollTo(0,0)
     $scope.hoverIn = function(){
@@ -291,7 +292,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
 
     var projectId = $routeParams.projectId;
-    $rootScope.imProjected = true;
+
     if(true){
         var restCallManager = new RestCallManager();
         restCallManager.post(getProject , $http, projectId , "getProject");
