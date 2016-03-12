@@ -220,7 +220,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                 if (success) {
                     $scope.categories = result;
                     if($scope.categories.length > 0){
-                        $scope.activeCategoryFilterId = $scope.categories[1].id;
+                        $scope.activeCategoryFilterId = $scope.categories[0].id;
                     }
                 } else {
 

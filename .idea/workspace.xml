@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96320c9f-0239-4de9-bdf9-dc28f01afea7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/projects.html" afterPath="$PROJECT_DIR$/static/js/partials/projects.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="VagrantBoxes.iws" />
@@ -55,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projects.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="projects.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/partials/projects.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88617885" vertical-offset="3603" max-vertical-offset="9197">
-              <caret line="244" column="99" selection-start-line="244" selection-start-column="99" selection-end-line="244" selection-end-column="99" />
+            <state vertical-scroll-proportion="-3.7962964" vertical-offset="3603" max-vertical-offset="9197">
+              <caret line="224" column="117" selection-start-line="224" selection-start-column="117" selection-end-line="224" selection-end-column="117" />
               <folding />
             </state>
           </provider>
@@ -108,8 +108,8 @@
       <file leaf-file-name="projectsCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.428572" vertical-offset="13846" max-vertical-offset="19261">
-              <caret line="832" column="34" selection-start-line="832" selection-start-column="11" selection-end-line="832" selection-end-column="34" />
+            <state vertical-scroll-proportion="-7.785714" vertical-offset="10288" max-vertical-offset="19261">
+              <caret line="620" column="26" selection-start-line="620" selection-start-column="25" selection-end-line="620" selection-end-column="26" />
               <folding>
                 <element signature="e#0#46#0" expanded="false" />
               </folding>
@@ -117,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="publicCtrl.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="publicCtrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.607143" vertical-offset="4734" max-vertical-offset="7072">
-              <caret line="319" column="50" selection-start-line="319" selection-start-column="50" selection-end-line="319" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.49141964" vertical-offset="3561" max-vertical-offset="7072">
+              <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -171,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
         <option value="$PROJECT_DIR$/static/js/controllers/adminCtrl.js" />
         <option value="$PROJECT_DIR$/static/js/partials/mainPublicApp.html" />
         <option value="$PROJECT_DIR$/server/UploadController.php" />
@@ -186,6 +185,7 @@
         <option value="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" />
         <option value="$PROJECT_DIR$/server/db/manager.php" />
         <option value="$PROJECT_DIR$/static/js/partials/projects.html" />
+        <option value="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
       </list>
     </option>
   </component>
@@ -549,7 +549,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457788976613</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="escape">
+      <created>1457789898336</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1457789898337</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1013,28 +1019,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
+    <entry file="file://$PROJECT_DIR$/static/js/partials/projects.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.607143" vertical-offset="4734" max-vertical-offset="7072">
-          <caret line="319" column="50" selection-start-line="319" selection-start-column="50" selection-end-line="319" selection-end-column="50" />
+        <state vertical-scroll-proportion="-3.7962964" vertical-offset="3603" max-vertical-offset="9197">
+          <caret line="224" column="117" selection-start-line="224" selection-start-column="117" selection-end-line="224" selection-end-column="117" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.428572" vertical-offset="13846" max-vertical-offset="19261">
-          <caret line="832" column="34" selection-start-line="832" selection-start-column="11" selection-end-line="832" selection-end-column="34" />
+        <state vertical-scroll-proportion="-7.785714" vertical-offset="10288" max-vertical-offset="19261">
+          <caret line="620" column="26" selection-start-line="620" selection-start-column="25" selection-end-line="620" selection-end-column="26" />
           <folding>
             <element signature="e#0#46#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/partials/projects.html">
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88617885" vertical-offset="3603" max-vertical-offset="9197">
-          <caret line="244" column="99" selection-start-line="244" selection-start-column="99" selection-end-line="244" selection-end-column="99" />
+        <state vertical-scroll-proportion="0.49141964" vertical-offset="3561" max-vertical-offset="7072">
+          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
           <folding />
         </state>
       </provider>
