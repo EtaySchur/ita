@@ -18,7 +18,7 @@ $scope.togglePublish = function (item){
             }
 
         } else {
-            alertMe( "danger" ,"Delete Mini Project Fail");
+            dangerMe( "danger" ,"Publish Project Fail");
         }
     }
 
@@ -270,7 +270,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
                     category.subCategories.splice(index , 1);
                     alertMe( "success" ,"Delete Sub Category Success");
                 } else {
-                    alertMe( "danger" ,"Delete Sub Category Fail");
+                    dangerMe( "danger" ,"Delete Sub Category Fail");
                 }
             }
         }, function () {
@@ -300,7 +300,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
                 if (success) {
                     alertMe( "success" ,"Save Category Success");
                 } else {
-                    alertMe( "danger" ,"Save Category Fail");
+                    dangerMe( "danger" ,"Save Category Fail");
                 }
             }
         }, function () {
@@ -331,7 +331,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
 
                     alertMe( "success" ,"Save Category Success");
                 } else {
-                    alertMe( "danger" ,"Save Category Fail");
+                    dangerMe( "danger" ,"Save Category Fail");
                 }
             }
 
@@ -375,7 +375,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
 
                     alertMe( "success" ,"Add Category Success");
                 } else {
-                    alertMe( "danger" ,"Add Category Fail");
+                    dangerMe( "danger" ,"Add Category Fail");
                 }
             }
 
@@ -411,7 +411,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
                     }
                     alertMe( "success" ,"Add Category Success");
                 } else {
-                    alertMe( "danger" ,"Add Category Fail");
+                    dangerMe( "danger" ,"Add Category Fail");
                 }
             }
 
@@ -465,7 +465,7 @@ app.controller('CarouselCtrl', ['$scope' , '$http', '$uibModal' , '$log', 'fileU
                     $scope.carouselImages.splice( index , 1);
                     alertMe( "success" ,"Delete Carousel Image Success");
                 } else {
-                    alertMe( "danger" ,"Delete Carousel Image Fail");
+                    dangerMe( "danger" ,"Delete Carousel Image Fail");
                 }
             }
         }, function () {
@@ -574,7 +574,7 @@ app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, item , 
                     alertMe( "success" ,"Edit Carousel Slide Success");
                 } else {
                     $scope.uploadingImage = false;
-                    alertMe( "danger" ,"Edit Carousel Slide Fail");
+                    dangerMe( "danger" ,"Edit Carousel Slide Fail");
                 }
             }
         }else{
@@ -600,7 +600,7 @@ app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, item , 
                 $uibModalInstance.close(newImage);
                 return;
             }).error(function(data, status, headers, config){
-                alertMe( "danger" ,"My Text");
+                dangerMe( "danger" ,"My Text");
                 $scope.uploadingImage = false;
             });
         }
@@ -678,10 +678,10 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
                     $scope.uploadingImage = false;
                     $uibModalInstance.close(item);
 
-                    alertMe( "success" ,"Edit Testimonial Success");
+                    alertMe( "success" ,"Edit Project Success");
                 } else {
                     $scope.uploadingImage = false;
-                    alertMe( "danger" ,"Edit Testimonial Fail");
+                    dangerMe( "danger" ,"Edit Project Fail");
                 }
             }
         }else{
@@ -783,7 +783,7 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
 
 
             }).error(function(data, status, headers, config){
-                alertMe( "danger" ,"My Text");
+                dangerMe( "danger" ,"My Text");
                 $scope.uploadingImage = false;
             });
         }
@@ -1047,10 +1047,10 @@ app.controller('ProjectModalCtrl', function ($scope, $uibModalInstance, item , $
                 if (success) {
                     $scope.uploadingImage = false;
                     $uibModalInstance.close(item);
-                    alertMe( "success" ,"Edit Testimonial Success");
+                    alertMe( "success" ,"Edit Project Success");
                 } else {
                     $scope.uploadingImage = false;
-                    alertMe( "danger" ,"Edit Testimonial Fail");
+                    dangerMe( "danger" ,"Edit Project Fail");
                 }
             }
         }else{
@@ -1075,7 +1075,7 @@ app.controller('ProjectModalCtrl', function ($scope, $uibModalInstance, item , $
                 $uibModalInstance.close(item);
                 return;
             }).error(function(data, status, headers, config){
-                alertMe( "danger" ,"My Text");
+                dangerMe( "danger" ,"My Text");
                 $scope.uploadingImage = false;
             });
         }

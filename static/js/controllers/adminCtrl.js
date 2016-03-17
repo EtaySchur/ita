@@ -90,7 +90,7 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
                     $scope.miniProjects.splice( index , 1);
                     alertMe( "success" ,"Delete Mini Project Success");
                 } else {
-                    alertMe( "danger" ,"Delete Mini Project Fail");
+                    dangerMe( "danger" ,"Delete Mini Project Fail");
                 }
             }
         }, function () {
@@ -100,8 +100,8 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
 
 
     var restCallManager = new RestCallManager();
-    restCallManager.post(getMiniProjects , $http, null , "getAdminMiniProjects");
-    function getMiniProjects(result , status , success) {
+    restCallManager.post(cb1 , $http, null , "getAdminMiniProjects");
+    function cb1(result , status , success) {
         if (success) {
             $scope.miniProjects = result;
             console.log("MY Mini Projects ",$scope.miniProjects);
@@ -183,12 +183,12 @@ app.controller('MiniProjectModalInstanceCtrl', function ($scope, $uibModalInstan
                 restCallManager.post(getMiniProjects , $http,  $scope.item , "editMiniProject");
                 function getMiniProjects(result , status , success) {
                     if (success) {
-                        alertMe( "success" ,"Create New Carousel Image Success");
+                        alertMe( "success" ,"Create New Mini Project Image Success");
                         $scope.item.id = result.id;
                         $scope.uploadingImage = false;
                         $uibModalInstance.close($scope.item);
                     } else {
-
+                        dangerMe( "danger" ,"Create New Mini Project Image Fail");
                     }
                 }
             }else{
@@ -228,12 +228,12 @@ app.controller('MiniProjectModalInstanceCtrl', function ($scope, $uibModalInstan
 
                 $scope.item.id = data.id;
                 $scope.item.imagePath = data.imagePath;
-                alertMe( "success" ,"Create New Carousel Image Success");
+                alertMe( "success" ,"Create New Mini Project Image Success");
                 $scope.uploadingImage = false;
                 $uibModalInstance.close($scope.item);
                 return;
             }).error(function(data, status, headers, config){
-                alertMe( "danger" ,"My Text");
+                dangerMe( "danger" ,"Create New Mini Project Image Fail");
                 $scope.uploadingImage = false;
             });
         }

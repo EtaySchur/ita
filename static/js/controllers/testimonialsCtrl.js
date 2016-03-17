@@ -66,7 +66,7 @@ app.controller('TestimonialsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' ,f
                     $scope.testimonials.splice( index , 1);
                     alertMe( "success" ,"Delete Testimonial Success");
                 } else {
-                    alertMe( "danger" ,"Delete Testimonial Fail");
+                    dangerMe( "danger" ,"Delete Testimonial Fail");
                 }
             }
         }, function () {
@@ -99,7 +99,7 @@ app.controller('addTestimonialCtrl', function ($scope, $uibModalInstance, item ,
                     alertMe( "success" ,"Edit Testimonial Success");
                 } else {
                     $scope.uploadingImage = false;
-                    alertMe( "danger" ,"Edit Testimonial Fail");
+                    dangerMe( "danger" ,"Edit Testimonial Fail");
                 }
             }
         }else{
@@ -130,7 +130,7 @@ app.controller('addTestimonialCtrl', function ($scope, $uibModalInstance, item ,
                 $uibModalInstance.close(item);
                 return;
             }).error(function(data, status, headers, config){
-                alertMe( "danger" ,"My Text");
+                dangerMe( "danger" ,"My Text");
                 $scope.uploadingImage = false;
             });
         }
