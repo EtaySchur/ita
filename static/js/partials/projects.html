@@ -125,27 +125,41 @@
         </div>
         <div class="modal-body">
             <form style="margin-top: 30px" name="editProjectForm">
+            <div style="margin-top: 20px;padding-bottom: 20px;border-bottom: dashed 2px grey" class="form-group">
+                <div>
+                    <button  ng-init="isFeatured(item)" type="button" class="btn btn-primary" ng-model="item.featured" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                        <i class="fa fa-star"></i>
+                    </button>
+                </div>
+                <div style="margin-top : 15px" class="row">
+                    <div class="col-md-3" >
+                        <label ng-if="item.featured == 1" for="exampleInputPassword1">Order</label>
+                        <input ng-if="item.featured == 1" required ng-model="item.myOrder" type="text" class="form-control" id="exampleInputPassword121" placeholder="Project Order">
+                    </div>
+                    <div  class="col-md-3" ng-if="item.featured == 1"  class="form-group">
+                        <label for="exampleInputPassword1">Description</label>
+                        <input required ng-model="item.description" type="text" class="form-control" id="exampleInputPassword132" placeholder="Project Description">
+                    </div>
+                    <div class="col-md-6" ng-if="item.featured == 1" class="form-group">
+                        <label for="exampleInputPassword1">Featured Image Image</label>
+                        <div style="text-align: left" ng-if="bigImageurl == null && item.bigImage != null" class="form-group">
+                            <img ng-src="{{item.bigImage}}" alt="..." class="img-thumbnail projectImage">
+                        </div>
+                        <div style="text-align: left" ng-if="bigImageurl != null" class="form-group">
+                            <img ng-src="{{bigImageurl}}" alt="..." class="img-thumbnail projectImage">
+                        </div>
+                        <button class="btn btn-default" ng-file-select="onProjectBigImageSelect($files)">Upload Image File</button>
+
+                    </div>
+                </div>
+
+
+
+            </div>
             <uib-tabset>
             <uib-tab   ng-click="tabs[0].active = true" heading="Texts" active="tabs[0].active" disable="tab.disabled">
 
-                    <div style="margin-top: 20px" class="form-group">
-                        <div>
-                            <button  ng-init="isFeatured(item)" type="button" class="btn btn-primary" ng-model="item.featured" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
-                                <i class="fa fa-star"></i>
-                            </button>
-                        </div>
-                        <div style="margin-top : 15px">
-                            <label ng-if="item.featured == 1" for="exampleInputPassword1">Order</label>
-                            <input ng-if="item.featured == 1" required ng-model="item.myOrder" type="text" class="form-control" id="exampleInputPassword121" placeholder="Project Order">
-                        </div>
-                        <div  ng-if="item.featured == 1"  class="form-group">
-                            <label for="exampleInputPassword1">Description</label>
-                            <input required ng-model="item.description" type="text" class="form-control" id="exampleInputPassword132" placeholder="Project Description">
-                        </div>
 
-
-
-                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -233,16 +247,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <div ng-if="item.featured == 1" class="form-group">
-                                <label for="exampleInputPassword1">Featured Image Image</label>
-                                <div style="text-align: center" ng-if="bigImageurl == null && item.bigImage != null" class="form-group">
-                                    <img ng-src="{{item.bigImage}}" alt="..." class="img-thumbnail projectImage">
-                                </div>
-                                <div style="text-align: center" ng-if="bigImageurl != null" class="form-group">
-                                    <img ng-src="{{bigImageurl}}" alt="..." class="img-thumbnail projectImage">
-                                </div>
-                            </div>
-                            <button class="btn btn-default" ng-file-select="onProjectBigImageSelect($files)">Upload Image File</button>
+
                         </div>
                     </div>
                     <div style="margin-top: 15px" class="row">
