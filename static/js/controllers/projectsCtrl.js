@@ -695,8 +695,6 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
                 }
             }
         }else{
-            console.log("Ipload project");
-            console.log("My Item " , item);
             var data = {
                 action : 'uploadProjectImage',
                 project : item

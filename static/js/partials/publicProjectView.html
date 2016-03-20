@@ -291,23 +291,23 @@
         <div style="margin-bottom: 80px;" class="row noLeftRightMargin">
             <div style="margin-top: 30px" class="col-xs-12 col-md-8 col-md-offset-2 rtl">
 
-                <div style="text-align: center"
-                     ng-repeat="item in miniProjects | startFrom:currentPage*pageSize | limitTo:pageSize"
-                     class="col-md-4 col-xs-4 ">
-                    <img style="width: 100%" class="img    bounceInLeft clickable" ng-src="{{item.imagePath}}">
+                <div ng-if="item.showMe" ng-class="{'slideInLeft' : item.slideInLeft , 'fadeOut' : item.fadeOut , 'fadeIn' : item.fadeIn , 'fadeOutLeft' : item.fadeOutLeft , 'fadeInLeft' : item.fadeInLeft , 'fadeOutRight' : item.fadeOutRight ,  'fadeInRight' : item.fadeInRight  ,'animated' : item.animated }"  style="text-align: center"
+                     ng-repeat="item in miniProjects"
+                     class="col-md-4 col-xs-4">
+                    <img style="width: 100%" class="img" ng-src="{{item.imagePath}}">
                     <p style="margin-top: 5px;text-align: right;font-size: 22px;">{{item.title}}</p>
                     <p style="margin-top: 5px;text-align: right">{{item.text}}</p>
                 </div>
-                <button  style="left: -10px" ng-if="currentPage != 0" class="carouselCheviLeft miniProjectChevi"
-                        ng-click="prevPage()">
-                    <i style="font-size: 22px" ng-class="{'disabled':currentPage == 0 }" class="icon-Arrow_left myGrey"></i>
-                </button>
+                <div  style="left: -10px" ng-if="miniProjects.length > pageSize"
+                         class="carouselCheviLeft miniProjectChevi clickable" ng-click="prevPage()">
+                    <i style="font-size: 22px" ng-class="{'disabled':minIndex == 0 }" class="icon-Arrow_left myGrey"></i>
+                </div>
 
-                <button style="right: -10px" ng-if="currentPage < miniProjects.length/pageSize - 1"
-                        class="carouselCheviRight miniProjectChevi" ng-click="nextPage()">
-                    <i style="font-size: 22px" ng-class="{'disabled':currentPage >= miniProjects.length/pageSize - 1}"
+                <div style="right: -10px" ng-if="miniProjects.length > pageSize"
+                        class="carouselCheviRight miniProjectChevi clickable" ng-click="nextPage()">
+                    <i style="font-size: 22px" ng-class="{'disabled': minIndex + 3 >= miniProjects.length}"
                        class="icon-Arrow_right myGrey"></i>
-                </button>
+                </div>
 
 
             </div>

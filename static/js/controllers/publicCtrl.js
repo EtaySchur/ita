@@ -260,8 +260,11 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 }]);
 
-publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window) {
+publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window' , '$timeout',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window , $timeout) {
     $rootScope.showSideProjects = false;
+    $scope.minIndex = 0;
+
+
     $rootScope.imProjected = true;
     console.log($rootScope.showSideProjects);
     $window.scrollTo(0,0)
@@ -271,11 +274,94 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
     $rootScope.showNav = false;
     $scope.nextPage = function(){
-        $scope.currentPage += 1;
+        $scope.nextAnimation = true;
+        $rootScope.miniProjects[$scope.minIndex].animated = true;
+        $rootScope.miniProjects[$scope.minIndex].fadeOutLeft = true;
+
+        //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
+        //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = true;
+        //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+        //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = true;
+
+        $timeout(function() {
+            $rootScope.miniProjects[$scope.minIndex].fadeOutLeft = false;
+            $rootScope.miniProjects[$scope.minIndex].animated = false;
+            $rootScope.miniProjects[$scope.minIndex].showMe = false;
+
+            $timeout(function() {
+                //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
+                //$rootScope.miniProjects[$scope.minIndex + 1].fadeIn = true;
+                //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = false;
+                //
+                //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+                //$rootScope.miniProjects[$scope.minIndex + 2].fadeIn = true;
+                //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = false;
+
+
+                $rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = true;
+                $rootScope.miniProjects[$scope.minIndex + 3].animated = true;
+                $rootScope.miniProjects[$scope.minIndex + 3].showMe = true;
+
+                //$rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = false;
+                //$rootScope.miniProjects[$scope.minIndex + 3].animated = false;
+                $scope.minIndex += 1;
+            } , 600)
+
+        }, 600);
     }
 
     $scope.prevPage = function(){
-        $scope.currentPage -= 1;
+        if( $scope.minIndex == 0){
+            return;
+        }
+
+
+        $scope.nextAnimation = true;
+        $rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+        $rootScope.miniProjects[$scope.minIndex + 2].fadeOutRight = true;
+
+        //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
+        //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = true;
+        //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+        //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = true;
+
+        $timeout(function() {
+            $rootScope.miniProjects[$scope.minIndex + 2].fadeOutRight = false;
+            $rootScope.miniProjects[$scope.minIndex + 2].animated = false;
+            $rootScope.miniProjects[$scope.minIndex + 2].showMe = false;
+
+            $timeout(function() {
+                //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
+                //$rootScope.miniProjects[$scope.minIndex + 1].fadeIn = true;
+                //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = false;
+                //
+                //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+                //$rootScope.miniProjects[$scope.minIndex + 2].fadeIn = true;
+                //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = false;
+
+
+                $rootScope.miniProjects[$scope.minIndex - 1].fadeInLeft = true;
+                $rootScope.miniProjects[$scope.minIndex - 1].animated = true;
+                $rootScope.miniProjects[$scope.minIndex - 1].showMe = true;
+
+                //$rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = false;
+                //$rootScope.miniProjects[$scope.minIndex + 3].animated = false;
+                $scope.minIndex -= 1;
+            } , 600)
+
+        }, 600);
+
+        //$scope.nextAnimation = false;
+        //$scope.minIndex -= 1;
+        //console.log($scope.minIndex);
+        //$timeout(function() {
+        //    $rootScope.miniProjects[$scope.minIndex + 3].showMe = false;
+        //    $timeout(function() {
+        //        $rootScope.miniProjects[$scope.minIndex].showMe = true;
+        //    }, 300);
+        //}, 800);
+        //
+        //$scope.currentPage -= 1;
     }
 
 
@@ -311,6 +397,11 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                         if (success) {
 
                             $rootScope.miniProjects = result;
+                            for ( var i = 0 ; i < $rootScope.miniProjects.length ; i++){
+                                if(i < $scope.pageSize){
+                                    $rootScope.miniProjects[i].showMe = true;
+                                }
+                            }
                             console.log("My Mioni Projects ", $rootScope.miniProjects);
                         } else {
 
@@ -326,11 +417,13 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                         console.log($scope.projects);
                         $rootScope.mySideProjects = [];
                         if (success) {
+                            var index = 0;
                             result1.forEach(function(project){
                                 console.log(project.subCategoryId);
                                 console.log($scope.selectedProject.subCategoryId);
                                if(project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
                                    project.slides = getMiniCarousel(project);
+
                                    $rootScope.mySideProjects.push(project);
                                }
 

@@ -435,7 +435,7 @@ input , textarea{
 }
 
 .miniProjectChevi {
-    top: 63px !important;
+    top: 108px !important;
 }
 
 .projectsContainer .col-md-4 {
@@ -561,7 +561,7 @@ svg{
 
 .subCategoryDesc{
     position: absolute;
-    top : calc(50% - 40px);
+    top : calc(50% - 65px);
     left: 0;
     right: 0;
 
@@ -690,3 +690,4 @@ svg{
 .carousel-indicators{
     bottom: 120px !important;
 }
+
