@@ -15,7 +15,6 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
     };
 
-
     $scope.currentPage = 0;
     $scope.pageSize = 3;
 
@@ -66,13 +65,12 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
             restCallManager.post( insertContactUs, $http, info , "insertContactUs");
             function insertContactUs(result , status , success) {
                 if (success) {
-                    $scope.mailSent = true;
+                    $rootScope.mailSent = true;
                     console.log("Contact Us Saved Success");
                 } else {
 
                 }
             }
-            alert('successful email send.');
             $scope.form = {};
             console.log('successful email send.');
             console.log('status: ' + status);
@@ -130,10 +128,10 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 }]);
 
 
-publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' ,  function($scope , $http , anchorSmoothScroll , $location , $rootScope) {
+publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , 'CategoriesService',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , CategoriesService) {
+    $rootScope.mailSent = false;
 
     $scope.noWrapSlides = false;
-
     $rootScope.imProjected = false;
 
     $scope.getImagePath = function(item){
@@ -158,6 +156,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     $scope.$watch('activeCategoryFilterId' , function(){
       if($scope.allCategories){
           $scope.projects = $scope.allCategories[$scope.activeCategoryFilterId];
+          CategoriesService.setActiveCategory($scope.activeCategoryFilterId);
       }
 
     });
@@ -221,7 +220,11 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                 if (success) {
                     $scope.categories = result;
                     if($scope.categories.length > 0){
-                        $scope.activeCategoryFilterId = $scope.categories[0].id;
+                        if( CategoriesService.getActiveCategory() == null ){
+                            $scope.activeCategoryFilterId = $scope.categories[0].id;
+                        }else{
+                            $scope.activeCategoryFilterId =  CategoriesService.getActiveCategory();
+                        }
                     }
                 } else {
 

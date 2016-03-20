@@ -100,8 +100,13 @@
         <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText3}}</p>
     </div>
 </div>
-<div style="margin-top:90px;margin-right: 0;margin-left: 0" class="row fancyBackground">
+<div style="margin-top:90px;margin-right: 0;margin-left: 0;position: relative" class="row fancyBackground">
+    <!--<div style="position: absolute;bottom: 0;right: 0" class="triangleWrapper">-->
+        <!--<div class="triangle">-->
+        <!--</div>-->
+    <!--</div>-->
     <div style="text-align: center;" class="col-xs-12">
+
         <div style="font-size: 29px;color: white;margin-top: 85px" class="regular29Text">ישנם אלפי אדריכלי שיפוץ בארץ </div>
         <div  style="margin-top: 25px" class="boldMiniHeader myYellow">אנחנו עובדים אחרת</div>
     </div>
@@ -214,14 +219,15 @@
 
     </div>
 </div>
-<div    id="contactUsSection"  class="row contactUsContainer noLeftRightMargin">
-    <div  style="text-align: center;padding: 0px" class="col-xs-12  col-md-6 alignRight  rtl">
+<div style="margin-left: 0;margin-right: 0" id="contactUsSection" class="row contactUsContainer">
+    <div style="text-align: center;padding: 0" class="col-xs-6  col-md-6 alignRight  rtl">
         <div class="outWrap">
             <div style="text-align: center" class="innerWrap">
                 <div style="margin-bottom: 20px;margin-top: 5px" class="myGrey boldBigText">
                     איתמר משה
                 </div>
-                <div style="width: 20px;border-bottom: 3px solid #4e4e4e;margin-bottom: 20px " class="liner myGrey"> </div>
+                <div style="width: 20px;border-bottom: 3px solid #4e4e4e;margin-bottom: 20px "
+                     class="liner myGrey"></div>
                 <div class="myGrey boldSemiText">
                     {{generalSettings.email}}
                 </div>
@@ -232,45 +238,81 @@
         </div>
         <img style="width: 100%" src="static/assets/Footer_bg.jpg">
     </div>
-    <div  style="text-align: center" class="col-xs-12 col-md-4 col-md-offset-1   alignRight rtl">
+    <div style="text-align: center" class="col-xs-6 col-md-4 col-md-offset-1   alignRight rtl">
         <div class="row">
-            <h3 style="font-size: 46px;margin-top: 55px;margin-bottom: 30px" class="rtl alignRight bold myGrey"> בואו נדבר </h3>
+            <h3 style="font-size: 46px;margin-top: 55px;margin-bottom: 30px" class="rtl alignRight bold myGrey"> בואו
+                נדבר </h3>
         </div>
 
         <div style="margin-bottom: 30px" class="row">
-            <div  class="borderinon"></div>
-        </div>
-        <div  class="row">
-            <p style="margin-up: 30px" class="regularText myGrey" style="margin-bottom: 10px"> חושבים לעשות שיפוץ בבית,הרחבה או תוספת בפנים או בחוץ? הגעתם למקום הנכון</p>
-        </div>
-        <div style="margin-bottom: 30px" class="row">
-            <p  class="regularText myGrey">  צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
+            <div class="borderinon"></div>
         </div>
         <div class="row">
-            <form style="width: 510px" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
-                <div class="form-group">
-                    <label  class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
-                    <input  name="fullNameInput"  required ng-model="contact.fullName" type="text" class="form-control myGrey contactUsInput" id="exampleInputEmail1" placeholder="הכנס/י את שמך המלא כאן">
+            <p style="margin-up: 30px" class="regularText myGrey" style="margin-bottom: 10px"> חושבים לעשות שיפוץ
+                בבית,הרחבה או תוספת בפנים או בחוץ? הגעתם למקום הנכון</p>
+        </div>
+        <div style="margin-bottom: 30px" class="row">
+            <p class="regularText myGrey"> צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
+        </div>
+        <div class="row">
+            <div ng-show="mailSent" class="sendMailConfirmationOuter">
+                <div class="textWrap">
+                    <i  ng-click="mailSent = false" style="color: black;position: absolute;top : 14px;right: 14px"  class="icon-Close clickable"></i>
+                    <div  class="boldMiniTitle">
+                    <span>
+                        היי
+                    </span>
+                     <span>
+                         {{contact.fullName}},
+                     </span>
+                    <span>
+                        תודה רבה שפנית אלינו
+                    </span>
+                    </div>
+                    <div style="font-size: 14px;margin-top: 20px" class="regularExtraSmallText">
+                        הפנייה שלך נמצאת כבר בתיבת המייל שלנו, ניצור איתך קשר ממש בקרוב.
+                    </div>
+                    <div style="font-size: 14px;margin-top: 14px" class="regularExtraSmallText">
+                        המשך יום טוב.
+                    </div>
+                </div>
+
+            </div>
+            <form ng-hide="mailSent" style="width: 510px" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
+                <div  style="margin-bottom: 30px" class="form-group">
+                    <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
+                    <input name="fullNameInput" required ng-model="contact.fullName" type="text"
+                           class="form-control myGrey contactUsInput" id="exampleInputEmail1"
+                           placeholder="הכנס/י את שמך המלא כאן">
+
                     <p ng-show="!contactUsForm.fullNameInput.$valid && validateAll" style="color: red"> שדה חובה </p>
                 </div>
                 <div style="margin-bottom: 30px" class="form-group">
-                    <label  class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
-                    <input  name="phoneInput" required ng-model="contact.phone" type="text" class="form-control myGrey contactUsInput" id="exampleInputPassword1" placeholder="הכנס/י את מספר הטלפון כאן">
+                    <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
+                    <input name="phoneInput" required ng-model="contact.phone" type="text"
+                           class="form-control myGrey contactUsInput" id="exampleInputPassword1"
+                           placeholder="הכנס/י את מספר הטלפון כאן">
+
                     <p ng-show="!contactUsForm.phoneInput.$valid && validateAll" style="color: red"> שדה חובה </p>
                 </div>
                 <div style="margin-bottom: 30px" class="form-group">
-                    <label  class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
-                    <input name="emailInput"  ng-model="contact.email" type="email" class="form-control myGrey contactUsInput" id="exampleInputPassword1" placeholder="הכנס/י את כתובת האי מייל כאן">
+                    <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
+                    <input name="emailInput" ng-model="contact.email" type="email"
+                           class="form-control myGrey contactUsInput" id="exampleInputPassword1"
+                           placeholder="הכנס/י את כתובת האי מייל כאן">
                     <!--p ng-show="!contactUsForm.emailInput.$valid && validateAll" style="color: red"> שדה חובה </p-->
                 </div>
                 <div style="margin-bottom: 20px" class="form-group">
                     <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
-                    <textarea  rows="5" ng-model="contact.howCanWeHelp" type="text" class="form-control myGrey contactUsTextArea" id="exampleInputPassword1" > </textarea>
+                    <textarea rows="5" ng-model="contact.howCanWeHelp" type="text"
+                              class="form-control myGrey contactUsTextArea" id="exampleInputPassword1"> </textarea>
                 </div>
-                <div style="margin-top: 30px;margin-bottom: 55px" class="clickable">
-                    <div ng-click="sendMail(contact)" style="padding: 5px 10px;float: left" class="boldSubtitle contactUsButton">
+                <div ng-class="{'disableButtonText' : sendingMail}" style="margin-top: 30px;margin-bottom: 55px" class="clickable">
+                    <div  ng-click="sendMail(contact)" style="padding: 5px 10px;float: left"
+                          class="boldSubtitle contactUsButton">
                         שלח אותי
                     </div>
+                    <i ng-show="sendingMail" class="fa fa-circle-o-notch fa-spin"></i>
                 </div>
 
 

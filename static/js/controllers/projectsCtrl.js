@@ -99,7 +99,7 @@ $scope.togglePublish = function (item){
             refreshProjects();
             function refreshProjects(){
                 var restCallManager = new RestCallManager();
-                restCallManager.post(callbackMe , $http, null , "getProjects");
+                restCallManager.post(callbackMe , $http, null , "getManageProjects");
                 function callbackMe(result , status , success) {
                     if (success) {
                         console.log("Override PROJECTS ??");
@@ -159,7 +159,17 @@ $scope.togglePublish = function (item){
         });
 
         modalInstance.result.then(function (project) {
-            $scope.projects.push(project);
+            refreshProjects();
+            function refreshProjects(){
+                var restCallManager = new RestCallManager();
+                restCallManager.post(function (result , status , success) {
+                    if (success) {
+                        console.log("Override PROJECTS ??");
+                        $scope.projects = result;
+                    }
+                } , $http, null , "getManageProjects");
+
+            }
         });
     }
 
@@ -678,10 +688,10 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
                     $scope.uploadingImage = false;
                     $uibModalInstance.close(item);
 
-                    alertMe( "success" ,"Edit Project Success");
+                    alertMe( "success" ,"Create New Project Success");
                 } else {
                     $scope.uploadingImage = false;
-                    dangerMe( "danger" ,"Edit Project Fail");
+                    dangerMe( "danger" ,"Create New Project Fail");
                 }
             }
         }else{

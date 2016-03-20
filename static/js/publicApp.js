@@ -164,3 +164,14 @@ publicApp.directive("scroll", function ($window , $rootScope) {
         });
     };
 });
+
+publicApp.service('CategoriesService', function() {
+    var activeCategory = null;
+
+    this.getActiveCategory = function() { return activeCategory};
+
+    this.setActiveCategory = function(activeCategoryId) { activeCategory = activeCategoryId};
+
+});
+
+

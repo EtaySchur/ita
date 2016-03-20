@@ -343,6 +343,16 @@ input , textarea{
 }
 
 
+.triangle {
+    background: green;
+    border: 2px solid yellow;
+    border-width: 2px 2px 0 0;
+    transform: rotate(-45deg);
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
 
 .myButton{
     width: 234px;
