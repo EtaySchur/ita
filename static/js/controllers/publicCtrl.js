@@ -66,6 +66,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
             restCallManager.post( insertContactUs, $http, info , "insertContactUs");
             function insertContactUs(result , status , success) {
                 if (success) {
+                    $scope.mailSent = true;
                     console.log("Contact Us Saved Success");
                 } else {
 
@@ -320,14 +321,14 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     function getAllProjects(result1 , status , success) {
                         $scope.projects = result1;
                         console.log($scope.projects);
-                        $scope.mySideProjects = [];
+                        $rootScope.mySideProjects = [];
                         if (success) {
                             result1.forEach(function(project){
                                 console.log(project.subCategoryId);
                                 console.log($scope.selectedProject.subCategoryId);
                                if(project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
                                    project.slides = getMiniCarousel(project);
-                                   $scope.mySideProjects.push(project);
+                                   $rootScope.mySideProjects.push(project);
                                }
 
                                $scope.slides = getMiniCarousel($scope.selectedProject);

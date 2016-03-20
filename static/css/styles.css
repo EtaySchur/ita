@@ -213,6 +213,12 @@ input , textarea{
      color: white;
  }
 
+.boldMiniTitle{
+    font-family: myBold;
+    font-size: 22px;
+    color: #4e4e4e;
+}
+
 .boldSemiText{
     font-family: myBold;
     font-size: 20px;
@@ -304,8 +310,21 @@ input , textarea{
 }
 
 
+.textWrap{
+    padding: 50px;
+}
 
+.sendMailConfirmationOuter{
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    border-width: 3px;
+    border-color: #4e4e4e;
+    border-radius: 0;
+    border-style: solid;
+    top : calc(50% + 160px);
 
+}
 
 .boldSubtitle .active{
     font-family: myBold;
@@ -313,7 +332,10 @@ input , textarea{
     color: #4e4e4e;
 }
 
-
+.disableButtonText{
+    opacity: 0.5;
+    cursor: default !important;
+}
 
 .carousel-caption{
     top : 20px !important;
