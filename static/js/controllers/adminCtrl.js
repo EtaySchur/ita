@@ -73,6 +73,7 @@ app.controller('GeneralCtrl', ['$scope', '$log' , '$http' , '$uibModal' ,  funct
             animation: true,
             templateUrl: 'deleteMiniProject.html',
             controller: 'DeleteModalInstanceCtrl',
+            backdrop : 'static'  ,
             resolve: {
                 item: function () {
                     return item;

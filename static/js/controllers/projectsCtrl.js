@@ -84,6 +84,7 @@ $scope.togglePublish = function (item){
             animation: $scope.animationsEnabled,
             templateUrl: 'editProjectModal.html',
             controller: 'EditProjectModalCtrl',
+            backdrop : 'static'  ,
             size : 'lg',
             resolve: {
                 item: function () {
@@ -148,6 +149,7 @@ $scope.togglePublish = function (item){
             animation: $scope.animationsEnabled,
             templateUrl: 'addNewProjectModal.html',
             controller: 'ProjectModalCtrl',
+            backdrop : 'static'  ,
             resolve: {
                 item: function () {
                     return null;
@@ -177,6 +179,7 @@ $scope.togglePublish = function (item){
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'deleteProject.html',
+            backdrop : 'static'  ,
             controller: 'DeleteModalInstanceCtrl',
             resolve: {
                 item: function () {
@@ -225,6 +228,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
             animation: true,
             templateUrl: 'deleteCategory.html',
             controller: 'addSubCategoryModalCtrl',
+            backdrop : 'static'  ,
             resolve: {
                 item: function () {
                     return category;
@@ -259,6 +263,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
     $scope.openDeleteSubCategoryModal = function(size , subCategory , category){
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
+            backdrop : 'static'  ,
             templateUrl: 'deleteSubCategory.html',
             controller: 'addSubCategoryModalCtrl',
             resolve: {
@@ -292,6 +297,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'editSubCategory.html',
+            backdrop : 'static'  ,
             controller: 'addSubCategoryModalCtrl',
             resolve: {
                 item: function () {
@@ -322,6 +328,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'editCategory.html',
+            backdrop : 'static'  ,
             controller: 'addSubCategoryModalCtrl',
             resolve: {
                 item: function () {
@@ -356,6 +363,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'addSubCategory.html',
+            backdrop : 'static'  ,
             controller: 'addSubCategoryModalCtrl',
             resolve: {
                 item: function () {
@@ -400,8 +408,10 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'addCategory.html',
+            backdrop : 'static'  ,
             controller: 'DeleteModalInstanceCtrl',
-            resolve: {
+            backdrop : 'static'  ,
+                resolve: {
                 item: function () {
                     return category;
                 }
@@ -459,6 +469,7 @@ app.controller('CarouselCtrl', ['$scope' , '$http', '$uibModal' , '$log', 'fileU
             animation: $scope.animationsEnabled,
             templateUrl: 'deleteCarousel.html',
             controller: 'DeleteModalInstanceCtrl',
+            backdrop : 'static'  ,
             resolve: {
                 item: function () {
                     return image;
@@ -502,6 +513,7 @@ app.controller('CarouselCtrl', ['$scope' , '$http', '$uibModal' , '$log', 'fileU
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'carousel.html',
+            backdrop : 'static'  ,
             controller: 'ModalInstanceCtrl',
             resolve: {
                 item: function () {

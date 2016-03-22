@@ -32,6 +32,7 @@ app.controller('TestimonialsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' ,f
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: templateId,
+            backdrop : 'static'  ,
             controller: 'addTestimonialCtrl',
             resolve: {
                 item: function () {
@@ -49,6 +50,7 @@ app.controller('TestimonialsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' ,f
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'deleteTestimonial.html',
+            backdrop : 'static'  ,
             controller: 'DeleteModalInstanceCtrl',
             resolve: {
                 item: function () {
