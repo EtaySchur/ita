@@ -2,7 +2,7 @@
      ng-class="{'bounceOutRight' : !showSideProjects}" class="floatingNavBar animated bounceInRight">
     <div style="margin-top: 80px" class="imagesContainer">
 
-        <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-click="gotoElement('sideProject'+$index)"
+        <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" scroll-to=('sideProject'+$index)"
              ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
              style="position: relative;text-align: center;width: 100%;margin-bottom: 28px" class="clickable"
              ng-repeat="project in mySideProjects | limitTo : 4">

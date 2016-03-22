@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="static/css/glyphter-font/css/Glyphter.css">
     <link rel="stylesheet" href="static/css/2/css/Glyphter.css">
     <script src="static/js/publicApp.js"></script>
+    <script src="static/js/vendor/ngSmoothScroll-master/lib/angular-smooth-scroll.js"></script>
+
     <script src="static/js/controllers/publicCtrl.js"></script>
     <script src="static/js/vendor/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
@@ -44,10 +46,10 @@
     </div>
     <ul  style="float: right;direction: rtl" class="nav navbar-nav">
 
-        <li   ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('contactUsSection')">צור קשר</a></li>
-        <li ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('testimonialsSection')">לקוחות ממליצים</a></li>
-        <li ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText" ng-click="gotoElement('whoWeAreSection')">קצת עלינו</a></li>
-        <li ng-if="showNav || !imTopped && !imProjected " class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped  }" class="boldSmallText" ng-click="gotoElement('projectsSection')">פרוייקטים</a></li>
+        <li   ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"   offset="60" scroll-to="contactUsSection">צור קשר</a></li>
+        <li ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"  offset="60" scroll-to="testimonialsSection">לקוחות ממליצים</a></li>
+        <li ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"  offset="60" scroll-to="whoWeAreSection">קצת עלינו</a></li>
+        <li ng-if="showNav || !imTopped && !imProjected " class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped  }" class="boldSmallText"  offset="70" scroll-to="projectsSection">פרוייקטים</a></li>
         <li   ng-if="imTopped && !showNav && !imProjected"  class="clickable">
             <a  ng-click="toggleNav()">
                 <i style="color: white" class="icon-Menu"></i>
