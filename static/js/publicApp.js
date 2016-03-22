@@ -98,12 +98,12 @@ publicApp.service('anchorSmoothScroll', function(){
         var timer = 0;
         if (stopY > startY) {
             for ( var i=startY; i<stopY; i+=step ) {
-                setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+                setTimeout("window.scrollTo(0, "+(leapY-62)+")", timer * speed);
                 leapY += step; if (leapY > stopY) leapY = stopY; timer++;
             } return;
         }
         for ( var i=startY; i>stopY; i-=step ) {
-            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+            setTimeout("window.scrollTo(0, "+(leapY-62)+")", timer * speed);
             leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
         }
 
