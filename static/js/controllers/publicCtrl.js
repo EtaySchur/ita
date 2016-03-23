@@ -128,9 +128,9 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 }]);
 
 
-publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , 'CategoriesService',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , CategoriesService) {
+publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , 'CategoriesService' , '$window',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , CategoriesService , $window) {
     $rootScope.mailSent = false;
-
+    $window.scrollTo(0,0)
     $scope.noWrapSlides = false;
     $rootScope.imProjected = false;
 
@@ -263,7 +263,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window' , '$timeout',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window , $timeout) {
     $rootScope.showSideProjects = false;
     $scope.minIndex = 0;
-
+    $scope.sideBarLimitItems = 5;
 
     $rootScope.imProjected = true;
     console.log($rootScope.showSideProjects);
@@ -380,6 +380,10 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
         $scope.hoveredTestimonal = {};
     };
 
+    $scope.navToProject = function(projectId){
+        $location.path('/'+projectId);
+    }
+
 
     var projectId = $routeParams.projectId;
 
@@ -419,17 +423,20 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                         $rootScope.otherProjects = [];
                         if (success) {
                             var index = 0;
+                            var counter = 0;
                             result1.forEach(function(project){
                                 console.log(project.subCategoryId);
                                 console.log($scope.selectedProject.subCategoryId);
-                               if(project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
+                               if(project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id && counter < $scope.sideBarLimitItems){
                                    project.slides = getMiniCarousel(project);
 
                                    $rootScope.mySideProjects.push(project);
+                                   counter++;
                                }
 
-                                if(project.subCategoryId != $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
+                                if(project.subCategoryId != $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id  && counter < $scope.sideBarLimitItems){
                                     $rootScope.otherProjects.push(project);
+                                    counter++;
                                 }
 
 

@@ -11,7 +11,7 @@
             </div>
             <img style="height: 135px;width: 226px" ng-src="{{project.sideBarImage}}">
         </div>
-        <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()"
+        <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-click="navToProject(otherProject.id)"
              ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
              style="position: relative;text-align: center;width: 100%;margin-bottom: 28px" class="clickable"
              ng-repeat="otherProject in otherProjects | limitTo : 4">
