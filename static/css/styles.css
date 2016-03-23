@@ -459,6 +459,10 @@ input , textarea{
 
 }
 
+textarea[name=contactFreeText] {
+    resize: none;
+}
+
 .carousel-indicators li{
     border-radius: 0 !important;
     height: 16px;

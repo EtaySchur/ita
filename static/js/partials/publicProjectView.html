@@ -333,7 +333,7 @@
         </div>
         <img style="width: 100%" src="static/assets/Footer_bg.jpg">
     </div>
-    <div style="text-align: center" class="col-xs-6 col-md-4 col-md-offset-1   alignRight rtl">
+    <div style="text-align: center" class="col-xs-6 col-md-5   alignRight rtl">
         <div class="row">
             <h3 style="font-size: 46px;margin-top: 55px;margin-bottom: 30px" class="rtl alignRight bold myGrey"> בואו
                 נדבר </h3>
@@ -378,7 +378,7 @@
                     <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
                     <input name="fullNameInput" required ng-model="contact.fullName" type="text"
                            class="form-control myGrey contactUsInput" id="exampleInputEmail1"
-                           placeholder="הכנס/י את שמך המלא כאן">
+                           >
 
                     <p ng-show="!contactUsForm.fullNameInput.$valid && validateAll" style="color: red"> שדה חובה </p>
                 </div>
@@ -386,7 +386,7 @@
                     <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
                     <input name="phoneInput" required ng-model="contact.phone" type="text"
                            class="form-control myGrey contactUsInput" id="exampleInputPassword1"
-                           placeholder="הכנס/י את מספר הטלפון כאן">
+                          >
 
                     <p ng-show="!contactUsForm.phoneInput.$valid && validateAll" style="color: red"> שדה חובה </p>
                 </div>
@@ -394,12 +394,12 @@
                     <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
                     <input name="emailInput" ng-model="contact.email" type="email"
                            class="form-control myGrey contactUsInput" id="exampleInputPassword1"
-                           placeholder="הכנס/י את כתובת האי מייל כאן">
+                          >
                     <!--p ng-show="!contactUsForm.emailInput.$valid && validateAll" style="color: red"> שדה חובה </p-->
                 </div>
                 <div style="margin-bottom: 20px" class="form-group">
                     <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
-                    <textarea rows="5" ng-model="contact.howCanWeHelp" type="text"
+                    <textarea maxlength="600" rows="5" ng-model="contact.howCanWeHelp" type="text"
                               class="form-control myGrey contactUsTextArea" id="exampleInputPassword1"> </textarea>
                 </div>
                 <div ng-class="{'disableButtonText' : sendingMail}" style="margin-top: 30px;margin-bottom: 55px" class="clickable">
