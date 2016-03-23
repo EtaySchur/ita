@@ -5,7 +5,7 @@
         <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" scroll-to="sideProject{{$index}}"
              ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
              style="position: relative;text-align: center;width: 100%;margin-bottom: 28px" class="clickable"
-             ng-repeat="project in mySideProjects | limitTo : 4">
+             ng-repeat="project in mySideProjects | limitTo : 5">
             <div ng-show="hoverEdit" style="color: white;position: absolute;top : 40%;width: 100%;text-align: center"
                  class="boldSubtitle"> {{project.title}}
             </div>
@@ -14,7 +14,7 @@
         <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-click="navToProject(otherProject.id)"
              ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
              style="position: relative;text-align: center;width: 100%;margin-bottom: 28px" class="clickable"
-             ng-repeat="otherProject in otherProjects | limitTo : 4">
+             ng-repeat="otherProject in otherProjects | limitTo : sideBarLimitItems - mySideProjects.length">
             <div ng-show="hoverEdit" style="color: white;position: absolute;top : 40%;width: 100%;text-align: center"
                  class="boldSubtitle"> {{otherProject.title}}
             </div>

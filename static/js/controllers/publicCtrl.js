@@ -427,14 +427,14 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                             result1.forEach(function(project){
                                 console.log(project.subCategoryId);
                                 console.log($scope.selectedProject.subCategoryId);
-                               if(project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
+                               if(project.subCategoryId == $scope.selectedProject.subCategoryId){
                                    project.slides = getMiniCarousel(project);
 
                                    $rootScope.mySideProjects.push(project);
                                    counter++;
                                }
 
-                                if(project.subCategoryId != $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id  && counter <= $scope.sideBarLimitItems){
+                                if(project.subCategoryId != $scope.selectedProject.subCategoryId){
                                     $rootScope.otherProjects.push(project);
                                     counter++;
                                 }
