@@ -416,6 +416,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                         $scope.projects = result1;
                         console.log($scope.projects);
                         $rootScope.mySideProjects = [];
+                        $rootScope.otherProjects = [];
                         if (success) {
                             var index = 0;
                             result1.forEach(function(project){
@@ -426,6 +427,12 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
                                    $rootScope.mySideProjects.push(project);
                                }
+
+                                if(project.subCategoryId != $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
+                                    $rootScope.otherProjects.push(project);
+                                }
+
+
 
                                $scope.slides = getMiniCarousel($scope.selectedProject);
 

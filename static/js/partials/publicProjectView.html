@@ -11,6 +11,15 @@
             </div>
             <img style="height: 135px;width: 226px" ng-src="{{project.sideBarImage}}">
         </div>
+        <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()"
+             ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
+             style="position: relative;text-align: center;width: 100%;margin-bottom: 28px" class="clickable"
+             ng-repeat="otherProject in otherProjects | limitTo : 4">
+            <div ng-show="hoverEdit" style="color: white;position: absolute;top : 40%;width: 100%;text-align: center"
+                 class="boldSubtitle"> {{otherProject.title}}
+            </div>
+            <img style="height: 135px;width: 226px" ng-src="{{otherProject.sideBarImage}}">
+        </div>
     </div>
 
 </div>
