@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96320c9f-0239-4de9-bdf9-dc28f01afea7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" afterPath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -87,8 +88,8 @@
       <file leaf-file-name="publicCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="8976">
-              <caret line="438" column="46" selection-start-line="438" selection-start-column="46" selection-end-line="438" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6375" max-vertical-offset="8976">
+              <caret line="407" column="29" selection-start-line="407" selection-start-column="29" selection-end-line="407" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -129,8 +130,8 @@
       <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10691824" vertical-offset="0" max-vertical-offset="7378">
-              <caret line="4" column="94" selection-start-line="4" selection-start-column="94" selection-end-line="4" selection-end-column="94" />
+            <state vertical-scroll-proportion="0.02672956" vertical-offset="51" max-vertical-offset="7378">
+              <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -764,7 +765,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458755746646</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="limit items">
+      <created>1458755843807</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1458755843807</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1228,16 +1235,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7038" max-vertical-offset="8976">
-          <caret line="438" column="46" selection-start-line="438" selection-start-column="46" selection-end-line="438" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6375" max-vertical-offset="8976">
+          <caret line="407" column="29" selection-start-line="407" selection-start-column="29" selection-end-line="407" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10691824" vertical-offset="0" max-vertical-offset="7378">
-          <caret line="4" column="94" selection-start-line="4" selection-start-column="94" selection-end-line="4" selection-end-column="94" />
+        <state vertical-scroll-proportion="0.02672956" vertical-offset="51" max-vertical-offset="7378">
+          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
