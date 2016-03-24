@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96320c9f-0239-4de9-bdf9-dc28f01afea7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/UploadController.php" afterPath="$PROJECT_DIR$/server/UploadController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/categories.html" afterPath="$PROJECT_DIR$/static/js/partials/categories.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/db/manager.php" afterPath="$PROJECT_DIR$/server/db/manager.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" afterPath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="VagrantBoxes.iws" />
@@ -32,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="projectsCtrl.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="projectsCtrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.821428" vertical-offset="7043" max-vertical-offset="21301">
-              <caret line="444" column="0" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.67387944" vertical-offset="7061" max-vertical-offset="21284">
+              <caret line="443" column="67" selection-start-line="443" selection-start-column="67" selection-end-line="443" selection-end-column="67" />
               <folding>
                 <element signature="e#0#46#0" expanded="false" />
               </folding>
@@ -84,8 +81,8 @@
       <file leaf-file-name="publicCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4641" max-vertical-offset="8976">
-              <caret line="296" column="75" selection-start-line="296" selection-start-column="75" selection-end-line="296" selection-end-column="75" />
+            <state vertical-scroll-proportion="-7.535714" vertical-offset="945" max-vertical-offset="8976">
+              <caret line="68" column="48" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -104,9 +101,10 @@
       <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="7378">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.314815" vertical-offset="580" max-vertical-offset="7378">
+              <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -231,11 +229,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="categories.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="categories.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/partials/categories.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37459806" vertical-offset="872" max-vertical-offset="3026">
-              <caret line="65" column="136" selection-start-line="65" selection-start-column="136" selection-end-line="65" selection-end-column="136" />
+            <state vertical-scroll-proportion="-3.6851852" vertical-offset="872" max-vertical-offset="3026">
+              <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -297,13 +295,13 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/static/js/partials/mainPublicApp.html" />
         <option value="$PROJECT_DIR$/public.html" />
-        <option value="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
         <option value="$PROJECT_DIR$/static/css/styles.css" />
         <option value="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
         <option value="$PROJECT_DIR$/server/UploadController.php" />
         <option value="$PROJECT_DIR$/server/db/manager.php" />
-        <option value="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" />
         <option value="$PROJECT_DIR$/static/js/partials/categories.html" />
+        <option value="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
+        <option value="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" />
       </list>
     </option>
   </component>
@@ -778,7 +776,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458756786021</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="add image bannar to sub category">
+      <created>1458845330785</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1458845330785</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -805,7 +809,8 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23891892" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2391775" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23675676" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
@@ -820,7 +825,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -856,7 +860,8 @@
     <MESSAGE value="making side projects" />
     <MESSAGE value="limit items" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="add image bannar to sub category" />
+    <option name="LAST_COMMIT_MESSAGE" value="add image bannar to sub category" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1224,11 +1229,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7299" max-vertical-offset="11968">
+          <caret line="467" column="12" selection-start-line="467" selection-start-column="12" selection-end-line="467" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/partials/carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="1326">
+          <caret line="45" column="89" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/adminCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2529" max-vertical-offset="4658">
+          <caret line="162" column="27" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/UploadController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.0925927" vertical-offset="1640" max-vertical-offset="5559">
+          <caret line="119" column="49" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/db/manager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.538462" vertical-offset="4152" max-vertical-offset="7293">
+          <caret line="273" column="54" selection-start-line="273" selection-start-column="54" selection-end-line="273" selection-end-column="54" />
+          <folding>
+            <marker date="1458843754822" expanded="true" signature="750:793" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="1040:1092" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="1338:1388" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="1629:1679" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="2664:2730" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="2983:3029" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="3276:3314" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="3694:3717" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="6102:6171" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="6605:6656" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="6919:6999" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="8150:8307" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="9773:9844" placeholder="SELECT * fro..." />
+            <marker date="1458843754822" expanded="true" signature="11765:11817" placeholder="INSERT INTO ..." />
+            <marker date="1458843754822" expanded="true" signature="12206:12218" placeholder="DELETE FROM ..." />
+            <marker date="1458843754822" expanded="true" signature="12323:12366" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/partials/categories.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6851852" vertical-offset="872" max-vertical-offset="3026">
+          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="7378">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.314815" vertical-offset="580" max-vertical-offset="7378">
+          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1342,86 +1413,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7299" max-vertical-offset="11968">
-          <caret line="467" column="12" selection-start-line="467" selection-start-column="12" selection-end-line="467" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/partials/carousel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="1326">
-          <caret line="45" column="89" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/controllers/adminCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2529" max-vertical-offset="4658">
-          <caret line="162" column="27" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4641" max-vertical-offset="8976">
-          <caret line="296" column="75" selection-start-line="296" selection-start-column="75" selection-end-line="296" selection-end-column="75" />
+        <state vertical-scroll-proportion="-7.535714" vertical-offset="945" max-vertical-offset="8976">
+          <caret line="68" column="48" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.821428" vertical-offset="7043" max-vertical-offset="21301">
-          <caret line="444" column="0" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.67387944" vertical-offset="7061" max-vertical-offset="21284">
+          <caret line="443" column="67" selection-start-line="443" selection-start-column="67" selection-end-line="443" selection-end-column="67" />
           <folding>
             <element signature="e#0#46#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/UploadController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0925927" vertical-offset="1640" max-vertical-offset="5559">
-          <caret line="119" column="49" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/db/manager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.538462" vertical-offset="4152" max-vertical-offset="7293">
-          <caret line="273" column="54" selection-start-line="273" selection-start-column="54" selection-end-line="273" selection-end-column="54" />
-          <folding>
-            <marker date="1458843754822" expanded="true" signature="750:793" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="1040:1092" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="1338:1388" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="1629:1679" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="2664:2730" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="2983:3029" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="3276:3314" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="3694:3717" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="6102:6171" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="6605:6656" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="6919:6999" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="8150:8307" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="9773:9844" placeholder="SELECT * fro..." />
-            <marker date="1458843754822" expanded="true" signature="11765:11817" placeholder="INSERT INTO ..." />
-            <marker date="1458843754822" expanded="true" signature="12206:12218" placeholder="DELETE FROM ..." />
-            <marker date="1458843754822" expanded="true" signature="12323:12366" placeholder="DELETE FROM ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/partials/categories.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37459806" vertical-offset="872" max-vertical-offset="3026">
-          <caret line="65" column="136" selection-start-line="65" selection-start-column="136" selection-end-line="65" selection-end-column="136" />
-          <folding />
         </state>
       </provider>
     </entry>

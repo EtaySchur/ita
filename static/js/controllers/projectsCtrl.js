@@ -343,7 +343,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' , '$r
 
                     file : $rootScope.subCategoriesBannerFile
                 }).success(function(data, status, headers, config) {
-
+                    $rootScope.subCategoriesBannerFile = undefined;
                     // file is uploaded successfully
                    $scope.initData();
                     alertMe( "success" ,"Edit Sub Category Success");
@@ -354,19 +354,18 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' , '$r
                     $scope.uploadingImage = false;
                 });
             }else{
-                restCallManager.post(addCategoryCallback , $http, subCategory , "editSubCategoryTitle");
-
-            }
-
-
-            restCallManager.post(editSubCategoryTitleCallback , $http, subCategory , "editSubCategoryTitle");
-            function editSubCategoryTitleCallback(result , status , success) {
-                if (success) {
-                    alertMe( "success" ,"Save Category Success");
-                } else {
-                    dangerMe( "danger" ,"Save Category Fail");
+                restCallManager.post(editSubCategoryTitleCallback , $http, subCategory , "editSubCategoryTitle");
+                function editSubCategoryTitleCallback(result , status , success) {
+                    if (success) {
+                        alertMe( "success" ,"Save Category Success");
+                    } else {
+                        dangerMe( "danger" ,"Save Category Fail");
+                    }
                 }
             }
+
+
+
         }, function () {
             $log.info('Modal dismissed at: ' + new Date());
         });
@@ -442,7 +441,7 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' , '$r
 
                     file : $rootScope.subCategoriesBannerFile
                 }).success(function(data, status, headers, config) {
-
+                    $rootScope.subCategoriesBannerFile = undefined;
                     // file is uploaded successfully
                    // $scope.initData();
                     alertMe( "success" ,"Create New Sub Category Success");
