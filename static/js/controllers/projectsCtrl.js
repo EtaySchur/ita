@@ -212,15 +212,33 @@ $scope.togglePublish = function (item){
 
 
 
-app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,function($scope , $http , $uibModal, $log) {
+app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' , '$rootScope' , '$upload' ,function($scope , $http , $uibModal, $log , $rootScope , $upload) {
     $scope.animationsEnabled = true;
-    var restCallManager = new RestCallManager();
-    restCallManager.post(getCategoriesCallback , $http, null , "getCategories");
-    function getCategoriesCallback(result , status , success) {
-        if (success) {
-            $scope.categories = result;
-        } else {
+    $scope.initData = function(){
+        var restCallManager = new RestCallManager();
+        restCallManager.post(getCategoriesCallback , $http, null , "getCategories");
+        function getCategoriesCallback(result , status , success) {
+            if (success) {
+                $scope.categories = result;
+            } else {
+            }
         }
+    };
+
+
+    $scope.initData();
+
+
+    $scope.onCampaignMainImageSelect = function ($files){
+        var file = $files[0];
+
+        if (file.type.indexOf('image') == -1) {
+            $scope.mainImageErrorText = 'image extension not allowed, please choose a JPEG or PNG file.'
+            $scope.mainImageError = true;
+            return false;
+        }
+        $scope.url = URL.createObjectURL(file);
+        $scope.newCarouselImage  = $files[0];
     }
 
     $scope.openDeleteCategoryModal = function(size , category){
@@ -310,7 +328,37 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
         });
 
         modalInstance.result.then(function (subCategory) {
+
             var restCallManager = new RestCallManager();
+
+
+            if($rootScope.subCategoriesBannerFile){
+                $scope.upload = $upload.upload({
+                    url : 'server/UploadController.php',
+                    data : {
+                        fname : $rootScope.subCategoriesBannerFile.name,
+                        action : 'uploadSubCategoryBanner',
+                        image : subCategory
+                    },
+
+                    file : $rootScope.subCategoriesBannerFile
+                }).success(function(data, status, headers, config) {
+
+                    // file is uploaded successfully
+                   $scope.initData();
+                    alertMe( "success" ,"Edit Sub Category Success");
+                    modalInstance.close(newImage);
+                    return;
+                }).error(function(data, status, headers, config){
+                    dangerMe( "danger" ,"Edit Sub Category Fail");
+                    $scope.uploadingImage = false;
+                });
+            }else{
+                restCallManager.post(addCategoryCallback , $http, subCategory , "editSubCategoryTitle");
+
+            }
+
+
             restCallManager.post(editSubCategoryTitleCallback , $http, subCategory , "editSubCategoryTitle");
             function editSubCategoryTitleCallback(result , status , success) {
                 if (success) {
@@ -372,20 +420,51 @@ app.controller('CategoriesCtrl', ['$scope',  '$http', '$uibModal' , '$log' ,func
                 type : function(){
                     return 'subCategory'
                 }
+
             }
         });
 
 
         modalInstance.result.then(function (newSubCategory) {
-            var data = {
-                newSubCategoryTitle : newSubCategory ,
-                category : category
-            }
+
+            newSubCategory.categoryId = category.id;
+
             var restCallManager = new RestCallManager();
-            restCallManager.post(addCategoryCallback , $http, data , "addSubCategory");
+
+            if($rootScope.subCategoriesBannerFile){
+                $scope.upload = $upload.upload({
+                    url : 'server/UploadController.php',
+                    data : {
+                        fname : $rootScope.subCategoriesBannerFile.name,
+                        action : 'uploadSubCategoryBanner',
+                        image : newSubCategory
+                    },
+
+                    file : $rootScope.subCategoriesBannerFile
+                }).success(function(data, status, headers, config) {
+
+                    // file is uploaded successfully
+                   // $scope.initData();
+                    alertMe( "success" ,"Create New Sub Category Success");
+                    $scope.uploadingImage = false;
+                    modalInstance.close();
+                    return;
+                }).error(function(data, status, headers, config){
+                    dangerMe( "danger" ,"My Text");
+                    $scope.uploadingImage = false;
+                });
+            }else{
+                restCallManager.post(addCategoryCallback , $http, data , "addSubCategory");
+
+            }
+
+
+
+
             function addCategoryCallback(result , status , success) {
                 if (success) {
                     newSubCategory.id = result.id;
+
                     if(category.subCategories == null) {
                         category.subCategories = [];
                     }
@@ -545,9 +624,12 @@ app.controller('CarouselCtrl', ['$scope' , '$http', '$uibModal' , '$log', 'fileU
 
 
 
-app.controller('addSubCategoryModalCtrl', function ($scope, $uibModalInstance, item , type) {
+app.controller('addSubCategoryModalCtrl', function ($scope, $uibModalInstance, item , type  ,$rootScope) {
     $scope.type = type;
     $scope.item = item;
+
+
+
     $scope.ok = function () {
         $uibModalInstance.close($scope.item);
     }
@@ -555,6 +637,34 @@ app.controller('addSubCategoryModalCtrl', function ($scope, $uibModalInstance, i
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
+
+
+
+
+    $scope.onCampaignMainImageSelect = function ($files){
+        var file = $files[0];
+        if(validImage(file)){
+            $rootScope.subCategoriesBannerUrl = URL.createObjectURL(file);
+            $rootScope.subCategoriesBannerFile  = $files[0];
+        }
+
+
+    }
+
+
+    function validImage(file){
+        if (file.type.indexOf('image') == -1) {
+            $scope.mainImageErrorText = 'image extension not allowed, please choose a JPEG or PNG file.'
+            $scope.mainImageError = true;
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+
+
+
 
 });
 
@@ -639,17 +749,7 @@ app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, item , 
         $uibModalInstance.dismiss('cancel');
     };
 
-    $scope.onCampaignMainImageSelect = function ($files){
-        var file = $files[0];
 
-        if (file.type.indexOf('image') == -1) {
-            $scope.mainImageErrorText = 'image extension not allowed, please choose a JPEG or PNG file.'
-            $scope.mainImageError = true;
-            return false;
-        }
-        $scope.url = URL.createObjectURL(file);
-        $scope.newCarouselImage  = $files[0];
-    }
 });
 
 app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item , $upload , categories, $http ) {

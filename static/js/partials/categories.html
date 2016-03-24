@@ -53,7 +53,7 @@
 <div>
     <script type="text/ng-template" id="editSubCategory.html">
         <div class="modal-header">
-            <h3 class="modal-title">Edit Category</h3>
+            <h3 class="modal-title">Edit Sub Category</h3>
         </div>
         <div class="modal-body">
             <div class="form-group">
@@ -65,6 +65,18 @@
                 <label for="exampleInputEmail1">Subcategory Description</label>
                 <input ng-model="item.description" type="text" class="form-control" id="exampleInputEmail1" placeholder="Category Name">
             </div>
+            <div ng-if="type = 'subCategory'" class="form-group">
+                <label for="exampleInputEmail1">Sub Category Banner</label>
+                <div ng-if="subCategoriesBannerUrl == null" class="form-group">
+                    <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail">
+                </div>
+                <div ng-if="subCategoriesBannerUrl != null" class="form-group">
+                    <img ng-src="{{subCategoriesBannerUrl}}" alt="..." class="img-thumbnail">
+                </div>
+
+            </div>
+            <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
+
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" type="button" ng-click="ok()">Save Sub Category <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>
@@ -101,6 +113,21 @@
                 <label for="exampleInputEmail1">Sub Category Name</label>
                 <input ng-model="item.title" type="text" class="form-control" id="exampleInputEmail12" placeholder="Sub Category Name">
             </div>
+            <div ng-if="type = 'subCategory'" class="form-group">
+                <label for="exampleInputEmail1">Subcategory Description</label>
+                <input ng-model="item.description" type="text" class="form-control" id="exampleInputEmail1" placeholder="Sub Category Description">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Sub Category Banner</label>
+            <div ng-if="subCategoriesBannerUrl == null && imageId != null" class="form-group">
+                <img ng-src="{{item.imagePath}}" alt="..." class="img-thumbnail">
+            </div>
+            <div ng-if="subCategoriesBannerUrl != null" class="form-group">
+                <img ng-src="{{subCategoriesBannerUrl}}" alt="..." class="img-thumbnail">
+            </div>
+                </div>
+
+            <button class="btn btn-default" ng-file-select="onCampaignMainImageSelect($files)">Upload Image File</button>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" type="button" ng-click="ok()">Add Category <i ng-if="uploadingImage" class="fa fa-circle-o-notch fa-spin"></i></button>

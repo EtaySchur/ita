@@ -15,7 +15,7 @@ $action = $_POST["action"];
 
 
 if (true) {
-    if($action == 'uploadNewCarouselImage' || $action == 'uploadNewMiniProjectImage'){
+    if($action == 'uploadNewCarouselImage' || $action == 'uploadNewMiniProjectImage' || $action == 'uploadSubCategoryBanner'){
         //The error validation could be done on the javascript client side.
         $errors = array();
         $file_name = $_FILES['file']['name'];
@@ -92,6 +92,39 @@ if (true) {
                 print_r($errors);
             }
         break;
+        case 'uploadSubCategoryBanner' :
+
+            $image = json_decode($_POST["image"]);
+
+            if (in_array($file_ext, $extensions) === false) {
+                $errors[] = "image extension not allowed, please choose a JPEG or PNG file.";
+            }
+            if ($file_size > 2097152) {
+                $errors[] = 'File size cannot exceed 2 MB';
+            }
+            if (empty($errors) == true) {
+                if (!file_exists("static/images/".CAROUSEL_PATH)) {
+                    var_dump("Making dir");
+                    mkdir("static/images/".CAROUSEL_PATH, 0777, true);
+                } else {
+
+                }
+                move_uploaded_file($file_tmp, "static/images/" . CAROUSEL_PATH.$timestamp.".".$file_ext);
+                $imagePath = "server/static/images/" . CAROUSEL_PATH.$timestamp.".".$file_ext;
+
+                if(!isset($image->id)){
+                    $image->imagePath = $imagePath;
+                    $response = DbManager::addSubCategory($image);
+                }else{
+                    $image->imagePath =  "server/static/images/" . CAROUSEL_PATH.$timestamp.".".$file_ext;
+                    $response = DbManager::editSubCategoryTitle($image);
+                }
+                $response['imagePath'] = $imagePath;
+                echo json_encode($response);
+            } else {
+                print_r($errors);
+            }
+            break;
         case 'uploadProjectImage' :
             $project = json_decode($_POST["project"]);
             if(isset($_FILES["file"])){

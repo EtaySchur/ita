@@ -214,10 +214,7 @@ class DbManager {
     }
 
     public static function addSubCategory($data){
-        $record = array();
-        $record["title"] = $data->newSubCategoryTitle->title;
-        $record["categoryId"] = $data->category->id;
-        return self::insertToDb("subCategories" , $record);
+        return self::insertToDb("subCategories" , $data);
     }
 
     public static function getCategories(){
