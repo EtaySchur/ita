@@ -197,11 +197,11 @@
 </div>
 <div   style="margin-bottom: 80px;" class="row noLeftRightMargin">
     <div   class="col-xs-12 col-md-6 col-md-offset-3 rtl">
-        <div  style="margin-bottom: 30px;text-align: center;padding-left: 40px;padding-right: 40px">
-            <i style="color: #cbcbcb;font-size: 40px" class="icon-commas commaImageRight"> </i>
-            <div class="regularLargeText myGrey"> {{selectedTestimonial.title}}  </div>
+        <div  style="margin-bottom: 30px;text-align: center;padding-left: 40px;padding-right: 40px;margin-top: 27px;height: 128px;position: relative">
+            <i style="color: #cbcbcb;font-size: 34px" class="icon-commas commaImageRight"> </i>
+            <div style="margin-bottom: 15px" class="regularLargeText myGrey"> {{selectedTestimonial.title}}  </div>
             <p class="regularText myOtherGrey"> {{selectedTestimonial.subTitle}}</p>
-            <i style="color: #cbcbcb;font-size: 40px" class="icon-commas commaImageLeft"> </i>
+            <i style="color: #cbcbcb;font-size: 34px" class="icon-commas commaImageLeft"> </i>
         </div>
         <div style="text-align: center;margin-top: 30px" ng-click="setTestimonial(item)" ng-repeat="item in testimonials | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-md-4 col-xs-4 testImageContainer">
             <img ng-class="{ 'actived': selectedTestimonial.id == item.id}" class="img img-circle img-thumbnail myThumb testimonialSmallImage  bounceInLeft clickable" ng-src="{{getImagePath(item)}}">
@@ -304,7 +304,7 @@
                 </div>
                 <div style="margin-bottom: 20px" class="form-group">
                     <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
-                    <textarea maxlength="600" rows="5" ng-model="contact.howCanWeHelp" type="text"
+                    <textarea style="resize: none;" maxlength="600" rows="5" ng-model="contact.howCanWeHelp" type="text"
                               class="form-control myGrey contactUsTextArea" id="exampleInputPassword1"> </textarea>
                 </div>
                 <div ng-class="{'disableButtonText' : sendingMail}" style="margin-top: 30px;margin-bottom: 55px" class="clickable">
