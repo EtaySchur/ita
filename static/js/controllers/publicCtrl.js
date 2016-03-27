@@ -25,7 +25,15 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     }
 
     $scope.sendMail = function(info) {
-
+        //var restCallManager = new RestCallManager();
+        //restCallManager.post( getGeneralSettings, $http, null , "sendEmail");
+        //function getGeneralSettings(result , status , success) {
+        //    if (success) {
+        //        $rootScope.mailSent = true;
+        //    } else {
+        //
+        //    }
+        //}
         if(!this.contactUsForm.$valid){
             $rootScope.validateAll = true;
             return;
@@ -37,50 +45,61 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
         if(info.howCanWeHelp == undefined){
             info.howCanWeHelp = "";
         }
-        console.log(info);
-        var mailJSON = {
-            "key": "uISeYrp55OvaS7WaxGuA3A",
-            "message": {
-                "text": "שם : "+info.fullName +
-                "טלפון : "+info.phone +
-                "אי מייל "+info.email +
-                "איך אתה יכול לעזור "+info.howCanWeHelp,
-                "subject": "שעאמיט יקר , מישהו השאיר את הפרטים שלו באתר",
-                "from_email": "noreply@fooddelivery.com",
-                "from_name": "New Order",
-                "to": [
-                    {
-                        "email": "etayschur@gmail.com",
-                        "name": "New Order",
-                        "type": "to"
-                    }
-                ],
-                "important": true
-            }
-        };
-        var apiURL = "https://mandrillapp.com/api/1.0/messages/send.json";
-        $http.post(apiURL, mailJSON).
-        success(function (data, status, headers, config) {
-            var restCallManager = new RestCallManager();
-            restCallManager.post( insertContactUs, $http, info , "insertContactUs");
-            function insertContactUs(result , status , success) {
-                if (success) {
-                    $rootScope.mailSent = true;
-                    console.log("Contact Us Saved Success");
-                } else {
 
-                }
-            }
-            $scope.form = {};
-            console.log('successful email send.');
-            console.log('status: ' + status);
-            console.log('data: ' + data);
-            console.log('headers: ' + headers);
-            console.log('config: ' + config);
-        }).error(function (data, status, headers, config) {
-            console.log('error sending email.');
-            console.log('status: ' + status);
-        });
+        emailjs.init("user_Z8mRIlQBfdHB3FmQswOFC");
+        emailjs.send("gmail","template_rhVwgmtA",{name: "James", notes: "Check this out!" , to_email : "etayschur.dev@gmail.com"})
+            .then(function(response) {
+                console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+            }, function(err) {
+                console.log("FAILED. error=", err);
+            });
+
+
+
+        //console.log(info);
+        //var mailJSON = {
+        //    "key": "uISeYrp55OvaS7WaxGuA3A",
+        //    "message": {
+        //        "text": "שם : "+info.fullName +
+        //        "טלפון : "+info.phone +
+        //        "אי מייל "+info.email +
+        //        "איך אתה יכול לעזור "+info.howCanWeHelp,
+        //        "subject": "שעאמיט יקר , מישהו השאיר את הפרטים שלו באתר",
+        //        "from_email": "noreply@fooddelivery.com",
+        //        "from_name": "New Order",
+        //        "to": [
+        //            {
+        //                "email": "etayschur@gmail.com",
+        //                "name": "New Order",
+        //                "type": "to"
+        //            }
+        //        ],
+        //        "important": true
+        //    }
+        //};
+        //var apiURL = "https://mandrillapp.com/api/1.0/messages/send.json";
+        //$http.post(apiURL, mailJSON).
+        //success(function (data, status, headers, config) {
+        //    var restCallManager = new RestCallManager();
+        //    restCallManager.post( insertContactUs, $http, info , "insertContactUs");
+        //    function insertContactUs(result , status , success) {
+        //        if (success) {
+        //            $rootScope.mailSent = true;
+        //            console.log("Contact Us Saved Success");
+        //        } else {
+        //
+        //        }
+        //    }
+        //    $scope.form = {};
+        //    console.log('successful email send.');
+        //    console.log('status: ' + status);
+        //    console.log('data: ' + data);
+        //    console.log('headers: ' + headers);
+        //    console.log('config: ' + config);
+        //}).error(function (data, status, headers, config) {
+        //    console.log('error sending email.');
+        //    console.log('status: ' + status);
+        //});
     }
 
     var restCallManager = new RestCallManager();

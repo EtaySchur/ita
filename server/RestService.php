@@ -6,9 +6,9 @@
  * Time: 16:30
  */
 require_once 'db/manager.php';
+require_once 'mail/phpmailer.php';
 
 if (($_POST) || (isset($_POST))) {
-
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
 
@@ -129,6 +129,35 @@ if (($_POST) || (isset($_POST))) {
             $result = DbManager::getAdminMiniProjects($request->table , $request->data);
             echo json_encode($result);
             exit;
+        case "sendEmail" :
+            $mail             = new PHPMailer(); // defaults to using php "mail()"
+            $body             = file_get_contents('static/contact-us.html');
+           // $body             = eregi_replace("[\]",'',$body);
+            $mail->From = "etayschur@gmail.com";
+            $mail->FromName = "Full Name";
+            $body = str_replace("###USERNAME###", 'Fuad' , $body);
+            $body = str_replace("###PHONE###", 'Fuad' , $body);
+            $body = str_replace("###EMAIL###", 'Fuad' , $body);
+            $body = str_replace("###TEXT###", 'Fuad' , $body);
+
+//Address to which recipient will reply
+            $mail->addReplyTo("etayschur@gmail.com", "Reply");
+
+            $address = "etayschur@gmail.com";
+            $mail->AddAddress($address, "John Doe");
+            $mail->Subject    = "PHPMailer Test Subject via mail(), basic";
+
+            $mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+            $mail->isHTML(true);
+
+            $mail->Body = $body;
+            if(!$mail->Send()) {
+                echo "Mailer Error: " . $mail->ErrorInfo;
+            } else {
+                echo "Message sent!";
+            }
+            break;
+
 
 
 
