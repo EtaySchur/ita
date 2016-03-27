@@ -2,7 +2,7 @@
  * Created by EtaySchur on 23/11/2015.
  */
 
-app.controller('ProjectsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' , '$sanitize' , function($scope , $http , $uibModal , $log , $sanitize) {
+app.controller('ProjectsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' , '$sanitize' , '$rootScope' , '$window', function($scope , $http , $uibModal , $log , $sanitize , $rootScope , $window) {
     $scope.animationsEnabled = true;
 
 $scope.togglePublish = function (item){
@@ -24,6 +24,12 @@ $scope.togglePublish = function (item){
 
 
 }
+
+
+    $scope.projectSelected = function(project){
+        $rootScope.selectedProject = project;
+        $window.open('projects/'+project.id, '_blank');
+    }
 
     var restCallManager = new RestCallManager();
     restCallManager.post(callback , $http, null , "getManageProjects");

@@ -15,7 +15,10 @@
         <div class="list-group">
             <a ng-init="getTitles(item)" ng-repeat="item in projects | isCategory:filteredCategory | filter:query | orderBy:'myOrder'" class="list-group-item row">
                 <div class="col-md-1">
-                    <i ng-if="item.featured == 1" class="fa fa-star"></i>
+                    <div>
+                  <span> <i ng-if="item.featured == 1" class="fa fa-star"></i></span>     <span>  {{item.myOrder}} </span>
+                    </div>
+                    <!--<p style="margin-top: 5px"> ID : {{item.id}}  </p>-->
                     </div>
                 <div class="col-md-3">
                      <span>
@@ -44,8 +47,11 @@
                     <button style="margin-right: 5px" ng-click="togglePublish(item)" ng-class="{'btn-default' : item.published == 0 , 'btn-success' : item.published == 1 }" class="btn">
                         <i ng-class="{'fa-toggle-off' : item.published == 0 , 'fa-toggle-on' : item.published == 1 }" class="fa"></i>
                     </button>
-                    <button  ng-click="updateFeatured(item)" ng-init="isFeatured(item)" type="button" class="btn btn-primary" ng-model="item.featured" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                    <button  style="margin-right: 5px" ng-click="updateFeatured(item)" ng-init="isFeatured(item)" type="button" class="btn btn-primary" ng-model="item.featured" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
                         <i class="fa fa-star"></i>
+                    </button>
+                    <button  style="margin-right: 5px" ng-click="projectSelected(item)" class="btn btn-warning">
+                        <i  class="fa fa-eye"></i>
                     </button>
                 </div>
 
