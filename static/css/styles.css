@@ -192,7 +192,7 @@ input , textarea{
 
 .boldHeader{
     font-family: myBold;
-    font-size: 80px;
+    font-size: 76px;
     color: white;
 }
 
@@ -202,7 +202,7 @@ input , textarea{
 }
 
 .boldSubHeader{
-    font-family: myBold;
+    font-family: myRegular;
     font-size: 28px;
     color: white;
 }
@@ -342,6 +342,21 @@ input , textarea{
      text-shadow: none !important;
 }
 
+.whoWeAreRowRight p{
+    padding-left: 25px;
+}
+
+
+.whoWeAreRowLeft p{
+    padding-right: 25px;
+}
+
+.whoWeAreRowLeft h3{
+    padding-right: 25px;
+}
+
+
+
 
 .triangle {
     background: green;
@@ -451,6 +466,13 @@ input , textarea{
     border: 3px solid #2e2e2e !important;
 }
 
+.testImageContainer {
+    text-align: center;
+}
+
+.testImageContainer img {
+    max-width: 140px;
+}
 .serviceSvg{
     height:68px;
     fill: white;

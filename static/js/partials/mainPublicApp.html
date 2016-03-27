@@ -6,7 +6,7 @@
                 <uib-slide ng-repeat="slide in carouselImages" active="slide.active">
                     <img class="carouselImage" ng-src="{{slide.imagePath}}" style="margin:auto;">
                     <div class="carousel-caption">
-                        <div style="margin-bottom: 20px;margin-top: 250px" class="boldHeader" >{{slide.title}}</div>
+                        <div style="margin-top: 250px" class="boldHeader" >{{slide.title}}</div>
                         <p style="margin-bottom: 76px" class="boldSubHeader">{{slide.text}}</p>
                         <div class="row">
                             <div scroll-to="projectsSection"  class="myButton clickable">
@@ -86,15 +86,15 @@
         <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{generalSettings.whoWeAreTitle}}</h1>
     </div>
 </div>
-<div   style="margin-top: 130px" class="row noLeftRightMargin">
-    <div  style="text-align: center" class="col-xs-12 col-md-offset-2 col-md-4 alignRight  rtl">
-        <h3 style="margin-bottom: 55px" class="rtl alignRigh regularTitle myGrey"> {{generalSettings.whoWeAreLeftSectionTitle}}</h3>
+<div   style="margin-top: 80px" class="row noLeftRightMargin">
+    <div  style="text-align: center" class="col-xs-12 col-md-offset-2 col-md-4 alignRight  rtl whoWeAreRowLeft">
+        <h3 style="margin-bottom:20px" class="rtl alignRigh regularTitle myGrey"> {{generalSettings.whoWeAreLeftSectionTitle}}</h3>
         <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText1}} </p>
         <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText2}} </p>
         <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText3}} </p>
     </div>
-    <div  style="text-align: center" class="col-xs-12 col-md-4   alignRight rtl">
-        <h3 style="margin-bottom: 55px" class="regularTitle myGrey"> {{generalSettings.whoWeAreRightSectionTitle}}</h3>
+    <div  style="text-align: center" class="col-xs-12 col-md-4   alignRight rtl whoWeAreRowRight">
+        <h3 style="margin-bottom: 20px" class="regularTitle myGrey"> {{generalSettings.whoWeAreRightSectionTitle}}</h3>
         <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText1}} </p>
         <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText2}}</p>
         <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText3}}</p>
@@ -108,7 +108,7 @@
     <div style="text-align: center;" class="col-xs-12">
 
         <div style="font-size: 29px;color: white;margin-top: 85px" class="regular29Text">ישנם אלפי אדריכלי שיפוץ בארץ </div>
-        <div  style="margin-top: 25px" class="boldMiniHeader myYellow">אנחנו עובדים אחרת</div>
+        <div class="boldMiniHeader myYellow">אנחנו עובדים אחרת</div>
     </div>
     <div style="margin-top: 60px" class="col-md-10 col-md-offset-1">
         <div style="direction: rtl" class="row">
@@ -119,7 +119,7 @@
                     </i>
                     <!--img class="serviceSvg" src="static/assets/Services_1_Fix.svg"-->
                 </div>
-                <div style="color: white;margin-bottom: 20px;" class="regularMediumText">
+                <div style="color: white;;margin-top: 9px;margin-bottom: 20px;" class="regularMediumText">
                     'פרוייקטים מ-א' ועד ת
                 </div>
                 <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
@@ -138,7 +138,7 @@
 
                     </i>
                 </div>
-                <div style="color: white;margin-bottom: 20px" class="regularMediumText">
+                <div style="color: white;margin-bottom: 20px;margin-top: 9px" class="regularMediumText">
                     עבודות בנייה מדוייקות
                 </div>
                 <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
@@ -157,7 +157,7 @@
 
                     </i>
                 </div>
-                <div style="color: white;margin-bottom: 20px" class="regularMediumText">
+                <div style="color: white;margin-bottom: 20px;margin-top: 9px" class="regularMediumText">
                     ייעוץ מקצועי
                 </div>
                 <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
@@ -176,7 +176,7 @@
 
                     </i>
                 </div>
-                <div style="color: white;margin-bottom: 20px" class="regularMediumText">
+                <div style="color: white;margin-bottom: 20px;margin-top: 9px" class="regularMediumText">
                     טיפול באישורים וניירת
                 </div>
                 <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
