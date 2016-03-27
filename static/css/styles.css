@@ -3,6 +3,8 @@ body {
     font-family: myRegular !important;
 }
 
+@media (max-width :  1900px){/*Class name*/{/*properties*/}}
+
 
 .carouselImage .actions {
     top: 50%;
@@ -272,6 +274,11 @@ input , textarea{
 .regularExtraSmallText{
     font-family: myRegular;
     font-size: 16px;
+    line-height: 1.5 !important;
+}
+
+.borderedTextSection{
+    margin-top: 50px;
 }
 
 
@@ -565,9 +572,19 @@ svg{
     padding: 0;
 }
 
+.anotherCarousel .carousel-indicators{
+    bottom: 15px !important;
+}
+
+.miniProjectCarousel .carousel-control{
+    display: none !important;
+}
+
 .myCarousel .glyphicon-chevron-left{
     display: none !important;
 }
+
+
 
 .contactUsSection .row{
     margin-left: 0;
