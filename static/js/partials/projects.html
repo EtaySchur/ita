@@ -16,7 +16,7 @@
             <a ng-init="getTitles(item)" ng-repeat="item in projects | isCategory:filteredCategory | filter:query | orderBy:'myOrder'" class="list-group-item row">
                 <div class="col-md-1">
                     <div>
-                  <span> <i ng-if="item.featured == 1" class="fa fa-star"></i></span>     <span>  {{item.myOrder}} </span>
+                  <span> <i ng-if="item.featured == 1" class="fa fa-star"></i></span>     <span ng-if="item.featured == 1">  {{item.myOrder}} </span>
                     </div>
                     <!--<p style="margin-top: 5px"> ID : {{item.id}}  </p>-->
                     </div>
