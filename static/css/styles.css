@@ -594,8 +594,7 @@ svg{
 
 
 .navbar-header a {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding: 20px !important;
 }
 
 .reqText{
