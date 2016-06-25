@@ -25,6 +25,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     }
 
     $scope.sendMail = function(info) {
+        $rootScope.submitted = true;
         //var restCallManager = new RestCallManager();
         //restCallManager.post( getGeneralSettings, $http, null , "sendEmail");
         //function getGeneralSettings(result , status , success) {
@@ -46,13 +47,16 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
             info.howCanWeHelp = "";
         }
 
+        $rootScope.sendingMail = true;
         emailjs.init("user_Z8mRIlQBfdHB3FmQswOFC");
         emailjs.send("gmail","template_rhVwgmtA",{name: "James", notes: "Check this out!" , to_email : "etayschur.dev@gmail.com"})
             .then(function(response) {
+                $rootScope.sendingMail = false;
                 console.log("Send mail true");
                 $rootScope.mailSent = true;
                 console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
             }, function(err) {
+                $rootScope.sendingMail = false;
                 console.log("FAILED. error=", err);
             });
 

@@ -278,41 +278,46 @@
                 </div>
 
             </div>
-            <form ng-if="!mailSent" style="width: 510px" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
-                <div  style="margin-bottom: 30px" class="form-group">
+            <form ng-if="!mailSent" style="width: 510px;" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
+                <div  style="margin-bottom: 30px;position: relative" class="form-group">
                     <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
+                    <div  class="reqText">  * שדה חובה </div>
                     <input name="fullNameInput" required ng-model="contact.fullName" type="text"
                            class="form-control myGrey contactUsInput" id="exampleInputEmail1"
                             >
 
-                    <p ng-show="!contactUsForm.fullNameInput.$valid && validateAll" style="color: red"> שדה חובה </p>
+                    <!--<p ng-show="!contactUsForm.fullNameInput.$valid && submitted" style="color: red"> שדה חובה </p>-->
                 </div>
                 <div style="margin-bottom: 30px" class="form-group">
                     <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
-                    <input name="phoneInput" required ng-model="contact.phone" type="text"
+                    <input name="phoneInput"  ng-model="contact.phone" type="text"
                            class="form-control myGrey contactUsInput" id="exampleInputPassword1"
                             >
 
-                    <p ng-show="!contactUsForm.phoneInput.$valid && validateAll" style="color: red"> שדה חובה </p>
+                    <!--<p ng-show="!contactUsForm.phoneInput.$valid" style="color: red"> שדה חובה </p>-->
                 </div>
-                <div style="margin-bottom: 30px" class="form-group">
+                <div style="margin-bottom: 30px;position: relative" class="form-group">
                     <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
-                    <input name="emailInput" ng-model="contact.email" type="email"
+                    <div  ng-show="!contactUsForm.emailInput.$valid && submitted" class="reqText">  * הוזן אימייל לא חוקי </div>
+                    <input required name="emailInput" ng-model="contact.email" type="email"
                            class="form-control myGrey contactUsInput" id="exampleInputPassword1"
                             >
-                    <!--p ng-show="!contactUsForm.emailInput.$valid && validateAll" style="color: red"> שדה חובה </p-->
                 </div>
-                <div style="margin-bottom: 20px" class="form-group">
+                <div style="margin-bottom: 20px;position: relative" class="form-group">
                     <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
+                    <!--<div  class="reqText">  * חובה להזין טקסט </div>-->
                     <textarea style="resize: none;" maxlength="600" rows="5" ng-model="contact.howCanWeHelp" type="text"
                               class="form-control regularText myGrey contactUsTextArea" id="exampleInputPassword1"> </textarea>
                 </div>
                 <div ng-class="{'disableButtonText' : sendingMail}" style="margin-top: 30px;margin-bottom: 55px" class="clickable">
                     <div  ng-click="sendMail(contact)" style="padding: 5px 10px;float: left"
                           class="boldSubtitle contactUsButton">
-                        שלח אותי
+                        <span>
+                                שלח אותי
+                        </span>
+                        <i ng-show="sendingMail" class="fa fa-circle-o-notch fa-spin"></i>
                     </div>
-                    <i ng-show="sendingMail" class="fa fa-circle-o-notch fa-spin"></i>
+
                 </div>
 
 
