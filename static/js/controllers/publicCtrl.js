@@ -49,6 +49,8 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
         emailjs.init("user_Z8mRIlQBfdHB3FmQswOFC");
         emailjs.send("gmail","template_rhVwgmtA",{name: "James", notes: "Check this out!" , to_email : "etayschur.dev@gmail.com"})
             .then(function(response) {
+                console.log("Send mail true");
+                $rootScope.mailSent = true;
                 console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
             }, function(err) {
                 console.log("FAILED. error=", err);
@@ -281,6 +283,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window' , '$timeout',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window , $timeout) {
     $rootScope.showSideProjects = false;
+    $rootScope.mailSent = false;
     $scope.minIndex = 0;
     $scope.sideBarLimitItems = 5;
 

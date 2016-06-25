@@ -83,10 +83,10 @@
 <div   id="whoWeAreSection" style="margin-top: 90px" class="row noLeftRightMargin">
     <div  style="text-align: center" class="col-xs-12 rtl">
         <div class="borderon"></div>
-        <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{generalSettings.whoWeAreTitle}}</h1>
+        <h1 class="boldMiniHeader" style="margin-top:20px;color:#4e4e4e"> {{generalSettings.whoWeAreTitle}}</h1>
     </div>
 </div>
-<div   style="margin-top: 80px" class="row noLeftRightMargin">
+<div   style="margin-top: 40px" class="row noLeftRightMargin">
     <div  style="text-align: center" class="col-xs-12 col-md-offset-2 col-md-4 alignRight  rtl whoWeAreRowLeft">
         <h3 style="margin-bottom:20px" class="rtl alignRigh regularTitle myGrey"> {{generalSettings.whoWeAreLeftSectionTitle}}</h3>
         <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText1}} </p>
@@ -255,7 +255,7 @@
             <p class="regularText myGrey"> צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
         </div>
         <div class="row">
-            <div ng-show="mailSent" class="sendMailConfirmationOuter">
+            <div ng-if="mailSent" class="sendMailConfirmationOuter">
                 <div class="textWrap">
                     <i  ng-click="mailSent = false" style="color: black;position: absolute;top : 14px;right: 14px"  class="icon-Close clickable"></i>
                     <div  class="boldMiniTitle">
@@ -278,7 +278,7 @@
                 </div>
 
             </div>
-            <form ng-hide="mailSent" style="width: 510px" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
+            <form ng-if="!mailSent" style="width: 510px" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
                 <div  style="margin-bottom: 30px" class="form-group">
                     <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
                     <input name="fullNameInput" required ng-model="contact.fullName" type="text"
@@ -305,7 +305,7 @@
                 <div style="margin-bottom: 20px" class="form-group">
                     <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
                     <textarea style="resize: none;" maxlength="600" rows="5" ng-model="contact.howCanWeHelp" type="text"
-                              class="form-control myGrey contactUsTextArea" id="exampleInputPassword1"> </textarea>
+                              class="form-control regularText myGrey contactUsTextArea" id="exampleInputPassword1"> </textarea>
                 </div>
                 <div ng-class="{'disableButtonText' : sendingMail}" style="margin-top: 30px;margin-bottom: 55px" class="clickable">
                     <div  ng-click="sendMail(contact)" style="padding: 5px 10px;float: left"
