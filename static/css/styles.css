@@ -591,6 +591,11 @@ svg{
     margin-right: 0;
 }
 
+.navbar-header a {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
 .myNavbar .navbar-nav>li>a{
     padding-bottom: 21px;
     padding-top: 21px;
