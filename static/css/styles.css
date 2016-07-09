@@ -77,13 +77,16 @@ input , textarea{
 }
 
 .miniProjectCarousel .carousel-indicators{
-    bottom: 30px !important;
+    bottom: 15px !important;
 }
 
 .alignRight{
     text-align: right !important;
 }
 
+#ourProjectsCta:hover {
+    background: #f6b721;
+}
 
 
 .categoryFilter{
