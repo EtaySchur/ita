@@ -2,16 +2,16 @@
      ng-class="{'bounceOutRight' : !showSideProjects}" class="floatingNavBar animated bounceInRight">
     <div style="margin-top: 80px" class="imagesContainer">
 
-        <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" scroll-to="sideProject{{$index}}"
+        <div ng-if="project.sideBarImage && project.sideBarImage != ''" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" scroll-to="sideProject{{$index}}"
              ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
-             style="position: relative;text-align: center;width: 100%;margin-bottom: 28px" class="clickable sideProjectImage"
+             style="position: relative;text-align: center;width: 100%;margin-bottom: 28px;padding-left: 20px;padding-right: 20px" class="clickable sideProjectImage"
              ng-repeat="project in mySideProjects | limitTo : 5">
-            <div ng-show="hoverEdit" style="color: white;position: absolute;top : 40%;width: 100%;text-align: center"
+            <div ng-show="hoverEdit" style="color: white;position: absolute;top : 30%;width: 75%;text-align: center"
                  class="boldSubtitle"> {{project.title}}
             </div>
-            <img style="height: 135px;width: 226px" ng-src="{{project.sideBarImage}}">
+            <img style="width: 100%" ng-src="{{project.sideBarImage}}">
         </div>
-        <div ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-click="navToProject(otherProject.id)"
+        <div ng-if="project.sideBarImage && project.sideBarImage != ''" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-click="navToProject(otherProject.id)"
              ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
              style="position: relative;text-align: center;width: 100%;margin-bottom: 28px" class="clickable sideProjectImage"
              ng-repeat="otherProject in otherProjects | limitTo : sideBarLimitItems - mySideProjects.length">
