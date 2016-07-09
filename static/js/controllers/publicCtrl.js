@@ -298,84 +298,87 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
         this.hoverEdit = true;
     };
 
+
+
+
     $rootScope.showNav = false;
     $scope.nextPage = function(){
-        $scope.nextAnimation = true;
-        $rootScope.miniProjects[$scope.minIndex].animated = true;
-        $rootScope.miniProjects[$scope.minIndex].fadeOutLeft = true;
-
-        //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
-        //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = true;
-        //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-        //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = true;
-
-        $timeout(function() {
-            $rootScope.miniProjects[$scope.minIndex].fadeOutLeft = false;
-            $rootScope.miniProjects[$scope.minIndex].animated = false;
-            $rootScope.miniProjects[$scope.minIndex].showMe = false;
-
-            $timeout(function() {
-                $rootScope.miniProjects[$scope.minIndex + 1].animated = true;
-                $rootScope.miniProjects[$scope.minIndex + 1].fadeIn = true;
-                $rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = false;
-
-                $rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-                $rootScope.miniProjects[$scope.minIndex + 2].fadeIn = true;
-                $rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = false;
-
-
-                $rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = true;
-                $rootScope.miniProjects[$scope.minIndex + 3].animated = true;
-                $rootScope.miniProjects[$scope.minIndex + 3].showMe = true;
-
-                $rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = false;
-                $rootScope.miniProjects[$scope.minIndex + 3].animated = false;
-                $scope.minIndex += 1;
-            } , 600)
-
-        }, 600);
+        // $scope.nextAnimation = true;
+        // $rootScope.miniProjects[$scope.minIndex].animated = true;
+        // $rootScope.miniProjects[$scope.minIndex].fadeOutLeft = true;
+        //
+        // //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
+        // //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = true;
+        // //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+        // //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = true;
+        //
+        // $timeout(function() {
+        //     $rootScope.miniProjects[$scope.minIndex].fadeOutLeft = false;
+        //     $rootScope.miniProjects[$scope.minIndex].animated = false;
+        //     $rootScope.miniProjects[$scope.minIndex].showMe = false;
+        //
+        //     $timeout(function() {
+        //         $rootScope.miniProjects[$scope.minIndex + 1].animated = true;
+        //         $rootScope.miniProjects[$scope.minIndex + 1].fadeIn = true;
+        //         $rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = false;
+        //
+        //         $rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+        //         $rootScope.miniProjects[$scope.minIndex + 2].fadeIn = true;
+        //         $rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = false;
+        //
+        //
+        //         $rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = true;
+        //         $rootScope.miniProjects[$scope.minIndex + 3].animated = true;
+        //         $rootScope.miniProjects[$scope.minIndex + 3].showMe = true;
+        //
+        //         $rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = false;
+        //         $rootScope.miniProjects[$scope.minIndex + 3].animated = false;
+        //         $scope.minIndex += 1;
+        //     } , 600)
+        //
+        // }, 600);
     }
 
     $scope.prevPage = function(){
-        if( $scope.minIndex == 0){
-            return;
-        }
-
-
-        $scope.nextAnimation = true;
-        $rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-        $rootScope.miniProjects[$scope.minIndex + 2].fadeOutRight = true;
-
-        //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
-        //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = true;
-        //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-        //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = true;
-
-        $timeout(function() {
-            $rootScope.miniProjects[$scope.minIndex + 2].fadeOutRight = false;
-            $rootScope.miniProjects[$scope.minIndex + 2].animated = false;
-            $rootScope.miniProjects[$scope.minIndex + 2].showMe = false;
-
-            $timeout(function() {
-                //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
-                //$rootScope.miniProjects[$scope.minIndex + 1].fadeIn = true;
-                //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = false;
-                //
-                //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-                //$rootScope.miniProjects[$scope.minIndex + 2].fadeIn = true;
-                //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = false;
-
-
-                $rootScope.miniProjects[$scope.minIndex - 1].fadeInLeft = true;
-                $rootScope.miniProjects[$scope.minIndex - 1].animated = true;
-                $rootScope.miniProjects[$scope.minIndex - 1].showMe = true;
-
-                //$rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = false;
-                //$rootScope.miniProjects[$scope.minIndex + 3].animated = false;
-                $scope.minIndex -= 1;
-            } , 600)
-
-        }, 600);
+        // if( $scope.minIndex == 0){
+        //     return;
+        // }
+        //
+        //
+        // $scope.nextAnimation = true;
+        // $rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+        // $rootScope.miniProjects[$scope.minIndex + 2].fadeOutRight = true;
+        //
+        // //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
+        // //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = true;
+        // //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+        // //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = true;
+        //
+        // $timeout(function() {
+        //     $rootScope.miniProjects[$scope.minIndex + 2].fadeOutRight = false;
+        //     $rootScope.miniProjects[$scope.minIndex + 2].animated = false;
+        //     $rootScope.miniProjects[$scope.minIndex + 2].showMe = false;
+        //
+        //     $timeout(function() {
+        //         //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
+        //         //$rootScope.miniProjects[$scope.minIndex + 1].fadeIn = true;
+        //         //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = false;
+        //         //
+        //         //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
+        //         //$rootScope.miniProjects[$scope.minIndex + 2].fadeIn = true;
+        //         //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = false;
+        //
+        //
+        //         $rootScope.miniProjects[$scope.minIndex - 1].fadeInLeft = true;
+        //         $rootScope.miniProjects[$scope.minIndex - 1].animated = true;
+        //         $rootScope.miniProjects[$scope.minIndex - 1].showMe = true;
+        //
+        //         //$rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = false;
+        //         //$rootScope.miniProjects[$scope.minIndex + 3].animated = false;
+        //         $scope.minIndex -= 1;
+        //     } , 600)
+        //
+        // }, 600);
 
         //$scope.nextAnimation = false;
         //$scope.minIndex -= 1;

@@ -12,6 +12,7 @@ var publicApp = angular.module("publicApp", ['ui.bootstrap' ,
     'ngAnimate',
     'ngSanitize',
     'smoothScroll',
+    'slick',
     'angularFileUpload']);
 
 publicApp.config(function($modalProvider) {

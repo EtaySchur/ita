@@ -2,8 +2,192 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9994554c-9e4d-4049-a450-76de86dd5563" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/angular.min.js.gzip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/fonts/slick.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/fonts/slick.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/fonts/slick.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/fonts/slick.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/fonts/slick.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/fonts/slick.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-slick/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-slick/.bowerrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-slick/LICENCE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-slick/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-slick/dist/slick.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-slick/dist/slick.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/angular-csp.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/angular.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/angular.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/AUTHORS.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/dist/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/dist/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/dist/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/dist/jquery.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/dist/jquery.slim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/dist/jquery.slim.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/dist/jquery.slim.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/external/sizzle/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/external/sizzle/dist/sizzle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/external/sizzle/dist/sizzle.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/external/sizzle/dist/sizzle.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/.eslintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/ajax/jsonp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/ajax/load.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/ajax/parseXML.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/ajax/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/ajax/var/location.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/ajax/var/nonce.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/ajax/var/rquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/ajax/xhr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/attributes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/attributes/attr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/attributes/classes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/attributes/prop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/attributes/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/attributes/val.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/callbacks.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core/DOMEval.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core/access.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core/init.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core/parseHTML.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core/ready-no-deferred.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core/ready.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core/readyException.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/core/var/rsingleTag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/addGetHookIf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/adjustCSS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/curCSS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/hiddenVisibleSelectors.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/showHide.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/var/cssExpand.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/var/getStyles.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/var/isHiddenWithinTree.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/var/rmargin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/var/rnumnonpx.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/css/var/swap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/data/Data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/data/var/acceptData.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/data/var/dataPriv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/data/var/dataUser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/deferred.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/deferred/exceptionHook.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/deprecated.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/dimensions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/effects.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/effects/Tween.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/effects/animatedSelector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/event.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/event/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/event/alias.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/event/focusin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/event/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/event/trigger.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/exports/amd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/exports/global.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation/_evalUrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation/buildFragment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation/getAll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation/setGlobalEval.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation/var/rcheckableType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation/var/rscriptType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation/var/rtagName.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/manipulation/wrapMap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/offset.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/queue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/queue/delay.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/selector-native.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/selector-sizzle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/selector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/serialize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/traversing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/traversing/findFilter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/traversing/var/dir.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/traversing/var/rneedsContext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/traversing/var/siblings.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/ObjectFunctionString.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/arr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/class2type.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/concat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/document.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/documentElement.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/fnToString.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/getProto.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/hasOwn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/indexOf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/pnum.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/push.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/rcssNum.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/rnotwhite.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/slice.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/support.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/var/toString.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/jquery/src/wrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/CONTRIBUTING.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/README.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick.jquery.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/config.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/fonts/slick.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/slick-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/slick-theme.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/slick.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/slick.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/slick.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/slick-carousel/slick/slick.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/CONTRIBUTING.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/ISSUE_TEMPLATE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/README.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick.jquery.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/config.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/fonts/slick.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/slick-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/slick-theme.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/slick-theme.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/slick.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/slick.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/slick.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/slick.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/slick/slick/slick.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public.html" afterPath="$PROJECT_DIR$/public.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/styles.css" afterPath="$PROJECT_DIR$/static/css/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" afterPath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/publicApp.js" afterPath="$PROJECT_DIR$/static/js/publicApp.js" />
     </list>
     <ignored path="VagrantBoxes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +209,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+            <state relative-caret-position="178">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -58,8 +242,8 @@
       <file leaf-file-name="public.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+            <state relative-caret-position="263">
+              <caret line="33" column="74" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
               <folding>
                 <element signature="n#style#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -68,11 +252,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="publicApp.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/publicApp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="231" column="47" selection-start-line="231" selection-start-column="47" selection-end-line="231" selection-end-column="47" />
+            <state relative-caret-position="153">
+              <caret line="309" column="33" selection-start-line="309" selection-start-column="33" selection-end-line="309" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -84,7 +280,14 @@
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
@@ -92,6 +295,10 @@
                 <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+                <marker date="1468092855882" expanded="false" signature="16003:16014" ph="..." />
+                <marker date="1468092855882" expanded="false" signature="16200:16215" ph="..." />
+                <marker date="1468092855882" expanded="false" signature="16358:16370" ph="..." />
+                <marker date="1468092855882" expanded="false" signature="16556:16571" ph="..." />
               </folding>
             </state>
           </provider>
@@ -100,8 +307,18 @@
       <file leaf-file-name="publicCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+            <state relative-caret-position="256">
+              <caret line="306" column="68" selection-start-line="306" selection-start-column="68" selection-end-line="306" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projectsCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,8 +327,8 @@
       <file leaf-file-name="mainPublicApp.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/partials/mainPublicApp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="11" column="51" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="51" />
+            <state relative-caret-position="-247">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#uib-slide#0;n#uib-carousel#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="true" />
@@ -131,8 +348,8 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+            <state relative-caret-position="195">
+              <caret line="396" column="30" selection-start-line="396" selection-start-column="30" selection-end-line="396" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -146,13 +363,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public.html" />
-        <option value="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
-        <option value="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
         <option value="$PROJECT_DIR$/static/js/partials/mainPublicApp.html" />
-        <option value="$PROJECT_DIR$/static/css/styles.css" />
         <option value="$PROJECT_DIR$/static/js/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/public.html" />
+        <option value="$PROJECT_DIR$/static/js/publicApp.js" />
+        <option value="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
+        <option value="$PROJECT_DIR$/static/css/styles.css" />
+        <option value="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
       </list>
     </option>
   </component>
@@ -307,7 +525,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,7 +543,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="bower_components" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -336,6 +554,38 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/Projects/anyclip-demo" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\EtaySchur\VagrantBoxes\static\vendor\slick" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -354,7 +604,7 @@
       <workItem from="1466854208160" duration="6490000" />
       <workItem from="1466869241285" duration="1253000" />
       <workItem from="1467732178632" duration="1211000" />
-      <workItem from="1468086418483" duration="2420000" />
+      <workItem from="1468086418483" duration="6460000" />
     </task>
     <task id="LOCAL-00001" summary="fix navbar">
       <created>1466270490448</created>
@@ -419,11 +669,18 @@
       <option name="project" value="LOCAL" />
       <updated>1468088278541</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="more fixes">
+      <created>1468088845302</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1468088845302</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11717000" />
+    <option name="totallyTimeSpent" value="15757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -513,7 +770,14 @@
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
@@ -521,6 +785,10 @@
             <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <marker date="1468092855882" expanded="false" signature="16003:16014" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16200:16215" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16358:16370" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16556:16571" ph="..." />
           </folding>
         </state>
       </provider>
@@ -594,7 +862,14 @@
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
@@ -602,6 +877,10 @@
             <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <marker date="1468092855882" expanded="false" signature="16003:16014" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16200:16215" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16358:16370" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16556:16571" ph="..." />
           </folding>
         </state>
       </provider>
@@ -675,7 +954,14 @@
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
@@ -683,6 +969,10 @@
             <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <marker date="1468092855882" expanded="false" signature="16003:16014" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16200:16215" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16358:16370" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16556:16571" ph="..." />
           </folding>
         </state>
       </provider>
@@ -730,79 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="231" column="47" selection-start-line="231" selection-start-column="47" selection-end-line="231" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/partials/mainPublicApp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="11" column="51" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#uib-slide#0;n#uib-carousel#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#8;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/controllers/adminCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-17">
@@ -819,11 +1036,113 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/partials/mainPublicApp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#uib-slide#0;n#uib-carousel#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#8;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+        <state relative-caret-position="178">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/publicApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="33" column="74" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="306" column="68" selection-start-line="306" selection-start-column="68" selection-end-line="306" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="396" column="30" selection-start-line="396" selection-start-column="30" selection-end-line="396" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="309" column="33" selection-start-line="309" selection-start-column="33" selection-end-line="309" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+            <marker date="1468092855882" expanded="false" signature="16003:16014" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16200:16215" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16358:16370" ph="..." />
+            <marker date="1468092855882" expanded="false" signature="16556:16571" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

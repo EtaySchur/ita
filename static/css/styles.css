@@ -397,6 +397,15 @@ input , textarea{
     color: #4e4e4e !important;
 }
 
+.slick-arrow{
+    top: calc(50% - 40px) !important;
+
+}
+
+.slick-arrow:before{
+    color: #4e4e4e !important;
+}
+
 .myYellow{
   color : #f6a721 !important;
 }
