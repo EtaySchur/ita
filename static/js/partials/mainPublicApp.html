@@ -278,7 +278,7 @@
                 </div>
 
             </div>
-            <form ng-if="!mailSent" style="width: 510px;" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
+            <form  autocomplete="off" ng-if="!mailSent" style="width: 510px;" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
                 <div  style="margin-bottom: 30px;position: relative" class="form-group">
                     <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
                     <div  class="reqText">  * שדה חובה </div>
@@ -288,9 +288,10 @@
 
                     <!--<p ng-show="!contactUsForm.fullNameInput.$valid && submitted" style="color: red"> שדה חובה </p>-->
                 </div>
-                <div style="margin-bottom: 30px" class="form-group">
+                <div style="margin-bottom: 30px;position: relative" class="form-group">
                     <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
-                    <input name="phoneInput"  ng-model="contact.phone" type="text"
+                    <div  class="reqText">  * שדה חובה </div>
+                    <input name="phoneInput"  required ng-model="contact.phone" type="text"
                            class="form-control myGrey contactUsInput" id="exampleInputPassword1"
                             >
 

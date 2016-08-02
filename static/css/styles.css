@@ -85,7 +85,18 @@ input , textarea{
 }
 
 #ourProjectsCta:hover {
+    background: #f6a721;
+
+}
+
+.myButton{
+    width: 234px;
+    height: 55px;
     background: #f6b721;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
 }
 
 
@@ -379,15 +390,6 @@ input , textarea{
 }
 
 
-.myButton{
-    width: 234px;
-    height: 55px;
-    background: #f6a721;
-    margin-left: auto;
-    margin-right: auto;
-
-    text-align: center;
-}
 
 .buttonWrapper  {
 
@@ -604,6 +606,12 @@ svg{
 }
 
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px  #ececec inset !important;
+    background-color: #ececec !important;
+}
+
+
 
 .navbar-header a {
     padding: 20px !important;
@@ -619,7 +627,7 @@ svg{
 
 .myNavbar .navbar-nav>li>a{
     padding-bottom: 21px;
-    padding-top: 21px;
+    padding-top: 34px;
 }
 
 
