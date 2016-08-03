@@ -13,6 +13,7 @@ var publicApp = angular.module("publicApp", ['ui.bootstrap' ,
     'ngSanitize',
     'smoothScroll',
     'slick',
+    'zumba.angular-waypoints',
     'angularFileUpload']);
 
 publicApp.config(function($modalProvider) {

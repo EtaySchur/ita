@@ -166,8 +166,6 @@ app.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll
                             var index = 0;
                             var counter = 0;
                             result1.forEach(function(project){
-                                console.log(project.subCategoryId);
-                                console.log($scope.selectedProject.subCategoryId);
                                 if(project.subCategoryId == $scope.selectedProject.subCategoryId){
                                     project.slides = getMiniCarousel(project);
 

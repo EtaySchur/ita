@@ -162,11 +162,11 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
 
 publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , 'CategoriesService' , '$window', '$timeout' ,  function($scope , $http , anchorSmoothScroll , $location , $rootScope , CategoriesService , $window , $timeout) {
+    $window.scrollTo(0,0);
+    $scope.justChecing = "just checking";
     $rootScope.mailSent = false;
-    $window.scrollTo(0,0)
+    $scope.showProjectsSection = false;
     $scope.noWrapSlides = false;
-    $rootScope.showRightSection = false;
-    $rootScope.showProjectsSection = false;
     $rootScope.imProjected = false;
 
     $scope.getImagePath = function(item){
@@ -223,26 +223,66 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
     $rootScope.boxVisible = false;
 
-    var whoWeAreBreakPoint = new Waypoint({
-        element: document.getElementById('textScroll'),
-        handler: function(direction) {
-           $rootScope.whoWeAreAnimation();
-            console.log("IM ON THAT DIV");
-        },
-        offset: 0
-    })
+    $scope.init  = function(){
+        console.log("init");
+        // var whoWeAreBreakPoint = new Waypoint({
+        //     element: document.getElementById('textScroll'),
+        //     handler: function(direction) {
+        //         $scope.whoWeAreAnimation();
+        //         console.log("IM ON THAT DIV");
+        //     },
+        //     offset: 0
+        // })
+        //
+        // var projectsSectionWaypoint = new Waypoint({
+        //     element: document.getElementById('projectSectionDiv'),
+        //     handler: function(direction) {
+        //         $scope.botToTopAnimation();
+        //         console.log("IM ON THAT DIV");
+        //     },
+        //     offset: 0
+        // })
+    }
 
-    var projectsSectionWaypoint = new Waypoint({
-        element: document.getElementById('projectSectionDiv'),
-        handler: function(direction) {
-            $rootScope.botToTopAnimation();
-            console.log("IM ON THAT DIV");
-        },
-        offset: 0
-    })
+    // $scope.$watch(function () {
+    //     return $scope.waypoints.whoWeAreSection;
+    // }, function (waypoint) {
+    //     console.log("Way Point ? ,",waypoint);
+    //     if(waypoint){
+    //         $scope.whoWeAreAnimation();
+    //     }
+    // });
 
+    // $scope.$watch(function () {
+    //     return $scope.waypoints.projectsSection;
+    // }, function (waypoint) {
+    //     console.log("Way Point ? ,",waypoint);
+    //     if(waypoint){
+    //         $scope.botToTopAnimation();
+    //     }
+    // });
 
-    $rootScope.botToTopAnimation = function(){
+    $scope.$watch(
+        "waypoints.globals.projectsSection",
+        function handleFooChange( newValue, oldValue ) {
+            console.log("Watching !" , newValue);
+            if(newValue){
+                $scope.botToTopAnimation();
+
+            }
+        }
+    );
+
+    $scope.$watch(
+        "waypoints.whoWeAreSection.down",
+        function handleFooChange( newValue, oldValue ) {
+            if(newValue){
+                $scope.whoWeAreAnimation();
+            }
+        }
+    );
+
+    $scope.botToTopAnimation = function(){
         if(!$scope.showProjectsSection){
             $scope.showProjectsSection = true;
             var bounce = new Bounce();
@@ -256,7 +296,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         }
     }
 
-    $rootScope.whoWeAreAnimation = function () {
+    $scope.whoWeAreAnimation = function () {
         console.log("Fire !");
         if(!$scope.showWhoWeAre){
             $scope.showWhoWeAre = true;
@@ -265,87 +305,41 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                 .translate({
                     from: { x:0, y: 200 },
                     to: { x: 0, y: 0 },
-                    duration: 3000,
+                    duration: 2000,
                     stiffness: 4
                 }).applyTo(document.querySelectorAll(".text-animation-target"));
 
 
 
-            $rootScope.showRightSection = true;
+            $scope.showRightSection = true;
 
             var bounce = new Bounce();
             bounce
                 .translate({
                     from: { x:0, y: 200 },
                     to: { x: 0, y: 0 },
-                    duration: 3000,
-                    delay: 150,
+                    duration: 2000,
                     stiffness: 4
                 }).applyTo(document.querySelectorAll(".animation-right"));
 
-            $rootScope.showLeftSection = true;
+            $scope.showLeftSection = true;
+
 
             var bounce = new Bounce();
             bounce
                 .translate({
                     from: { x:0, y: 200 },
                     to: { x: 0, y: 0 },
-                    duration: 3000,
-                    delay: 250,
+                    duration: 2000,
                     stiffness: 4
+
                 }).applyTo(document.querySelectorAll(".animation-left"));
         }
     }
 
 
 
-    $rootScope.showIt = function() {
-        $rootScope.boxVisible = true;
-        for(var i = 0 ; i < 2 ;i++){
-            var bounce = new Bounce();
-            if(i === 0){
-                $rootScope.boxVisible0 = true; // show it, then apply anim
-                bounce
-                    .translate({
-                        from: { x: 300, y: 0 },
-                        to: { x: 0, y: 0 },
-                        duration: 2000,
-                        stiffness: 4
-                    })
-                    .scale({
-                        from: { x: 1, y: 1 },
-                        to: { x: 0.1, y: 2.3 },
-                        easing: "sway",
-                        duration: 2000,
-                        delay: 500,
-                        stiffness: 2
-                    })
-            }
 
-            if(i === 1) {
-                $rootScope.boxVisible1 = true; // show it, then apply anim
-                    bounce
-                        .translate({
-                            from: { x: 0, y: -300 },
-                            to: { x: 0, y: 0 },
-                            delay: 100,
-                            duration: 2000,
-                            stiffness: 4
-                        })
-                        .scale({
-                            from: { x: 1, y: 1 },
-                            to: { x: 0.1, y: 2.3 },
-                            easing: "sway",
-                            duration: 2000,
-                            delay: 500,
-                            stiffness: 2
-                        })
-            }
-
-            bounce.applyTo(document.querySelectorAll(".clickable" + i));
-        }
-
-    };
 
 
 
@@ -417,7 +411,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         }
     }
 
-
+    $scope.init();
 
 
 
@@ -435,9 +429,6 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     $scope.hoverIn = function(){
         this.hoverEdit = true;
     };
-
-
-
 
     $rootScope.showNav = false;
     $scope.nextPage = function(){
@@ -592,8 +583,6 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                             var index = 0;
                             var counter = 0;
                             result1.forEach(function(project){
-                                console.log(project.subCategoryId);
-                                console.log($scope.selectedProject.subCategoryId);
                                if(project.subCategoryId == $scope.selectedProject.subCategoryId){
                                    project.slides = getMiniCarousel(project);
 
