@@ -161,7 +161,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 }]);
 
 
-publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , 'CategoriesService' , '$window',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , CategoriesService , $window) {
+publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , 'CategoriesService' , '$window', '$timeout' ,  function($scope , $http , anchorSmoothScroll , $location , $rootScope , CategoriesService , $window , $timeout) {
     $rootScope.mailSent = false;
     $window.scrollTo(0,0)
     $scope.noWrapSlides = false;
@@ -216,6 +216,59 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
         $location.path('/' + project.id);
     }
+
+
+
+    $rootScope.boxVisible = false;
+
+
+    $rootScope.showIt = function() {
+        $rootScope.boxVisible = true;
+        for(var i = 0 ; i < 2 ;i++){
+            var bounce = new Bounce();
+            if(i === 0){
+                $rootScope.boxVisible0 = true; // show it, then apply anim
+                bounce
+                    .translate({
+                        from: { x: 300, y: 0 },
+                        to: { x: 0, y: 0 },
+                        duration: 2000,
+                        stiffness: 4
+                    })
+                    .scale({
+                        from: { x: 1, y: 1 },
+                        to: { x: 0.1, y: 2.3 },
+                        easing: "sway",
+                        duration: 2000,
+                        delay: 500,
+                        stiffness: 2
+                    })
+            }
+
+            if(i === 1) {
+                $rootScope.boxVisible1 = true; // show it, then apply anim
+                    bounce
+                        .translate({
+                            from: { x: 0, y: -300 },
+                            to: { x: 0, y: 0 },
+                            delay: 100,
+                            duration: 2000,
+                            stiffness: 4
+                        })
+                        .scale({
+                            from: { x: 1, y: 1 },
+                            to: { x: 0.1, y: 2.3 },
+                            easing: "sway",
+                            duration: 2000,
+                            delay: 500,
+                            stiffness: 2
+                        })
+            }
+
+            bounce.applyTo(document.querySelectorAll(".clickable" + i));
+        }
+
+    };
 
 
 

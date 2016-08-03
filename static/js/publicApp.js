@@ -54,6 +54,26 @@ publicApp.directive('fileModel', ['$parse', function ($parse) {
     };
 }]);
 
+publicApp.directive("scroll", function ($window , $rootScope) {
+    return function(scope, element, attrs) {
+
+        angular.element($window).bind("scroll", function() {
+            if (this.pageYOffset >= 300) {
+                if(!$rootScope.boxVisible){
+                    console.log("Show it ?");
+                    //$rootScope.showIt();
+                }
+                scope.boolChangeClass = true;
+                console.log('Scrolled below header.');
+            } else {
+                scope.boolChangeClass = false;
+                console.log('Header is in view.');
+            }
+            scope.$apply();
+        });
+    };
+});
+
 publicApp.service('fileUpload', ['$http', function ($http) {
     this.uploadFileToUrl = function(file, uploadUrl){
         var fd = new FormData();
