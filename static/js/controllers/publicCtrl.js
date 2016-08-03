@@ -225,13 +225,37 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     var whoWeAreBreakPoint = new Waypoint({
         element: document.getElementById('textScroll'),
         handler: function(direction) {
-           $rootScope.botToTopAnimation();
+           $rootScope.whoWeAreAnimation();
             console.log("IM ON THAT DIV");
         },
         offset: 0
     })
-    
-    $rootScope.botToTopAnimation = function () {
+
+    var projectsSectionWaypoint = new Waypoint({
+        element: document.getElementById('projectSectionDiv'),
+        handler: function(direction) {
+            $rootScope.botToTopAnimation();
+            console.log("IM ON THAT DIV");
+        },
+        offset: 0
+    })
+
+
+    $rootScope.botToTopAnimation = function(){
+        if(!$scope.showProjectsSection){
+            $scope.showProjectsSection = true;
+            var bounce = new Bounce();
+            bounce
+                .translate({
+                    from: { x:0, y: 200 },
+                    to: { x: 0, y: 0 },
+                    duration: 2000,
+                    stiffness: 4
+                }).applyTo(document.querySelectorAll(".projectSectionDiv"));
+        }
+    }
+
+    $rootScope.whoWeAreAnimation = function () {
         console.log("Fire !");
         if(!$scope.showWhoWeAre){
             $scope.showWhoWeAre = true;
