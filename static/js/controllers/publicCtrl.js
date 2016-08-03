@@ -226,6 +226,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         element: document.getElementById('textScroll'),
         handler: function(direction) {
            $rootScope.botToTopAnimation();
+            console.log("IM ON THAT DIV");
         },
         offset: 20
     })
