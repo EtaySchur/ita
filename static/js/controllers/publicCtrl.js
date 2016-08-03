@@ -166,6 +166,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     $window.scrollTo(0,0)
     $scope.noWrapSlides = false;
     $rootScope.showRightSection = false;
+    $rootScope.showProjectsSection = false;
     $rootScope.imProjected = false;
 
     $scope.getImagePath = function(item){
