@@ -337,8 +337,6 @@ input , textarea{
 
 .sendMailConfirmationOuter{
     position: absolute;
-    left: 50px;
-    right: 50px;
     border-width: 3px;
     border-color: #4e4e4e;
     border-radius: 0;

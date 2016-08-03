@@ -47,9 +47,17 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
             info.howCanWeHelp = "";
         }
 
+        if(info.email == undefined){
+            info.emailToSent = "לא השאירו מייל";
+        }else{
+            info.emailToSent = info.email;
+        }
+
+
+
         $rootScope.sendingMail = true;
         emailjs.init("user_Z8mRIlQBfdHB3FmQswOFC");
-        emailjs.send("gmail","template_rhVwgmtA",{name: "James", notes: "Check this out!" , to_email : "etayschur.dev@gmail.com"})
+        emailjs.send("gmail","template_rhVwgmtA",{ name:  info.fullName , phone: info.phone , email: info.emailToSent , freeText:info.howCanWeHelp ,notes: "Check this out!" , to_email : "etayschur.dev@gmail.com"})
             .then(function(response) {
                 $rootScope.sendingMail = false;
                 console.log("Send mail true");
