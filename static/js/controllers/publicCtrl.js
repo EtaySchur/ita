@@ -165,6 +165,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     $rootScope.mailSent = false;
     $window.scrollTo(0,0)
     $scope.noWrapSlides = false;
+    $rootScope.showRightSection = false;
     $rootScope.imProjected = false;
 
     $scope.getImagePath = function(item){
@@ -220,6 +221,56 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 
     $rootScope.boxVisible = false;
+
+    var whoWeAreBreakPoint = new Waypoint({
+        element: document.getElementById('textScroll'),
+        handler: function(direction) {
+           $rootScope.botToTopAnimation();
+        },
+        offset: 20
+    })
+    
+    $rootScope.botToTopAnimation = function () {
+        console.log("Fire !");
+        if(!$scope.showWhoWeAre){
+            $scope.showWhoWeAre = true;
+            var bounce = new Bounce();
+            bounce
+                .translate({
+                    from: { x:0, y: 200 },
+                    to: { x: 0, y: 0 },
+                    duration: 3000,
+                    stiffness: 4
+                }).applyTo(document.querySelectorAll(".text-animation-target"));
+
+
+
+            $rootScope.showRightSection = true;
+
+            var bounce = new Bounce();
+            bounce
+                .translate({
+                    from: { x:0, y: 200 },
+                    to: { x: 0, y: 0 },
+                    duration: 3000,
+                    delay: 150,
+                    stiffness: 4
+                }).applyTo(document.querySelectorAll(".animation-right"));
+
+            $rootScope.showLeftSection = true;
+
+            var bounce = new Bounce();
+            bounce
+                .translate({
+                    from: { x:0, y: 200 },
+                    to: { x: 0, y: 0 },
+                    duration: 3000,
+                    delay: 250,
+                    stiffness: 4
+                }).applyTo(document.querySelectorAll(".animation-left"));
+        }
+    }
+
 
 
     $rootScope.showIt = function() {

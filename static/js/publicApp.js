@@ -54,15 +54,14 @@ publicApp.directive('fileModel', ['$parse', function ($parse) {
     };
 }]);
 
-publicApp.directive("scroll", function ($window , $rootScope) {
+publicApp.directive("scroll-alert", function ($window , $rootScope) {
     return function(scope, element, attrs) {
-
         angular.element($window).bind("scroll", function() {
+            console.log("ScrollY - ",this.pageYOffset);
             if (this.pageYOffset >= 300) {
-                if(!$rootScope.boxVisible){
                     console.log("Show it ?");
                     //$rootScope.showIt();
-                }
+                    alert("fuad");
                 scope.boolChangeClass = true;
                 console.log('Scrolled below header.');
             } else {

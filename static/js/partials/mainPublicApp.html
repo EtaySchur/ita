@@ -30,7 +30,7 @@
     </div>
 </div>
 
-<div  id="projectsSection"  style="margin-top: 60px" scroll class="row noLeftRightMargin">
+<div  id="projectsSection"  style="margin-top: 60px"  class="row noLeftRightMargin">
     <div  style="text-align: center;" class="col-md-10 col-md-offset-1 myCategoryFilter">
         <span  style="color: #a8a8a8;margin-left: 50px" ng-click="setActiveCategoryFilter(category)" ng-class="{'active': activeCategoryFilterId === category.id , 'hovered':hoverEdit}" class="categoryFilter clickable boldSubtitle" ng-repeat="category in categories">
               {{category.title}}
@@ -80,26 +80,30 @@
         </div>
     </div>
 </div>
-<div   id="whoWeAreSection" style="margin-top: 90px" class="row noLeftRightMargin">
-    <div  style="text-align: center" class="col-xs-12 rtl">
-        <div class="borderon"></div>
-        <h1 class="boldMiniHeader" style="margin-top:20px;color:#4e4e4e"> {{generalSettings.whoWeAreTitle}}</h1>
+
+<div id="textScroll">
+    <div   id="whoWeAreSection" style="margin-top: 90px" class="row noLeftRightMargin">
+        <div  ng-show="showWhoWeAre" style="text-align: center" class="col-xs-12 rtl text-animation-target">
+            <div class="borderon"></div>
+            <h1 class="boldMiniHeader" style="margin-top:20px;color:#4e4e4e"> {{generalSettings.whoWeAreTitle}}</h1>
+        </div>
+    </div>
+    <div   style="margin-top: 40px" class="row noLeftRightMargin">
+        <div  ng-show="showLeftSection" style="text-align: center" class="col-xs-12 col-md-offset-2 col-md-4 alignRight  rtl whoWeAreRowLeft animation-left">
+            <h3 style="margin-bottom:20px" class="rtl alignRigh regularTitle myGrey"> {{generalSettings.whoWeAreLeftSectionTitle}}</h3>
+            <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText1}} </p>
+            <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText2}} </p>
+            <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText3}} </p>
+        </div>
+        <div  ng-show="showRightSection" style="text-align: center" class="col-xs-12 col-md-4   alignRight rtl whoWeAreRowRight animation-right">
+            <h3 style="margin-bottom: 20px" class="regularTitle myGrey"> {{generalSettings.whoWeAreRightSectionTitle}}</h3>
+            <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText1}} </p>
+            <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText2}}</p>
+            <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText3}}</p>
+        </div>
     </div>
 </div>
-<div   style="margin-top: 40px" class="row noLeftRightMargin">
-    <div  style="text-align: center" class="col-xs-12 col-md-offset-2 col-md-4 alignRight  rtl whoWeAreRowLeft">
-        <h3 style="margin-bottom:20px" class="rtl alignRigh regularTitle myGrey"> {{generalSettings.whoWeAreLeftSectionTitle}}</h3>
-        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText1}} </p>
-        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText2}} </p>
-        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText3}} </p>
-    </div>
-    <div  style="text-align: center" class="col-xs-12 col-md-4   alignRight rtl whoWeAreRowRight">
-        <h3 style="margin-bottom: 20px" class="regularTitle myGrey"> {{generalSettings.whoWeAreRightSectionTitle}}</h3>
-        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText1}} </p>
-        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText2}}</p>
-        <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText3}}</p>
-    </div>
-</div>
+
 <div style="margin-top:90px;margin-right: 0;margin-left: 0;position: relative" class="row fancyBackground">
     <!--<div style="position: absolute;bottom: 0;right: 0" class="triangleWrapper">-->
         <!--<div class="triangle">-->
