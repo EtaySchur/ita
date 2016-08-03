@@ -596,6 +596,10 @@ svg{
     display: none !important;
 }
 
+.anotherCarousel .glyphicon {
+    display: none !important;
+}
+
 
 
 .contactUsSection .row{
