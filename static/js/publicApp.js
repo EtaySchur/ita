@@ -14,6 +14,8 @@ var publicApp = angular.module("publicApp", ['ui.bootstrap' ,
     'smoothScroll',
     'slick',
     'zumba.angular-waypoints',
+    'pc035860.scrollWatch',
+    'angular-inview',
     'angularFileUpload']);
 
 publicApp.config(function($modalProvider) {

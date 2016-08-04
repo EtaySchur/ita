@@ -164,8 +164,8 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , 'CategoriesService' , '$window', '$timeout' ,  function($scope , $http , anchorSmoothScroll , $location , $rootScope , CategoriesService , $window , $timeout) {
     $window.scrollTo(0,0);
     $scope.justChecing = "just checking";
+    $scope.scrollingSettings = {};
     $rootScope.mailSent = false;
-    $scope.showProjectsSection = false;
     $scope.noWrapSlides = false;
     $rootScope.imProjected = false;
 
@@ -176,6 +176,8 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
             return item.blackImagePath;
         }
     }
+
+
 
     $scope.gotoElement = function (eID){
         console.log("scroling to ",eID);
@@ -221,70 +223,43 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 
 
-    $rootScope.boxVisible = false;
 
-    $scope.init  = function(){
-        console.log("init");
-        // var whoWeAreBreakPoint = new Waypoint({
-        //     element: document.getElementById('textScroll'),
-        //     handler: function(direction) {
-        //         $scope.whoWeAreAnimation();
-        //         console.log("IM ON THAT DIV");
-        //     },
-        //     offset: 0
-        // })
-        //
-        // var projectsSectionWaypoint = new Waypoint({
-        //     element: document.getElementById('projectSectionDiv'),
-        //     handler: function(direction) {
-        //         $scope.botToTopAnimation();
-        //         console.log("IM ON THAT DIV");
-        //     },
-        //     offset: 0
-        // })
+
+
+    $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId){
+        if(!$scope.scrollingSettings[flagRight]){
+            $scope.scrollingSettings[flagRight] = true;
+            var bounce = new Bounce();
+            bounce
+                .translate({
+                    from: { x:0, y: 200 },
+                    to: { x: 0, y: 0 },
+                    duration: 1500,
+                    stiffness: 4
+                }).applyTo(document.querySelectorAll("." + rightElementId));
+
+                $timeout(function() {
+                    console.log("Showing Left Ele");
+                    bounce
+                        .translate({
+                            from: { x:0, y: 200 },
+                            to: { x: 0, y: 0 },
+                            duration: 1500,
+                            stiffness: 1,
+                        }).applyTo(document.querySelectorAll("." + leftElementId));
+                    $scope.scrollingSettings[flagLeft] = true;
+                } , 100)
+
+
+        }
+
+
     }
 
-    // $scope.$watch(function () {
-    //     return $scope.waypoints.whoWeAreSection;
-    // }, function (waypoint) {
-    //     console.log("Way Point ? ,",waypoint);
-    //     if(waypoint){
-    //         $scope.whoWeAreAnimation();
-    //     }
-    // });
 
-    // $scope.$watch(function () {
-    //     return $scope.waypoints.projectsSection;
-    // }, function (waypoint) {
-    //     console.log("Way Point ? ,",waypoint);
-    //     if(waypoint){
-    //         $scope.botToTopAnimation();
-    //     }
-    // });
-
-    $scope.$watch(
-        "waypoints.globals.projectsSection",
-        function handleFooChange( newValue, oldValue ) {
-            console.log("Watching !" , newValue);
-            if(newValue){
-                $scope.botToTopAnimation();
-
-            }
-        }
-    );
-
-    $scope.$watch(
-        "waypoints.whoWeAreSection.down",
-        function handleFooChange( newValue, oldValue ) {
-            if(newValue){
-                $scope.whoWeAreAnimation();
-            }
-        }
-    );
-
-    $scope.botToTopAnimation = function(){
-        if(!$scope.showProjectsSection){
-            $scope.showProjectsSection = true;
+    $scope.botToTopAnimation = function(flag , elementId){
+        if(!$scope.scrollingSettings[flag]){
+            $scope.scrollingSettings[flag] = true;
             var bounce = new Bounce();
             bounce
                 .translate({
@@ -292,14 +267,14 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                     to: { x: 0, y: 0 },
                     duration: 2000,
                     stiffness: 4
-                }).applyTo(document.querySelectorAll(".projectSectionDiv"));
+                }).applyTo(document.querySelectorAll("." + elementId));
         }
     }
 
-    $scope.whoWeAreAnimation = function () {
+    $scope.whoWeAreAnimation = function (flag , elementId) {
         console.log("Fire !");
-        if(!$scope.showWhoWeAre){
-            $scope.showWhoWeAre = true;
+        if(!$scope.scrollingSettings[flag]){
+            $scope.scrollingSettings[flag] = true;
             var bounce = new Bounce();
             bounce
                 .translate({
@@ -410,11 +385,6 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
         }
     }
-
-    $scope.init();
-
-
-
 }]);
 
 publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window' , '$timeout',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window , $timeout) {
@@ -431,96 +401,8 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     };
 
     $rootScope.showNav = false;
-    $scope.nextPage = function(){
-        // $scope.nextAnimation = true;
-        // $rootScope.miniProjects[$scope.minIndex].animated = true;
-        // $rootScope.miniProjects[$scope.minIndex].fadeOutLeft = true;
-        //
-        // //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
-        // //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = true;
-        // //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-        // //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = true;
-        //
-        // $timeout(function() {
-        //     $rootScope.miniProjects[$scope.minIndex].fadeOutLeft = false;
-        //     $rootScope.miniProjects[$scope.minIndex].animated = false;
-        //     $rootScope.miniProjects[$scope.minIndex].showMe = false;
-        //
-        //     $timeout(function() {
-        //         $rootScope.miniProjects[$scope.minIndex + 1].animated = true;
-        //         $rootScope.miniProjects[$scope.minIndex + 1].fadeIn = true;
-        //         $rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = false;
-        //
-        //         $rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-        //         $rootScope.miniProjects[$scope.minIndex + 2].fadeIn = true;
-        //         $rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = false;
-        //
-        //
-        //         $rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = true;
-        //         $rootScope.miniProjects[$scope.minIndex + 3].animated = true;
-        //         $rootScope.miniProjects[$scope.minIndex + 3].showMe = true;
-        //
-        //         $rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = false;
-        //         $rootScope.miniProjects[$scope.minIndex + 3].animated = false;
-        //         $scope.minIndex += 1;
-        //     } , 600)
-        //
-        // }, 600);
-    }
 
-    $scope.prevPage = function(){
-        // if( $scope.minIndex == 0){
-        //     return;
-        // }
-        //
-        //
-        // $scope.nextAnimation = true;
-        // $rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-        // $rootScope.miniProjects[$scope.minIndex + 2].fadeOutRight = true;
-        //
-        // //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
-        // //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = true;
-        // //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-        // //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = true;
-        //
-        // $timeout(function() {
-        //     $rootScope.miniProjects[$scope.minIndex + 2].fadeOutRight = false;
-        //     $rootScope.miniProjects[$scope.minIndex + 2].animated = false;
-        //     $rootScope.miniProjects[$scope.minIndex + 2].showMe = false;
-        //
-        //     $timeout(function() {
-        //         //$rootScope.miniProjects[$scope.minIndex + 1].animated = true;
-        //         //$rootScope.miniProjects[$scope.minIndex + 1].fadeIn = true;
-        //         //$rootScope.miniProjects[$scope.minIndex + 1].fadeOutLeft = false;
-        //         //
-        //         //$rootScope.miniProjects[$scope.minIndex + 2].animated = true;
-        //         //$rootScope.miniProjects[$scope.minIndex + 2].fadeIn = true;
-        //         //$rootScope.miniProjects[$scope.minIndex + 2].fadeOutLeft = false;
-        //
-        //
-        //         $rootScope.miniProjects[$scope.minIndex - 1].fadeInLeft = true;
-        //         $rootScope.miniProjects[$scope.minIndex - 1].animated = true;
-        //         $rootScope.miniProjects[$scope.minIndex - 1].showMe = true;
-        //
-        //         //$rootScope.miniProjects[$scope.minIndex + 3].fadeInRight = false;
-        //         //$rootScope.miniProjects[$scope.minIndex + 3].animated = false;
-        //         $scope.minIndex -= 1;
-        //     } , 600)
-        //
-        // }, 600);
 
-        //$scope.nextAnimation = false;
-        //$scope.minIndex -= 1;
-        //console.log($scope.minIndex);
-        //$timeout(function() {
-        //    $rootScope.miniProjects[$scope.minIndex + 3].showMe = false;
-        //    $timeout(function() {
-        //        $rootScope.miniProjects[$scope.minIndex].showMe = true;
-        //    }, 300);
-        //}, 800);
-        //
-        //$scope.currentPage -= 1;
-    }
 
 
     $scope.currentPage = 0;
