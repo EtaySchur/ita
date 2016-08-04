@@ -1,343 +1,346 @@
-<div class="row noLeftRightMargin">
-    <div class="col-md-12 myCarousel">
-        <!-- Carousel Section -->
-        <div>
-            <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
-                <uib-slide ng-repeat="slide in carouselImages" active="slide.active">
-                    <img class="carouselImage" ng-src="{{slide.imagePath}}" style="margin:auto;">
-                    <div class="carousel-caption">
-                        <div style="margin-top: 250px" class="boldHeader" >{{slide.title}}</div>
-                        <p style="margin-bottom: 76px" class="boldSubHeader">{{slide.text}}</p>
-                        <div class="row">
-                            <div id="ourProjectsCta" scroll-to="projectsSection"  class="myButton clickable">
-                                <div style="color: white;padding-top: 14px" class="boldSubtitle">
-                                    לצפייה בעבודות שלנו
+<div  in-view-container>
+    <div class="row noLeftRightMargin">
+        <div class="col-md-12 myCarousel">
+            <!-- Carousel Section -->
+            <div>
+                <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+                    <uib-slide ng-repeat="slide in carouselImages" active="slide.active">
+                        <img class="carouselImage" ng-src="{{slide.imagePath}}" style="margin:auto;">
+                        <div class="carousel-caption">
+                            <div style="margin-top: 250px" class="boldHeader" >{{slide.title}}</div>
+                            <p style="margin-bottom: 76px" class="boldSubHeader">{{slide.text}}</p>
+                            <div class="row">
+                                <div id="ourProjectsCta" scroll-to="projectsSection"  class="myButton clickable">
+                                    <div style="color: white;padding-top: 14px" class="boldSubtitle">
+                                        לצפייה בעבודות שלנו
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div  style="bottom: 15px;font-size: 35px" class="icon-Go_Down floatMe">
+                            <div class="row">
+                                <div  style="bottom: 15px;font-size: 35px" class="icon-Go_Down floatMe">
+                                </div>
                             </div>
+
+
                         </div>
+                    </uib-slide>
+                </uib-carousel>
+            </div>
 
-
-                    </div>
-                </uib-slide>
-            </uib-carousel>
+            <!-- End Carousel Section -->
         </div>
-
-        <!-- End Carousel Section -->
     </div>
-</div>
-<div   in-view="botToTopAnimation('showProjectsSection' , 'projectSectionDiv')" style="min-height: 600px;" class="heightContainer">
-    <div  ng-show="scrollingSettings.showProjectsSection"   class="projectSectionDiv"  id="projectSectionDiv">
-        <div  id="projectsSection"  style="margin-top: 60px"  class="row noLeftRightMargin">
-            <div  style="text-align: center;" class="col-md-10 col-md-offset-1 myCategoryFilter">
+    <div   in-view="botToTopAnimation('showProjectsSection' , 'projectSectionDiv')" style="min-height: 600px;" class="heightContainer">
+        <div  ng-show="scrollingSettings.showProjectsSection"   class="projectSectionDiv"  id="projectSectionDiv">
+            <div  id="projectsSection"  style="margin-top: 60px"  class="row noLeftRightMargin">
+                <div  style="text-align: center;" class="col-md-10 col-md-offset-1 myCategoryFilter">
         <span  style="color: #a8a8a8;margin-left: 50px" ng-click="setActiveCategoryFilter(category)" ng-class="{'active': activeCategoryFilterId === category.id , 'hovered':hoverEdit}" class="categoryFilter clickable boldSubtitle" ng-repeat="category in categories">
               {{category.title}}
         </span>
+                </div>
             </div>
-        </div>
-        <div   style="margin-top: 40px" class="row noLeftRightMargin">
-            <div style="text-align: center" class="col-md-8 col-md-offset-2 projectsContainer">
-                <div      class="col-md-4 animation-target">
-                    <div    style="position: relative" ng-if="($index == 0) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
-                        <div  ng-click="projectSelected(project)" ng-show="hoverEdit" class="imageMask"> </div>
-                        <div ng-click="projectSelected(project)" class="floatingContainer">
-                            <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
-                            <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+            <div   style="margin-top: 40px" class="row noLeftRightMargin">
+                <div style="text-align: center" class="col-md-8 col-md-offset-2 projectsContainer">
+                    <div      class="col-md-4 animation-target">
+                        <div    style="position: relative" ng-if="($index == 0) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+                            <div  ng-click="projectSelected(project)" ng-show="hoverEdit" class="imageMask"> </div>
+                            <div ng-click="projectSelected(project)" class="floatingContainer">
+                                <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
+                                <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                            </div>
+                            <div ng-class="{ 'imageContainer':hoverEdit}" >
+                                <img   style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
+                            </div>
+                            <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
                         </div>
-                        <div ng-class="{ 'imageContainer':hoverEdit}" >
-                            <img   style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
-                        </div>
-                        <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
                     </div>
-                </div>
-                <div     class="col-md-4">
-                    <div        style="position: relative" ng-if="($index == 1 || $index == 3)  && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
-                        <div  ng-click="projectSelected(project)" ng-show="hoverEdit" class="imageMask"> </div>
-                        <div ng-click="projectSelected(project)" class="floatingContainer">
-                            <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
-                            <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                    <div     class="col-md-4">
+                        <div        style="position: relative" ng-if="($index == 1 || $index == 3)  && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+                            <div  ng-click="projectSelected(project)" ng-show="hoverEdit" class="imageMask"> </div>
+                            <div ng-click="projectSelected(project)" class="floatingContainer">
+                                <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
+                                <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                            </div>
+                            <div ng-class="{ 'imageContainer':hoverEdit}" >
+                                <img    style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
+                            </div>
+                            <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
                         </div>
-                        <div ng-class="{ 'imageContainer':hoverEdit}" >
-                            <img    style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
-                        </div>
-                        <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
                     </div>
-                </div>
-                <div     class="col-md-4">
-                    <div      style="position: relative" ng-if="($index == 2 || $index == 4) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
-                        <div ng-click="projectSelected(project)" ng-show="hoverEdit" class="imageMask"> </div>
-                        <div ng-click="projectSelected(project)" class="floatingContainer">
-                            <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
-                            <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                    <div     class="col-md-4">
+                        <div      style="position: relative" ng-if="($index == 2 || $index == 4) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
+                            <div ng-click="projectSelected(project)" ng-show="hoverEdit" class="imageMask"> </div>
+                            <div ng-click="projectSelected(project)" class="floatingContainer">
+                                <div  ng-show="hoverEdit" style="color: white" class="boldSubtitle projectTitle"> {{project.title}}</div>
+                                <div   ng-show="hoverEdit" style="color: white" class="regularText projectCta"> צפה בפרוייקט</div>
+                            </div>
+                            <div ng-class="{ 'imageContainer':hoverEdit}" >
+                                <img  style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
+                            </div>
+                            <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
                         </div>
-                        <div ng-class="{ 'imageContainer':hoverEdit}" >
-                            <img  style="width: 100%" class="animated" ng-src="{{project.bigImage}}">
-                        </div>
-                        <p style="text-align: right"> {{ project.subCategoryTitle}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
-<div  style="min-height: 420px" id="textScroll">
-    <div   in-view="botToTopAnimation('showWhoWeAre' , 'text-animation-target')" id="whoWeAreSection" style="margin-top: 90px" class="row noLeftRightMargin">
-        <div  ng-show="scrollingSettings.showWhoWeAre" style="text-align: center" class="col-xs-12 rtl text-animation-target">
-            <div class="borderon"></div>
-            <h1 class="boldMiniHeader" style="margin-top:20px;color:#4e4e4e"> {{generalSettings.whoWeAreTitle}}</h1>
-        </div>
-    </div>
-    <div    in-view="botToTopDelayedAnimation('showWhoWeAreRightSection' , 'showWhoWeAreLeftSection' , 'whoWeAreRowRight' , 'whoWeAreRowLeft')" style="margin-top: 40px" class="row noLeftRightMargin">
-        <div  style="text-align: center" class="col-xs-12 col-md-offset-2 col-md-4 alignRight  rtl whoWeAreRowLeft animation-left">
-            <div  ng-show="scrollingSettings.showWhoWeAreLeftSection">
-                <h3 style="margin-bottom:20px" class="rtl alignRigh regularTitle myGrey"> {{generalSettings.whoWeAreLeftSectionTitle}}</h3>
-                <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText1}} </p>
-                <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText2}} </p>
-                <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText3}} </p>
+    <div  style="min-height: 420px" id="textScroll">
+        <div   in-view="botToTopAnimation('showWhoWeAre' , 'text-animation-target')" id="whoWeAreSection" style="margin-top: 90px" class="row noLeftRightMargin">
+            <div  ng-show="scrollingSettings.showWhoWeAre" style="text-align: center" class="col-xs-12 rtl text-animation-target">
+                <div class="borderon"></div>
+                <h1 class="boldMiniHeader" style="margin-top:20px;color:#4e4e4e"> {{generalSettings.whoWeAreTitle}}</h1>
             </div>
         </div>
-        <div   style="text-align: center" class="col-xs-12 col-md-4   alignRight rtl whoWeAreRowRight animation-right">
-            <div ng-show="scrollingSettings.showWhoWeAreRightSection">
-                <h3 style="margin-bottom: 20px" class="regularTitle myGrey"> {{generalSettings.whoWeAreRightSectionTitle}}</h3>
-                <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText1}} </p>
-                <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText2}}</p>
-                <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText3}}</p>
+        <div    in-view="botToTopDelayedAnimation('showWhoWeAreRightSection' , 'showWhoWeAreLeftSection' , 'whoWeAreRowRight' , 'whoWeAreRowLeft')" style="margin-top: 40px" class="row noLeftRightMargin">
+            <div  style="text-align: center" class="col-xs-12 col-md-offset-2 col-md-4 alignRight  rtl whoWeAreRowLeft animation-left">
+                <div  ng-show="scrollingSettings.showWhoWeAreLeftSection">
+                    <h3 style="margin-bottom:20px" class="rtl alignRigh regularTitle myGrey"> {{generalSettings.whoWeAreLeftSectionTitle}}</h3>
+                    <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText1}} </p>
+                    <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText2}} </p>
+                    <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreLeftSectionText3}} </p>
+                </div>
             </div>
+            <div   style="text-align: center" class="col-xs-12 col-md-4   alignRight rtl whoWeAreRowRight animation-right">
+                <div ng-show="scrollingSettings.showWhoWeAreRightSection">
+                    <h3 style="margin-bottom: 20px" class="regularTitle myGrey"> {{generalSettings.whoWeAreRightSectionTitle}}</h3>
+                    <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText1}} </p>
+                    <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText2}}</p>
+                    <p class="myOtherGrey regularSmallText">  {{generalSettings.whoWeAreRightSectionText3}}</p>
+                </div>
             </div>
 
+        </div>
     </div>
-</div>
 
-<div style="margin-top:90px;margin-right: 0;margin-left: 0;position: relative" class="row fancyBackground">
-    <!--<div style="position: absolute;bottom: 0;right: 0" class="triangleWrapper">-->
+    <div style="margin-top:90px;margin-right: 0;margin-left: 0;position: relative" class="row fancyBackground">
+        <!--<div style="position: absolute;bottom: 0;right: 0" class="triangleWrapper">-->
         <!--<div class="triangle">-->
         <!--</div>-->
-    <!--</div>-->
-    <div style="text-align: center;" class="col-xs-12">
+        <!--</div>-->
+        <div style="text-align: center;" class="col-xs-12">
 
-        <div style="font-size: 29px;color: white;margin-top: 85px" class="regular29Text">ישנם אלפי אדריכלי שיפוץ בארץ </div>
-        <div class="boldMiniHeader myYellow">אנחנו עובדים אחרת</div>
-    </div>
-    <div style="margin-top: 60px" class="col-md-10 col-md-offset-1">
-        <div style="direction: rtl" class="row">
-            <div style="float: right;" class="col-md-3 alignRight">
-                <div  class="imageHolder">
-                    <i class="fuadIcon icon-Services_1">
-
-                    </i>
-                    <!--img class="serviceSvg" src="static/assets/Services_1_Fix.svg"-->
-                </div>
-                <div style="color: white;;margin-top: 9px;margin-bottom: 20px;" class="regularMediumText">
-                    'פרוייקטים מ-א' ועד ת
-                </div>
-                <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
-                    משלב התכנון ההתחלתי וההדמיות ועד לביצוע הבנייה ועבודות הגמר, אנחנו פה אתכם ובשבילכם בכל רגע.
-                </div>
-                <div class="boldExtraSmallText myOtherWhite">
-                    אתם תמנעו מכאבי ראש ועלויות של עבודה מול מספר נותני שירות במקביל.
-                </div>
-            </div>
-
-
-
-            <div style="float: right;" class="col-md-3 alignRight">
-                <div  class="imageHolder">
-                    <i class="fuadIcon icon-Services_2">
-
-                    </i>
-                </div>
-                <div style="color: white;margin-bottom: 20px;margin-top: 9px" class="regularMediumText">
-                    עבודות בנייה מדוייקות
-                </div>
-                <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
-                    אנחנו עובדים על פי סטנדרטים אמריקאיים של ביצוע עבודות עם דיוק ברמת המילימטר.
-                </div>
-                <div class="boldExtraSmallText myOtherWhite">
-                    למה? כי בעינינו אין דרך אחרת לעבוד.
-                </div>
-            </div>
-
-
-
-            <div style="float: right;" class="col-md-3 alignRight">
-                <div  class="imageHolder">
-                    <i class="fuadIcon icon-Services_3">
-
-                    </i>
-                </div>
-                <div style="color: white;margin-bottom: 20px;margin-top: 9px" class="regularMediumText">
-                    ייעוץ מקצועי
-                </div>
-                <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
-                    יש לכם שאלה לגבי פרוייקט שיפוץ מסויים? רוצים לקבל חוות דעת שניה לגבי חידוש הבית?
-                </div>
-                <div class="boldExtraSmallText myOtherWhite">
-                    אנחנו נספק חוות דעת מקצועית ואובייקטיבית עבורכם.
-                </div>
-            </div>
-
-
-
-            <div style="float: right;" class="col-md-3 alignRight">
-                <div class="imageHolder">
-                    <i class="fuadIcon icon-Services_4">
-
-                    </i>
-                </div>
-                <div style="color: white;margin-bottom: 20px;margin-top: 9px" class="regularMediumText">
-                    טיפול באישורים וניירת
-                </div>
-                <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
-                    אנחנו מומחים בהכנה, הגשה וטיפול באישורי הבנייה השונים, בעבודה מול הרשויות ובהסדרת הניירת הדרושה.
-                </div>
-                <div class="boldExtraSmallText myOtherWhite">
-                    וכל זאת כלול במחיר הפרוייקט.
-                </div>
-            </div>
+            <div style="font-size: 29px;color: white;margin-top: 85px" class="regular29Text">ישנם אלפי אדריכלי שיפוץ בארץ </div>
+            <div class="boldMiniHeader myYellow">אנחנו עובדים אחרת</div>
         </div>
-    </div>
-</div>
-<div   id="testimonialsSection" style="margin-top: 90px;margin-bottom: 30px;margin-left: 0;margin-right: 0" class="row">
-    <div  style="text-align: center" class="col-xs-12 rtl">
-        <div class="borderon"></div>
-        <h1 class="boldMiniHeader" style="color:#4e4e4e"> {{generalSettings.testimonialsTitle}}</h1>
-    </div>
-</div>
-<div   style="margin-bottom: 80px;" class="row noLeftRightMargin">
-    <div   class="col-xs-12 col-md-6 col-md-offset-3 rtl">
-        <div  style="margin-bottom: 30px;text-align: center;padding-left: 40px;padding-right: 40px;margin-top: 27px;height: 128px;position: relative">
-            <i style="color: #cbcbcb;font-size: 34px" class="icon-commas commaImageRight"> </i>
-            <div style="margin-bottom: 15px" class="regularLargeText myGrey"> {{selectedTestimonial.title}}  </div>
-            <p class="regularText myOtherGrey"> {{selectedTestimonial.subTitle}}</p>
-            <i style="color: #cbcbcb;font-size: 34px" class="icon-commas commaImageLeft"> </i>
-        </div>
-        <div style="text-align: center;margin-top: 30px" ng-click="setTestimonial(item)" ng-repeat="item in testimonials | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-md-4 col-xs-4 testImageContainer">
-            <img ng-class="{ 'actived': selectedTestimonial.id == item.id}" class="img img-circle img-thumbnail myThumb testimonialSmallImage  bounceInLeft clickable" ng-src="{{getImagePath(item)}}">
+        <div style="margin-top: 60px" class="col-md-10 col-md-offset-1">
+            <div style="direction: rtl" class="row">
+                <div style="float: right;" class="col-md-3 alignRight">
+                    <div  class="imageHolder">
+                        <i class="fuadIcon icon-Services_1">
 
-            <p class="regularText myGrey" style="margin-top: 5px">{{item.description}}</p>
-        </div>
-        <button class="carouselCheviLeft" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
-            <i ng-class="{'disabled':currentPage == 0 }" class="icon-Arrow_left myGrey"></i>
-        </button>
-
-        <button class="carouselCheviRight" ng-disabled="currentPage >= testimonials.length/pageSize - 1" ng-click="currentPage=currentPage+1">
-            <i   ng-class="{'disabled':currentPage >= testimonials.length/pageSize - 1}" class="icon-Arrow_right myGrey"></i>
-        </button>
-
-
-    </div>
-</div>
-<div style="margin-left: 0;margin-right: 0" id="contactUsSection" class="row contactUsContainer">
-    <div style="text-align: center;padding: 0" class="col-xs-6  col-md-6 alignRight  rtl">
-        <div class="outWrap">
-            <div style="text-align: center" class="innerWrap">
-                <div style="margin-bottom: 20px;margin-top: 5px" class="myGrey boldBigText">
-                    איתמר משה
+                        </i>
+                        <!--img class="serviceSvg" src="static/assets/Services_1_Fix.svg"-->
+                    </div>
+                    <div style="color: white;;margin-top: 9px;margin-bottom: 20px;" class="regularMediumText">
+                        'פרוייקטים מ-א' ועד ת
+                    </div>
+                    <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
+                        משלב התכנון ההתחלתי וההדמיות ועד לביצוע הבנייה ועבודות הגמר, אנחנו פה אתכם ובשבילכם בכל רגע.
+                    </div>
+                    <div class="boldExtraSmallText myOtherWhite">
+                        אתם תמנעו מכאבי ראש ועלויות של עבודה מול מספר נותני שירות במקביל.
+                    </div>
                 </div>
-                <div style="width: 20px;border-bottom: 3px solid #4e4e4e;margin-bottom: 20px "
-                     class="liner myGrey"></div>
-                <div class="myGrey boldSemiText">
-                    {{generalSettings.email}}
+
+
+
+                <div style="float: right;" class="col-md-3 alignRight">
+                    <div  class="imageHolder">
+                        <i class="fuadIcon icon-Services_2">
+
+                        </i>
+                    </div>
+                    <div style="color: white;margin-bottom: 20px;margin-top: 9px" class="regularMediumText">
+                        עבודות בנייה מדוייקות
+                    </div>
+                    <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
+                        אנחנו עובדים על פי סטנדרטים אמריקאיים של ביצוע עבודות עם דיוק ברמת המילימטר.
+                    </div>
+                    <div class="boldExtraSmallText myOtherWhite">
+                        למה? כי בעינינו אין דרך אחרת לעבוד.
+                    </div>
                 </div>
-                <div class="myGrey boldSemiText">
-                    {{generalSettings.phone}}
+
+
+
+                <div style="float: right;" class="col-md-3 alignRight">
+                    <div  class="imageHolder">
+                        <i class="fuadIcon icon-Services_3">
+
+                        </i>
+                    </div>
+                    <div style="color: white;margin-bottom: 20px;margin-top: 9px" class="regularMediumText">
+                        ייעוץ מקצועי
+                    </div>
+                    <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
+                        יש לכם שאלה לגבי פרוייקט שיפוץ מסויים? רוצים לקבל חוות דעת שניה לגבי חידוש הבית?
+                    </div>
+                    <div class="boldExtraSmallText myOtherWhite">
+                        אנחנו נספק חוות דעת מקצועית ואובייקטיבית עבורכם.
+                    </div>
+                </div>
+
+
+
+                <div style="float: right;" class="col-md-3 alignRight">
+                    <div class="imageHolder">
+                        <i class="fuadIcon icon-Services_4">
+
+                        </i>
+                    </div>
+                    <div style="color: white;margin-bottom: 20px;margin-top: 9px" class="regularMediumText">
+                        טיפול באישורים וניירת
+                    </div>
+                    <div  style="margin-bottom: 30px;" class="regularExtraSmallText myOtherWhite">
+                        אנחנו מומחים בהכנה, הגשה וטיפול באישורי הבנייה השונים, בעבודה מול הרשויות ובהסדרת הניירת הדרושה.
+                    </div>
+                    <div class="boldExtraSmallText myOtherWhite">
+                        וכל זאת כלול במחיר הפרוייקט.
+                    </div>
                 </div>
             </div>
         </div>
-        <img style="width: 100%" src="static/assets/Footer_bg.jpg">
     </div>
-    <div style="text-align: center" class="col-xs-6 col-md-5   alignRight rtl">
-        <div class="row">
-            <h3 style="font-size: 46px;margin-top:30px;margin-bottom: 30px" class="rtl alignRight bold myGrey"> בואו
-                נדבר </h3>
+    <div   id="testimonialsSection" style="margin-top: 90px;margin-bottom: 30px;margin-left: 0;margin-right: 0" class="row">
+        <div  style="text-align: center" class="col-xs-12 rtl">
+            <div class="borderon"></div>
+            <h1 class="boldMiniHeader" style="color:#4e4e4e"> {{generalSettings.testimonialsTitle}}</h1>
         </div>
+    </div>
+    <div   style="margin-bottom: 80px;" class="row noLeftRightMargin">
+        <div   class="col-xs-12 col-md-6 col-md-offset-3 rtl">
+            <div  style="margin-bottom: 30px;text-align: center;padding-left: 40px;padding-right: 40px;margin-top: 27px;height: 128px;position: relative">
+                <i style="color: #cbcbcb;font-size: 34px" class="icon-commas commaImageRight"> </i>
+                <div style="margin-bottom: 15px" class="regularLargeText myGrey"> {{selectedTestimonial.title}}  </div>
+                <p class="regularText myOtherGrey"> {{selectedTestimonial.subTitle}}</p>
+                <i style="color: #cbcbcb;font-size: 34px" class="icon-commas commaImageLeft"> </i>
+            </div>
+            <div style="text-align: center;margin-top: 30px" ng-click="setTestimonial(item)" ng-repeat="item in testimonials | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-md-4 col-xs-4 testImageContainer">
+                <img ng-class="{ 'actived': selectedTestimonial.id == item.id}" class="img img-circle img-thumbnail myThumb testimonialSmallImage  bounceInLeft clickable" ng-src="{{getImagePath(item)}}">
 
-        <div style="margin-bottom: 30px" class="row">
-            <div class="borderinon"></div>
+                <p class="regularText myGrey" style="margin-top: 5px">{{item.description}}</p>
+            </div>
+            <button class="carouselCheviLeft" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                <i ng-class="{'disabled':currentPage == 0 }" class="icon-Arrow_left myGrey"></i>
+            </button>
+
+            <button class="carouselCheviRight" ng-disabled="currentPage >= testimonials.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                <i   ng-class="{'disabled':currentPage >= testimonials.length/pageSize - 1}" class="icon-Arrow_right myGrey"></i>
+            </button>
+
+
         </div>
-        <div class="row">
-            <p style="margin-up: 30px" class="regularText myGrey" style="margin-bottom: 10px"> חושבים לעשות שיפוץ
-                בבית,הרחבה או תוספת בפנים או בחוץ? הגעתם למקום הנכון</p>
+    </div>
+    <div style="margin-left: 0;margin-right: 0" id="contactUsSection" class="row contactUsContainer">
+        <div style="text-align: center;padding: 0" class="col-xs-6  col-md-6 alignRight  rtl">
+            <div class="outWrap">
+                <div style="text-align: center" class="innerWrap">
+                    <div style="margin-bottom: 20px;margin-top: 5px" class="myGrey boldBigText">
+                        איתמר משה
+                    </div>
+                    <div style="width: 20px;border-bottom: 3px solid #4e4e4e;margin-bottom: 20px "
+                         class="liner myGrey"></div>
+                    <div class="myGrey boldSemiText">
+                        {{generalSettings.email}}
+                    </div>
+                    <div class="myGrey boldSemiText">
+                        {{generalSettings.phone}}
+                    </div>
+                </div>
+            </div>
+            <img style="width: 100%" src="static/assets/Footer_bg.jpg">
         </div>
-        <div style="margin-bottom: 30px" class="row">
-            <p class="regularText myGrey"> צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
-        </div>
-        <div class="row">
-            <div ng-if="mailSent" class="sendMailConfirmationOuter">
-                <div class="textWrap">
-                    <i  ng-click="mailSent = false" style="color: black;position: absolute;top : 14px;right: 14px"  class="icon-Close clickable"></i>
-                    <div  class="boldMiniTitle">
+        <div style="text-align: center" class="col-xs-6 col-md-5   alignRight rtl">
+            <div class="row">
+                <h3 style="font-size: 46px;margin-top:30px;margin-bottom: 30px" class="rtl alignRight bold myGrey"> בואו
+                    נדבר </h3>
+            </div>
+
+            <div style="margin-bottom: 30px" class="row">
+                <div class="borderinon"></div>
+            </div>
+            <div class="row">
+                <p style="margin-up: 30px" class="regularText myGrey" style="margin-bottom: 10px"> חושבים לעשות שיפוץ
+                    בבית,הרחבה או תוספת בפנים או בחוץ? הגעתם למקום הנכון</p>
+            </div>
+            <div style="margin-bottom: 30px" class="row">
+                <p class="regularText myGrey"> צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
+            </div>
+            <div class="row">
+                <div ng-if="mailSent" class="sendMailConfirmationOuter">
+                    <div class="textWrap">
+                        <i  ng-click="mailSent = false" style="color: black;position: absolute;top : 14px;right: 14px"  class="icon-Close clickable"></i>
+                        <div  class="boldMiniTitle">
                     <span>
                         היי
                     </span>
-                     <span>
+                            <span>
                          {{contact.fullName}},
                      </span>
-                    <span>
+                            <span>
                         תודה רבה שפנית אלינו
                     </span>
+                        </div>
+                        <div style="font-size: 14px;margin-top: 20px" class="regularExtraSmallText">
+                            הפנייה שלך נמצאת כבר בתיבת המייל שלנו, ניצור איתך קשר ממש בקרוב.
+                        </div>
+                        <div style="font-size: 14px;margin-top: 14px" class="regularExtraSmallText">
+                            המשך יום טוב.
+                        </div>
                     </div>
-                    <div style="font-size: 14px;margin-top: 20px" class="regularExtraSmallText">
-                        הפנייה שלך נמצאת כבר בתיבת המייל שלנו, ניצור איתך קשר ממש בקרוב.
+
+                </div>
+                <form  autocomplete="off" ng-if="!mailSent" style="width: 510px;" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
+                    <div  style="margin-bottom: 30px;position: relative" class="form-group">
+                        <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
+                        <div  class="reqText">  * שדה חובה </div>
+                        <input name="fullNameInput" required ng-model="contact.fullName" type="text"
+                               class="form-control myGrey contactUsInput" id="exampleInputEmail1"
+                        >
+
+                        <!--<p ng-show="!contactUsForm.fullNameInput.$valid && submitted" style="color: red"> שדה חובה </p>-->
                     </div>
-                    <div style="font-size: 14px;margin-top: 14px" class="regularExtraSmallText">
-                        המשך יום טוב.
+                    <div style="margin-bottom: 30px;position: relative" class="form-group">
+                        <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
+                        <div  class="reqText">  * שדה חובה </div>
+                        <input name="phoneInput"  required ng-model="contact.phone" type="text"
+                               class="form-control myGrey contactUsInput" id="exampleInputPassword1"
+                        >
+
+                        <!--<p ng-show="!contactUsForm.phoneInput.$valid" style="color: red"> שדה חובה </p>-->
                     </div>
-                </div>
-
-            </div>
-            <form  autocomplete="off" ng-if="!mailSent" style="width: 510px;" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
-                <div  style="margin-bottom: 30px;position: relative" class="form-group">
-                    <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
-                    <div  class="reqText">  * שדה חובה </div>
-                    <input name="fullNameInput" required ng-model="contact.fullName" type="text"
-                           class="form-control myGrey contactUsInput" id="exampleInputEmail1"
-                            >
-
-                    <!--<p ng-show="!contactUsForm.fullNameInput.$valid && submitted" style="color: red"> שדה חובה </p>-->
-                </div>
-                <div style="margin-bottom: 30px;position: relative" class="form-group">
-                    <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
-                    <div  class="reqText">  * שדה חובה </div>
-                    <input name="phoneInput"  required ng-model="contact.phone" type="text"
-                           class="form-control myGrey contactUsInput" id="exampleInputPassword1"
-                            >
-
-                    <!--<p ng-show="!contactUsForm.phoneInput.$valid" style="color: red"> שדה חובה </p>-->
-                </div>
-                <div style="margin-bottom: 30px;position: relative" class="form-group">
-                    <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
-                    <div  ng-show="!contactUsForm.emailInput.$valid && submitted" class="reqText">  * הוזן אימייל לא חוקי </div>
-                    <input  name="emailInput" ng-model="contact.email" type="email"
-                           class="form-control myGrey contactUsInput" id="exampleInputPassword1"
-                            >
-                </div>
-                <div style="margin-bottom: 20px;position: relative" class="form-group">
-                    <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
-                    <!--<div  class="reqText">  * חובה להזין טקסט </div>-->
-                    <textarea style="resize: none;" maxlength="600" rows="5" ng-model="contact.howCanWeHelp" type="text"
-                              class="form-control regularText myGrey contactUsTextArea" id="exampleInputPassword1"> </textarea>
-                </div>
-                <div ng-class="{'disableButtonText' : sendingMail}" style="margin-top: 30px;margin-bottom: 55px" class="clickable">
-                    <div  ng-click="sendMail(contact)" style="padding: 5px 10px;float: left;margin-top:-10px"
-                          class="boldSubtitle contactUsButton">
+                    <div style="margin-bottom: 30px;position: relative" class="form-group">
+                        <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
+                        <div  ng-show="!contactUsForm.emailInput.$valid && submitted" class="reqText">  * הוזן אימייל לא חוקי </div>
+                        <input  name="emailInput" ng-model="contact.email" type="email"
+                                class="form-control myGrey contactUsInput" id="exampleInputPassword1"
+                        >
+                    </div>
+                    <div style="margin-bottom: 20px;position: relative" class="form-group">
+                        <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
+                        <!--<div  class="reqText">  * חובה להזין טקסט </div>-->
+                        <textarea style="resize: none;" maxlength="600" rows="5" ng-model="contact.howCanWeHelp" type="text"
+                                  class="form-control regularText myGrey contactUsTextArea" id="exampleInputPassword1"> </textarea>
+                    </div>
+                    <div ng-class="{'disableButtonText' : sendingMail}" style="margin-top: 30px;margin-bottom: 55px" class="clickable">
+                        <div  ng-click="sendMail(contact)" style="padding: 5px 10px;float: left;margin-top:-10px"
+                              class="boldSubtitle contactUsButton">
                         <span>
                                 שלח אותי
                         </span>
-                        <i ng-show="sendingMail" class="fa fa-circle-o-notch fa-spin"></i>
+                            <i ng-show="sendingMail" class="fa fa-circle-o-notch fa-spin"></i>
+                        </div>
+
                     </div>
 
-                </div>
 
+                </form>
+            </div>
 
-            </form>
         </div>
-
     </div>
+
 </div>
