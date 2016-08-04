@@ -2,45 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9994554c-9e4d-4049-a450-76de86dd5563" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/images/how_much_angular_do_you_want.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/images/lovely_slides.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/build/angular-scroll-watch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/build/angular-scroll-watch.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/assets/digest-count.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/assets/edit-on-plunker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/assets/lesshat-prefixed.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/digest-sync/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/digest-sync/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/infinite-scroll/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/infinite-scroll/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/locals/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/locals/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-broadcast-through-emit/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-broadcast-through-emit/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-broadcast/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-broadcast/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-class-with-ng-repeat/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-class-with-ng-repeat/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-class/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-class/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-stage/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-stage/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-style-touch/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-style-touch/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-style/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/example/sw-style/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-scroll-watch/src/angular-scroll-watch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/angular-inview.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/angular-inview.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/examples/basic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/examples/container.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/examples/debounce.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/examples/fixed.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/karma.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bower_components/angular-inview/test/angular-inview.spec.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public.html" afterPath="$PROJECT_DIR$/public.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/mainPublicApp.html" afterPath="$PROJECT_DIR$/static/js/partials/mainPublicApp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/publicApp.js" afterPath="$PROJECT_DIR$/static/js/publicApp.js" />
     </list>
     <ignored path="VagrantBoxes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -404,6 +380,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VagrantBoxes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VagrantBoxes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-inview" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -498,7 +496,7 @@
       <workItem from="1468086418483" duration="6928000" />
       <workItem from="1470131585401" duration="6170000" />
       <workItem from="1470223648228" duration="10320000" />
-      <workItem from="1470243974674" duration="7685000" />
+      <workItem from="1470243974674" duration="7753000" />
     </task>
     <task id="LOCAL-00001" summary="fix navbar">
       <created>1466270490448</created>
@@ -682,11 +680,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470245204788</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fix animations issue">
+      <created>1470313567847</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1470313567847</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40400000" />
+    <option name="totallyTimeSpent" value="40468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -730,7 +735,8 @@
     <MESSAGE value="more changes" />
     <MESSAGE value="starting animations" />
     <MESSAGE value="who wee are animations" />
-    <option name="LAST_COMMIT_MESSAGE" value="who wee are animations" />
+    <MESSAGE value="fix animations issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix animations issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
