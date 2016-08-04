@@ -258,6 +258,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 
     $scope.botToTopAnimation = function(flag , elementId){
+        console.log("showing Flag ! ",flag);
         if(!$scope.scrollingSettings[flag]){
             $scope.scrollingSettings[flag] = true;
             var bounce = new Bounce();
