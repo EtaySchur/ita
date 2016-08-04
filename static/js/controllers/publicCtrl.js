@@ -228,6 +228,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
     $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId){
         if(!$scope.scrollingSettings[flagRight]){
+            console.log("Flag Delayed ",flagRight);
             $scope.scrollingSettings[flagRight] = true;
             var bounce = new Bounce();
             bounce
