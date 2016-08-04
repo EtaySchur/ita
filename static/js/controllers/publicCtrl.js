@@ -26,15 +26,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
     $scope.sendMail = function(info) {
         $rootScope.submitted = true;
-        //var restCallManager = new RestCallManager();
-        //restCallManager.post( getGeneralSettings, $http, null , "sendEmail");
-        //function getGeneralSettings(result , status , success) {
-        //    if (success) {
-        //        $rootScope.mailSent = true;
-        //    } else {
-        //
-        //    }
-        //}
+
         if(!this.contactUsForm.$valid){
             $rootScope.validateAll = true;
             return;
@@ -70,50 +62,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
 
 
-        //console.log(info);
-        //var mailJSON = {
-        //    "key": "uISeYrp55OvaS7WaxGuA3A",
-        //    "message": {
-        //        "text": "שם : "+info.fullName +
-        //        "טלפון : "+info.phone +
-        //        "אי מייל "+info.email +
-        //        "איך אתה יכול לעזור "+info.howCanWeHelp,
-        //        "subject": "שעאמיט יקר , מישהו השאיר את הפרטים שלו באתר",
-        //        "from_email": "noreply@fooddelivery.com",
-        //        "from_name": "New Order",
-        //        "to": [
-        //            {
-        //                "email": "etayschur@gmail.com",
-        //                "name": "New Order",
-        //                "type": "to"
-        //            }
-        //        ],
-        //        "important": true
-        //    }
-        //};
-        //var apiURL = "https://mandrillapp.com/api/1.0/messages/send.json";
-        //$http.post(apiURL, mailJSON).
-        //success(function (data, status, headers, config) {
-        //    var restCallManager = new RestCallManager();
-        //    restCallManager.post( insertContactUs, $http, info , "insertContactUs");
-        //    function insertContactUs(result , status , success) {
-        //        if (success) {
-        //            $rootScope.mailSent = true;
-        //            console.log("Contact Us Saved Success");
-        //        } else {
-        //
-        //        }
-        //    }
-        //    $scope.form = {};
-        //    console.log('successful email send.');
-        //    console.log('status: ' + status);
-        //    console.log('data: ' + data);
-        //    console.log('headers: ' + headers);
-        //    console.log('config: ' + config);
-        //}).error(function (data, status, headers, config) {
-        //    console.log('error sending email.');
-        //    console.log('status: ' + status);
-        //});
+
     }
 
     var restCallManager = new RestCallManager();
@@ -200,18 +149,13 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
     $scope.setActiveCategoryFilter = function(category , nextCategoryIndex){
         if($scope.currentCategoryIndex < nextCategoryIndex) {
-            console.log("Moving Left");
             $scope.moveToLeft = true;
             $scope.fadeMeOutLeft = true;
         }else{
-            console.log("moving right");
             $scope.moveToLeft = false;
             $scope.fadeMeOutRight = true;
         }
 
-
-
-        console.log('setting category');
         $timeout(function() {
             if($scope.moveToLeft){
                 $scope.fadeMeOutLeft = false;
@@ -225,7 +169,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
             $scope.activeCategoryFilterId = category.id;
             $scope.currentCategoryIndex = nextCategoryIndex;
-        } , 1000)
+        } , 500)
     }
 
     $scope.hoverIn = function(){
@@ -297,53 +241,6 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                 }).applyTo(document.querySelectorAll("." + elementId));
         }
     }
-
-    $scope.whoWeAreAnimation = function (flag , elementId) {
-        console.log("Fire !");
-        if(!$scope.scrollingSettings[flag]){
-            $scope.scrollingSettings[flag] = true;
-            var bounce = new Bounce();
-            bounce
-                .translate({
-                    from: { x:0, y: 200 },
-                    to: { x: 0, y: 0 },
-                    duration: 2000,
-                    stiffness: 4
-                }).applyTo(document.querySelectorAll(".text-animation-target"));
-
-
-
-            $scope.showRightSection = true;
-
-            var bounce = new Bounce();
-            bounce
-                .translate({
-                    from: { x:0, y: 200 },
-                    to: { x: 0, y: 0 },
-                    duration: 2000,
-                    stiffness: 4
-                }).applyTo(document.querySelectorAll(".animation-right"));
-
-            $scope.showLeftSection = true;
-
-
-            var bounce = new Bounce();
-            bounce
-                .translate({
-                    from: { x:0, y: 200 },
-                    to: { x: 0, y: 0 },
-                    duration: 2000,
-                    stiffness: 4
-
-                }).applyTo(document.querySelectorAll(".animation-left"));
-        }
-    }
-
-
-
-
-
-
 
 
     var restCallManager = new RestCallManager();
@@ -420,7 +317,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     $rootScope.mailSent = false;
     $scope.minIndex = 0;
     $scope.sideBarLimitItems = 5;
-
+    $scope.scrollingSettings = {};
     $rootScope.imProjected = true;
     console.log($rootScope.showSideProjects);
     $window.scrollTo(0,0)
@@ -582,6 +479,52 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     }
 
 
+    $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId){
+        if(!$scope.scrollingSettings[flagRight]){
+            console.log("Flag Delayed ",flagRight);
+            $scope.scrollingSettings[flagRight] = true;
+            var bounce = new Bounce();
+            bounce
+                .translate({
+                    from: { x:0, y: 200 },
+                    to: { x: 0, y: 0 },
+                    duration: 1500,
+                    stiffness: 4
+                }).applyTo(document.querySelectorAll("." + rightElementId));
+
+            $timeout(function() {
+                console.log("Showing Left Ele");
+                bounce
+                    .translate({
+                        from: { x:0, y: 200 },
+                        to: { x: 0, y: 0 },
+                        duration: 1500,
+                        stiffness: 1,
+                    }).applyTo(document.querySelectorAll("." + leftElementId));
+                $scope.scrollingSettings[flagLeft] = true;
+            } , 100)
+
+
+        }
+
+
+    }
+
+
+    $scope.botToTopAnimation = function(flag , elementId){
+        console.log("showing Flag ! ",flag);
+        if(!$scope.scrollingSettings[flag]){
+            $scope.scrollingSettings[flag] = true;
+            var bounce = new Bounce();
+            bounce
+                .translate({
+                    from: { x:0, y: 200 },
+                    to: { x: 0, y: 0 },
+                    duration: 2000,
+                    stiffness: 4
+                }).applyTo(document.querySelectorAll("." + elementId));
+        }
+    }
 
 
 
