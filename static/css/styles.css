@@ -430,6 +430,10 @@ input , textarea{
     height: 626px;
 }
 
+#projectAnimatedContainer {
+    -webkit-animation-duration: 1s;
+}
+
 .carouselCheviLeft{
     position: absolute;
     left:0;

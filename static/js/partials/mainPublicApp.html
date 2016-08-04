@@ -34,13 +34,13 @@
         <div  ng-show="scrollingSettings.showProjectsSection"   class="projectSectionDiv"  id="projectSectionDiv">
             <div  id="projectsSection"  style="margin-top: 60px"  class="row noLeftRightMargin">
                 <div  style="text-align: center;" class="col-md-10 col-md-offset-1 myCategoryFilter">
-        <span  style="color: #a8a8a8;margin-left: 50px" ng-click="setActiveCategoryFilter(category)" ng-class="{'active': activeCategoryFilterId === category.id , 'hovered':hoverEdit}" class="categoryFilter clickable boldSubtitle" ng-repeat="category in categories">
+        <span  style="color: #a8a8a8;margin-left: 50px" ng-click="setActiveCategoryFilter(category , $index)" ng-class="{'active': activeCategoryFilterId === category.id , 'hovered':hoverEdit}" class="categoryFilter clickable boldSubtitle" ng-repeat="category in categories">
               {{category.title}}
         </span>
                 </div>
             </div>
-            <div   ng-class="{'fadeInRight' : fadeMeIn}" style="margin-top: 40px" class="row noLeftRightMargin animate">
-                <div style="text-align: center" class="col-md-8 col-md-offset-2 projectsContainer">
+            <div    style="margin-top: 40px" class="row noLeftRightMargin ">
+                <div id="projectAnimatedContainer" ng-class="{'fadeInRight' : fadeMeInRight , 'fadeInLeft' : fadeMeInLeft , 'fadeOutLeft' : fadeMeOutLeft , 'fadeOutRight' : fadeMeOutRight}" style="text-align: center" class="col-md-8 col-md-offset-2 projectsContainer animated">
                     <div      class="col-md-4 animation-target">
                         <div    style="position: relative" ng-if="($index == 0) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">
                             <div  ng-click="projectSelected(project)" ng-show="hoverEdit" class="imageMask"> </div>
