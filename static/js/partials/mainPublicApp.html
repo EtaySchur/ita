@@ -39,7 +39,7 @@
         </span>
                 </div>
             </div>
-            <div   style="margin-top: 40px" class="row noLeftRightMargin">
+            <div   ng-class="{'fadeInRight' : fadeMeIn}" style="margin-top: 40px" class="row noLeftRightMargin animate">
                 <div style="text-align: center" class="col-md-8 col-md-offset-2 projectsContainer">
                     <div      class="col-md-4 animation-target">
                         <div    style="position: relative" ng-if="($index == 0) && activeCategoryFilterId == project.categoryId" class="clickable" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-repeat="project in projects | orderBy : 'myOrder'">

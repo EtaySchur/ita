@@ -199,8 +199,13 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     });
 
     $scope.setActiveCategoryFilter = function(category){
+        $scope.fadeMeOut = true;
         console.log('setting category');
-        $scope.activeCategoryFilterId = category.id;
+        $timeout(function() {
+            $scope.fadeMeOut = false;
+            $scope.fadeMeIn = true;
+            $scope.activeCategoryFilterId = category.id;
+        } , 1000)
     }
 
     $scope.hoverIn = function(){
