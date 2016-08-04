@@ -30,7 +30,7 @@
             <!-- End Carousel Section -->
         </div>
     </div>
-    <div   in-view="botToTopAnimation('showProjectsSection' , 'projectSectionDiv')" style="min-height: 700px;" class="heightContainer">
+    <div   in-view="botToTopAnimation('showProjectsSection' , 'projectSectionDiv')" style="min-height: 600px;" class="heightContainer">
         <div  ng-show="scrollingSettings.showProjectsSection"   class="projectSectionDiv"  id="projectSectionDiv">
             <div  id="projectsSection"  style="margin-top: 60px"  class="row noLeftRightMargin">
                 <div  style="text-align: center;" class="col-md-10 col-md-offset-1 myCategoryFilter">
@@ -204,14 +204,14 @@
             </div>
         </div>
     </div>
-    <div   id="testimonialsSection" style="margin-top: 90px;margin-bottom: 30px;margin-left: 0;margin-right: 0" class="row">
-        <div  style="text-align: center" class="col-xs-12 rtl">
+    <div   in-view="botToTopAnimation('showTestimonialTitle' , 'testimonalTitle')" id="testimonialsSection" style="margin-top: 90px;margin-bottom: 30px;margin-left: 0;margin-right: 0" class="row">
+        <div   ng-show="scrollingSettings.showTestimonialTitle" style="text-align: center" class="col-xs-12 rtl testimonalTitle">
             <div class="borderon"></div>
             <h1 class="boldMiniHeader" style="color:#4e4e4e"> {{generalSettings.testimonialsTitle}}</h1>
         </div>
     </div>
-    <div   style="margin-bottom: 80px;" class="row noLeftRightMargin">
-        <div   class="col-xs-12 col-md-6 col-md-offset-3 rtl">
+    <div   in-view="botToTopAnimation('showTestimonialText' , 'showTestimonialText')" style="margin-bottom: 80px;" class="row noLeftRightMargin">
+        <div   ng-show="scrollingSettings.showTestimonialText" class="col-xs-12 col-md-6 col-md-offset-3 rtl showTestimonialText">
             <div  style="margin-bottom: 30px;text-align: center;padding-left: 40px;padding-right: 40px;margin-top: 27px;height: 128px;position: relative">
                 <i style="color: #cbcbcb;font-size: 34px" class="icon-commas commaImageRight"> </i>
                 <div style="margin-bottom: 15px" class="regularLargeText myGrey"> {{selectedTestimonial.title}}  </div>
