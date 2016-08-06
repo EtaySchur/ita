@@ -486,7 +486,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
             var bounce = new Bounce();
             bounce
                 .translate({
-                    from: { x:0, y: 100 },
+                    from: { x:0, y: 500 },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration,
                     stiffness: 5
@@ -496,7 +496,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                 console.log("Showing Left Ele");
                 bounce
                     .translate({
-                        from: { x:0, y: 100 },
+                        from: { x:0, y: 500 },
                         to: { x: 0, y: 0 },
                         duration: $rootScope.scrollAnimationDucration,
                         stiffness: 5,
@@ -518,7 +518,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
             var bounce = new Bounce();
             bounce
                 .translate({
-                    from: { x:0, y: 100 },
+                    from: { x:0, y: 500 },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration,
                     stiffness: 5
