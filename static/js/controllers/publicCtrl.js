@@ -173,9 +173,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         } , 300)
     }
 
-    $timeout(function() {
-      $scope.lazyHide = true;
-    } , 500)
+
 
 
     $scope.hoverIn = function(){
@@ -335,7 +333,9 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     $rootScope.showNav = false;
 
 
-
+    $timeout(function() {
+        $scope.lazyHide = true;
+    } , 500)
 
     $scope.currentPage = 0;
     $scope.pageSize = 3;

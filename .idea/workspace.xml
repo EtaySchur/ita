@@ -16,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="C:\Users\EtaySchur\VagrantBoxes" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -50,8 +50,8 @@
       <file leaf-file-name="publicCtrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="520" column="11" selection-start-line="520" selection-start-column="11" selection-end-line="520" selection-end-column="11" />
+            <state relative-caret-position="478">
+              <caret line="334" column="0" selection-start-line="334" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -531,14 +531,7 @@
       <workItem from="1470223648228" duration="10320000" />
       <workItem from="1470243974674" duration="16420000" />
       <workItem from="1470323327346" duration="271000" />
-      <workItem from="1470323816485" duration="19206000" />
-    </task>
-    <task id="LOCAL-00086" summary="project animation">
-      <created>1470499111444</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1470499111444</updated>
+      <workItem from="1470323816485" duration="19280000" />
     </task>
     <task id="LOCAL-00087" summary="project animation">
       <created>1470499168575</created>
@@ -876,11 +869,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470510179389</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="project animation">
+      <created>1470510362371</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1470510362371</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68612000" />
+    <option name="totallyTimeSpent" value="68686000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -932,12 +932,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js</url>
-          <line>197</line>
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
@@ -1829,8 +1823,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="520" column="11" selection-start-line="520" selection-start-column="11" selection-end-line="520" selection-end-column="11" />
+        <state relative-caret-position="478">
+          <caret line="334" column="0" selection-start-line="334" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
           <folding />
         </state>
       </provider>
