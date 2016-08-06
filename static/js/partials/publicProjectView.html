@@ -236,7 +236,7 @@
         </div>
 
         <div class="col-xs-12 col-md-10 col-md-offset-1 rtl">
-            <div  in-view="botToTopDelayedAnimation('sideProject' + {{$index}} + 'RightSection' , 'sideProject-{{$index}}-RightSection' , 'sideProject' + {{$index}} + 'LeftSection' , 'sideProject' + {{$index}} +'LeftSection')" class="row noLeftRightMargin">
+            <div  in-view="botToTopDelayedAnimation('sideProject' + {{$index}} + 'RightSection' , 'sideProject-{{$index}}-RightSection' , 'sideProject' + {{$index}} + 'LeftSection' , 'sideProject-{{$index}}-LeftSection')" class="row noLeftRightMargin">
 
                 <div class="col-md-7">
                     <div ng-show="scrollingSettings.sideProject{{$index}}LeftSection" class="sideProject-{{$index}}-LeftSection">
@@ -273,7 +273,7 @@
 
                 </div>
                 <div class="col-md-5">
-                    <div ng-show="scrollingSettings.sideProject{{$index}}RightSection" class="sideProject{{$index}}RightSection">
+                    <div ng-show="scrollingSettings.sideProject{{$index}}RightSection" class="sideProject-{{$index}}-RightSection">
                         <img style="width: 100%" ng-src="{{item.imagePath}}">
 
                     </div>
