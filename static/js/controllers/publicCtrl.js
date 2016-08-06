@@ -489,7 +489,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     from: { x:0, y: 600 },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration,
-                    stiffness: 3
+                    stiffness: 5
                 }).applyTo(document.querySelectorAll("." + rightElementId));
 
             $timeout(function() {
@@ -499,7 +499,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                         from: { x:0, y: 600 },
                         to: { x: 0, y: 0 },
                         duration: $rootScope.scrollAnimationDucration,
-                        stiffness: 3,
+                        stiffness: 5,
                     }).applyTo(document.querySelectorAll("." + leftElementId));
                 $scope.scrollingSettings[flagLeft] = true;
             } , 100)
@@ -521,7 +521,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     from: { x:0, y: 600 },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration,
-                    stiffness: 3
+                    stiffness: 5
                 }).applyTo(document.querySelectorAll("." + elementId));
         }
     }
