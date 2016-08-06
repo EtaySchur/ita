@@ -623,6 +623,8 @@ input:-webkit-autofill {
     padding: 20px !important;
 }
 
+
+
 .reqText{
     color: #e22246;
     position: absolute;
@@ -634,6 +636,11 @@ input:-webkit-autofill {
 .myNavbar .navbar-nav>li>a{
     padding-bottom: 21px;
     padding-top: 34px;
+
+}
+
+.myNavbar .navbar-nav>li>a:hover{
+    color: black !important;
 }
 
 
@@ -718,6 +725,17 @@ input:-webkit-autofill {
     border-radius: 0;
     border-style: solid;
 }
+
+
+.contactUsButton:hover{
+   color: rgb(236, 236, 236);
+   background-color:rgb(78, 78, 78)
+;
+}
+
+
+
+
 
 .contactUsTextArea:focus{
     outline: 0;
