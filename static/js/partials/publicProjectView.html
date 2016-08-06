@@ -236,7 +236,7 @@
         </div>
 
         <div class="col-xs-12 col-md-10 col-md-offset-1 rtl">
-            <div  in-view="botToTopDelayedAnimation('sideProject' + {{$index}} + 'RightSection' , 'sideProject' + {{$index}} + 'LeftSection' , 'sideProject-{{$index}}-RightSection' , 'sideProject-{{$index}}-LeftSection')" class="row noLeftRightMargin">
+            <div  style="margin-bottom: 80px" in-view="botToTopDelayedAnimation('sideProject' + {{$index}} + 'RightSection' , 'sideProject' + {{$index}} + 'LeftSection' , 'sideProject-{{$index}}-RightSection' , 'sideProject-{{$index}}-LeftSection')" class="row noLeftRightMargin">
 
                 <div class="col-md-7">
                     <div ng-show="scrollingSettings.sideProject{{$index}}LeftSection" class="sideProject-{{$index}}-LeftSection">
@@ -280,7 +280,7 @@
                 </div>
             </div>
             <div in-view="botToTopAnimation('showProject{{$index}}DetailSection' , 'sideProject-{{$index}}-DetailSection')">
-                <div ng-show="showProject{{$index}}DetailSection" style="margin-top: 80px" class="row sideProject-{{$index}}-DetailSection">
+                <div ng-show="showProject{{$index}}DetailSection"  class="row sideProject-{{$index}}-DetailSection">
                     <div class="col-md-12  rtl col-xs-12">
                         <div style="margin-bottom: 30px" class="regularTitle myGrey">
                             הסבר על תהליך העבודה
