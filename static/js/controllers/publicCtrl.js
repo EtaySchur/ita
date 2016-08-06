@@ -217,7 +217,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                             stiffness: 5,
                         }).applyTo(document.querySelectorAll("." + leftElementId));
                     $scope.scrollingSettings[flagLeft] = true;
-                } , 100)
+                } , 50)
 
 
         }
@@ -502,7 +502,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                         stiffness: 5,
                     }).applyTo(document.querySelectorAll("." + leftElementId));
                 $scope.scrollingSettings[flagLeft] = true;
-            } , 100)
+            } , 50)
 
 
         }
