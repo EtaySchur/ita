@@ -279,7 +279,7 @@
                     </div>
                 </div>
             </div>
-            <div style="min-height: 100px;margin-bottom: 80px" in-view="botToTopAnimation('showProject' + {{$index}} + 'DetailSection' , 'sideProject-{{$index}}-DetailSection')">
+            <div style="margin-bottom: 80px" in-view="botToTopAnimation('showProject' + {{$index}} + 'DetailSection' , 'sideProject-{{$index}}-DetailSection')">
                 <div ng-show="scrollingSettings.showProject{{$index}}DetailSection"  class="row sideProject-{{$index}}-DetailSection">
                     <div class="col-md-12  rtl col-xs-12">
                         <div style="margin-bottom: 30px" class="regularTitle myGrey">
@@ -291,7 +291,7 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-bottom: 60px;min-height: 350px" in-view="botToTopAnimation('sideProject' + {{$index}} + 'detailsImagesRow' , 'sideProject-{{$index}}-detailsImagesRow')">
+            <div style="margin-bottom: 60px;" in-view="botToTopAnimation('sideProject' + {{$index}} + 'detailsImagesRow' , 'sideProject-{{$index}}-detailsImagesRow')">
                 <div ng-show="scrollingSettings.sideProject{{$index}}detailsImagesRow"  class="row noLeftRightMargin detailsImagesRow sideProject-{{$index}}-detailsImagesRow">
                     <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
                         <div class="projectImageContainer">
@@ -332,7 +332,7 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-bottom: 60px;min-height:90px" in-view="botToTopAnimation('sideProject' + {{$index}} + 'anotherTitle' , 'sideProject-{{$index}}-anotherTitle')">
+            <div style="margin-bottom: 60px;" in-view="botToTopAnimation('sideProject' + {{$index}} + 'anotherTitle' , 'sideProject-{{$index}}-anotherTitle')">
                 <div  ng-show="scrollingSettings.sideProject{{$index}}anotherTitle" class="row sideProject-{{$index}}-anotherTitle">
                     <div class="col-md-12  rtl col-xs-12">
                         <div class="regularTitle myGrey">
