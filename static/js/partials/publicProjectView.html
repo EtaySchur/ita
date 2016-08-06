@@ -370,19 +370,16 @@
         </div>
             <div>
                 <div  style="margin-bottom: 80px;" class="row noLeftRightMargin">
-                    <div style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1">
-                        <slick      init-onload=true data="miniProjects" speed="500" arrows="true"  slides-to-show="3" slides-to-scroll="1">
-                            <div  class="showMiniProjectsCarousel">
-                                <div  style="text-align: center"
-                                     ng-repeat="item in miniProjects"
-                                     class="col-md-12 col-xs-12 ">
-                                    <img  style="width: 100%" class="img" ng-src="{{item.imagePath}}">
-                                    <p  style="margin-top: 15px;text-align: right;font-size: 22px;margin-bottom: 5px">
-                                        {{item.title}}</p>
-                                    <p style="text-align: right">{{item.text}}</p>
-                                </div>
+                    <div style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1 showMiniProjectsCarousel">
+                        <slick   init-onload="true" data="miniProjects"  speed="500" arrows="true"  slides-to-show="3" slides-to-scroll="1">
+                            <div style="text-align: center"
+                                 ng-repeat="item in miniProjects"
+                                 class="col-md-12 col-xs-12">
+                                <img style="width: 100%" class="img" ng-src="{{item.imagePath}}">
+                                <p style="margin-top: 15px;text-align: right;font-size: 22px;margin-bottom: 5px">
+                                    {{item.title}}</p>
+                                <p style="text-align: right">{{item.text}}</p>
                             </div>
-
                         </slick>
 
                         <!--<div  style="left: -30px" ng-if="miniProjects.length > pageSize"-->
