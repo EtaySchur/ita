@@ -61,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="374" column="117" selection-start-line="374" selection-start-column="117" selection-end-line="374" selection-end-column="117" />
+              <caret line="374" column="136" selection-start-line="374" selection-start-column="136" selection-end-line="374" selection-end-column="136" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -119,6 +119,7 @@
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -530,14 +531,7 @@
       <workItem from="1470223648228" duration="10320000" />
       <workItem from="1470243974674" duration="16420000" />
       <workItem from="1470323327346" duration="271000" />
-      <workItem from="1470323816485" duration="17180000" />
-    </task>
-    <task id="LOCAL-00063" summary="project animation">
-      <created>1470494537243</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1470494537243</updated>
+      <workItem from="1470323816485" duration="17235000" />
     </task>
     <task id="LOCAL-00064" summary="project animation">
       <created>1470494595654</created>
@@ -875,11 +869,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470508180694</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="project animation">
+      <created>1470508332615</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1470508332615</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66586000" />
+    <option name="totallyTimeSpent" value="66641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1095,6 +1096,7 @@
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -1251,6 +1253,7 @@
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -1393,6 +1396,7 @@
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -1535,6 +1539,7 @@
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -1754,7 +1759,7 @@
     <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="374" column="117" selection-start-line="374" selection-start-column="117" selection-end-line="374" selection-end-column="117" />
+          <caret line="374" column="136" selection-start-line="374" selection-start-column="136" selection-end-line="374" selection-end-column="136" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1812,6 +1817,7 @@
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#slick#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
