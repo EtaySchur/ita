@@ -2,18 +2,22 @@
      ng-class="{'bounceOutRight' : !showSideProjects}" class="floatingNavBar animated bounceInRight">
     <div style="margin-top: 80px" class="imagesContainer">
 
-        <div ng-if="project.sideBarImage && project.sideBarImage != ''" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" scroll-to="sideProject{{$index}}"
+        <div ng-if="project.sideBarImage && project.sideBarImage != ''" ng-mouseleave="hoverOut()"
+             ng-mouseover="hoverIn()" scroll-to="sideProject{{$index}}"
              ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
-             style="position: relative;text-align: center;width: 100%;margin-bottom: 28px;padding-left: 20px;padding-right: 20px" class="clickable sideProjectImage"
+             style="position: relative;text-align: center;width: 100%;margin-bottom: 28px;padding-left: 20px;padding-right: 20px"
+             class="clickable sideProjectImage"
              ng-repeat="project in mySideProjects | limitTo : 5">
             <div ng-show="hoverEdit" style="color: white;position: absolute;top : 30%;width: 75%;text-align: center"
                  class="boldSubtitle"> {{project.title}}
             </div>
             <img style="width: 100%" ng-src="{{project.sideBarImage}}">
         </div>
-        <div ng-if="project.sideBarImage && project.sideBarImage != ''" ng-mouseleave="hoverOut()" ng-mouseover="hoverIn()" ng-click="navToProject(otherProject.id)"
+        <div ng-if="project.sideBarImage && project.sideBarImage != ''" ng-mouseleave="hoverOut()"
+             ng-mouseover="hoverIn()" ng-click="navToProject(otherProject.id)"
              ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
-             style="position: relative;text-align: center;width: 100%;margin-bottom: 28px" class="clickable sideProjectImage"
+             style="position: relative;text-align: center;width: 100%;margin-bottom: 28px"
+             class="clickable sideProjectImage"
              ng-repeat="otherProject in otherProjects | limitTo : sideBarLimitItems - mySideProjects.length">
             <div ng-show="hoverEdit" style="color: white;position: absolute;top : 40%;width: 100%;text-align: center"
                  class="boldSubtitle"> {{otherProject.title}}
@@ -25,434 +29,474 @@
 </div>
 
 <div ng-click="toggleSideMenu(False)" class="wrapper projectView">
-<div style="min-height:260px;position: relative;text-align: center" class="bannar">
-    <div style="direction: rtl" class="subCategoryDesc">
-        <div style="color: #ffffff" class="boldMiniHeader">
-            {{subCategory.title}}
+    <div style="min-height:260px;position: relative;text-align: center" class="bannar">
+        <div style="direction: rtl" class="subCategoryDesc">
+            <div style="color: #ffffff" class="boldMiniHeader">
+                {{subCategory.title}}
+            </div>
+            <div style="color: #ffffff" class="regularTitle">
+                {{subCategory.description}}
+            </div>
         </div>
-        <div style="color: #ffffff" class="regularTitle">
-            {{subCategory.description}}
-        </div>
-    </div>
 
-    <img  style="width: 100%;height: auto" ng-src="{{subCategory.imagePath}}">
-</div>
-<div style="min-height: 800px;" class="selectProjectView">
-    <div in-view="botToTopAnimation('showselectedProjectTitle' , 'showselectedProjectTitle')" style="margin-top: 90px;margin-bottom: 90px" class="row noLeftRightMargin">
-        <div ng-show="scrollingSettings.showselectedProjectTitle" style="text-align: center;padding-right: 0" class="col-xs-12 rtl showselectedProjectTitle">
-            <div class="borderon"></div>
-            <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{selectedProject.title}}</h1>
-        </div>
+        <img style="width: 100%;height: auto" ng-src="{{subCategory.imagePath}}">
     </div>
-    <divs  class="row">
-        <div class="col-xs-12 col-md-10 col-md-offset-1 rtl">
-            <div in-view="botToTopDelayedAnimation('showSelectedProjectImage' , 'selectedProjectLeftSection' , 'showSelectedProjectImage' , 'selectedProjectLeftSection')" class="row" style="margin-bottom: 60px;min-height: 600px">
-                <div class="col-md-7">
-                    <div ng-show="scrollingSettings.selectedProjectLeftSection" class="selectedProjectLeftSection">
-                        <div style="margin-bottom: 30px" class="regularTitle myGrey">
-                            כמה מילים על הפרוייקט
-                        </div>
-                        <div class="regularExtraSmallText myOtherGrey">
-                            {{selectedProject.aboutMe}}
-                        </div>
-                        <div style="margin-top: 60px;margin-bottom: 60px" ng-if="selectedProject.imageCircle1"
-                             class="circleImageContainer row">
-                            <div class="circleImage col-md-3 floatMeRight regularExtraSmallText">
-                                <div>
-                                    <img ng-src="{{selectedProject.imageCircle1}}">
+    <div style="min-height: 800px;" class="selectProjectView">
+        <div in-view="botToTopAnimation('showselectedProjectTitle' , 'showselectedProjectTitle')"
+             style="margin-top: 90px;margin-bottom: 90px" class="row noLeftRightMargin">
+            <div ng-show="scrollingSettings.showselectedProjectTitle" style="text-align: center;padding-right: 0"
+                 class="col-xs-12 rtl showselectedProjectTitle">
+                <div class="borderon"></div>
+                <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{selectedProject.title}}</h1>
+            </div>
+        </div>
+        <divs class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 rtl">
+                <div in-view="botToTopDelayedAnimation('showSelectedProjectImage' , 'selectedProjectLeftSection' , 'showSelectedProjectImage' , 'selectedProjectLeftSection')"
+                     class="row" style="margin-bottom: 60px;min-height: 600px">
+                    <div class="col-md-7">
+                        <div ng-show="scrollingSettings.selectedProjectLeftSection" class="selectedProjectLeftSection">
+                            <div style="margin-bottom: 30px" class="regularTitle myGrey">
+                                כמה מילים על הפרוייקט
+                            </div>
+                            <div class="regularExtraSmallText myOtherGrey">
+                                {{selectedProject.aboutMe}}
+                            </div>
+                            <div style="margin-top: 60px;margin-bottom: 60px" ng-if="selectedProject.imageCircle1"
+                                 class="circleImageContainer row">
+                                <div class="circleImage col-md-3 floatMeRight regularExtraSmallText">
+                                    <div>
+                                        <img ng-src="{{selectedProject.imageCircle1}}">
+                                        <div style="text-align: center">
+                                            <p style="margin-top: 10px"> {{selectedProject.imageCircle1Text}} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="circleImage col-md-3 floatMeRight regularExtraSmallText">
+                                    <img ng-src="{{selectedProject.imageCircle2}}">
                                     <div style="text-align: center">
-                                        <p style="margin-top: 10px"> {{selectedProject.imageCircle1Text}} </p>
+                                        <p style="margin-top: 10px"> {{selectedProject.imageCircle2Text}} </p>
+
+                                    </div>
+                                </div>
+                                <div class="circleImage col-md-3 floatMeRight regularExtraSmallText">
+
+                                    <img ng-src="{{selectedProject.imageCircle3}}">
+                                    <div style="text-align: center">
+                                        <p style="margin-top: 10px"> {{selectedProject.imageCircle3Text}} </p>
+                                    </div>
+                                </div>
+                                <div class="circleImage col-md-3 floatMeRight regularExtraSmallText">
+                                    <img ng-src="{{selectedProject.imageCircle4}}">
+                                    <div style="text-align: center">
+                                        <p style="margin-top: 10px"> {{selectedProject.imageCircle4Text}} </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="circleImage col-md-3 floatMeRight regularExtraSmallText">
-                                <img ng-src="{{selectedProject.imageCircle2}}">
-                                <div style="text-align: center">
-                                    <p style="margin-top: 10px"> {{selectedProject.imageCircle2Text}} </p>
-
+                            <div ng-if="selectedProject.borderText1" class="borderedTextSection row">
+                                <div style="font-size: 22px;margin-bottom: 10px" class="myGrey regularFont">
+                                    {{selectedProject.borderTextTitle}}
                                 </div>
-                            </div>
-                            <div class="circleImage col-md-3 floatMeRight regularExtraSmallText">
 
-                                <img ng-src="{{selectedProject.imageCircle3}}">
-                                <div  style="text-align: center">
-                                    <p style="margin-top: 10px"> {{selectedProject.imageCircle3Text}} </p>
+                                <div style="border-right-width: 2px;font-size: 16px"
+                                     ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}"
+                                     class="borderedText regularExtraSmallText floatMeRight">
+                                    {{selectedProject.borderText1}}
                                 </div>
-                            </div>
-                            <div class="circleImage col-md-3 floatMeRight regularExtraSmallText">
-                                <img ng-src="{{selectedProject.imageCircle4}}">
-                                <div  style="text-align: center">
-                                    <p style="margin-top: 10px"> {{selectedProject.imageCircle4Text}} </p>
+                                <div style="font-size: 16px"
+                                     ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}"
+                                     class="borderedText regularExtraSmallText floatMeRight">
+                                    {{selectedProject.borderText2}}
+                                </div>
+                                <div style="font-size: 16px"
+                                     ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}"
+                                     class="borderedText regularExtraSmallText floatMeRight">
+                                    {{selectedProject.borderText3}}
+                                </div>
+                                <div style="font-size: 16px" ng-if="selectedProject.borderText4"
+                                     ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}"
+                                     class="borderedText regularExtraSmallText floatMeRight">
+                                    {{selectedProject.borderText4}}
                                 </div>
                             </div>
                         </div>
-                        <div  ng-if="selectedProject.borderText1" class="borderedTextSection row">
-                            <div style="font-size: 22px;margin-bottom: 10px" class="myGrey regularFont"> {{selectedProject.borderTextTitle}} </div>
+                    </div>
 
-                            <div style="border-right-width: 2px;font-size: 16px" ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}" class="borderedText regularExtraSmallText floatMeRight">
-                                {{selectedProject.borderText1}}
+                    <div class="col-md-5">
+                        <div ng-show="scrollingSettings.showSelectedProjectImage" class="showSelectedProjectImage">
+                            <img style="width: 100%" ng-src="{{selectedProject.imagePath}}">
+
+                        </div>
+                    </div>
+                </div>
+                <div in-view="botToTopAnimation('showProjectExplain' , 'projectExplain')" class="row"
+                     style="margin-bottom: 80px;min-height: 200px">
+                    <div ng-show="scrollingSettings.showProjectExplain" class="col-md-12  rtl col-xs-12 projectExplain">
+                        <div style="margin-bottom: 30px" class="regularTitle myGrey ">
+                            הסבר על תהליך העבודה
+                        </div>
+                        <div class="regularExtraSmallText myOtherGrey">
+                            {{selectedProject.explainMe}}
+                        </div>
+                    </div>
+                </div>
+                <div in-view="botToTopAnimation('showDetailSection' , 'showDetailSection')">
+                    <div ng-show="scrollingSettings.showDetailSection" class="showDetailSection"
+                         class="row detailsImagesRow">
+                        <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
+                             style="float: right" class="rtl col-xs-12">
+                            <div>
+                                <div class="projectImageContainer">
+                                    <img ng-src="{{selectedProject.image1}}">
+
+                                    <div style="margin-top: 5px" class="regularExtraSmallText">
+                                        {{selectedProject.image1Text}}
+                                    </div>
+                                </div>
                             </div>
-                            <div style="font-size: 16px" ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}" class="borderedText regularExtraSmallText floatMeRight">
-                                {{selectedProject.borderText2}}
+
+                        </div>
+                        <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
+                             style="float: right" class="rtl">
+                            <div class="projectImageContainer">
+                                <img ng-src="{{selectedProject.image2}}">
+
+                                <div style="margin-top: 5px" class="regularExtraSmallText">
+                                    {{selectedProject.image2Text}}
+                                </div>
                             </div>
-                            <div   style="font-size: 16px" ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}" class="borderedText regularExtraSmallText floatMeRight">
-                                {{selectedProject.borderText3}}
+                        </div>
+                        <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
+                             style="float: right" class="rtl">
+                            <div class="projectImageContainer">
+                                <img ng-src="{{selectedProject.image3}}">
+
+                                <div style="margin-top: 5px" class="regularExtraSmallText">
+                                    {{selectedProject.image3Text}}
+                                </div>
                             </div>
-                            <div  style="font-size: 16px" ng-if="selectedProject.borderText4" ng-class="{'col-md-3' : selectedProject.borderText4 , 'col-md-4' : !selectedProject.borderText4}" class="borderedText regularExtraSmallText floatMeRight">
-                                {{selectedProject.borderText4}}
+                        </div>
+                        <div ng-if="selectedProject.image4"
+                             ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
+                             style="float: right" class="rtl">
+                            <div class="projectImageContainer">
+                                <img ng-src="{{selectedProject.image4}}">
+
+                                <div style="margin-top: 5px" class="regularExtraSmallText">
+                                    {{selectedProject.image4Text}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div in-view="botToTopAnimation('showAnotherTitleSection' , 'showAnotherTitleSection')">
+                    <div ng-show="scrollingSettings.showAnotherTitleSection" style="margin-top: 60px"
+                         class="row showAnotherTitleSection">
+                        <div class="col-md-12  rtl col-xs-12">
+                            <div class="regularTitle myGrey">
+                                {{selectedProject.anotherTitle}}
+                            </div>
+                            <div class="regularExtraSmallText myOtherGrey">
+                                {{selectedProject.anotherText}}
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-5">
-                    <div ng-show="scrollingSettings.showSelectedProjectImage" class="showSelectedProjectImage">
-                        <img style="width: 100%" ng-src="{{selectedProject.imagePath}}">
-
+                <div in-view="botToTopAnimation('showAnotherTitleSection' , 'showAnotherTitleSection')">
+                    <div ng-if="slides.length > 0" style="margin-top: 60px;margin-bottom:90px" class="row">
+                        <div class="col-md-10 col-md-offset-1  rtl col-xs-12">
+                            <div>
+                                <uib-carousel class="miniProjectCarousel" active="active" interval="myInterval"
+                                              no-wrap="noWrapSlides">
+                                    <uib-slide ng-repeat="slide in slides track by $index">
+                                        <img ng-src="{{slide}}" style="margin:auto;">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </uib-slide>
+                                </uib-carousel>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div   in-view="botToTopAnimation('showProjectExplain' , 'projectExplain')" class="row" style="margin-bottom: 80px">
-                <div    ng-show="scrollingSettings.showProjectExplain" class="col-md-12  rtl col-xs-12 projectExplain">
-                    <div  style="margin-bottom: 30px" class="regularTitle myGrey ">
+        </divs>
+    </div>
+
+
+    <div id="sideProject{{$index}}" ng-repeat="item in mySideProjects" style="margin-bottom: 90px"
+         class="row noLeftRightMargin">
+        <div style="min-height: 120px" in-view="botToTopAnimation('sideProjectTitle' + {{$index}} , 'sideProject-{{$index}}-Title')">
+            <div ng-show="scrollingSettings.sideProjectTitle{{$index}}" style="margin-bottom: 90px" class="row noLeftRightMargin sideProject-{{$index}}-Title">
+                <div style="text-align: center;padding-right: 0" class="col-xs-12 rtl">
+                    <div class="borderon"></div>
+                    <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{item.title}}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-10 col-md-offset-1 rtl">
+            <div class="row noLeftRightMargin">
+
+                <div class="col-md-7">
+                    <div style="margin-bottom: 15px" class="regularTitle myGrey">
+                        כמה מילים על הפרוייקט
+                    </div>
+                    <div class="regularExtraSmallText myOtherGrey">
+                        {{item.aboutMe}}
+                    </div>
+                    <div style="margin-top: 60px;margin-bottom: 60px" ng-if="item.imageCircle1"
+                         class="circleImageContainer row">
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{item.imageCircle1}}">
+
+                            <p style="margin-top: 10px"> {{item.imageCircle1Text}} </p>
+                        </div>
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{item.imageCircle2}}">
+
+                            <p style="margin-top: 10px"> {{item.imageCircle2Text}} </p>
+                        </div>
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{item.imageCircle3}}">
+
+                            <p style="margin-top: 10px"> {{item.imageCircle3Text}} </p>
+                        </div>
+                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                            <img ng-src="{{item.imageCircle4}}">
+
+                            <p style="margin-top: 10px"> {{item.imageCircle4Text}} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img style="width: 100%" ng-src="{{item.imagePath}}">
+                </div>
+            </div>
+            <div style="margin-top: 80px" class="row">
+                <div class="col-md-12  rtl col-xs-12">
+                    <div style="margin-bottom: 30px" class="regularTitle myGrey">
                         הסבר על תהליך העבודה
                     </div>
                     <div class="regularExtraSmallText myOtherGrey">
-                        {{selectedProject.explainMe}}
+                        {{item.explainMe}}
                     </div>
                 </div>
             </div>
-            <div in-view="botToTopAnimation('showDetailSection' , 'showDetailSection')">
-                <div   ng-show="scrollingSettings.showDetailSection" class="showDetailSection"  class="row detailsImagesRow">
-                    <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}" style="float: right" class="rtl col-xs-12">
-                        <div >
-                            <div class="projectImageContainer">
-                                <img ng-src="{{selectedProject.image1}}">
+            <div style="margin-top: 80px" class="row noLeftRightMargin detailsImagesRow">
+                <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{item.image1}}">
 
-                                <div style="margin-top: 5px" class="regularExtraSmallText">
-                                    {{selectedProject.image1Text}}
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}" style="float: right" class="rtl">
-                        <div class="projectImageContainer">
-                            <img ng-src="{{selectedProject.image2}}">
-
-                            <div style="margin-top: 5px" class="regularExtraSmallText">
-                                {{selectedProject.image2Text}}
-                            </div>
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{item.image1Text}}
                         </div>
                     </div>
-                    <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}" style="float: right" class="rtl">
-                        <div class="projectImageContainer">
-                            <img ng-src="{{selectedProject.image3}}">
+                </div>
+                <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{item.image2}}">
 
-                            <div style="margin-top: 5px" class="regularExtraSmallText">
-                                {{selectedProject.image3Text}}
-                            </div>
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{item.image2Text}}
                         </div>
                     </div>
-                    <div ng-if="selectedProject.image4" ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}" style="float: right" class="rtl">
-                        <div class="projectImageContainer">
-                            <img ng-src="{{selectedProject.image4}}">
+                </div>
+                <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{item.image3}}">
 
-                            <div style="margin-top: 5px" class="regularExtraSmallText">
-                                {{selectedProject.image4Text}}
-                            </div>
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{item.image3Text}}
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="item.image4" ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}"
+                     style="float: right" class="rtl">
+                    <div class="projectImageContainer">
+                        <img ng-src="{{item.image4}}">
+
+                        <div style="margin-top: 5px" class="regularExtraSmallText">
+                            {{item.image4Text}}
                         </div>
                     </div>
                 </div>
             </div>
-
             <div style="margin-top: 60px" class="row">
                 <div class="col-md-12  rtl col-xs-12">
                     <div class="regularTitle myGrey">
-                        {{selectedProject.anotherTitle}}
+                        {{item.anotherTitle}}
                     </div>
                     <div class="regularExtraSmallText myOtherGrey">
-                        {{selectedProject.anotherText}}
+                        {{item.anotherText}}
                     </div>
                 </div>
             </div>
-            <div ng-if="slides.length > 0" style="margin-top: 60px;margin-bottom:90px" class="row">
-                <div class="col-md-10 col-md-offset-1  rtl col-xs-12">
+            <div ng-if="item.slides.length > 0" style="margin-top: 60px" class="row">
+                <div class="col-md-10 col-md-offset-1  rtl col-xs-12 anotherCarousel">
                     <div>
-                        <uib-carousel class="miniProjectCarousel" active="active" interval="myInterval" no-wrap="noWrapSlides">
-                            <uib-slide ng-repeat="slide in slides track by $index">
+                        <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                            <uib-slide ng-repeat="slide in item.slides">
                                 <img ng-src="{{slide}}" style="margin:auto;">
 
-                                <div class="carousel-caption">
-                                </div>
                             </uib-slide>
                         </uib-carousel>
                     </div>
                 </div>
             </div>
         </div>
-    </divs>
-</div>
-
-
-
-<div id="sideProject{{$index}}" ng-repeat="item in mySideProjects" style="margin-bottom: 90px" class="row noLeftRightMargin">
-    <div style="margin-bottom: 90px" class="row noLeftRightMargin">
+    </div>
+    <div ng-if="miniProjects.length > 0" style="margin-top: 90px;margin-bottom: 0px" class="row noLeftRightMargin">
         <div style="text-align: center;padding-right: 0" class="col-xs-12 rtl">
             <div class="borderon"></div>
-            <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e"> {{item.title}}</h1>
+            <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e;margin-bottom: 60px"> פרוייקטים
+                נוספים </h1>
         </div>
-    </div>
-    <div class="col-xs-12 col-md-10 col-md-offset-1 rtl">
-        <div class="row noLeftRightMargin">
+        <div>
+            <div style="margin-bottom: 80px;" class="row noLeftRightMargin">
+                <div style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1">
+                    <slick speed="500" arrows="true" lazy-load="ondemand" slides-to-show="3" slides-to-scroll="1">
+                        <div style="text-align: center"
+                             ng-repeat="item in miniProjects"
+                             class="col-md-12 col-xs-12">
+                            <img style="width: 100%" class="img" ng-src="{{item.imagePath}}">
+                            <p style="margin-top: 15px;text-align: right;font-size: 22px;margin-bottom: 5px">
+                                {{item.title}}</p>
+                            <p style="text-align: right">{{item.text}}</p>
+                        </div>
+                    </slick>
 
-            <div class="col-md-7">
-                <div style="margin-bottom: 15px" class="regularTitle myGrey">
-                    כמה מילים על הפרוייקט
-                </div>
-                <div class="regularExtraSmallText myOtherGrey">
-                    {{item.aboutMe}}
-                </div>
-                <div style="margin-top: 60px;margin-bottom: 60px" ng-if="item.imageCircle1"
-                     class="circleImageContainer row">
-                    <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
-                        <img ng-src="{{item.imageCircle1}}">
-
-                        <p style="margin-top: 10px"> {{item.imageCircle1Text}} </p>
-                    </div>
-                    <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
-                        <img ng-src="{{item.imageCircle2}}">
-
-                        <p style="margin-top: 10px"> {{item.imageCircle2Text}} </p>
-                    </div>
-                    <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
-                        <img ng-src="{{item.imageCircle3}}">
-
-                        <p style="margin-top: 10px"> {{item.imageCircle3Text}} </p>
-                    </div>
-                    <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
-                        <img ng-src="{{item.imageCircle4}}">
-
-                        <p style="margin-top: 10px"> {{item.imageCircle4Text}} </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <img style="width: 100%" ng-src="{{item.imagePath}}">
-            </div>
-        </div>
-        <div style="margin-top: 80px" class="row">
-            <div class="col-md-12  rtl col-xs-12">
-                <div style="margin-bottom: 30px" class="regularTitle myGrey">
-                    הסבר על תהליך העבודה
-                </div>
-                <div class="regularExtraSmallText myOtherGrey">
-                    {{item.explainMe}}
-                </div>
-            </div>
-        </div>
-        <div style="margin-top: 80px" class="row noLeftRightMargin detailsImagesRow">
-            <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
-                <div class="projectImageContainer">
-                    <img ng-src="{{item.image1}}">
-
-                    <div style="margin-top: 5px" class="regularExtraSmallText">
-                        {{item.image1Text}}
-                    </div>
-                </div>
-            </div>
-            <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
-                <div class="projectImageContainer">
-                    <img ng-src="{{item.image2}}">
-
-                    <div style="margin-top: 5px" class="regularExtraSmallText">
-                        {{item.image2Text}}
-                    </div>
-                </div>
-            </div>
-            <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
-                <div class="projectImageContainer">
-                    <img ng-src="{{item.image3}}">
-
-                    <div style="margin-top: 5px" class="regularExtraSmallText">
-                        {{item.image3Text}}
-                    </div>
-                </div>
-            </div>
-            <div ng-if="item.image4" ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
-                <div class="projectImageContainer">
-                    <img ng-src="{{item.image4}}">
-
-                    <div style="margin-top: 5px" class="regularExtraSmallText">
-                        {{item.image4Text}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div style="margin-top: 60px" class="row">
-            <div class="col-md-12  rtl col-xs-12">
-                <div class="regularTitle myGrey">
-                    {{item.anotherTitle}}
-                </div>
-                <div class="regularExtraSmallText myOtherGrey">
-                    {{item.anotherText}}
-                </div>
-            </div>
-        </div>
-        <div ng-if="item.slides.length > 0" style="margin-top: 60px" class="row">
-            <div class="col-md-10 col-md-offset-1  rtl col-xs-12 anotherCarousel">
-                <div>
-                    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-                        <uib-slide ng-repeat="slide in item.slides">
-                            <img ng-src="{{slide}}" style="margin:auto;">
-
-                        </uib-slide>
-                    </uib-carousel>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div ng-if="miniProjects.length > 0" style="margin-top: 90px;margin-bottom: 0px" class="row noLeftRightMargin">
-    <div style="text-align: center;padding-right: 0" class="col-xs-12 rtl">
-        <div class="borderon"></div>
-        <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e;margin-bottom: 60px"> פרוייקטים נוספים </h1>
-    </div>
-    <div>
-        <div  style="margin-bottom: 80px;" class="row noLeftRightMargin">
-            <div   style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1">
-                <slick speed="500" arrows="true" lazy-load="ondemand" slides-to-show="3" slides-to-scroll="1">
-                    <div   style="text-align: center"
-                           ng-repeat="item in miniProjects"
-                           class="col-md-12 col-xs-12">
-                        <img style="width: 100%" class="img" ng-src="{{item.imagePath}}">
-                        <p style="margin-top: 15px;text-align: right;font-size: 22px;margin-bottom: 5px">{{item.title}}</p>
-                        <p style="text-align: right">{{item.text}}</p>
-                    </div>
-                </slick>
-
-                <!--<div  style="left: -30px" ng-if="miniProjects.length > pageSize"-->
-                         <!--class="carouselCheviLeft miniProjectChevi clickable" ng-click="prevPage()">-->
+                    <!--<div  style="left: -30px" ng-if="miniProjects.length > pageSize"-->
+                    <!--class="carouselCheviLeft miniProjectChevi clickable" ng-click="prevPage()">-->
                     <!--<i style="font-size: 33px" ng-class="{'disabled':minIndex == 0 }" class="icon-Arrow_left myGrey"></i>-->
-                <!--</div>-->
+                    <!--</div>-->
 
-                <!--<div style="right: -30px" ng-if="miniProjects.length > pageSize"-->
-                        <!--class="carouselCheviRight miniProjectChevi clickable" ng-click="nextPage()">-->
+                    <!--<div style="right: -30px" ng-if="miniProjects.length > pageSize"-->
+                    <!--class="carouselCheviRight miniProjectChevi clickable" ng-click="nextPage()">-->
                     <!--<i style="font-size: 33px" ng-class="{'disabled': minIndex + 3 >= miniProjects.length}"-->
-                       <!--class="icon-Arrow_right myGrey"></i>-->
-                <!--</div>-->
+                    <!--class="icon-Arrow_right myGrey"></i>-->
+                    <!--</div>-->
 
 
-            </div>
-        </div>
-    </div>
-</div>
-<div style="margin-left: 0;margin-right: 0" id="contactUsSection" class="row contactUsContainer">
-    <div style="text-align: center;padding: 0" class="col-xs-6  col-md-6 alignRight  rtl">
-        <div class="outWrap">
-            <div style="text-align: center" class="innerWrap">
-                <div style="margin-bottom: 20px;margin-top: 5px" class="myGrey boldBigText">
-                    איתמר משה
-                </div>
-                <div style="width: 20px;border-bottom: 3px solid #4e4e4e;margin-bottom: 20px "
-                     class="liner myGrey"></div>
-                <div class="myGrey boldSemiText">
-                    {{generalSettings.email}}
-                </div>
-                <div class="myGrey boldSemiText">
-                    {{generalSettings.phone}}
                 </div>
             </div>
         </div>
-        <img style="width: 100%" src="static/assets/Footer_bg.jpg">
     </div>
-    <div style="text-align: center" class="col-xs-6 col-md-5   alignRight rtl">
-        <div class="row">
-            <h3 style="font-size: 46px;margin-top: 30px;margin-bottom: 30px" class="rtl alignRight bold myGrey"> בואו
-                נדבר </h3>
+    <div style="margin-left: 0;margin-right: 0" id="contactUsSection" class="row contactUsContainer">
+        <div style="text-align: center;padding: 0" class="col-xs-6  col-md-6 alignRight  rtl">
+            <div class="outWrap">
+                <div style="text-align: center" class="innerWrap">
+                    <div style="margin-bottom: 20px;margin-top: 5px" class="myGrey boldBigText">
+                        איתמר משה
+                    </div>
+                    <div style="width: 20px;border-bottom: 3px solid #4e4e4e;margin-bottom: 20px "
+                         class="liner myGrey"></div>
+                    <div class="myGrey boldSemiText">
+                        {{generalSettings.email}}
+                    </div>
+                    <div class="myGrey boldSemiText">
+                        {{generalSettings.phone}}
+                    </div>
+                </div>
+            </div>
+            <img style="width: 100%" src="static/assets/Footer_bg.jpg">
         </div>
+        <div style="text-align: center" class="col-xs-6 col-md-5   alignRight rtl">
+            <div class="row">
+                <h3 style="font-size: 46px;margin-top: 30px;margin-bottom: 30px" class="rtl alignRight bold myGrey">
+                    בואו
+                    נדבר </h3>
+            </div>
 
-        <div style="margin-bottom: 30px" class="row">
-            <div class="borderinon"></div>
-        </div>
-        <div class="row">
-            <p style="margin-up: 30px" class="regularText myGrey" style="margin-bottom: 10px"> חושבים לעשות שיפוץ
-                בבית,הרחבה או תוספת בפנים או בחוץ? הגעתם למקום הנכון</p>
-        </div>
-        <div style="margin-bottom: 30px" class="row">
-            <p class="regularText myGrey"> צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
-        </div>
-        <div class="row">
-            <div ng-show="mailSent" class="sendMailConfirmationOuter">
-                <div class="textWrap">
-                    <i  ng-click="mailSent = false" style="color: black;position: absolute;top : 14px;right: 14px"  class="icon-Close clickable"></i>
-                    <div  class="boldMiniTitle">
+            <div style="margin-bottom: 30px" class="row">
+                <div class="borderinon"></div>
+            </div>
+            <div class="row">
+                <p style="margin-up: 30px" class="regularText myGrey" style="margin-bottom: 10px"> חושבים לעשות שיפוץ
+                    בבית,הרחבה או תוספת בפנים או בחוץ? הגעתם למקום הנכון</p>
+            </div>
+            <div style="margin-bottom: 30px" class="row">
+                <p class="regularText myGrey"> צרו עימנו קשר דרך הטופס ונחזור אליכם טיק טק </p>
+            </div>
+            <div class="row">
+                <div ng-show="mailSent" class="sendMailConfirmationOuter">
+                    <div class="textWrap">
+                        <i ng-click="mailSent = false" style="color: black;position: absolute;top : 14px;right: 14px"
+                           class="icon-Close clickable"></i>
+                        <div class="boldMiniTitle">
                     <span>
                         היי
                     </span>
-                     <span>
+                            <span>
                          {{contact.fullName}},
                      </span>
-                    <span>
+                            <span>
                         תודה רבה שפנית אלינו
                     </span>
+                        </div>
+                        <div style="font-size: 14px;margin-top: 20px" class="regularExtraSmallText">
+                            הפנייה שלך נמצאת כבר בתיבת המייל שלנו, ניצור איתך קשר ממש בקרוב.
+                        </div>
+                        <div style="font-size: 14px;margin-top: 14px" class="regularExtraSmallText">
+                            המשך יום טוב.
+                        </div>
                     </div>
-                    <div style="font-size: 14px;margin-top: 20px" class="regularExtraSmallText">
-                        הפנייה שלך נמצאת כבר בתיבת המייל שלנו, ניצור איתך קשר ממש בקרוב.
+
+                </div>
+                <form autocomplete="off" ng-if="!mailSent" style="width: 510px;" class="regularText"
+                      name="contactUsForm" ng-init="setFormScope(this)">
+                    <div style="margin-bottom: 30px;position: relative" class="form-group">
+                        <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
+                        <div class="reqText"> * שדה חובה</div>
+                        <input name="fullNameInput" required ng-model="contact.fullName" type="text"
+                               class="form-control myGrey contactUsInput" id="exampleInputEmail1"
+                        >
+
+                        <!--<p ng-show="!contactUsForm.fullNameInput.$valid && submitted" style="color: red"> שדה חובה </p>-->
                     </div>
-                    <div style="font-size: 14px;margin-top: 14px" class="regularExtraSmallText">
-                        המשך יום טוב.
+                    <div style="margin-bottom: 30px;position: relative" class="form-group">
+                        <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
+                        <div class="reqText"> * שדה חובה</div>
+                        <input name="phoneInput" required ng-model="contact.phone" type="text"
+                               class="form-control myGrey contactUsInput" id="exampleInputPassword1"
+                        >
+
+                        <!--<p ng-show="!contactUsForm.phoneInput.$valid" style="color: red"> שדה חובה </p>-->
                     </div>
-                </div>
-
-            </div>
-            <form  autocomplete="off" ng-if="!mailSent" style="width: 510px;" class="regularText" name="contactUsForm" ng-init="setFormScope(this)">
-                <div  style="margin-bottom: 30px;position: relative" class="form-group">
-                    <label class="regularText myGrey contactUsLabel" for="exampleInputEmail1">שם מלא</label>
-                    <div  class="reqText">  * שדה חובה </div>
-                    <input name="fullNameInput" required ng-model="contact.fullName" type="text"
-                           class="form-control myGrey contactUsInput" id="exampleInputEmail1"
-                    >
-
-                    <!--<p ng-show="!contactUsForm.fullNameInput.$valid && submitted" style="color: red"> שדה חובה </p>-->
-                </div>
-                <div style="margin-bottom: 30px;position: relative" class="form-group">
-                    <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">טלפון</label>
-                    <div  class="reqText">  * שדה חובה </div>
-                    <input name="phoneInput"  required ng-model="contact.phone" type="text"
-                           class="form-control myGrey contactUsInput" id="exampleInputPassword1"
-                    >
-
-                    <!--<p ng-show="!contactUsForm.phoneInput.$valid" style="color: red"> שדה חובה </p>-->
-                </div>
-                <div style="margin-bottom: 30px;position: relative" class="form-group">
-                    <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
-                    <div  ng-show="!contactUsForm.emailInput.$valid && submitted" class="reqText">  * הוזן אימייל לא חוקי </div>
-                    <input  name="emailInput" ng-model="contact.email" type="email"
-                           class="form-control myGrey contactUsInput" id="exampleInputPassword1"
-                    >
-                </div>
-                <div style="margin-bottom: 20px;position: relative" class="form-group">
-                    <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך ?</label>
-                    <!--<div  class="reqText">  * חובה להזין טקסט </div>-->
-                    <textarea style="resize: none;" maxlength="600" rows="5" ng-model="contact.howCanWeHelp" type="text"
-                              class="form-control regularText myGrey contactUsTextArea" id="exampleInputPassword1"> </textarea>
-                </div>
-                <div ng-class="{'disableButtonText' : sendingMail}" style="margin-top: 30px;margin-bottom: 55px" class="clickable">
-                    <div  ng-click="sendMail(contact)" style="padding: 5px 10px;float: left;margin-top:-10px"
-                          class="boldSubtitle contactUsButton">
+                    <div style="margin-bottom: 30px;position: relative" class="form-group">
+                        <label class="regularText myGrey contactUsLabel" for="exampleInputPassword1">אימייל</label>
+                        <div ng-show="!contactUsForm.emailInput.$valid && submitted" class="reqText"> * הוזן אימייל לא
+                            חוקי
+                        </div>
+                        <input name="emailInput" ng-model="contact.email" type="email"
+                               class="form-control myGrey contactUsInput" id="exampleInputPassword1"
+                        >
+                    </div>
+                    <div style="margin-bottom: 20px;position: relative" class="form-group">
+                        <label class="regularText myGrey " for="exampleInputPassword1">איך אנחנו יכולים לעזור לך
+                            ?</label>
+                        <!--<div  class="reqText">  * חובה להזין טקסט </div>-->
+                        <textarea style="resize: none;" maxlength="600" rows="5" ng-model="contact.howCanWeHelp"
+                                  type="text"
+                                  class="form-control regularText myGrey contactUsTextArea"
+                                  id="exampleInputPassword1"> </textarea>
+                    </div>
+                    <div ng-class="{'disableButtonText' : sendingMail}" style="margin-top: 30px;margin-bottom: 55px"
+                         class="clickable">
+                        <div ng-click="sendMail(contact)" style="padding: 5px 10px;float: left;margin-top:-10px"
+                             class="boldSubtitle contactUsButton">
                         <span>
                                 שלח אותי
                         </span>
-                        <i ng-show="sendingMail" class="fa fa-circle-o-notch fa-spin"></i>
+                            <i ng-show="sendingMail" class="fa fa-circle-o-notch fa-spin"></i>
+                        </div>
+
                     </div>
 
-                </div>
 
+                </form>
+            </div>
 
-            </form>
         </div>
-
     </div>
-</div>
 </div>
