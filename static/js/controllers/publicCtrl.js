@@ -517,6 +517,11 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
     }
 
+    $scope.botToTopAnimationMiniProjects = function(flag,elementId){
+        $scope.lazyHide = false;
+        $scope.botToTopAnimation(flag,elementId);
+    }
+
 
     $scope.botToTopAnimation = function(flag , elementId){
         console.log("showing Flag ! ",flag);
