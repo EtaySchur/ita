@@ -17,7 +17,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
     $scope.currentPage = 0;
     $scope.pageSize = 3;
-    $rootScope.scrollAnimationDucration = 7000;
+    $rootScope.scrollAnimationDucration = 8000;
 
 
     $scope.setFormScope= function(scope){
@@ -489,7 +489,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     from: { x:0, y: 600 },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration,
-                    stiffness: 5
+                    stiffness: 3
                 }).applyTo(document.querySelectorAll("." + rightElementId));
 
             $timeout(function() {
@@ -499,7 +499,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                         from: { x:0, y: 600 },
                         to: { x: 0, y: 0 },
                         duration: $rootScope.scrollAnimationDucration,
-                        stiffness: 5,
+                        stiffness: 3,
                     }).applyTo(document.querySelectorAll("." + leftElementId));
                 $scope.scrollingSettings[flagLeft] = true;
             } , 100)
@@ -521,7 +521,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     from: { x:0, y: 600 },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration,
-                    stiffness: 5
+                    stiffness: 3
                 }).applyTo(document.querySelectorAll("." + elementId));
         }
     }
