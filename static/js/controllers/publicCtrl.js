@@ -170,7 +170,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
             $scope.activeCategoryFilterId = category.id;
             $scope.currentCategoryIndex = nextCategoryIndex;
-        } , 500)
+        } , 300)
     }
 
     $scope.hoverIn = function(){
