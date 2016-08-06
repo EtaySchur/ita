@@ -236,7 +236,7 @@
         </div>
 
         <div class="col-xs-12 col-md-10 col-md-offset-1 rtl">
-            <div  style="margin-bottom: 80px;min-height: 350px" in-view="botToTopDelayedAnimation('sideProject' + {{$index}} + 'RightSection' , 'sideProject' + {{$index}} + 'LeftSection' , 'sideProject-{{$index}}-RightSection' , 'sideProject-{{$index}}-LeftSection')" class="row noLeftRightMargin">
+            <div  style="margin-bottom: 80px;min-height: 600px" in-view="botToTopDelayedAnimation('sideProject' + {{$index}} + 'RightSection' , 'sideProject' + {{$index}} + 'LeftSection' , 'sideProject-{{$index}}-RightSection' , 'sideProject-{{$index}}-LeftSection')" class="row noLeftRightMargin">
 
                 <div class="col-md-7">
                     <div ng-show="scrollingSettings.sideProject{{$index}}LeftSection" class="sideProject-{{$index}}-LeftSection">
@@ -291,7 +291,7 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-bottom: 60px" in-view="botToTopAnimation('sideProject' + {{$index}} + 'detailsImagesRow' , 'sideProject-{{$index}}-detailsImagesRow')">
+            <div style="margin-bottom: 60px;min-height: 350px" in-view="botToTopAnimation('sideProject' + {{$index}} + 'detailsImagesRow' , 'sideProject-{{$index}}-detailsImagesRow')">
                 <div ng-show="scrollingSettings.sideProject{{$index}}detailsImagesRow"  class="row noLeftRightMargin detailsImagesRow sideProject-{{$index}}-detailsImagesRow">
                     <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
                         <div class="projectImageContainer">
