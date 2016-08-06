@@ -174,7 +174,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     }
 
     $timeout(function() {
-      $scope.lazyHide = true;
+      //$scope.lazyHide = true;
     } , 500)
 
 
