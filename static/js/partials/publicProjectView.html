@@ -203,8 +203,8 @@
                     </div>
                 </div>
 
-                <div in-view="botToTopAnimation('showAnotherTitleSection' , 'showAnotherTitleSection')">
-                    <div ng-if="slides.length > 0" style="margin-top: 60px;margin-bottom:90px" class="row">
+                <div in-view="botToTopAnimation('showProjectCarousel' , 'showProjectCarousel')">
+                    <div  ng-show="scrollingSettings.showProjectCarousel" ng-if="slides.length > 0" style="margin-top: 60px;margin-bottom:90px" class="row showProjectCarousel">
                         <div class="col-md-10 col-md-offset-1  rtl col-xs-12">
                             <div>
                                 <uib-carousel class="miniProjectCarousel" active="active" interval="myInterval"
