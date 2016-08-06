@@ -360,16 +360,17 @@
             </div>
         </div>
     </div>
-    <div  ng-if="miniProjects.length > 0">
-        <div   style="min-height: 150px" in-view="botToTopAnimation('showMiniProjects', 'showMiniProjects')" style="margin-top: 90px;margin-bottom: 0px" class="row noLeftRightMargin">
-            <div ng-show="scrollingSettings.showMiniProjects" style="text-align: center;padding-right: 0" class="col-xs-12 rtl showMiniProjects">
-                <div class="borderon"></div>
-                <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e;margin-bottom: 60px"> פרוייקטים
-                    נוספים </h1>
+    <div  style="min-height: 150px" in-view="botToTopAnimation('showMiniProjects', 'showMiniProjects')" ng-if="miniProjects.length > 0">
+        <div ng-show="scrollingSettings.showMiniProjects" class="showMiniProjects">
+            <div    style="margin-top: 90px;margin-bottom: 0px" class="row noLeftRightMargin">
+                <div  style="text-align: center;padding-right: 0" class="col-xs-12 rtl">
+                    <div class="borderon"></div>
+                    <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e;margin-bottom: 60px"> פרוייקטים
+                        נוספים </h1>
+                </div>
             </div>
-        </div>
-            <div  style="min-height: 150px" in-view="botToTopAnimation('showMiniProjectsCarousel', 'showMiniProjectsCarousel')">
-                <div ng-show="scrollingSettings.showMiniProjectsCarousel" style="margin-bottom: 80px;" class="row noLeftRightMargin showMiniProjectsCarousel">
+            <div>
+                <div  style="margin-bottom: 80px;" class="row noLeftRightMargin showMiniProjectsCarousel">
                     <div style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1">
                         <slick speed="500" arrows="true" lazy-load="ondemand" slides-to-show="3" slides-to-scroll="1">
                             <div style="text-align: center"
@@ -397,6 +398,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+
 
     </div>
 
