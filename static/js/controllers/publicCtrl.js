@@ -204,8 +204,8 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                 .translate({
                     from: { x:0, y: 200 },
                     to: { x: 0, y: 0 },
-                    duration: 1500,
-                    stiffness: 4
+                    duration: 3000,
+                    stiffness: 5
                 }).applyTo(document.querySelectorAll("." + rightElementId));
 
                 $timeout(function() {
@@ -214,8 +214,8 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                         .translate({
                             from: { x:0, y: 200 },
                             to: { x: 0, y: 0 },
-                            duration: 1500,
-                            stiffness: 1,
+                            duration: 3000,
+                            stiffness: 5,
                         }).applyTo(document.querySelectorAll("." + leftElementId));
                     $scope.scrollingSettings[flagLeft] = true;
                 } , 100)
@@ -236,8 +236,8 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                 .translate({
                     from: { x:0, y: 200 },
                     to: { x: 0, y: 0 },
-                    duration: 2000,
-                    stiffness: 4
+                    duration: 3000,
+                    stiffness: 5
                 }).applyTo(document.querySelectorAll("." + elementId));
         }
     }
@@ -488,8 +488,8 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                 .translate({
                     from: { x:0, y: 200 },
                     to: { x: 0, y: 0 },
-                    duration: 1500,
-                    stiffness: 4
+                    duration: 3000,
+                    stiffness: 5
                 }).applyTo(document.querySelectorAll("." + rightElementId));
 
             $timeout(function() {
@@ -498,8 +498,8 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     .translate({
                         from: { x:0, y: 200 },
                         to: { x: 0, y: 0 },
-                        duration: 1500,
-                        stiffness: 1,
+                        duration: 3000,
+                        stiffness: 5,
                     }).applyTo(document.querySelectorAll("." + leftElementId));
                 $scope.scrollingSettings[flagLeft] = true;
             } , 100)
@@ -520,8 +520,8 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                 .translate({
                     from: { x:0, y: 200 },
                     to: { x: 0, y: 0 },
-                    duration: 2000,
-                    stiffness: 4
+                    duration: 3000,
+                    stiffness: 5
                 }).applyTo(document.querySelectorAll("." + elementId));
         }
     }
