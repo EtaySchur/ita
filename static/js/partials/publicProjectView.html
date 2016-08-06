@@ -236,41 +236,47 @@
         </div>
 
         <div class="col-xs-12 col-md-10 col-md-offset-1 rtl">
-            <div class="row noLeftRightMargin">
+            <div  in-view="botToTopDelayedAnimation('sideProject' + {{$index}} + 'RightSection' , 'sideProject-{{$index}}-RightSection' , 'sideProject' + {{$index}} + 'LeftSection' , 'sideProject' + {{$index}} +'LeftSection')" class="row noLeftRightMargin">
 
                 <div class="col-md-7">
-                    <div style="margin-bottom: 15px" class="regularTitle myGrey">
-                        כמה מילים על הפרוייקט
+                    <div ng-show="scrollingSettings.sideProject{{$index}}RightSection" class="sideProject-{{$index}}-RightSection">
+                        <div style="margin-bottom: 15px" class="regularTitle myGrey">
+                            כמה מילים על הפרוייקט
+                        </div>
+                        <div class="regularExtraSmallText myOtherGrey">
+                            {{item.aboutMe}}
+                        </div>
+                        <div style="margin-top: 60px;margin-bottom: 60px" ng-if="item.imageCircle1"
+                             class="circleImageContainer row">
+                            <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                                <img ng-src="{{item.imageCircle1}}">
+
+                                <p style="margin-top: 10px"> {{item.imageCircle1Text}} </p>
+                            </div>
+                            <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                                <img ng-src="{{item.imageCircle2}}">
+
+                                <p style="margin-top: 10px"> {{item.imageCircle2Text}} </p>
+                            </div>
+                            <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                                <img ng-src="{{item.imageCircle3}}">
+
+                                <p style="margin-top: 10px"> {{item.imageCircle3Text}} </p>
+                            </div>
+                            <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
+                                <img ng-src="{{item.imageCircle4}}">
+
+                                <p style="margin-top: 10px"> {{item.imageCircle4Text}} </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="regularExtraSmallText myOtherGrey">
-                        {{item.aboutMe}}
-                    </div>
-                    <div style="margin-top: 60px;margin-bottom: 60px" ng-if="item.imageCircle1"
-                         class="circleImageContainer row">
-                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
-                            <img ng-src="{{item.imageCircle1}}">
 
-                            <p style="margin-top: 10px"> {{item.imageCircle1Text}} </p>
-                        </div>
-                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
-                            <img ng-src="{{item.imageCircle2}}">
-
-                            <p style="margin-top: 10px"> {{item.imageCircle2Text}} </p>
-                        </div>
-                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
-                            <img ng-src="{{item.imageCircle3}}">
-
-                            <p style="margin-top: 10px"> {{item.imageCircle3Text}} </p>
-                        </div>
-                        <div style="text-align: center" class="circleImage col-md-3 floatMeRight">
-                            <img ng-src="{{item.imageCircle4}}">
-
-                            <p style="margin-top: 10px"> {{item.imageCircle4Text}} </p>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-md-5">
-                    <img style="width: 100%" ng-src="{{item.imagePath}}">
+                    <div ng-show="scrollingSettings.sideProject{{$index}}LeftSection" class="sideProject{{$index}}LeftSection">
+                        <img style="width: 100%" ng-src="{{item.imagePath}}">
+
+                    </div>
                 </div>
             </div>
             <div style="margin-top: 80px" class="row">
