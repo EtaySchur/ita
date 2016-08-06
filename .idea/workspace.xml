@@ -60,8 +60,8 @@
       <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="334" column="44" selection-start-line="334" selection-start-column="44" selection-end-line="334" selection-end-column="44" />
+            <state relative-caret-position="611">
+              <caret line="334" column="57" selection-start-line="334" selection-start-column="57" selection-end-line="334" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -111,7 +111,6 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#uib-slide#0;n#uib-carousel#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -127,10 +126,10 @@
                 <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
-                <marker date="1470495510872" expanded="false" signature="23193:23204" ph="..." />
-                <marker date="1470495510872" expanded="false" signature="23385:23400" ph="..." />
-                <marker date="1470495510872" expanded="false" signature="23551:23563" ph="..." />
-                <marker date="1470495510872" expanded="false" signature="23745:23760" ph="..." />
+                <marker date="1470495583582" expanded="false" signature="23244:23255" ph="..." />
+                <marker date="1470495583582" expanded="false" signature="23436:23451" ph="..." />
+                <marker date="1470495583582" expanded="false" signature="23602:23614" ph="..." />
+                <marker date="1470495583582" expanded="false" signature="23796:23811" ph="..." />
               </folding>
             </state>
           </provider>
@@ -529,14 +528,7 @@
       <workItem from="1470223648228" duration="10320000" />
       <workItem from="1470243974674" duration="16420000" />
       <workItem from="1470323327346" duration="271000" />
-      <workItem from="1470323816485" duration="9965000" />
-    </task>
-    <task id="LOCAL-00021" summary="who wee are animations">
-      <created>1470236763892</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1470236763892</updated>
+      <workItem from="1470323816485" duration="10038000" />
     </task>
     <task id="LOCAL-00022" summary="who wee are animations">
       <created>1470236966912</created>
@@ -874,11 +866,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470495029995</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="project animation">
+      <created>1470495515550</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1470495515550</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59371000" />
+    <option name="totallyTimeSpent" value="59444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1086,7 +1085,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#uib-slide#0;n#uib-carousel#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -1102,10 +1100,10 @@
             <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
-            <marker date="1470495510872" expanded="false" signature="23193:23204" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23385:23400" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23551:23563" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23745:23760" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23244:23255" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23436:23451" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23602:23614" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23796:23811" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1241,7 +1239,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#uib-slide#0;n#uib-carousel#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -1257,10 +1254,10 @@
             <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
-            <marker date="1470495510872" expanded="false" signature="23193:23204" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23385:23400" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23551:23563" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23745:23760" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23244:23255" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23436:23451" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23602:23614" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23796:23811" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1382,7 +1379,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#uib-slide#0;n#uib-carousel#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -1398,10 +1394,10 @@
             <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
-            <marker date="1470495510872" expanded="false" signature="23193:23204" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23385:23400" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23551:23563" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23745:23760" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23244:23255" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23436:23451" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23602:23614" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23796:23811" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1523,7 +1519,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#uib-slide#0;n#uib-carousel#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -1539,10 +1534,10 @@
             <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
-            <marker date="1470495510872" expanded="false" signature="23193:23204" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23385:23400" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23551:23563" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23745:23760" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23244:23255" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23436:23451" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23602:23614" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23796:23811" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1748,8 +1743,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="334" column="44" selection-start-line="334" selection-start-column="44" selection-end-line="334" selection-end-column="44" />
+        <state relative-caret-position="611">
+          <caret line="334" column="57" selection-start-line="334" selection-start-column="57" selection-end-line="334" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1799,7 +1794,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#uib-slide#0;n#uib-carousel#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#!!top" expanded="true" />
@@ -1815,10 +1809,10 @@
             <element signature="n#style#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
-            <marker date="1470495510872" expanded="false" signature="23193:23204" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23385:23400" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23551:23563" ph="..." />
-            <marker date="1470495510872" expanded="false" signature="23745:23760" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23244:23255" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23436:23451" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23602:23614" ph="..." />
+            <marker date="1470495583582" expanded="false" signature="23796:23811" ph="..." />
           </folding>
         </state>
       </provider>
