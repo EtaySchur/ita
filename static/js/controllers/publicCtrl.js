@@ -17,7 +17,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
     $scope.currentPage = 0;
     $scope.pageSize = 3;
-    $rootScope.scrollAnimationDucration = 6000;
+    $rootScope.scrollAnimationDucration = 7000;
 
 
     $scope.setFormScope= function(scope){
