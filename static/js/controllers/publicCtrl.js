@@ -18,6 +18,8 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     $scope.currentPage = 0;
     $scope.pageSize = 3;
     $rootScope.scrollAnimationDucration = 8000;
+    $rootScope.scrollStiffness = 10;
+    $rootScope.scrollYFrom = 300;
 
 
     $scope.setFormScope= function(scope){
@@ -201,20 +203,20 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
             var bounce = new Bounce();
             bounce
                 .translate({
-                    from: { x:0, y: 400 },
+                    from: { x:0, y: $rootScope.scrollYFrom },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration,
-                    stiffness: 5
+                    stiffness: $rootScope.scrollStiffness
                 }).applyTo(document.querySelectorAll("." + rightElementId));
 
                 $timeout(function() {
                     console.log("Showing Left Ele");
                     bounce
                         .translate({
-                            from: { x:0, y: 400 },
+                            from: { x:0, y: $rootScope.scrollYFrom },
                             to: { x: 0, y: 0 },
                             duration: $rootScope.scrollAnimationDucration,
-                            stiffness: 5,
+                            stiffness: $rootScope.scrollStiffness,
                         }).applyTo(document.querySelectorAll("." + leftElementId));
                     $scope.scrollingSettings[flagLeft] = true;
                 } , 50)
@@ -233,10 +235,10 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
             var bounce = new Bounce();
             bounce
                 .translate({
-                    from: { x:0, y: 400 },
+                    from: { x:0, y: $rootScope.scrollYFrom },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration ,
-                    stiffness: 5
+                    stiffness: $rootScope.scrollStiffness
                 }).applyTo(document.querySelectorAll("." + elementId));
         }
     }
@@ -486,20 +488,20 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
             var bounce = new Bounce();
             bounce
                 .translate({
-                    from: { x:0, y: 400 },
+                    from: { x:0, y: $rootScope.scrollYFrom },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration,
-                    stiffness: 5
+                    stiffness: $rootScope.scrollStiffness
                 }).applyTo(document.querySelectorAll("." + rightElementId));
 
             $timeout(function() {
                 console.log("Showing Left Ele");
                 bounce
                     .translate({
-                        from: { x:0, y: 400 },
+                        from: { x:0, y: $rootScope.scrollYFrom },
                         to: { x: 0, y: 0 },
                         duration: $rootScope.scrollAnimationDucration,
-                        stiffness: 5,
+                        stiffness: $rootScope.scrollStiffness,
                     }).applyTo(document.querySelectorAll("." + leftElementId));
                 $scope.scrollingSettings[flagLeft] = true;
             } , 50)
@@ -518,10 +520,10 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
             var bounce = new Bounce();
             bounce
                 .translate({
-                    from: { x:0, y: 400 },
+                    from: { x:0, y: $rootScope.scrollYFrom },
                     to: { x: 0, y: 0 },
                     duration: $rootScope.scrollAnimationDucration,
-                    stiffness: 5
+                    stiffness: $rootScope.scrollStiffness
                 }).applyTo(document.querySelectorAll("." + elementId));
         }
     }
