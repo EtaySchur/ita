@@ -279,7 +279,7 @@
                     </div>
                 </div>
             </div>
-            <div style="min-height: 100px" in-view="botToTopAnimation('showProject' + {{$index}} + 'DetailSection' , 'sideProject-{{$index}}-DetailSection')">
+            <div style="min-height: 100px;margin-bottom: 80px" in-view="botToTopAnimation('showProject' + {{$index}} + 'DetailSection' , 'sideProject-{{$index}}-DetailSection')">
                 <div ng-show="scrollingSettings.showProject{{$index}}DetailSection"  class="row sideProject-{{$index}}-DetailSection">
                     <div class="col-md-12  rtl col-xs-12">
                         <div style="margin-bottom: 30px" class="regularTitle myGrey">
@@ -291,46 +291,48 @@
                     </div>
                 </div>
             </div>
+            <div in-view="botToTopAnimation('sideProject' + {{$index}} + 'detailsImagesRow' , 'sideProject-{{$index}}-detailsImagesRow')">
+                <div ng-show="scrollingSettings.sideProject{{$index}}detailsImagesRow"  class="row noLeftRightMargin detailsImagesRow sideProject-{{$index}}-detailsImagesRow">
+                    <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
+                        <div class="projectImageContainer">
+                            <img ng-src="{{item.image1}}">
 
-            <div style="margin-top: 80px" class="row noLeftRightMargin detailsImagesRow">
-                <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
-                    <div class="projectImageContainer">
-                        <img ng-src="{{item.image1}}">
-
-                        <div style="margin-top: 5px" class="regularExtraSmallText">
-                            {{item.image1Text}}
+                            <div style="margin-top: 5px" class="regularExtraSmallText">
+                                {{item.image1Text}}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
-                    <div class="projectImageContainer">
-                        <img ng-src="{{item.image2}}">
+                    <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
+                        <div class="projectImageContainer">
+                            <img ng-src="{{item.image2}}">
 
-                        <div style="margin-top: 5px" class="regularExtraSmallText">
-                            {{item.image2Text}}
+                            <div style="margin-top: 5px" class="regularExtraSmallText">
+                                {{item.image2Text}}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
-                    <div class="projectImageContainer">
-                        <img ng-src="{{item.image3}}">
+                    <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
+                        <div class="projectImageContainer">
+                            <img ng-src="{{item.image3}}">
 
-                        <div style="margin-top: 5px" class="regularExtraSmallText">
-                            {{item.image3Text}}
+                            <div style="margin-top: 5px" class="regularExtraSmallText">
+                                {{item.image3Text}}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div ng-if="item.image4" ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}"
-                     style="float: right" class="rtl">
-                    <div class="projectImageContainer">
-                        <img ng-src="{{item.image4}}">
+                    <div ng-if="item.image4" ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}"
+                         style="float: right" class="rtl">
+                        <div class="projectImageContainer">
+                            <img ng-src="{{item.image4}}">
 
-                        <div style="margin-top: 5px" class="regularExtraSmallText">
-                            {{item.image4Text}}
+                            <div style="margin-top: 5px" class="regularExtraSmallText">
+                                {{item.image4Text}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div style="margin-top: 60px" class="row">
                 <div class="col-md-12  rtl col-xs-12">
                     <div class="regularTitle myGrey">
