@@ -173,6 +173,11 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         } , 300)
     }
 
+    $timeout(function() {
+      $scope.lazyHide = true;
+    } , 500)
+
+
     $scope.hoverIn = function(){
         this.hoverEdit = true;
     };
