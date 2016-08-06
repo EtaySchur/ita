@@ -224,7 +224,7 @@
     </div>
 
 
-    <div id="sideProject{{$index}}" ng-repeat="item in mySideProjects" style="margin-bottom: 90px;min-height: 1000px"
+    <div id="sideProject{{$index}}" ng-repeat="item in mySideProjects" style="margin-bottom: 90px"
          class="row noLeftRightMargin">
         <div style="min-height: 120px" in-view="botToTopAnimation('sideProjectTitle' + {{$index}} , 'sideProject-{{$index}}-Title')">
             <div ng-show="scrollingSettings.sideProjectTitle{{$index}}" style="margin-bottom: 90px" class="row noLeftRightMargin sideProject-{{$index}}-Title">
@@ -371,7 +371,7 @@
             </div>
         </div>
 
-            <div>
+            <div in-view="botToTopAnimationMiniProjects('showMiniProjectsCarousel' , 'showMiniProjectsCarouselImages')">
                 <div  ng-hide="lazyHide" style="margin-bottom: 80px;" class="row noLeftRightMargin showMiniProjectsCarouselImages">
                     <div style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1">
                         <slick    init-onload="true" data="miniProjects"  speed="500" arrows="true"  slides-to-show="3" slides-to-scroll="1">

@@ -487,8 +487,8 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
     $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId){
         if(!$scope.scrollingSettings[flagRight]){
-            console.log("Flag Delayed ",flagRight);
-            console.log("flagLefT ",flagLeft);
+            // console.log("Flag Delayed ",flagRight);
+            // console.log("flagLefT ",flagLeft);
             $scope.scrollingSettings[flagRight] = true;
             var bounce = new Bounce();
             bounce
@@ -525,7 +525,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
 
     $scope.botToTopAnimation = function(flag , elementId){
-        console.log("showing Flag ! ",flag);
+        // console.log("showing Flag ! ",flag);
         if(!$scope.scrollingSettings[flag]){
             $scope.scrollingSettings[flag] = true;
             var bounce = new Bounce();
