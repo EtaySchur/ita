@@ -518,6 +518,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     }
 
     $scope.botToTopAnimationMiniProjects = function(flag,elementId){
+        console.log("Minig Projects Images Raw");
         $scope.lazyHide = false;
         $scope.botToTopAnimation(flag,elementId);
     }
