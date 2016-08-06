@@ -60,8 +60,8 @@
       <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="379" column="90" selection-start-line="379" selection-start-column="90" selection-end-line="379" selection-end-column="90" />
+            <state relative-caret-position="306">
+              <caret line="375" column="123" selection-start-line="375" selection-start-column="123" selection-end-line="375" selection-end-column="123" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -531,14 +531,7 @@
       <workItem from="1470223648228" duration="10320000" />
       <workItem from="1470243974674" duration="16420000" />
       <workItem from="1470323327346" duration="271000" />
-      <workItem from="1470323816485" duration="19351000" />
-    </task>
-    <task id="LOCAL-00088" summary="project animation">
-      <created>1470499240080</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1470499240080</updated>
+      <workItem from="1470323816485" duration="19411000" />
     </task>
     <task id="LOCAL-00089" summary="project animation">
       <created>1470499374254</created>
@@ -876,11 +869,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470510433918</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="project animation">
+      <created>1470510505148</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1470510505148</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68757000" />
+    <option name="totallyTimeSpent" value="68817000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1752,8 +1752,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="379" column="90" selection-start-line="379" selection-start-column="90" selection-end-line="379" selection-end-column="90" />
+        <state relative-caret-position="306">
+          <caret line="375" column="123" selection-start-line="375" selection-start-column="123" selection-end-line="375" selection-end-column="123" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
