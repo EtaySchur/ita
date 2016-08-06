@@ -28,7 +28,7 @@
 
 </div>
 
-<div ng-click="toggl eSideMenu(False)" class="wrapper projectView">
+<div ng-click="toggleSideMenu(False)" class="wrapper projectView">
     <div style="min-height:260px;position: relative;text-align: center" class="bannar">
         <div style="direction: rtl" class="subCategoryDesc">
             <div style="color: #ffffff" class="boldMiniHeader">
@@ -360,42 +360,45 @@
             </div>
         </div>
     </div>
-    <div ng-if="miniProjects.length > 0" style="margin-top: 90px;margin-bottom: 0px" class="row noLeftRightMargin">
-        <div style="text-align: center;padding-right: 0" class="col-xs-12 rtl">
-            <div class="borderon"></div>
-            <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e;margin-bottom: 60px"> פרוייקטים
-                נוספים </h1>
-        </div>
-        <div>
-            <div style="margin-bottom: 80px;" class="row noLeftRightMargin">
-                <div style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1">
-                    <slick speed="500" arrows="true" lazy-load="ondemand" slides-to-show="3" slides-to-scroll="1">
-                        <div style="text-align: center"
-                             ng-repeat="item in miniProjects"
-                             class="col-md-12 col-xs-12">
-                            <img style="width: 100%" class="img" ng-src="{{item.imagePath}}">
-                            <p style="margin-top: 15px;text-align: right;font-size: 22px;margin-bottom: 5px">
-                                {{item.title}}</p>
-                            <p style="text-align: right">{{item.text}}</p>
-                        </div>
-                    </slick>
+    <div  style="min-height: 300px" ng-if="miniProjects.length > 0">
+        <div  in-view="botToTopAnimation('showMiniProjects', 'showMiniProjects')" style="margin-top: 90px;margin-bottom: 0px" class="row noLeftRightMargin">
+            <div ng-show="scrollingSettings.showMiniProjects" style="text-align: center;padding-right: 0" class="col-xs-12 rtl showMiniProjects">
+                <div class="borderon"></div>
+                <h1 class="boldMiniHeader" style="margin-top: 30px;color:#4e4e4e;margin-bottom: 60px"> פרוייקטים
+                    נוספים </h1>
+            </div>
+            <div>
+                <div style="margin-bottom: 80px;" class="row noLeftRightMargin">
+                    <div style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1">
+                        <slick speed="500" arrows="true" lazy-load="ondemand" slides-to-show="3" slides-to-scroll="1">
+                            <div style="text-align: center"
+                                 ng-repeat="item in miniProjects"
+                                 class="col-md-12 col-xs-12">
+                                <img style="width: 100%" class="img" ng-src="{{item.imagePath}}">
+                                <p style="margin-top: 15px;text-align: right;font-size: 22px;margin-bottom: 5px">
+                                    {{item.title}}</p>
+                                <p style="text-align: right">{{item.text}}</p>
+                            </div>
+                        </slick>
 
-                    <!--<div  style="left: -30px" ng-if="miniProjects.length > pageSize"-->
-                    <!--class="carouselCheviLeft miniProjectChevi clickable" ng-click="prevPage()">-->
-                    <!--<i style="font-size: 33px" ng-class="{'disabled':minIndex == 0 }" class="icon-Arrow_left myGrey"></i>-->
-                    <!--</div>-->
+                        <!--<div  style="left: -30px" ng-if="miniProjects.length > pageSize"-->
+                        <!--class="carouselCheviLeft miniProjectChevi clickable" ng-click="prevPage()">-->
+                        <!--<i style="font-size: 33px" ng-class="{'disabled':minIndex == 0 }" class="icon-Arrow_left myGrey"></i>-->
+                        <!--</div>-->
 
-                    <!--<div style="right: -30px" ng-if="miniProjects.length > pageSize"-->
-                    <!--class="carouselCheviRight miniProjectChevi clickable" ng-click="nextPage()">-->
-                    <!--<i style="font-size: 33px" ng-class="{'disabled': minIndex + 3 >= miniProjects.length}"-->
-                    <!--class="icon-Arrow_right myGrey"></i>-->
-                    <!--</div>-->
+                        <!--<div style="right: -30px" ng-if="miniProjects.length > pageSize"-->
+                        <!--class="carouselCheviRight miniProjectChevi clickable" ng-click="nextPage()">-->
+                        <!--<i style="font-size: 33px" ng-class="{'disabled': minIndex + 3 >= miniProjects.length}"-->
+                        <!--class="icon-Arrow_right myGrey"></i>-->
+                        <!--</div>-->
 
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div style="margin-left: 0;margin-right: 0" id="contactUsSection" class="row contactUsContainer">
         <div style="text-align: center;padding: 0" class="col-xs-6  col-md-6 alignRight  rtl">
             <div class="outWrap">
