@@ -313,13 +313,14 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window' , '$timeout',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window , $timeout) {
     $rootScope.showSideProjects = false;
+    $window.scrollTo(0,0)
     $rootScope.mailSent = false;
     $scope.minIndex = 0;
     $scope.sideBarLimitItems = 5;
     $scope.scrollingSettings = {};
     $rootScope.imProjected = true;
     console.log($rootScope.showSideProjects);
-    $window.scrollTo(0,0)
+
     $scope.hoverIn = function(){
         this.hoverEdit = true;
     };
@@ -481,6 +482,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId){
         if(!$scope.scrollingSettings[flagRight]){
             console.log("Flag Delayed ",flagRight);
+            console.log("flagLefT ",flagLeft);
             $scope.scrollingSettings[flagRight] = true;
             var bounce = new Bounce();
             bounce
