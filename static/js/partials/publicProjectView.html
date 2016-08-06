@@ -279,16 +279,19 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 80px" class="row">
-                <div class="col-md-12  rtl col-xs-12">
-                    <div style="margin-bottom: 30px" class="regularTitle myGrey">
-                        הסבר על תהליך העבודה
-                    </div>
-                    <div class="regularExtraSmallText myOtherGrey">
-                        {{item.explainMe}}
+            <div in-view="botToTopAnimation('showProject{{$index}}DetailSection' , 'sideProject-{{$index}}-DetailSection')">
+                <div ng-show="showProject{{$index}}DetailSection" style="margin-top: 80px" class="row sideProject-{{$index}}-DetailSection">
+                    <div class="col-md-12  rtl col-xs-12">
+                        <div style="margin-bottom: 30px" class="regularTitle myGrey">
+                            הסבר על תהליך העבודה
+                        </div>
+                        <div class="regularExtraSmallText myOtherGrey">
+                            {{item.explainMe}}
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div style="margin-top: 80px" class="row noLeftRightMargin detailsImagesRow">
                 <div ng-class="{'col-md-3' : item.image4 , 'col-md-4' : !item.image4}" style="float: right" class="rtl">
                     <div class="projectImageContainer">
