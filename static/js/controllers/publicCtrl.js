@@ -154,7 +154,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         bounce
             .scale({
                 from: { x: 1, y: 1 },
-                to: { x: 0.1, y: 2.3 },
+                to: { x: 0.5, y: 0.5 },
                 easing: "sway",
                 duration: 800,
                 delay: 65,
@@ -169,8 +169,8 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         var bounce = new Bounce();
         bounce
             .scale({
-                from: { x: 0.1, y: 2.3 },
-                to: { x: 1, y: 1 },
+                from: { x: 1, y:1 },
+                to: { x: 2, y: 2 },
                 easing: "sway",
                 duration: 800,
                 delay: 65,
