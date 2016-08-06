@@ -148,24 +148,23 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     });
 
     $scope.setActiveCategoryFilter = function(category , nextCategoryIndex){
-        if($scope.currentCategoryIndex < nextCategoryIndex) {
-            $scope.moveToLeft = true;
-            $scope.fadeMeOutLeft = true;
-        }else{
-            $scope.moveToLeft = false;
-            $scope.fadeMeOutRight = true;
-        }
-
+        // if($scope.currentCategoryIndex < nextCategoryIndex) {
+        //     $scope.moveToLeft = true;
+        //     $scope.fadeMeOutLeft = true;
+        // }else{
+        //     $scope.moveToLeft = false;
+        //     $scope.fadeMeOutRight = true;
+        // }
+        $scope.zoomOut = true;
         $timeout(function() {
-            if($scope.moveToLeft){
-                $scope.fadeMeOutLeft = false;
-                $scope.fadeMeInRight = true;
-                $scope.fadeMeInLeft = false;
-            }else{
-                $scope.fadeMeOutRight = false;
-                $scope.fadeMeInLeft = true;
-                $scope.fadeMeInRight = false;
-            }
+            // if($scope.moveToLeft){
+                $scope.zoomOut = false;
+                $scope.zoomIn = true;
+            // }else{
+            //     $scope.fadeMeOutRight = false;
+            //     $scope.fadeMeInLeft = true;
+            //     $scope.fadeMeInRight = false;
+            // }
 
             $scope.activeCategoryFilterId = category.id;
             $scope.currentCategoryIndex = nextCategoryIndex;
