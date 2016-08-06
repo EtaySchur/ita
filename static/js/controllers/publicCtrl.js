@@ -150,6 +150,35 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     });
 
     $scope.setActiveCategoryFilter = function(category , nextCategoryIndex){
+        var bounce = new Bounce();
+        bounce
+            .scale({
+                from: { x: 1, y: 1 },
+                to: { x: 0.1, y: 2.3 },
+                easing: "sway",
+                duration: 800,
+                delay: 65,
+                stiffness: 2
+            })
+            .applyTo(document.querySelectorAll(".projectsContainer"));
+
+
+        $scope.activeCategoryFilterId = category.id;
+        $scope.currentCategoryIndex = nextCategoryIndex;
+
+        var bounce = new Bounce();
+        bounce
+            .scale({
+                from: { x: 0.1, y: 2.3 },
+                to: { x: 1, y: 1 },
+                easing: "sway",
+                duration: 800,
+                delay: 65,
+                stiffness: 2
+            })
+            .applyTo(document.querySelectorAll(".projectsContainer"));
+
+        return;
         // if($scope.currentCategoryIndex < nextCategoryIndex) {
         //     $scope.moveToLeft = true;
         //     $scope.fadeMeOutLeft = true;
