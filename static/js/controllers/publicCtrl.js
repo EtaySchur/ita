@@ -20,7 +20,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     $scope.pageSize = 3;
     $rootScope.scrollAnimationDucration = 8000;
     $rootScope.scrollStiffness = 10;
-    $rootScope.scrollYFrom = 100;
+    $rootScope.scrollYFrom = 200;
 
 
 
