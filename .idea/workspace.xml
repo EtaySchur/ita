@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9994554c-9e4d-4049-a450-76de86dd5563" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" afterPath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
     </list>
     <ignored path="VagrantBoxes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="publicCtrl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="publicCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -57,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="215">
-              <caret line="346" column="69" selection-start-line="346" selection-start-column="52" selection-end-line="346" selection-end-column="69" />
+              <caret line="346" column="66" selection-start-line="346" selection-start-column="66" selection-end-line="346" selection-end-column="66" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -237,8 +237,8 @@
         <option value="$PROJECT_DIR$/static/css/animate.css" />
         <option value="$PROJECT_DIR$/static/css/styles.css" />
         <option value="$PROJECT_DIR$/static/js/partials/mainPublicApp.html" />
-        <option value="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
         <option value="$PROJECT_DIR$/static/js/controllers/publicCtrl.js" />
+        <option value="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
       </list>
     </option>
   </component>
@@ -534,14 +534,7 @@
       <workItem from="1470243974674" duration="16420000" />
       <workItem from="1470323327346" duration="271000" />
       <workItem from="1470323816485" duration="22994000" />
-      <workItem from="1470588968200" duration="2740000" />
-    </task>
-    <task id="LOCAL-00105" summary="project animation">
-      <created>1470507517139</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1470507517139</updated>
+      <workItem from="1470588968200" duration="2779000" />
     </task>
     <task id="LOCAL-00106" summary="project animation">
       <created>1470507838931</created>
@@ -879,11 +872,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470591352553</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="project animation">
+      <created>1470591713062</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1470591713062</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75140000" />
+    <option name="totallyTimeSpent" value="75179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="53" width="1936" height="1056" extended-state="0" />
@@ -1748,10 +1748,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
-          <caret line="346" column="69" selection-start-line="346" selection-start-column="52" selection-end-line="346" selection-end-column="69" />
+          <caret line="346" column="66" selection-start-line="346" selection-start-column="66" selection-end-line="346" selection-end-column="66" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1824,14 +1832,6 @@
             <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#4;n#div#1;n#div#4;n#div#1;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
