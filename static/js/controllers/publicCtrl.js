@@ -553,19 +553,32 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     }
 
 
-    $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId){
+    $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId , isImage){
         if(!$scope.scrollingSettings[flagRight]){
             // console.log("Flag Delayed ",flagRight);
             // console.log("flagLefT ",flagLeft);
             $scope.scrollingSettings[flagRight] = true;
-            var bounce = new Bounce();
-            bounce
-                .translate({
-                    from: { x:0, y: $rootScope.scrollYFrom },
-                    to: { x: 0, y: 0 },
-                    duration: $rootScope.scrollAnimationDucration,
-                    stiffness: $rootScope.scrollStiffness
-                }).applyTo(document.querySelectorAll("." + rightElementId));
+            if(isImage){
+                var bounce = new Bounce();
+                bounce
+                    .scale({
+                        from: { x: 1, y: 1 },
+                        to: { x: 2, y: 2 },
+                        duration: $rootScope.scrollAnimationDucration,
+                        stiffness: $rootScope.scrollStiffness,
+                        bounces:1 ,
+                        stiffness :3
+                    }).applyTo(document.querySelectorAll("." + rightElementId));
+            }else{
+                var bounce = new Bounce();
+                bounce
+                    .translate({
+                        from: { x:0, y: $rootScope.scrollYFrom },
+                        to: { x: 0, y: 0 },
+                        duration: $rootScope.scrollAnimationDucration,
+                        stiffness: $rootScope.scrollStiffness
+                    }).applyTo(document.querySelectorAll("." + rightElementId));
+            }
 
             $timeout(function() {
                 console.log("Showing Left Ele");
