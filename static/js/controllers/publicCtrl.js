@@ -23,20 +23,6 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     $rootScope.scrollYFrom = 300;
 
 
-    $rootScope.popInAnimation = function(flag , elemId){
-        console.log("Popoing in ");
-        if(!$scope.scrollingSettings[flag]){
-            $scope.scrollingSettings[flag] = true;
-            var bounce = new Bounce();
-            bounce
-                .scale({
-                    from: { x: 0.5, y: 1 },
-                    to: { x: 1, y: 1 },
-                    duration: $rootScope.scrollAnimationDucration,
-                    stiffness: $rootScope.scrollStiffness
-                }).applyTo(document.querySelectorAll("." + elemId));
-        }
-    }
 
     $scope.setFormScope= function(scope){
         this.contactUsForm = scope;
@@ -556,6 +542,22 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
         return array;
     }
+
+    $scope.popInAnimation = function(flag , elemId){
+        console.log("Popoing in ");
+        if(!$scope.scrollingSettings[flag]){
+            $scope.scrollingSettings[flag] = true;
+            var bounce = new Bounce();
+            bounce
+                .scale({
+                    from: { x: 0.5, y: 1 },
+                    to: { x: 1, y: 1 },
+                    duration: $rootScope.scrollAnimationDucration,
+                    stiffness: $rootScope.scrollStiffness
+                }).applyTo(document.querySelectorAll("." + elemId));
+        }
+    }
+
 
 
     $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId , isImage){
