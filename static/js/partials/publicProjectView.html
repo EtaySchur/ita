@@ -203,11 +203,11 @@
                     </div>
                 </div>
 
-                <div ng-if="slides.length > 0" style="min-height: 450px" in-view="botToTopAnimation('showProjectCarousel' , 'showProjectCarousel')">
+                <div ng-if="slides.length > 0" style="min-height: 450px" in-view="popInAnimation('showProjectCarousel' , 'showProjectCarousel')">
                     <div  ng-show="scrollingSettings.showProjectCarousel"  style="margin-top: 60px;margin-bottom:90px" class="row showProjectCarousel">
                         <div class="col-md-10 col-md-offset-1  rtl col-xs-12">
                             <div>
-                                <uib-carousel class="miniProjectCarousel" active="active" interval="myInterval"
+                                <uib-carousel class="miniProjectCarousel" active="active"
                                               no-wrap="noWrapSlides">
                                     <uib-slide ng-repeat="slide in slides track by $index">
                                         <img ng-src="{{slide}}" style="margin:auto;">
@@ -348,7 +348,7 @@
                 <div   ng-show="scrollingSettings.sideProject{{$index}}anotherCarousel" class="row sideProject-{{$index}}-anotherCarousel">
                     <div class="col-md-10 col-md-offset-1  rtl col-xs-12 anotherCarousel">
                         <div>
-                            <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                            <uib-carousel active="active" no-wrap="noWrapSlides">
                                 <uib-slide ng-repeat="slide in item.slides">
                                     <img ng-src="{{slide}}" style="margin:auto;">
 
@@ -371,7 +371,7 @@
             </div>
         </div>
 
-            <div in-view="popInAnimation('showMiniProjectsCarousel' , 'showMiniProjectsCarouselImages')">
+            <div in-view="botToTopAnimationMiniProjects('showMiniProjectsCarousel' , 'showMiniProjectsCarouselImages')">
                 <div  ng-hide="lazyHide" style="margin-bottom: 80px;" class="row noLeftRightMargin showMiniProjectsCarouselImages">
                     <div style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1">
                         <slick    init-onload="true" data="miniProjects"  speed="500" arrows="true"  slides-to-show="3" slides-to-scroll="1">
