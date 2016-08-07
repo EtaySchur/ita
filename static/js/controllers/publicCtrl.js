@@ -150,35 +150,47 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     });
 
     $scope.setActiveCategoryFilter = function(category , nextCategoryIndex){
+
         var bounce = new Bounce();
         bounce
             .scale({
                 from: { x: 1, y: 1 },
-                to: { x: 0.5, y: 0.5 },
-                easing: "sway",
-                duration: 800,
-                delay: 65,
-                stiffness: 2
+                to: { x: 0.5, y: 0.5  },
+                easing: "bounce",
+                duration: 750,
+                stiffness: 3,
+                bounces: 4
             })
-            .applyTo(document.querySelectorAll(".projectsContainer"));
-
-
-        $scope.activeCategoryFilterId = category.id;
-        $scope.currentCategoryIndex = nextCategoryIndex;
-
-        var bounce = new Bounce();
-        bounce
+            // .scale({
+            //     from: { x: 1, y: 1},
+            //     to: { x: 1, y: 0.5},
+            //     easing: "bounce",
+            //     delay: 250,
+            //     duration: 500,
+            //     stiffness: 3,
+            //     bounces:4
+            // })
             .scale({
-                from: { x: 1, y:1 },
-                to: { x: 2, y: 2 },
-                easing: "sway",
-                duration: 800,
-                delay: 65,
-                stiffness: 2
+                from: { x: 1, y: 1},
+                to: { x: 2, y: 2},
+                easing: "bounce",
+                delay: 750,
+                duration: 750,
+                stiffness: 3,
+                bounces:4
             })
+            // .scale({
+            //     from: { x: 1, y: 1},
+            //     to: { x: 1, y: 2},
+            //     easing: "bounce",
+            //     delay: 750,
+            //     duration: 500,
+            //     stiffness: 1,
+            //     bounces:2
+            // })
             .applyTo(document.querySelectorAll(".projectsContainer"));
 
-        return;
+
         // if($scope.currentCategoryIndex < nextCategoryIndex) {
         //     $scope.moveToLeft = true;
         //     $scope.fadeMeOutLeft = true;
@@ -186,20 +198,20 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         //     $scope.moveToLeft = false;
         //     $scope.fadeMeOutRight = true;
         // }
-        $scope.zoomOut = true;
+       // $scope.zoomOut = true;
         $timeout(function() {
             // if($scope.moveToLeft){
-                $scope.zoomOut = false;
-                $scope.zoomIn = true;
+            //     $scope.zoomOut = false;
+            //     $scope.zoomIn = true;
             // }else{
             //     $scope.fadeMeOutRight = false;
             //     $scope.fadeMeInLeft = true;
             //     $scope.fadeMeInRight = false;
             // }
 
-            $scope.activeCategoryFilterId = category.id;
+            //$scope.activeCategoryFilterId = category.id;
             $scope.currentCategoryIndex = nextCategoryIndex;
-        } , 300)
+        } , 1500)
     }
 
 
@@ -225,7 +237,19 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 
 
-
+    $scope.popInAnimation = function(flag , elemId){
+        if(!$scope.scrollingSettings[flag]){
+            $scope.scrollingSettings[flag] = true;
+            var bounce = new Bounce();
+            bounce
+                .scale({
+                    from: { x: 1, y: 1 },
+                    to: { x: 2, y: 2 },
+                    duration: $rootScope.scrollAnimationDucration,
+                    stiffness: $rootScope.scrollStiffness
+                }).applyTo(document.querySelectorAll("." + elemId));
+        }
+    }
 
 
     $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId){
