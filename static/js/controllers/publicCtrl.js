@@ -24,6 +24,7 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 
 
     $rootScope.popInAnimation = function(flag , elemId){
+        console.log("Popoing in ");
         if(!$scope.scrollingSettings[flag]){
             $scope.scrollingSettings[flag] = true;
             var bounce = new Bounce();
