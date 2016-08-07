@@ -564,8 +564,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     .scale({
                         from: { x: 0.5, y: 0.5 },
                         to: { x: 1, y: 1 },
-                        duration: $rootScope.scrollAnimationDucration,
-                        stiffness: $rootScope.scrollStiffness,
+                        duration: 1000,
                         bounces:1 ,
                         stiffness :3
                     }).applyTo(document.querySelectorAll("." + rightElementId));
