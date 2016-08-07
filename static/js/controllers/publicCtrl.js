@@ -256,7 +256,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         if(!$scope.scrollingSettings[flagRight]){
             console.log("Flag Delayed ",flagRight);
             $scope.scrollingSettings[flagRight] = true;
-
+            console.log("is Image" ,isImage);
             if(isImage){
                 var bounce = new Bounce();
                 bounce
