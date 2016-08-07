@@ -361,7 +361,7 @@
         </div>
     </div>
     <div    ng-if="miniProjects.length > 0">
-        <div in-view="popInAnimation('showMiniProjectsCarousel' , 'showMiniProjectsCarousel')">
+        <div in-view="botToTopAnimation('showMiniProjectsCarousel' , 'showMiniProjectsCarousel')">
             <div    ng-show="scrollingSettings.showMiniProjectsCarousel" style="min-height: 150px"  style="margin-top: 90px;margin-bottom: 0px" class="row noLeftRightMargin showMiniProjectsCarousel">
                 <div style="text-align: center;padding-right: 0" class="col-xs-12 rtl showMiniProjects">
                     <div class="borderon"></div>
@@ -371,7 +371,7 @@
             </div>
         </div>
 
-            <div in-view="botToTopAnimationMiniProjects('showMiniProjectsCarousel' , 'showMiniProjectsCarouselImages')">
+            <div in-view="popInAnimation('showMiniProjectsCarousel' , 'showMiniProjectsCarouselImages')">
                 <div  ng-hide="lazyHide" style="margin-bottom: 80px;" class="row noLeftRightMargin showMiniProjectsCarouselImages">
                     <div style="margin-top: 30px" class="col-xs-12 col-md-10 col-md-offset-1">
                         <slick    init-onload="true" data="miniProjects"  speed="500" arrows="true"  slides-to-show="3" slides-to-scroll="1">
