@@ -165,7 +165,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
             }).scale({
             from: { x: 1, y: 1 },
             to: { x: 1.42, y: 1.42 },
-            duration:  1500,
+            duration:  2000,
             bounces:1 ,
             delay:300,
             stiffness :3

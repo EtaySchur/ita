@@ -50,8 +50,8 @@
       <file leaf-file-name="publicCtrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="167" column="27" selection-start-line="167" selection-start-column="27" selection-end-line="167" selection-end-column="27" />
+            <state relative-caret-position="70">
+              <caret line="169" column="21" selection-start-line="169" selection-start-column="18" selection-end-line="169" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -536,14 +536,7 @@
       <workItem from="1470243974674" duration="16420000" />
       <workItem from="1470323327346" duration="271000" />
       <workItem from="1470323816485" duration="22994000" />
-      <workItem from="1470588968200" duration="7004000" />
-    </task>
-    <task id="LOCAL-00121" summary="project animation">
-      <created>1470509008721</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1470509008721</updated>
+      <workItem from="1470588968200" duration="7117000" />
     </task>
     <task id="LOCAL-00122" summary="project animation">
       <created>1470509069240</created>
@@ -881,11 +874,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470595916069</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="project animation">
+      <created>1470595983525</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1470595983525</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79404000" />
+    <option name="totallyTimeSpent" value="79517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="53" width="1936" height="1056" extended-state="0" />
@@ -1843,8 +1843,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="167" column="27" selection-start-line="167" selection-start-column="27" selection-end-line="167" selection-end-column="27" />
+        <state relative-caret-position="70">
+          <caret line="169" column="21" selection-start-line="169" selection-start-column="18" selection-end-line="169" selection-end-column="21" />
           <folding />
         </state>
       </provider>
