@@ -1,5 +1,5 @@
 <div>
-    <div class="row noLeftRightMargin">
+    <div style="margin-bottom: 60px" class="row noLeftRightMargin">
         <div style="min-height: 600px" class="col-md-12 myCarousel">
             <!-- Carousel Section -->
             <div>
@@ -32,7 +32,7 @@
     </div>
     <div   in-view="botToTopAnimation('showProjectsSection' , 'projectSectionDiv')" style="min-height: 600px;" class="heightContainer">
         <div  ng-show="scrollingSettings.showProjectsSection"   class="projectSectionDiv"  id="projectSectionDiv">
-            <div  id="projectsSection"  style="margin-top: 60px"  class="row noLeftRightMargin">
+            <div  id="projectsSection"    class="row noLeftRightMargin">
                 <div  style="text-align: center;" class="col-md-10 col-md-offset-1 myCategoryFilter">
         <span  style="color: #a8a8a8;margin-left: 50px" ng-click="setActiveCategoryFilter(category , $index)" ng-class="{'active': activeCategoryFilterId === category.id , 'hovered':hoverEdit}" class="categoryFilter clickable boldSubtitle" ng-repeat="category in categories">
               {{category.title}}
