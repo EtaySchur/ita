@@ -273,6 +273,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
                 $timeout(function() {
                     console.log("Showing Left Ele");
+                    var bounce =  new Bounce();
                     bounce
                         .translate({
                             from: { x:0, y: $rootScope.scrollYFrom },
