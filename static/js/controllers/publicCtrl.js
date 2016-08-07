@@ -580,6 +580,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
             }
 
             $timeout(function() {
+                var bounce = new Bounce();
                 console.log("Showing Left Ele");
                 bounce
                     .translate({
