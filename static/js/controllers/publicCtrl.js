@@ -562,8 +562,8 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                 var bounce = new Bounce();
                 bounce
                     .scale({
-                        from: { x: 1, y: 1 },
-                        to: { x: 2, y: 2 },
+                        from: { x: 0.5, y: 0.5 },
+                        to: { x: 1, y: 1 },
                         duration: $rootScope.scrollAnimationDucration,
                         stiffness: $rootScope.scrollStiffness,
                         bounces:1 ,
