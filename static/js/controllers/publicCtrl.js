@@ -157,40 +157,20 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         bounce
             .scale({
                 from: { x: 1, y: 1 },
-                to: { x: 0.5, y: 0.5  },
-                easing: "bounce",
-                duration: 750,
-                stiffness: 3,
-                bounces: 4
-            })
-            // .scale({
-            //     from: { x: 1, y: 1},
-            //     to: { x: 1, y: 0.5},
-            //     easing: "bounce",
-            //     delay: 250,
-            //     duration: 500,
-            //     stiffness: 3,
-            //     bounces:4
-            // })
-            .scale({
-                from: { x: 1, y: 1},
-                to: { x: 2, y: 2},
-                easing: "bounce",
-                delay: 750,
-                duration: 750,
-                stiffness: 3,
-                bounces:4
-            })
-            // .scale({
-            //     from: { x: 1, y: 1},
-            //     to: { x: 1, y: 2},
-            //     easing: "bounce",
-            //     delay: 750,
-            //     duration: 500,
-            //     stiffness: 1,
-            //     bounces:2
-            // })
-            .applyTo(document.querySelectorAll(".projectsContainer"));
+                to: { x: 0.7, y: 0.7 },
+                duration:1500,
+                bounces:1,
+                stiffness :3
+
+            }).scale({
+            from: { x: 1, y: 1 },
+            to: { x: 1.42, y: 1.42 },
+            duration:  2500,
+            bounces:1 ,
+            delay:300,
+            stiffness :3
+        }).applyTo(document.querySelectorAll(".projectsContainer"));
+
 
 
         // if($scope.currentCategoryIndex < nextCategoryIndex) {
@@ -200,20 +180,21 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         //     $scope.moveToLeft = false;
         //     $scope.fadeMeOutRight = true;
         // }
-       // $scope.zoomOut = true;
+      // $scope.zoomOut = true;
         $timeout(function() {
-            // if($scope.moveToLeft){
-            //     $scope.zoomOut = false;
-            //     $scope.zoomIn = true;
-            // }else{
-            //     $scope.fadeMeOutRight = false;
-            //     $scope.fadeMeInLeft = true;
-            //     $scope.fadeMeInRight = false;
-            // }
+            // var bounce = new Bounce();
+            // bounce
+            //     .scale({
+            //         from: { x:0.5, y: 0.5 },
+            //         to: { x: 1, y: 1 },
+            //         duration:  800,
+            //         bounces:1 ,
+            //         stiffness :3
+            //     }).applyTo(document.querySelectorAll(".projectsContainer"));
 
-            //$scope.activeCategoryFilterId = category.id;
+            $scope.activeCategoryFilterId = category.id;
             $scope.currentCategoryIndex = nextCategoryIndex;
-        } , 1500)
+        } , 300)
     }
 
 
@@ -545,7 +526,6 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     }
 
     $scope.popInAnimation = function(flag , elemId){
-        console.log("Popoing in ");
         if(!$scope.scrollingSettings[flag]){
             $scope.scrollingSettings[flag] = true;
             var bounce = new Bounce();
