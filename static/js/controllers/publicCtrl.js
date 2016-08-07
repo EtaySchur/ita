@@ -564,7 +564,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     .scale({
                         from: { x: 0.5, y: 0.5 },
                         to: { x: 1, y: 1 },
-                        duration: 1000,
+                        duration: 2000,
                         bounces:1 ,
                         stiffness :3
                     }).applyTo(document.querySelectorAll("." + rightElementId));
@@ -579,17 +579,17 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     }).applyTo(document.querySelectorAll("." + rightElementId));
             }
 
-            // $timeout(function() {
-            //     console.log("Showing Left Ele");
-            //     bounce
-            //         .translate({
-            //             from: { x:0, y: $rootScope.scrollYFrom },
-            //             to: { x: 0, y: 0 },
-            //             duration: $rootScope.scrollAnimationDucration,
-            //             stiffness: $rootScope.scrollStiffness,
-            //         }).applyTo(document.querySelectorAll("." + leftElementId));
-            //     $scope.scrollingSettings[flagLeft] = true;
-            // } , 50)
+            $timeout(function() {
+                console.log("Showing Left Ele");
+                bounce
+                    .translate({
+                        from: { x:0, y: $rootScope.scrollYFrom },
+                        to: { x: 0, y: 0 },
+                        duration: $rootScope.scrollAnimationDucration,
+                        stiffness: $rootScope.scrollStiffness,
+                    }).applyTo(document.querySelectorAll("." + leftElementId));
+                $scope.scrollingSettings[flagLeft] = true;
+            } , 100)
 
 
         }
