@@ -550,10 +550,11 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
             var bounce = new Bounce();
             bounce
                 .scale({
-                    from: { x: 0.5, y: 1 },
+                    from: { x: 0.7, y: 1 },
                     to: { x: 1, y: 1 },
-                    duration: $rootScope.scrollAnimationDucration,
-                    stiffness: $rootScope.scrollStiffness
+                    duration: 3000,
+                    stiffness: 1,
+                    bounce:1
                 }).applyTo(document.querySelectorAll("." + elemId));
         }
     }
