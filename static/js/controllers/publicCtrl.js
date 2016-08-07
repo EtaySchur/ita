@@ -580,17 +580,17 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     }).applyTo(document.querySelectorAll("." + rightElementId));
             }
 
-            $timeout(function() {
-                console.log("Showing Left Ele");
-                bounce
-                    .translate({
-                        from: { x:0, y: $rootScope.scrollYFrom },
-                        to: { x: 0, y: 0 },
-                        duration: $rootScope.scrollAnimationDucration,
-                        stiffness: $rootScope.scrollStiffness,
-                    }).applyTo(document.querySelectorAll("." + leftElementId));
-                $scope.scrollingSettings[flagLeft] = true;
-            } , 50)
+            // $timeout(function() {
+            //     console.log("Showing Left Ele");
+            //     bounce
+            //         .translate({
+            //             from: { x:0, y: $rootScope.scrollYFrom },
+            //             to: { x: 0, y: 0 },
+            //             duration: $rootScope.scrollAnimationDucration,
+            //             stiffness: $rootScope.scrollStiffness,
+            //         }).applyTo(document.querySelectorAll("." + leftElementId));
+            //     $scope.scrollingSettings[flagLeft] = true;
+            // } , 50)
 
 
         }
