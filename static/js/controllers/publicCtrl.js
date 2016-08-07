@@ -553,8 +553,8 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     from: { x: 0.7, y: 1 },
                     to: { x: 1, y: 1 },
                     duration: 3000,
-                    stiffness: 1,
-                    bounce:1
+                    stiffness: 3,
+                    bounces:1
                 }).applyTo(document.querySelectorAll("." + elemId));
         }
     }
