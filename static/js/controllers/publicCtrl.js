@@ -5,6 +5,7 @@
 publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope'  , '$window',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $window) {
     $scope.gotoElement = function (eID){
         console.log("scroling to ",eID);
+        $scope.scrollingSettings = {};
         // set the location.hash to the id of
         // the element you wish to scroll to.
         $location.hash(eID);
@@ -21,6 +22,20 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     $rootScope.scrollStiffness = 10;
     $rootScope.scrollYFrom = 300;
 
+
+    $rootScope.popInAnimation = function(flag , elemId){
+        if(!$scope.scrollingSettings[flag]){
+            $scope.scrollingSettings[flag] = true;
+            var bounce = new Bounce();
+            bounce
+                .scale({
+                    from: { x: 0.5, y: 1 },
+                    to: { x: 1, y: 1 },
+                    duration: $rootScope.scrollAnimationDucration,
+                    stiffness: $rootScope.scrollStiffness
+                }).applyTo(document.querySelectorAll("." + elemId));
+        }
+    }
 
     $scope.setFormScope= function(scope){
         this.contactUsForm = scope;
@@ -237,19 +252,8 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 
 
-    $scope.popInAnimation = function(flag , elemId){
-        if(!$scope.scrollingSettings[flag]){
-            $scope.scrollingSettings[flag] = true;
-            var bounce = new Bounce();
-            bounce
-                .scale({
-                    from: { x: 1, y: 1 },
-                    to: { x: 2, y: 2 },
-                    duration: $rootScope.scrollAnimationDucration,
-                    stiffness: $rootScope.scrollStiffness
-                }).applyTo(document.querySelectorAll("." + elemId));
-        }
-    }
+
+
 
 
     $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId , isImage){
