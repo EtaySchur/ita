@@ -649,6 +649,7 @@ input:-webkit-autofill {
     right: 50px;
     bottom: 50px;
     cursor: pointer;
+    z-index: 2000000;
 }
 .nav-devider{
     height: 15px;
