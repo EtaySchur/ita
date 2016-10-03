@@ -143,7 +143,7 @@
                 <div  style="min-height: 350px" in-view="botToTopAnimation('showDetailSection' , 'showDetailSection')">
                     <div ng-show="scrollingSettings.showDetailSection"
                          class="row detailsImagesRow showDetailSection">
-                        <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
+                        <div  ng-if="selectedProject.image1 && selectedProject.image1 !== ''" ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
                              style="float: right" class="rtl col-xs-12">
                             <div>
                                 <div class="projectImageContainer">
@@ -156,7 +156,7 @@
                             </div>
 
                         </div>
-                        <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
+                        <div ng-if="selectedProject.image2 && selectedProject.image2 !== ''" ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
                              style="float: right" class="rtl">
                             <div class="projectImageContainer">
                                 <img ng-src="{{selectedProject.image2}}">
@@ -166,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
+                        <div ng-if="selectedProject.image3 && selectedProject.image3 !== ''" ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
                              style="float: right" class="rtl">
                             <div class="projectImageContainer">
                                 <img ng-src="{{selectedProject.image3}}">
@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div ng-if="selectedProject.image4"
+                        <div ng-if="selectedProject.image4 && selectedProject.image4 !== ''"
                              ng-class="{'col-md-3' : selectedProject.image4 , 'col-md-4' : !selectedProject.image4}"
                              style="float: right" class="rtl">
                             <div class="projectImageContainer">

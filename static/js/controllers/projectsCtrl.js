@@ -802,7 +802,7 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
         if(!isNeedToUploadImages()){
             console.log("Editing project ",item);
             var restCallManager = new RestCallManager();
-
+            console.log(item.image1);
             restCallManager.post(callback , $http, item , "editProject");
             function callback(result , status , success) {
                 if (success) {
@@ -825,7 +825,7 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
                 data['file'] = $scope.newCarouselImage;
             }
 
-            if($scope.newBigImage != undefined){
+            if($scope.newBigImage !== undefined){
                 data['bigImage'] = $scope.newBigImage;
             }
 
@@ -924,6 +924,7 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
     };
 
 
+
     $scope.selectCategory = function(categoryId){
         for(var i = 0 ; i < $scope.categories.length ; i++){
             if($scope.categories[i].id === categoryId){
@@ -965,7 +966,13 @@ app.controller('EditProjectModalCtrl', function ($scope, $uibModalInstance, item
             $scope.bigImageurl = URL.createObjectURL(file);
             $scope.newBigImage  = $files[0];
         }
+    }
 
+    $scope.clearImage = function(item , key , urlKey) {
+        console.log("Clearing ? ",key,urlKey,item);
+        item.newBigImage = null;
+        $scope[urlKey] = null;
+        $scope[key] = null;
 
     }
 
