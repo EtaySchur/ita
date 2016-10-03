@@ -79,6 +79,10 @@ $scope.togglePublish = function (item){
         }
     }
 
+    $scope.categorySelected = function(category) {
+       $scope.selectedCategory = category;
+    }
+
     $scope.openEditProjectModal = function(size , project){
         if(project.id){
             var isNew = false;

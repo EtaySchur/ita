@@ -1,10 +1,15 @@
 <div class="row">
     <div class="col-xs-12">
-        <button type="button" class="btn btn-success col-xs-2" ng-click="addNewProject()"><i style="margin-right: 5px" class="fa fa-plus-circle"></i>New</button>
-        <span style="margin-left: 30px" class="btn-group col-xs-5">
-            <label ng-repeat='category in categories' class="btn btn-primary" ng-model="$parent.filteredCategory" btn-radio="'{{category.id}}'" uncheckable>{{category.title}}</label>
+        <button type="button" class="btn btn-success col-xs-1" ng-click="addNewProject()"><i style="margin-right: 5px" class="fa fa-plus-circle"></i>New</button>
+        <span style="margin-left: 30px" class="btn-group col-xs-3">
+            <label ng-click="categorySelected(category)" ng-repeat='category in categories' class="btn btn-primary" ng-model="$parent.filteredCategory" btn-radio="'{{category.id}}'" uncheckable>{{category.title}}</label>
         </span>
-        <div class="input-group col-xs-4">
+
+        <span class="btn-group col-xs-5">
+               <label ng-repeat='subCategory in selectedCategory.subCategories' class="btn btn-primary" ng-model="$parent.filteredSubCategory" btn-radio="'{{subCategory.id}}'" uncheckable>{{subCategory.title}}</label>
+        </span>
+
+        <div class="input-group col-xs-2">
             <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
             <input ng-model="query"type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
         </div>
@@ -13,7 +18,7 @@
 <div style="margin-top: 30px" class="row">
     <div class="col-xs-10 col-xs-offset-1">
         <div class="list-group">
-            <a ng-init="getTitles(item)" ng-repeat="item in projects | isCategory:filteredCategory | filter:query | orderBy:'myOrder'" class="list-group-item row">
+            <a ng-init="getTitles(item)" ng-repeat="item in projects | isCategory:filteredCategory | filter:query | orderBy:'myOrder' | isSubCategory:filteredSubCategory" class="list-group-item row">
                 <div class="col-md-1">
                     <div>
                   <span> <i ng-if="item.featured == 1" class="fa fa-star"></i></span>     <span ng-if="item.featured == 1">  {{item.myOrder}} </span>
