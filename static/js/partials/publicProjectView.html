@@ -11,7 +11,10 @@
             <div ng-show="hoverEdit" style="color: white;position: absolute;top : 30%;width: 75%;text-align: center"
                  class="boldSubtitle"> {{project.title}}
             </div>
-            <img style="width: 100%" ng-src="{{project.sideBarImage}}">
+            <div style="max-height: 200px;overflow: hidden">
+                <img style="width: 100%;" ng-src="{{project.sideBarImage}}">
+
+            </div>
         </div>
         <div ng-if="project.sideBarImage && project.sideBarImage != ''" ng-mouseleave="hoverOut()"
              ng-mouseover="hoverIn()" ng-click="navToProject(otherProject.id)"
