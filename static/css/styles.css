@@ -426,7 +426,8 @@ input , textarea{
 }
 
 .circleImage{
-    text-align: center;
+    text-align: right !important;
+    padding-right: 0px !important;
 }
 
 .fancyBackground{
