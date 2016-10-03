@@ -625,7 +625,7 @@ input:-webkit-autofill {
 
 
 .navbar-header a {
-    padding: 20px !important;
+    padding: 13px 20px 12px 20px !important;
 }
 
 
@@ -639,8 +639,8 @@ input:-webkit-autofill {
 }
 
 .myNavbar .navbar-nav>li>a{
-    padding-bottom: 21px;
-    padding-top: 34px;
+    padding-bottom: 14px;
+    padding-top: 26px;
 
 }
 
