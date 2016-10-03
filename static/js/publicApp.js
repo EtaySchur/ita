@@ -179,7 +179,7 @@ publicApp.directive("scroll", function ($window , $rootScope) {
     return function(scope, element, attrs) {
         angular.element($window).bind("scroll", function() {
             if (this.pageYOffset >= 100) {
-                if($rootScope.imTopped){
+                if($rootScope.imTopped && !$rootScope.imProjected){
                     $rootScope.imTopped = false;
                     var bounce = new Bounce();
                     bounce
