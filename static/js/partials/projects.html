@@ -442,7 +442,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#1</label>
                                     <div style="text-align: center"
-                                         ng-if="detailedImageCircleUrl1 == null && item.imageCircle1 != null"
+                                         ng-if="detailedImageCircleUrl1 == null && item.imageCircle1 != null && item.imageCircle1 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.imageCircle1}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -453,9 +453,14 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onDetailedCircleImage1Select($files)">
-                                    Upload Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onDetailedCircleImage1Select($files)">
+                                        Upload Image File
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.imageCircle1 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
+
                                 <div style="margin-top: 15px" class="form-group">
                                     <label for="exampleInputPassword1">Circled Image #1 Text</label>
                                     <input ng-model="item.imageCircle1Text" type="text" class="form-control"
@@ -468,7 +473,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#2</label>
                                     <div style="text-align: center"
-                                         ng-if="detailedImageCircleUrl2 == null && item.imageCircle2 != null"
+                                         ng-if="detailedImageCircleUrl2 == null && item.imageCircle2 != null  && item.imageCircle2 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.imageCircle2}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -479,9 +484,13 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onDetailedCircleImage2Select($files)">
-                                    Upload Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onDetailedCircleImage2Select($files)">
+                                        Upload Image File
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.imageCircle2 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
                                 <div style="margin-top: 15px" class="form-group">
                                     <label for="exampleInputPassword1">Detailed Image #2 Text</label>
                                     <input ng-model="item.imageCircle2Text" type="text" class="form-control"
@@ -494,7 +503,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#3</label>
                                     <div style="text-align: center"
-                                         ng-if="detailedImageCircleUrl3 == null && item.imageCircle3 != null"
+                                         ng-if="detailedImageCircleUrl3 == null && item.imageCircle3 != null  && item.imageCircle3 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.imageCircle3}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -505,9 +514,13 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onDetailedCircleImage3Select($files)">
-                                    Upload Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onDetailedCircleImage3Select($files)">
+                                        Upload Image File
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.imageCircle3 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
                                 <div style="margin-top: 15px" class="form-group">
                                     <label for="exampleInputPassword1">Detailed Image #3 Text</label>
                                     <input ng-model="item.imageCircle3Text" type="text" class="form-control"
@@ -518,7 +531,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#4</label>
                                     <div style="text-align: center"
-                                         ng-if="detailedImageCircleUrl4 == null && item.imageCircle4 != null"
+                                         ng-if="detailedImageCircleUrl4 == null && item.imageCircle4 != null  && item.imageCircle4 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.imageCircle4}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -529,9 +542,13 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onDetailedCircleImage4Select($files)">
-                                    Upload Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onDetailedCircleImage4Select($files)">
+                                        Upload Image File
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.imageCircle4 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
                                 <div style="margin-top: 15px" class="form-group">
                                     <label for="exampleInputPassword1">Detailed Image #4 Text</label>
                                     <input ng-model="item.imageCircle4Text" type="text" class="form-control"
@@ -586,7 +603,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#1</label>
                                     <div style="text-align: center"
-                                         ng-if="scopeCarouselImageUrl1 == null && item.miniCarouselImage1 != null"
+                                         ng-if="scopeCarouselImageUrl1 == null && item.miniCarouselImage1 != null && item.miniCarouselImage1 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.miniCarouselImage1}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -597,16 +614,20 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onMiniCarousel1Select($files)">Upload
-                                    Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onMiniCarousel1Select($files)">Upload
+
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.miniCarouselImage1 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#2</label>
                                     <div style="text-align: center"
-                                         ng-if="scopeCarouselImage2 == null && item.miniCarouselImage2 != null"
+                                         ng-if="scopeCarouselImage2 == null && item.miniCarouselImage2 != null && item.miniCarouselImage2 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.miniCarouselImage2}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -617,16 +638,21 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onMiniCarousel2Select($files)">Upload
-                                    Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onMiniCarousel2Select($files)">Upload
+
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.miniCarouselImage2 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
+
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#3</label>
                                     <div style="text-align: center"
-                                         ng-if="scopeCarouselImageUrl3 == null && item.miniCarouselImage3 != null"
+                                         ng-if="scopeCarouselImageUrl3 == null && item.miniCarouselImage3 != null && item.miniCarouselImage3 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.miniCarouselImage3}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -637,9 +663,13 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onMiniCarousel3Select($files)">Upload
-                                    Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onMiniCarousel3Select($files)">Upload
+
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.miniCarouselImage3 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
                             </div>
 
 
@@ -647,7 +677,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#4</label>
                                     <div style="text-align: center"
-                                         ng-if="scopeCarouselImageUrl4 == null && item.miniCarouselImage4 != null"
+                                         ng-if="scopeCarouselImageUrl4 == null && item.miniCarouselImage4 != null && item.miniCarouselImage4 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.miniCarouselImage4}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -658,9 +688,13 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onMiniCarousel4Select($files)">Upload
-                                    Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onMiniCarousel4Select($files)">Upload
+
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.miniCarouselImage4 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
                             </div>
 
 
@@ -668,7 +702,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#5</label>
                                     <div style="text-align: center"
-                                         ng-if="scopeCarouselImageUrl5 == null && item.miniCarouselImage5 != null"
+                                         ng-if="scopeCarouselImageUrl5 == null && item.miniCarouselImage5 != null && item.miniCarouselImage5 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.miniCarouselImage5}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -679,9 +713,13 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onMiniCarousel5Select($files)">Upload
-                                    Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onMiniCarousel5Select($files)">Upload
+
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.miniCarouselImage5 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
                             </div>
 
 
@@ -689,7 +727,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">#6</label>
                                     <div style="text-align: center"
-                                         ng-if="scopeCarouselImageUrl6 == null && item.miniCarouselImage6 != null"
+                                         ng-if="scopeCarouselImageUrl6 == null && item.miniCarouselImage6 != null && item.miniCarouselImage6 != ''"
                                          class="form-group">
                                         <img ng-src="{{item.miniCarouselImage1}}" alt="..."
                                              class="img-thumbnail projectImage">
@@ -700,9 +738,13 @@
                                              class="img-thumbnail projectImage">
                                     </div>
                                 </div>
-                                <button class="btn btn-default" ng-file-select="onMiniCarousel6Select($files)">Upload
-                                    Image File
-                                </button>
+                                <div class="row">
+                                    <button style="margin-left: 15px" class="btn btn-default" ng-file-select="onMiniCarousel6Select($files)">Upload
+
+                                    </button>
+                                    <button class="btn btn-danger" ng-click="item.miniCarouselImage6 = ''"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </div>
                             </div>
                         </div>
                     </uib-tab>
