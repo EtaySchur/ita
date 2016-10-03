@@ -609,6 +609,10 @@ svg{
     display: none !important;
 }
 
+.toppedProjectNavbar {
+    position: relative;
+    margin-bottom: 0px;
+}
 
 
 .contactUsSection .row{
@@ -673,7 +677,7 @@ input:-webkit-autofill {
 
 .subCategoryDesc{
     position: absolute;
-    top : calc(50% - 65px);
+    top : calc(50% - 87px);
     left: 0;
     right: 0;
 

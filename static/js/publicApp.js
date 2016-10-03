@@ -181,7 +181,7 @@ publicApp.directive("scroll", function ($window , $rootScope) {
             if (this.pageYOffset >= 100) {
                 if($rootScope.imTopped){
                     $rootScope.imTopped = false;
-                    if(!$rootScope.imProjected){
+                    if(true){
                         var bounce = new Bounce();
                         bounce
                             .translate({
