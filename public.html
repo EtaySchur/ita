@@ -56,6 +56,7 @@
             <img src="static/assets/Logo_black.png">
         </a>
     </div>
+
     <ul  style="float: right;direction: rtl" class="nav navbar-nav">
 
         <li   ng-if="!imTopped || imProjected" class="clickable"><a ng-class="{ 'myGrey' : !imTopped }" class="boldSmallText"   offset="60" scroll-to="contactUsSection">צור קשר</a></li>
@@ -90,6 +91,10 @@
     </ul>
 </nav>
 <div style="padding-left: 0;padding-right: 0" class="col-xs-12">
+    <div  ng-if="!imTopped" scroll-to="navBar" ng-mouseleave="showBackToTopHoverIcon = false" ng-mouseenter="showBackToTopHoverIcon = true" class="scrollToTopIcon">
+        <img  ng-hide="showBackToTopHoverIcon" ng-src="static/assets/BackToTop_Arrow.png">
+        <img ng-show="showBackToTopHoverIcon" ng-src="static/assets/BackToTop_Arrow_Hover.png">
+    </div>
     <div ng-view></div>
 </div>
 

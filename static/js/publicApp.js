@@ -179,17 +179,20 @@ publicApp.directive("scroll", function ($window , $rootScope) {
     return function(scope, element, attrs) {
         angular.element($window).bind("scroll", function() {
             if (this.pageYOffset >= 100) {
-                if($rootScope.imTopped && !$rootScope.imProjected){
+                if($rootScope.imTopped){
                     $rootScope.imTopped = false;
-                    var bounce = new Bounce();
-                    bounce
-                        .translate({
-                            from: { x:0, y: -87 },
-                            to: { x: 0, y: 0 },
-                            duration: 2000 ,
-                            stiffness: 3,
-                            bounces:1
-                        }).applyTo(document.querySelectorAll(".myNavbar"));
+                    if(!$rootScope.imProjected){
+                        var bounce = new Bounce();
+                        bounce
+                            .translate({
+                                from: { x:0, y: -87 },
+                                to: { x: 0, y: 0 },
+                                duration: 2000 ,
+                                stiffness: 3,
+                                bounces:1
+                            }).applyTo(document.querySelectorAll(".myNavbar"));
+                    }
+
                     $rootScope.navHoverEdit = false;
                 }
             } else {

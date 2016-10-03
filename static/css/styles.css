@@ -643,6 +643,13 @@ input:-webkit-autofill {
     padding-top: 26px;
 
 }
+
+.scrollToTopIcon{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    cursor: pointer;
+}
 .nav-devider{
     height: 15px;
     width: 1px;
