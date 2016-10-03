@@ -425,6 +425,10 @@ input , textarea{
 
 }
 
+.circleImage{
+    text-align: center;
+}
+
 .fancyBackground{
     background-image: url('../assets/Black_bg.jpg');
     height: 626px;

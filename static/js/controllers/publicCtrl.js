@@ -449,11 +449,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                                     $rootScope.otherProjects.push(project);
                                     counter++;
                                 }
-
-
-
                                $scope.slides = getMiniCarousel($scope.selectedProject);
-
                             });
                         } else {
 
