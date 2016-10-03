@@ -597,7 +597,8 @@ svg{
     bottom: 15px !important;
 }
 
-.miniProjectCarousel .carousel-control{
+.miniProjectCarousel .carousel-control glyphicon {
+    display: none !important;
 }
 
 .myCarousel .glyphicon-chevron-left{
