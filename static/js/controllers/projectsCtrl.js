@@ -81,6 +81,7 @@ $scope.togglePublish = function (item){
 
     $scope.categorySelected = function(category) {
        $scope.selectedCategory = category;
+        $scope.filteredSubCategory = null;
     }
 
     $scope.openEditProjectModal = function(size , project){

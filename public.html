@@ -58,10 +58,10 @@
     </div>
     <ul  style="float: right;direction: rtl" class="nav navbar-nav">
 
-        <li   ng-if="showNav || !imTopped" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"   offset="60" scroll-to="contactUsSection">צור קשר</a></li>
-        <li ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"  offset="60" scroll-to="testimonialsSection">לקוחות ממליצים</a></li>
-        <li ng-if="showNav || !imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"  offset="60" scroll-to="whoWeAreSection">קצת עלינו</a></li>
-        <li ng-if="showNav || !imTopped && !imProjected " class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped  }" class="boldSmallText"  offset="70" scroll-to="projectsSection">פרוייקטים</a></li>
+        <li   ng-if="!imTopped || imProjected" class="clickable"><a ng-class="{ 'myGrey' : !imTopped }" class="boldSmallText"   offset="60" scroll-to="contactUsSection">צור קשר</a></li>
+        <li ng-if="!imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"  offset="60" scroll-to="testimonialsSection">לקוחות ממליצים</a></li>
+        <li ng-if="!imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"  offset="60" scroll-to="whoWeAreSection">קצת עלינו</a></li>
+        <li ng-if="!imTopped && !imProjected " class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped  }" class="boldSmallText"  offset="70" scroll-to="projectsSection">פרוייקטים</a></li>
         <li   ng-if="imTopped && !showNav && !imProjected && false"  class="clickable">
             <a  ng-click="toggleNav()">
                 <i style="color: white" class="icon-Menu"></i>
