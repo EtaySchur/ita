@@ -597,7 +597,7 @@ svg{
     bottom: 15px !important;
 }
 
-.miniProjectCarousel .carousel-control glyphicon {
+.miniProjectCarousel .carousel-control .glyphicon {
     display: none !important;
 }
 
