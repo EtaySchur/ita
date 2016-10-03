@@ -59,6 +59,7 @@
     <ul  style="float: right;direction: rtl" class="nav navbar-nav">
 
         <li   ng-if="!imTopped || imProjected" class="clickable"><a ng-class="{ 'myGrey' : !imTopped }" class="boldSmallText"   offset="60" scroll-to="contactUsSection">צור קשר</a></li>
+        <li ng-if="imProjected"> <a  class="nav-devider" > </a></li>
         <li ng-if="!imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"  offset="60" scroll-to="testimonialsSection">לקוחות ממליצים</a></li>
         <li ng-if="!imTopped && !imProjected" class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped }" class="boldSmallText"  offset="60" scroll-to="whoWeAreSection">קצת עלינו</a></li>
         <li ng-if="!imTopped && !imProjected " class="clickable"><a ng-class="{'whiteText' : imTopped , 'myGrey' : !imTopped  }" class="boldSmallText"  offset="70" scroll-to="projectsSection">פרוייקטים</a></li>
