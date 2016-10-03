@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9994554c-9e4d-4049-a450-76de86dd5563" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/projects.html" afterPath="$PROJECT_DIR$/static/js/partials/projects.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public.html" afterPath="$PROJECT_DIR$/public.html" />
     </list>
     <ignored path="VagrantBoxes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +37,8 @@
       <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+            <state relative-caret-position="351">
+              <caret line="166" column="7" selection-start-line="166" selection-start-column="7" selection-end-line="166" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#0;n#divs#0;n#div#1;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#divs#0;n#div#1;n#div#1;n#!!top" expanded="true" />
@@ -47,12 +47,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/styles.css">
+      <file leaf-file-name="public.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7429">
-              <caret line="437" column="23" selection-start-line="437" selection-start-column="23" selection-end-line="437" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="182">
+              <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#5;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projects.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="projects.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/partials/projects.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="741" column="125" selection-start-line="741" selection-start-column="125" selection-end-line="741" selection-end-column="125" />
+            <state relative-caret-position="390">
+              <caret line="736" column="64" selection-start-line="736" selection-start-column="64" selection-end-line="736" selection-end-column="64" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -143,7 +145,6 @@
       <list>
         <option value="$PROJECT_DIR$/static/js/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/public.html" />
         <option value="$PROJECT_DIR$/static/css/animate.css" />
         <option value="$PROJECT_DIR$/static/css/styles.css" />
         <option value="$PROJECT_DIR$/static/js/partials/mainPublicApp.html" />
@@ -153,6 +154,7 @@
         <option value="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" />
         <option value="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
         <option value="$PROJECT_DIR$/static/js/partials/projects.html" />
+        <option value="$PROJECT_DIR$/public.html" />
       </list>
     </option>
   </component>
@@ -452,14 +454,7 @@
       <workItem from="1474723450622" duration="200000" />
       <workItem from="1475232267680" duration="111000" />
       <workItem from="1475232386573" duration="805000" />
-      <workItem from="1475487600937" duration="5559000" />
-    </task>
-    <task id="LOCAL-00126" summary="project animation">
-      <created>1470509286094</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1470509286094</updated>
+      <workItem from="1475487600937" duration="5774000" />
     </task>
     <task id="LOCAL-00127" summary="project animation">
       <created>1470509436459</created>
@@ -797,11 +792,18 @@
       <option name="project" value="LOCAL" />
       <updated>1475492604199</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="add delete option to carousel images">
+      <created>1475493427171</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1475493427171</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87287000" />
+    <option name="totallyTimeSpent" value="87502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -851,7 +853,8 @@
     <MESSAGE value="project animation" />
     <MESSAGE value="support sub categores projects page" />
     <MESSAGE value="add delete option to detailed images" />
-    <option name="LAST_COMMIT_MESSAGE" value="add delete option to detailed images" />
+    <MESSAGE value="add delete option to carousel images" />
+    <option name="LAST_COMMIT_MESSAGE" value="add delete option to carousel images" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1502,13 +1505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="144" selection-start-line="49" selection-start-column="136" selection-end-line="49" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/publicApp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3162">
@@ -1640,10 +1636,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/partials/projects.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="736" column="64" selection-start-line="736" selection-start-column="64" selection-end-line="736" selection-end-column="64" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+        <state relative-caret-position="351">
+          <caret line="166" column="7" selection-start-line="166" selection-start-column="7" selection-end-line="166" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#0;n#divs#0;n#div#1;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#divs#0;n#div#1;n#div#1;n#!!top" expanded="true" />
@@ -1651,13 +1658,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/partials/projects.html">
+    <entry file="file://$PROJECT_DIR$/public.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="741" column="125" selection-start-line="741" selection-start-column="125" selection-end-line="741" selection-end-column="125" />
+        <state relative-caret-position="182">
+          <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#5;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
