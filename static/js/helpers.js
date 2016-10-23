@@ -29,13 +29,13 @@ RestCallManager.prototype.post = function( callback , http , data , action , tab
 }
 
 function alertMe ( type , text){
-    new PNotify({
+    return new PNotify({
         title: 'Success',
         text: text,
         type: type
     });
 
-    return;
+
     /*
     var info_div =  $('#info_alert');
     $(info_div).addClass('alert-'+type);

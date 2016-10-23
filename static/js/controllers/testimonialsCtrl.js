@@ -29,9 +29,10 @@ app.controller('TestimonialsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' ,f
         restCallManager.post(saveTestimonials , $http, $scope.testimonials , "saveTestimonials");
         function saveTestimonials(result , status , success) {
             if (success) {
-                alertMe("Testimonials Order Saved Success");
+                alertMe("success" ,"Testimonials Order Saved Success");
                // $scope.testimonials = result;
             } else {
+                alertMe("error" ,"Ops ... , Save Order Fail");
             }
         }
     }
