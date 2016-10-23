@@ -499,14 +499,7 @@
       <workItem from="1475232267680" duration="111000" />
       <workItem from="1475232386573" duration="805000" />
       <workItem from="1475487600937" duration="14082000" />
-      <workItem from="1477219160375" duration="1393000" />
-    </task>
-    <task id="LOCAL-00150" summary="project animation">
-      <created>1470591064248</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1470591064248</updated>
+      <workItem from="1477219160375" duration="1435000" />
     </task>
     <task id="LOCAL-00151" summary="project animation">
       <created>1470591222660</created>
@@ -844,11 +837,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477220495174</updated>
     </task>
-    <option name="localTasksCounter" value="199" />
+    <task id="LOCAL-00199" summary="sticky navbar and fix text vertical">
+      <created>1477220557202</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1477220557202</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97203000" />
+    <option name="totallyTimeSpent" value="97245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
