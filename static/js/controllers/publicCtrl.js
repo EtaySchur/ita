@@ -438,7 +438,7 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                             var index = 0;
                             var counter = 0;
                             result1.forEach(function(project){
-                               if(project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
+                               if(project.subCategoryId == $scope.selectedProject.subCategoryId){
                                    project.slides = getMiniCarousel(project);
 
                                    $rootScope.mySideProjects.push(project);

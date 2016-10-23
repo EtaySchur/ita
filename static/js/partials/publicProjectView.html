@@ -3,7 +3,7 @@
     <div style="margin-top: 80px" class="imagesContainer">
 
         <div ng-if="project.sideBarImage && project.sideBarImage != ''" ng-mouseleave="hoverOut()"
-             ng-mouseover="hoverIn()" scroll-to="sideProject{{$index}}"
+             ng-mouseover="hoverIn()" scroll-to="{{project.id}}"
              ng-class="{'sideProjectHovered' : hoverEdit}" width="100%"
              style="position: relative;text-align: center;width: 100%;margin-bottom: 28px;padding-left: 20px;padding-right: 20px"
              class="clickable sideProjectImage"
@@ -44,7 +44,7 @@
 
         <img style="width: 100%;height: auto" ng-src="{{subCategory.imagePath}}">
     </div>
-    <div style="min-height: 800px;" class="selectProjectView">
+    <div id="{{selectedProject.id}}" style="min-height: 800px;" class="selectProjectView">
         <div in-view="botToTopAnimation('showselectedProjectTitle' , 'showselectedProjectTitle')"
              style="margin-top: 90px;margin-bottom: 90px" class="row noLeftRightMargin">
             <div ng-show="scrollingSettings.showselectedProjectTitle" style="text-align: center;padding-right: 0"
@@ -244,7 +244,7 @@
     </div>
 
 
-    <div id="sideProject{{$index}}" ng-repeat="item in mySideProjects" style="margin-bottom: 90px"
+    <div ng-if="item.id !== selectedProject.id" id="{{item.id}}" ng-repeat="item in mySideProjects" style="margin-bottom: 90px"
          class="row noLeftRightMargin">
         <div style="min-height: 120px" in-view="botToTopAnimation('sideProjectTitle' + {{$index}} , 'sideProject-{{$index}}-Title')">
             <div ng-show="scrollingSettings.sideProjectTitle{{$index}}" style="margin-bottom: 90px" class="row noLeftRightMargin sideProject-{{$index}}-Title">
