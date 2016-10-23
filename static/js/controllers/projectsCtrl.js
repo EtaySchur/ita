@@ -45,7 +45,7 @@ app.controller('ProjectsCtrl', ['$scope', '$http', '$uibModal', '$log', '$saniti
         function saveTestimonials(result , status , success) {
             if (success) {
                 alertMe("success" ,"Projects Order Saved Success");
-                    $scope.projects = result;
+                    //$scope.projects = result;
                 // $scope.testimonials = result;
             } else {
 
