@@ -29,7 +29,7 @@
                dnd-selected="models.selected = item"
                ng-class="{'selected': models.selected === item}"
                dnd-draggable="item"
-               ng-show="(item.categoryId === filteredCategory && item.subCategoryId === filteredSubCategory) || (filteredCategory === item.categoryId && !filteredCategory > 0) || (!(subCategoryId > 0) && !(filteredSubCategory > 0))"
+               ng-show="(item.categoryId === filteredCategory && item.subCategoryId === filteredSubCategory) || (filteredCategory === item.categoryId && !filteredSubCategory > 0) || (!(subCategoryId > 0) && !(filteredSubCategory > 0))"
                dnd-effect-allowed="move" dnd-moved="moved($index)"
                ng-repeat="item in projects | filter:query"
                class="list-group-item row">
