@@ -134,8 +134,8 @@
       <file leaf-file-name="manager.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/db/manager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="102" column="117" selection-start-line="102" selection-start-column="117" selection-end-line="102" selection-end-column="117" />
+            <state relative-caret-position="247">
+              <caret line="112" column="100" selection-start-line="112" selection-start-column="100" selection-end-line="112" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -483,14 +483,7 @@
       <workItem from="1475232386573" duration="805000" />
       <workItem from="1475487600937" duration="14082000" />
       <workItem from="1477219160375" duration="7509000" />
-      <workItem from="1477226974938" duration="6013000" />
-    </task>
-    <task id="LOCAL-00186" summary="fix side images">
-      <created>1475507101198</created>
-      <option name="number" value="00186" />
-      <option name="presentableId" value="LOCAL-00186" />
-      <option name="project" value="LOCAL" />
-      <updated>1475507101198</updated>
+      <workItem from="1477226974938" duration="6041000" />
     </task>
     <task id="LOCAL-00187" summary="fix side images">
       <created>1475507245656</created>
@@ -828,11 +821,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477232967783</updated>
     </task>
-    <option name="localTasksCounter" value="235" />
+    <task id="LOCAL-00235" summary="sticky navbar and fix text vertical">
+      <created>1477232997109</created>
+      <option name="number" value="00235" />
+      <option name="presentableId" value="LOCAL-00235" />
+      <option name="project" value="LOCAL" />
+      <updated>1477232997109</updated>
+    </task>
+    <option name="localTasksCounter" value="236" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109332000" />
+    <option name="totallyTimeSpent" value="109360000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1386,8 +1386,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/db/manager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="102" column="117" selection-start-line="102" selection-start-column="117" selection-end-line="102" selection-end-column="117" />
+        <state relative-caret-position="247">
+          <caret line="112" column="100" selection-start-line="112" selection-start-column="100" selection-end-line="112" selection-end-column="100" />
           <folding />
         </state>
       </provider>
