@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9994554c-9e4d-4049-a450-76de86dd5563" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/RestService.php" afterPath="$PROJECT_DIR$/server/RestService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/projects.html" afterPath="$PROJECT_DIR$/static/js/partials/projects.html" />
     </list>
     <ignored path="VagrantBoxes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +70,8 @@
       <file leaf-file-name="projectsCtrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+            <state relative-caret-position="294">
+              <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -80,8 +80,8 @@
       <file leaf-file-name="RestService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/RestService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="120" column="47" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="47" />
+            <state relative-caret-position="264">
+              <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -90,8 +90,8 @@
       <file leaf-file-name="manager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/db/manager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+            <state relative-caret-position="213">
+              <caret line="110" column="44" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -152,10 +152,10 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/static/js/controllers/testimonialsCtrl.js" />
         <option value="$PROJECT_DIR$/static/js/partials/testimonials.html" />
-        <option value="$PROJECT_DIR$/server/RestService.php" />
         <option value="$PROJECT_DIR$/static/js/helpers.js" />
         <option value="$PROJECT_DIR$/server/db/manager.php" />
         <option value="$PROJECT_DIR$/static/js/partials/projects.html" />
+        <option value="$PROJECT_DIR$/server/RestService.php" />
         <option value="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" />
       </list>
     </option>
@@ -453,14 +453,7 @@
       <workItem from="1475232386573" duration="805000" />
       <workItem from="1475487600937" duration="14082000" />
       <workItem from="1477219160375" duration="7509000" />
-      <workItem from="1477226974938" duration="2554000" />
-    </task>
-    <task id="LOCAL-00164" summary="project animation">
-      <created>1470593370445</created>
-      <option name="number" value="00164" />
-      <option name="presentableId" value="LOCAL-00164" />
-      <option name="project" value="LOCAL" />
-      <updated>1470593370445</updated>
+      <workItem from="1477226974938" duration="2745000" />
     </task>
     <task id="LOCAL-00165" summary="project animation">
       <created>1470593460337</created>
@@ -798,11 +791,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477229209144</updated>
     </task>
-    <option name="localTasksCounter" value="213" />
+    <task id="LOCAL-00213" summary="sticky navbar and fix text vertical">
+      <created>1477229534181</created>
+      <option name="number" value="00213" />
+      <option name="presentableId" value="LOCAL-00213" />
+      <option name="project" value="LOCAL" />
+      <updated>1477229534181</updated>
+    </task>
+    <option name="localTasksCounter" value="214" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105873000" />
+    <option name="totallyTimeSpent" value="106064000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1317,22 +1317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/RestService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="120" column="47" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/db/manager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/partials/projects.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1343,10 +1327,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/db/manager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="110" column="44" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/RestService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+        <state relative-caret-position="294">
+          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
           <folding />
         </state>
       </provider>

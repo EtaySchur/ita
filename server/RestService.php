@@ -127,6 +127,7 @@ if (($_POST) || (isset($_POST))) {
                         exit;
         case "saveProjects" :
               $result = DbManager::saveOrder($request->data, "projects");
+              $result = DbManager::getManageProject();
               echo json_encode($result);
               exit;
         case "updateObject" :

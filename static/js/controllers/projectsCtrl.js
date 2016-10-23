@@ -45,27 +45,7 @@ app.controller('ProjectsCtrl', ['$scope', '$http', '$uibModal', '$log', '$saniti
         function saveTestimonials(result , status , success) {
             if (success) {
                 alertMe("success" ,"Projects Order Saved Success");
-                var restCallManager = new RestCallManager();
-                restCallManager.post(callback, $http, null, "getManageProjects");
-                function callback(result, status, success) {
-                    if (success) {
-                        $scope.projects = result;
-                        console.log("This is my projects ", $scope.projects);
-                        var restCallManager = new RestCallManager();
-                        restCallManager.post(getCategoriesCallback, $http, null, "getCategories");
-                        function getCategoriesCallback(result, status, success) {
-                            if (success) {
-                                $scope.categories = result;
-                                for (var i = 0; i < $scope.projects.length; i++) {
-                                    $scope.getTitles($scope.projects[i]);
-                                }
-
-                            } else {
-                            }
-                        }
-
-                    }
-                }
+                    $scope.projects = result;
                 // $scope.testimonials = result;
             } else {
 
