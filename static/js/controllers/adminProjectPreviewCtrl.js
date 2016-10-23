@@ -51,7 +51,7 @@ app.controller('adminProjectViewCtrl', ['$scope', '$http', 'anchorSmoothScroll',
             if (success) {
                 if (result.length > 0) {
                     $scope.selectedProject = result[0];
-
+                    console.log("SELECTED ? ",$scope.selectedProject)
                     var restMiniProjectCallManager = new RestCallManager();
                     restMiniProjectCallManager.post(getMiniProjects, $http, $scope.selectedProject.subCategoryId, "getMiniProjects");
                     function getMiniProjects(result, status, success) {
