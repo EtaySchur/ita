@@ -32,6 +32,11 @@ class DbManager {
         exit;
     }
 
+    public static function saveOrder($dataArray,$table) {
+        foreach ($dataArray as $item) {
+           self::updateDb($table , $item);
+        };
+    }
 
 
     public static function getCarouselImages(){
@@ -56,7 +61,7 @@ class DbManager {
 
     public static function getTestimonials(){
         $conn = self::connectToDb();
-        $sql = $conn->prepare("SELECT * from `testimonials` WHERE `isDeleted` = 0");
+        $sql = $conn->prepare("SELECT * from `testimonials` WHERE `isDeleted` = 0 ORDER BY itemOrder ASC");
         $sql->execute();
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $result;

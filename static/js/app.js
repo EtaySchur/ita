@@ -10,6 +10,7 @@ var app = angular.module("mainApp", ['ui.bootstrap' ,
     'ngSanitize',
     'angularFileUpload',
      'ui.bootstrap',
+    'dndLists',
     'ui.tree']);
 
 app.config(function($modalProvider) {

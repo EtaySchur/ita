@@ -19,7 +19,21 @@ app.controller('TestimonialsCtrl', ['$scope', '$http' ,  '$uibModal' , '$log' ,f
 
     $scope.getData();
 
+    $scope.moved = function(index) {
+        $scope.testimonials.splice(index, 1);
+         for(var i = 0 ; i < $scope.testimonials.length ; i++) {
+             $scope.testimonials[i].itemOrder = i;
+         };
 
+        var restCallManager = new RestCallManager();
+        restCallManager.post(saveTestimonials , $http, $scope.testimonials , "saveTestimonials");
+        function saveTestimonials(result , status , success) {
+            if (success) {
+               // $scope.testimonials = result;
+            } else {
+            }
+        }
+    }
 
 
     $scope.addNewTestimonial = function(item){

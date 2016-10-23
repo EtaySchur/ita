@@ -121,6 +121,10 @@ if (($_POST) || (isset($_POST))) {
             $result = DbManager::editCarouselImage($request->data);
             echo json_encode($result);
             exit;
+        case "saveTestimonials" :
+             $result = DbManager::saveOrder($request->data, "testimonials");
+                        echo json_encode($result);
+                        exit;
         case "updateObject" :
              $result = DbManager::updateDb($request->table , $request->data);
                         echo json_encode($result);
