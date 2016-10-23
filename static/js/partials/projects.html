@@ -30,7 +30,7 @@
                ng-class="{'selected': models.selected === item}"
                dnd-draggable="item"
                dnd-effect-allowed="move" dnd-moved="moved($index)"
-               ng-repeat="item in projects | isCategory:filteredCategory | filter:query | orderBy:'itemOrder' | isSubCategory:filteredSubCategory"
+               ng-repeat="item in projects | isCategory:filteredCategory | filter:query |  isSubCategory:filteredSubCategory"
                class="list-group-item row">
                 <div class="col-md-1">
                     <div>
