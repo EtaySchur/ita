@@ -2,9 +2,9 @@
  * Created by EtaySchur on 25/11/2015.
  */
 
-publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope'  , '$window',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $window) {
-    $scope.gotoElement = function (eID){
-        console.log("scroling to ",eID);
+publicApp.controller('MainCtrl', ['$scope', '$http', 'anchorSmoothScroll', '$location', '$rootScope', '$window', function ($scope, $http, anchorSmoothScroll, $location, $rootScope, $window) {
+    $scope.gotoElement = function (eID) {
+        console.log("scroling to ", eID);
         $scope.scrollingSettings = {};
         // set the location.hash to the id of
         // the element you wish to scroll to.
@@ -23,55 +23,58 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     $rootScope.scrollYFrom = 200;
 
 
-
-    $scope.setFormScope= function(scope){
+    $scope.setFormScope = function (scope) {
         this.contactUsForm = scope;
     }
 
-    $scope.sendMail = function(info) {
+    $scope.sendMail = function (info) {
         $rootScope.submitted = true;
 
-        if(!this.contactUsForm.$valid){
+        if (!this.contactUsForm.$valid) {
             $rootScope.validateAll = true;
             return;
-        }else{
+        } else {
             $rootScope.validateAll = false;
         }
 
 
-        if(info.howCanWeHelp == undefined){
+        if (info.howCanWeHelp == undefined) {
             info.howCanWeHelp = "";
         }
 
-        if(info.email == undefined){
+        if (info.email == undefined) {
             info.emailToSent = "לא השאירו מייל";
-        }else{
+        } else {
             info.emailToSent = info.email;
         }
 
 
-
         $rootScope.sendingMail = true;
         emailjs.init("user_Z8mRIlQBfdHB3FmQswOFC");
-        emailjs.send("gmail","template_rhVwgmtA",{ name:  info.fullName , phone: info.phone , email: info.emailToSent , freeText:info.howCanWeHelp ,notes: "Check this out!" , to_email : "etayschur.dev@gmail.com"})
-            .then(function(response) {
+        emailjs.send("gmail", "template_rhVwgmtA", {
+            name: info.fullName,
+            phone: info.phone,
+            email: info.emailToSent,
+            freeText: info.howCanWeHelp,
+            notes: "Check this out!",
+            to_email: "etayschur.dev@gmail.com"
+        })
+            .then(function (response) {
                 $rootScope.sendingMail = false;
                 console.log("Send mail true");
                 $rootScope.mailSent = true;
                 console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-            }, function(err) {
+            }, function (err) {
                 $rootScope.sendingMail = false;
                 console.log("FAILED. error=", err);
             });
 
 
-
-
     }
 
     var restCallManager = new RestCallManager();
-    restCallManager.post( getGeneralSettings, $http, null , "getGeneralSettings");
-    function getGeneralSettings(result , status , success) {
+    restCallManager.post(getGeneralSettings, $http, null, "getGeneralSettings");
+    function getGeneralSettings(result, status, success) {
         if (success) {
             $rootScope.generalSettings = result[0];
             $scope.myInterval = $rootScope.generalSettings.carouselInterval * 1000;
@@ -84,28 +87,28 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
     $scope.$watch(function () {
         return $window.scrollY;
     }, function (scrollY) {
-   $scope.scrollY = scrollY;
+        $scope.scrollY = scrollY;
     });
 
     $rootScope.showNav = true;
     $rootScope.imTopped = true;
-    $rootScope.toggleNav = function (){
+    $rootScope.toggleNav = function () {
         console.log("Toggling ? ");
         $scope.showNav = !$scope.showNav;
     }
 
-    $rootScope.navHoverIn = function(){
+    $rootScope.navHoverIn = function () {
         console.log("Hover In");
         $rootScope.navHoverEdit = true;
     };
 
-    $rootScope.navHoverOut = function(){
+    $rootScope.navHoverOut = function () {
         console.log("Hover In");
-       // $scope.navHoverEdit = false;
+        // $scope.navHoverEdit = false;
     };
 
     $rootScope.showSideProjects = false;
-    $rootScope.toggleSideMenu = function(show){
+    $rootScope.toggleSideMenu = function (show) {
         $rootScope.showSideProjects = show;
     }
 
@@ -114,26 +117,25 @@ publicApp.controller('MainCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$l
 }]);
 
 
-publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , 'CategoriesService' , '$window', '$timeout' ,  function($scope , $http , anchorSmoothScroll , $location , $rootScope , CategoriesService , $window , $timeout) {
-    $window.scrollTo(0,0);
+publicApp.controller('publicCtrl', ['$scope', '$http', 'anchorSmoothScroll', '$location', '$rootScope', 'CategoriesService', '$window', '$timeout', function ($scope, $http, anchorSmoothScroll, $location, $rootScope, CategoriesService, $window, $timeout) {
+    $window.scrollTo(0, 0);
     $scope.justChecing = "just checking";
     $scope.scrollingSettings = {};
     $rootScope.mailSent = false;
     $scope.noWrapSlides = false;
     $rootScope.imProjected = false;
 
-    $scope.getImagePath = function(item){
-        if($scope.selectedTestimonial.id == item.id){
+    $scope.getImagePath = function (item) {
+        if ($scope.selectedTestimonial.id == item.id) {
             return item.imagePath;
-        }else{
+        } else {
             return item.blackImagePath;
         }
     }
 
 
-
-    $scope.gotoElement = function (eID){
-        console.log("scroling to ",eID);
+    $scope.gotoElement = function (eID) {
+        console.log("scroling to ", eID);
         // set the location.hash to the id of
         // the element you wish to scroll to.
         $location.hash(eID);
@@ -143,34 +145,33 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
     };
 
-    $scope.$watch('activeCategoryFilterId' , function(){
-      if($scope.allCategories){
-          $scope.projects = $scope.allCategories[$scope.activeCategoryFilterId];
-          CategoriesService.setActiveCategory($scope.activeCategoryFilterId);
-      }
+    $scope.$watch('activeCategoryFilterId', function () {
+        if ($scope.allCategories) {
+            $scope.projects = $scope.allCategories[$scope.activeCategoryFilterId];
+            CategoriesService.setActiveCategory($scope.activeCategoryFilterId);
+        }
 
     });
 
-    $scope.setActiveCategoryFilter = function(category , nextCategoryIndex){
+    $scope.setActiveCategoryFilter = function (category, nextCategoryIndex) {
 
         var bounce = new Bounce();
         bounce
             .scale({
-                from: { x: 1, y: 1 },
-                to: { x: 0.7, y: 0.7 },
-                duration:1500,
-                bounces:1,
-                stiffness :3
+                from: {x: 1, y: 1},
+                to: {x: 0.7, y: 0.7},
+                duration: 1500,
+                bounces: 1,
+                stiffness: 3
 
             }).scale({
-            from: { x: 1, y: 1 },
-            to: { x: 1.42, y: 1.42 },
-            duration:  2000,
-            bounces:1 ,
-            delay:300,
-            stiffness :3
+            from: {x: 1, y: 1},
+            to: {x: 1.42, y: 1.42},
+            duration: 2000,
+            bounces: 1,
+            delay: 300,
+            stiffness: 3
         }).applyTo(document.querySelectorAll(".projectsContainer"));
-
 
 
         // if($scope.currentCategoryIndex < nextCategoryIndex) {
@@ -180,8 +181,8 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
         //     $scope.moveToLeft = false;
         //     $scope.fadeMeOutRight = true;
         // }
-      // $scope.zoomOut = true;
-        $timeout(function() {
+        // $scope.zoomOut = true;
+        $timeout(function () {
             // var bounce = new Bounce();
             // bounce
             //     .scale({
@@ -194,76 +195,69 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
             $scope.activeCategoryFilterId = category.id;
             $scope.currentCategoryIndex = nextCategoryIndex;
-        } , 300)
+        }, 300)
     }
 
 
-
-
-    $scope.hoverIn = function(){
+    $scope.hoverIn = function () {
         this.hoverEdit = true;
     };
 
-    $scope.hoverOut = function(){
+    $scope.hoverOut = function () {
         this.hoverEdit = false;
     };
 
-    $scope.setTestimonial = function(item){
+    $scope.setTestimonial = function (item) {
         $scope.selectedTestimonial = item;
     }
 
-    $scope.projectSelected = function(project){
+    $scope.projectSelected = function (project) {
         $rootScope.selectedProject = project;
 
         $location.path('/' + project.id);
     }
 
 
-
-
-
-
-
-    $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId , isImage){
-        if(!$scope.scrollingSettings[flagRight]){
-            console.log("Flag Delayed ",flagRight);
+    $scope.botToTopDelayedAnimation = function (flagRight, flagLeft, rightElementId, leftElementId, isImage) {
+        if (!$scope.scrollingSettings[flagRight]) {
+            console.log("Flag Delayed ", flagRight);
             $scope.scrollingSettings[flagRight] = true;
-            console.log("is Image" ,isImage);
-            if(isImage){
+            console.log("is Image", isImage);
+            if (isImage) {
                 var bounce = new Bounce();
                 bounce
                     .scale({
-                        from: { x: 1, y: 1 },
-                        to: { x: 2, y: 2 },
+                        from: {x: 1, y: 1},
+                        to: {x: 2, y: 2},
                         duration: $rootScope.scrollAnimationDucration,
                         stiffness: $rootScope.scrollStiffness,
-                        bounces:1 ,
-                        stiffness :3
+                        bounces: 1,
+                        stiffness: 3
                     }).applyTo(document.querySelectorAll("." + rightElementId));
-            }else{
+            } else {
                 var bounce = new Bounce();
                 bounce
                     .translate({
-                        from: { x:0, y: $rootScope.scrollYFrom },
-                        to: { x: 0, y: 0 },
+                        from: {x: 0, y: $rootScope.scrollYFrom},
+                        to: {x: 0, y: 0},
                         duration: $rootScope.scrollAnimationDucration,
                         stiffness: $rootScope.scrollStiffness
                     }).applyTo(document.querySelectorAll("." + rightElementId));
             }
 
 
-                $timeout(function() {
-                    console.log("Showing Left Ele");
-                    var bounce =  new Bounce();
-                    bounce
-                        .translate({
-                            from: { x:0, y: $rootScope.scrollYFrom },
-                            to: { x: 0, y: 0 },
-                            duration: $rootScope.scrollAnimationDucration,
-                            stiffness: $rootScope.scrollStiffness,
-                        }).applyTo(document.querySelectorAll("." + leftElementId));
-                    $scope.scrollingSettings[flagLeft] = true;
-                } , 50)
+            $timeout(function () {
+                console.log("Showing Left Ele");
+                var bounce = new Bounce();
+                bounce
+                    .translate({
+                        from: {x: 0, y: $rootScope.scrollYFrom},
+                        to: {x: 0, y: 0},
+                        duration: $rootScope.scrollAnimationDucration,
+                        stiffness: $rootScope.scrollStiffness,
+                    }).applyTo(document.querySelectorAll("." + leftElementId));
+                $scope.scrollingSettings[flagLeft] = true;
+            }, 50)
 
 
         }
@@ -272,16 +266,16 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     }
 
 
-    $scope.botToTopAnimation = function(flag , elementId){
-        console.log("showing Flag ! ",flag);
-        if(!$scope.scrollingSettings[flag]){
+    $scope.botToTopAnimation = function (flag, elementId) {
+        console.log("showing Flag ! ", flag);
+        if (!$scope.scrollingSettings[flag]) {
             $scope.scrollingSettings[flag] = true;
             var bounce = new Bounce();
             bounce
                 .translate({
-                    from: { x:0, y: $rootScope.scrollYFrom },
-                    to: { x: 0, y: 0 },
-                    duration: $rootScope.scrollAnimationDucration ,
+                    from: {x: 0, y: $rootScope.scrollYFrom},
+                    to: {x: 0, y: 0},
+                    duration: $rootScope.scrollAnimationDucration,
                     stiffness: $rootScope.scrollStiffness
                 }).applyTo(document.querySelectorAll("." + elementId));
         }
@@ -289,8 +283,8 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 
     var restCallManager = new RestCallManager();
-    restCallManager.post(getCarouselImages , $http, null , "getCarouselImages");
-    function getCarouselImages(result , status , success) {
+    restCallManager.post(getCarouselImages, $http, null, "getCarouselImages");
+    function getCarouselImages(result, status, success) {
         if (success) {
             $scope.carouselImages = result;
 
@@ -301,31 +295,31 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     }
 
     var restCallManager = new RestCallManager();
-    restCallManager.post(getProjects , $http, null , "getProjects");
-    function getProjects(result , status , success) {
+    restCallManager.post(getProjects, $http, null, "getProjects");
+    function getProjects(result, status, success) {
         $scope.allCategories = {};
         if (success) {
-            result.forEach(function(project){
-                if(!$scope.allCategories.hasOwnProperty(project.categoryId)){
+            result.forEach(function (project) {
+                if (!$scope.allCategories.hasOwnProperty(project.categoryId)) {
                     $scope.allCategories[project.categoryId] = [];
                 }
-                if(project.featured == 1){
+                if (project.featured == 1) {
                     $scope.allCategories[project.categoryId].push(project);
                 }
 
             });
 
             var restCallManager = new RestCallManager();
-            restCallManager.post(getCategories , $http, null , "getCategories");
-            function getCategories(result , status , success) {
+            restCallManager.post(getCategories, $http, null, "getCategories");
+            function getCategories(result, status, success) {
                 if (success) {
                     $scope.categories = result;
-                    if($scope.categories.length > 0){
-                        if( CategoriesService.getActiveCategory() == null ){
+                    if ($scope.categories.length > 0) {
+                        if (CategoriesService.getActiveCategory() == null) {
                             $scope.activeCategoryFilterId = $scope.categories[0].id;
                             $scope.currentCategoryIndex = 0;
-                        }else{
-                            $scope.activeCategoryFilterId =  CategoriesService.getActiveCategory();
+                        } else {
+                            $scope.activeCategoryFilterId = CategoriesService.getActiveCategory();
                         }
                     }
                 } else {
@@ -333,7 +327,7 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
                 }
             }
 
-            console.log("This is my projects original , " , $scope.allCategories);
+            console.log("This is my projects original , ", $scope.allCategories);
 
 
         } else {
@@ -343,11 +337,11 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
 
 
     var restCallManager = new RestCallManager();
-    restCallManager.post(getTestimonials , $http, null , "getTestimonials");
-    function getTestimonials(result , status , success) {
+    restCallManager.post(getTestimonials, $http, null, "getTestimonials");
+    function getTestimonials(result, status, success) {
         if (success) {
             $scope.testimonials = result;
-            if($scope.testimonials.length > 0){
+            if ($scope.testimonials.length > 0) {
                 $scope.selectedTestimonial = $scope.testimonials[0];
                 console.log($scope.selectedTestimonial);
             }
@@ -357,9 +351,9 @@ publicApp.controller('publicCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '
     }
 }]);
 
-publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmoothScroll' , '$location' , '$rootScope' , '$routeParams' , '$window' , '$timeout',  function($scope , $http , anchorSmoothScroll , $location , $rootScope , $routeParams , $window , $timeout) {
+publicApp.controller('publicProjectViewCtrl', ['$scope', '$http', 'anchorSmoothScroll', '$location', '$rootScope', '$routeParams', '$window', '$timeout', function ($scope, $http, anchorSmoothScroll, $location, $rootScope, $routeParams, $window, $timeout) {
     $rootScope.showSideProjects = false;
-    $window.scrollTo(0,0)
+    $window.scrollTo(0, 0)
     $rootScope.mailSent = false;
     $scope.minIndex = 0;
     $scope.sideBarLimitItems = 5;
@@ -367,55 +361,55 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
     $rootScope.imProjected = true;
     console.log($rootScope.showSideProjects);
 
-    $scope.hoverIn = function(){
+    $scope.hoverIn = function () {
         this.hoverEdit = true;
     };
 
     $rootScope.showNav = false;
 
 
-    $timeout(function() {
+    $timeout(function () {
         $scope.lazyHide = true;
-    } , 500)
+    }, 500)
 
     $scope.currentPage = 0;
     $scope.pageSize = 3;
 
-    $scope.hoverOut = function(){
+    $scope.hoverOut = function () {
         this.hoverEdit = false;
     };
 
-    $scope.hoverTesteminalIn = function(item){
-       $scope.hoveredTestimonal = item;
+    $scope.hoverTesteminalIn = function (item) {
+        $scope.hoveredTestimonal = item;
     };
 
-    $scope.hoverTesteminalOut = function(item){
+    $scope.hoverTesteminalOut = function (item) {
         $scope.hoveredTestimonal = {};
     };
 
-    $scope.navToProject = function(projectId){
-        $location.path('/'+projectId);
+    $scope.navToProject = function (projectId) {
+        $location.path('/' + projectId);
     }
 
 
     var projectId = $routeParams.projectId;
 
-    if(true){
+    if (true) {
         var restCallManager = new RestCallManager();
-        restCallManager.post(getProject , $http, projectId , "getProject");
-        function getProject(result , status , success) {
+        restCallManager.post(getProject, $http, projectId, "getProject");
+        function getProject(result, status, success) {
             if (success) {
-                if(result.length > 0){
+                if (result.length > 0) {
                     $scope.selectedProject = result[0];
 
                     var restMiniProjectCallManager = new RestCallManager();
-                    restMiniProjectCallManager.post(getMiniProjects , $http, $scope.selectedProject.subCategoryId , "getMiniProjects");
-                    function getMiniProjects(result , status , success) {
+                    restMiniProjectCallManager.post(getMiniProjects, $http, $scope.selectedProject.subCategoryId, "getMiniProjects");
+                    function getMiniProjects(result, status, success) {
                         if (success) {
 
                             $rootScope.miniProjects = result;
-                            for ( var i = 0 ; i < $rootScope.miniProjects.length ; i++){
-                                if(i < $scope.pageSize){
+                            for (var i = 0; i < $rootScope.miniProjects.length; i++) {
+                                if (i < $scope.pageSize) {
                                     $rootScope.miniProjects[i].showMe = true;
                                 }
                             }
@@ -426,10 +420,10 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                     }
 
 
-                    console.log("This is my Selected Project ",$scope.selectedProject);
+                    console.log("This is my Selected Project ", $scope.selectedProject);
                     var restCallManager = new RestCallManager();
-                    restCallManager.post(getAllProjects , $http, null , "getProjects");
-                    function getAllProjects(result1 , status , success) {
+                    restCallManager.post(getAllProjects, $http, null, "getProjects");
+                    function getAllProjects(result1, status, success) {
                         $scope.projects = result1;
                         console.log($scope.projects);
                         $rootScope.mySideProjects = [];
@@ -438,19 +432,19 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
                             var index = 0;
                             var counter = 0;
                             $rootScope.mySideProjects.push($scope.selectedProject);
-                            result1.forEach(function(project){
-                               if(project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id){
-                                   project.slides = getMiniCarousel(project);
+                            result1.forEach(function (project) {
+                                if (project.subCategoryId == $scope.selectedProject.subCategoryId && project.id != $scope.selectedProject.id) {
+                                    project.slides = getMiniCarousel(project);
 
-                                   $rootScope.mySideProjects.push(project);
-                                   counter++;
-                               }
+                                    $rootScope.mySideProjects.push(project);
+                                    counter++;
+                                }
 
-                                if(project.subCategoryId != $scope.selectedProject.subCategoryId){
+                                if (project.subCategoryId != $scope.selectedProject.subCategoryId) {
                                     $rootScope.otherProjects.push(project);
                                     counter++;
                                 }
-                               $scope.slides = getMiniCarousel($scope.selectedProject);
+                                $scope.slides = getMiniCarousel($scope.selectedProject);
                             });
                         } else {
 
@@ -459,33 +453,32 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
 
                     var restCallManagerSubCategory = new RestCallManager();
-                    restCallManagerSubCategory.post( cb , $http, $scope.selectedProject.subCategoryId , "getSubCategory");
-                    function cb(result2 , status , success) {
+                    restCallManagerSubCategory.post(cb, $http, $scope.selectedProject.subCategoryId, "getSubCategory");
+                    function cb(result2, status, success) {
                         if (success) {
                             $scope.subCategory = result2[0];
-                            console.log("i have desc ? ",$scope.subCategoryDesc);
+                            console.log("i have desc ? ", $scope.subCategoryDesc);
                         } else {
 
                         }
                     }
-                }else{
+                } else {
                     $location.path('/');
                 }
             } else {
 
             }
         }
-    }else{
+    } else {
 
-        console.log("This is my projects!!!!!!!!!!!!!!!!!!565656!!!!!!!!!" , $rootScope.selectedProject);
+        console.log("This is my projects!!!!!!!!!!!!!!!!!!565656!!!!!!!!!", $rootScope.selectedProject);
 
     }
 
 
-
-     function getSelectedProject (projectId){
-        for(var i = 0 ; i < $scope.projects.length ; i++){
-            if($scope.projects[i].id = projectId ){
+    function getSelectedProject(projectId) {
+        for (var i = 0; i < $scope.projects.length; i++) {
+            if ($scope.projects[i].id = projectId) {
                 return $scope.projects[i];
                 break;
             }
@@ -493,90 +486,89 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
         return null;
     }
 
-    function getMiniCarousel(project){
+    function getMiniCarousel(project) {
         var array = [];
-        if(project.miniCarouselImage1){
+        if (project.miniCarouselImage1) {
             array.push(project.miniCarouselImage1)
         }
 
-        if(project.miniCarouselImage2){
+        if (project.miniCarouselImage2) {
             array.push(project.miniCarouselImage2)
         }
 
-        if(project.miniCarouselImage3){
+        if (project.miniCarouselImage3) {
             array.push(project.miniCarouselImage3)
         }
 
-        if(project.miniCarouselImage4){
+        if (project.miniCarouselImage4) {
             array.push(project.miniCarouselImage4)
         }
 
-        if(project.miniCarouselImage5){
+        if (project.miniCarouselImage5) {
             array.push(project.miniCarouselImage5)
         }
 
-        if(project.miniCarouselImage6){
+        if (project.miniCarouselImage6) {
             array.push(project.miniCarouselImage6)
         }
 
         return array;
     }
 
-    $scope.popInAnimation = function(flag , elemId){
-        if(!$scope.scrollingSettings[flag]){
+    $scope.popInAnimation = function (flag, elemId) {
+        if (!$scope.scrollingSettings[flag]) {
             $scope.scrollingSettings[flag] = true;
             var bounce = new Bounce();
             bounce
                 .scale({
-                    from: { x: 0.7, y: 1 },
-                    to: { x: 1, y: 1 },
+                    from: {x: 0.7, y: 1},
+                    to: {x: 1, y: 1},
                     duration: 3000,
                     stiffness: 3,
-                    bounces:1
+                    bounces: 1
                 }).applyTo(document.querySelectorAll("." + elemId));
         }
     }
 
 
-
-    $scope.botToTopDelayedAnimation = function(flagRight , flagLeft , rightElementId , leftElementId , isImage){
-        if(!$scope.scrollingSettings[flagRight]){
+    $scope.botToTopDelayedAnimation = function (flagRight, flagLeft, rightElementId, leftElementId, isImage) {
+        if (!$scope.scrollingSettings[flagRight]) {
             // console.log("Flag Delayed ",flagRight);
             // console.log("flagLefT ",flagLeft);
             $scope.scrollingSettings[flagRight] = true;
-            if(isImage){
+            if (isImage) {
                 var bounce = new Bounce();
                 bounce
                     .scale({
-                        from: { x: 0.5, y: 0.5 },
-                        to: { x: 1, y: 1 },
+                        from: {x: 0.5, y: 0.5},
+                        to: {x: 1, y: 1},
                         duration: 3000,
-                        bounces:1 ,
-                        stiffness :3
+                        bounces: 1,
+                        stiffness: 3
                     }).applyTo(document.querySelectorAll("." + rightElementId));
-            }else{
+            } else {
                 var bounce = new Bounce();
                 bounce
                     .translate({
-                        from: { x:0, y: $rootScope.scrollYFrom },
-                        to: { x: 0, y: 0 },
+                        from: {x: 0, y: $rootScope.scrollYFrom},
+                        to: {x: 0, y: 0},
                         duration: $rootScope.scrollAnimationDucration,
                         stiffness: $rootScope.scrollStiffness
                     }).applyTo(document.querySelectorAll("." + rightElementId));
             }
 
-            $timeout(function() {
+            $timeout(function () {
                 var bounce = new Bounce();
                 console.log("Showing Left Ele");
                 bounce
                     .translate({
-                        from: { x:0, y: $rootScope.scrollYFrom },
-                        to: { x: 0, y: 0 },
+                        from: {x: 0, y: $rootScope.scrollYFrom},
+                        to: {x: 0, y: 0},
                         duration: $rootScope.scrollAnimationDucration,
                         stiffness: $rootScope.scrollStiffness,
                     }).applyTo(document.querySelectorAll("." + leftElementId));
                 $scope.scrollingSettings[flagLeft] = true;
-            } , 100)
+            }, 100)
 
 
         }
@@ -584,32 +576,30 @@ publicApp.controller('publicProjectViewCtrl', ['$scope', '$http' , 'anchorSmooth
 
     }
 
-    $scope.botToTopAnimationMiniProjects = function(flag,elementId){
-        if($scope.lazyHide){
+    $scope.botToTopAnimationMiniProjects = function (flag, elementId) {
+        if ($scope.lazyHide) {
             console.log("Minig Projects Images Raw");
             $scope.lazyHide = false;
-            $scope.botToTopAnimation(flag,elementId);
+            $scope.botToTopAnimation(flag, elementId);
         }
 
     }
 
 
-    $scope.botToTopAnimation = function(flag , elementId){
+    $scope.botToTopAnimation = function (flag, elementId) {
         // console.log("showing Flag ! ",flag);
-        if(!$scope.scrollingSettings[flag]){
+        if (!$scope.scrollingSettings[flag]) {
             $scope.scrollingSettings[flag] = true;
             var bounce = new Bounce();
             bounce
                 .translate({
-                    from: { x:0, y: $rootScope.scrollYFrom },
-                    to: { x: 0, y: 0 },
+                    from: {x: 0, y: $rootScope.scrollYFrom},
+                    to: {x: 0, y: 0},
                     duration: $rootScope.scrollAnimationDucration,
                     stiffness: $rootScope.scrollStiffness
                 }).applyTo(document.querySelectorAll("." + elementId));
         }
     }
-
-
 
 
 }]);

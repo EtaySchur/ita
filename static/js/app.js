@@ -33,7 +33,7 @@ app.config(['$routeProvider', '$locationProvider' ,
         }).
         when('/projects/:projectId', {
             templateUrl: 'static/js/partials/publicProjectView.html',
-            controller: 'publicProjectViewCtrl'
+            controller: 'adminProjectViewCtrl'
         }).
         when('/general', {
             templateUrl: 'static/js/partials/general.html',

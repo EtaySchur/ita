@@ -59,7 +59,7 @@ app.controller('ProjectsCtrl', ['$scope', '$http', '$uibModal', '$log', '$saniti
 
     $scope.projectSelected = function (project) {
         $rootScope.selectedProject = project;
-        $window.open('projects/' + project.id, '_blank');
+        $window.open('#/projects/' + project.id, '_blank');
     }
 
     var restCallManager = new RestCallManager();
