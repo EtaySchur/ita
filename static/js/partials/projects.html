@@ -29,8 +29,9 @@
                dnd-selected="models.selected = item"
                ng-class="{'selected': models.selected === item}"
                dnd-draggable="item"
+               ng-show="item.categoryId === filteredCategory && item.subCategoryId === filteredSubCategory"
                dnd-effect-allowed="move" dnd-moved="moved($index)"
-               ng-repeat="item in projects | isCategory:filteredCategory | filter:query |  isSubCategory:filteredSubCategory"
+               ng-repeat="item in projects | filter:query"
                class="list-group-item row">
                 <div class="col-md-1">
                     <div>
