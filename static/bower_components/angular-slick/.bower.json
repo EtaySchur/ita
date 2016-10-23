@@ -1,6 +1,5 @@
 {
   "name": "angular-slick",
-  "version": "0.2.1",
   "main": "dist/slick.js",
   "ignore": [
     "app",
@@ -26,14 +25,13 @@
     "name": "Vasyl Stanislavchuk"
   },
   "homepage": "https://github.com/vasyabigi/angular-slick",
-  "_release": "0.2.1",
+  "_release": "1d3215bb32",
   "_resolution": {
-    "type": "version",
-    "tag": "0.2.1",
-    "commit": "63d0822cb5aff98b3a70617b753c0cd6178803d0"
+    "type": "branch",
+    "branch": "master",
+    "commit": "1d3215bb32fbdd2ccf311fd49e80db1f1ec415df"
   },
   "_source": "https://github.com/vasyabigi/angular-slick.git",
-  "_target": "^0.2.1",
-  "_originalSource": "angular-slick",
-  "_direct": true
+  "_target": "master",
+  "_originalSource": "angular-slick"
 }
