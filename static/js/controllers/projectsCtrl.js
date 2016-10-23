@@ -28,7 +28,7 @@ app.controller('ProjectsCtrl', ['$scope', '$http', '$uibModal', '$log', '$saniti
     $scope.moved = function(index) {
         $scope.projects.splice(index, 1);
         var projectsOrderArray = [];
-
+        console.log("LENGTH ? ",$scope.projects.length);
         for(var i = 0 ; i < $scope.projects.length ; i++) {
             $scope.projects[i].itemOrder = i;
             projectsOrderArray[i] = {
