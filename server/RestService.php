@@ -125,6 +125,10 @@ if (($_POST) || (isset($_POST))) {
              $result = DbManager::saveOrder($request->data, "testimonials");
                         echo json_encode($result);
                         exit;
+        case "saveProjects" :
+              $result = DbManager::saveOrder($request->data, "projects");
+              echo json_encode($result);
+              exit;
         case "updateObject" :
              $result = DbManager::updateDb($request->table , $request->data);
                         echo json_encode($result);

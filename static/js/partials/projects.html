@@ -10,7 +10,7 @@
         </span>
 
         <span class="btn-group col-xs-5">
-               <label ng-repeat='subCategory in selectedCategory.subCategories' class="btn btn-primary"
+               <label ng-show="filteredCategory > 0" ng-repeat='subCategory in selectedCategory.subCategories' class="btn btn-primary"
                       ng-model="$parent.filteredSubCategory" btn-radio="'{{subCategory.id}}'" uncheckable>{{subCategory.title}}</label>
         </span>
 
@@ -23,9 +23,14 @@
 </div>
 <div style="margin-top: 30px" class="row">
     <div class="col-xs-10 col-xs-offset-1">
-        <div class="list-group">
+        <div dnd-list="projects" class="list-group">
             <a ng-init="getTitles(item)"
-               ng-repeat="item in projects | isCategory:filteredCategory | filter:query | orderBy:'myOrder' | isSubCategory:filteredSubCategory"
+               style="cursor: move"
+               dnd-selected="models.selected = item"
+               ng-class="{'selected': models.selected === item}"
+               dnd-draggable="item"
+               dnd-effect-allowed="move" dnd-moved="moved($index)"
+               ng-repeat="item in projects | isCategory:filteredCategory | filter:query | orderBy:'itemOrder' | isSubCategory:filteredSubCategory"
                class="list-group-item row">
                 <div class="col-md-1">
                     <div>

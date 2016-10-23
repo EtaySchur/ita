@@ -10,7 +10,11 @@
 </div>
 <div style="margin-top: 30px" class="col-xs-10 col-xs-offset-1">
     <div dnd-list="testimonials" class="list-group alignRight">
-        <a   style="cursor: move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}" dnd-effect-allowed="move" dnd-moved="moved($index)" dnd-draggable="item" ng-init="getTitles(item)" ng-repeat="item in testimonials | isCategory:filteredCategory | filter:query" class="list-group-item row">
+        <a   style="cursor: move" dnd-selected="models.selected = item"
+             ng-class="{'selected': models.selected === item}"
+             dnd-effect-allowed="move" dnd-moved="moved($index)"
+             dnd-draggable="item" ng-init="getTitles(item)"
+             ng-repeat="item in testimonials | isCategory:filteredCategory | filter:query" class="list-group-item row">
             <div  class="col-md-2">
                 <button ng-click="deleteTestimonial(item)" class="btn btn-danger">
                     <i  class="fa fa-trash"></i>

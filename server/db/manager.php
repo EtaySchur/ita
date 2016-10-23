@@ -110,7 +110,7 @@ class DbManager {
 
     public static  function getManageProject($projectId){
         $conn = self::connectToDb();
-        $sql = $conn->prepare("SELECT * from `projects` WHERE `isDeleted` = 0");
+        $sql = $conn->prepare("SELECT * from `projects` WHERE `isDeleted` = 0 ORDER BY itemOrder ASC");
         $sql->execute();
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $result;
