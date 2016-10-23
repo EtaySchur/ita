@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9994554c-9e4d-4049-a450-76de86dd5563" name="Default" comment="">
+    <list default="true" id="9994554c-9e4d-4049-a450-76de86dd5563" name="Default" comment="sticky navbar and fix text vertical">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/adminProjectPreviewCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/adminProjectPreviewCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" afterPath="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" afterPath="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
     </list>
     <ignored path="VagrantBoxes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="publicProjectView.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="435">
+              <caret line="103" column="57" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -112,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projectsCtrl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="projectsCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+            <state relative-caret-position="579">
+              <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -172,7 +171,6 @@
         <option value="$PROJECT_DIR$/static/css/animate.css" />
         <option value="$USER_HOME$/Projects/Gadsar/index.php" />
         <option value="$PROJECT_DIR$/static/js/partials/mainPublicApp.html" />
-        <option value="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
         <option value="$PROJECT_DIR$/static/bower.json" />
         <option value="$PROJECT_DIR$/static/css/styles.css" />
         <option value="$PROJECT_DIR$/static/js/publicApp.js" />
@@ -188,6 +186,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/static/js/controllers/adminProjectPreviewCtrl.js" />
         <option value="$PROJECT_DIR$/static/js/controllers/projectsCtrl.js" />
+        <option value="$PROJECT_DIR$/static/js/partials/publicProjectView.html" />
       </list>
     </option>
   </component>
@@ -484,14 +483,7 @@
       <workItem from="1475232386573" duration="805000" />
       <workItem from="1475487600937" duration="14082000" />
       <workItem from="1477219160375" duration="7509000" />
-      <workItem from="1477226974938" duration="4768000" />
-    </task>
-    <task id="LOCAL-00169" summary="project animation">
-      <created>1470595916069</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1470595916069</updated>
+      <workItem from="1477226974938" duration="4963000" />
     </task>
     <task id="LOCAL-00170" summary="project animation">
       <created>1470595983525</created>
@@ -829,11 +821,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477230909444</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="sticky navbar and fix text vertical">
+      <created>1477231751538</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1477231751538</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108087000" />
+    <option name="totallyTimeSpent" value="108282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1334,10 +1333,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="353" column="35" selection-start-line="353" selection-start-column="35" selection-end-line="353" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/adminProjectPreviewCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="3" column="197" selection-start-line="3" selection-start-column="192" selection-end-line="3" selection-end-column="197" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/partials/publicProjectView.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        <state relative-caret-position="435">
+          <caret line="103" column="57" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1364,32 +1389,6 @@
             <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/controllers/publicCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="353" column="35" selection-start-line="353" selection-start-column="35" selection-end-line="353" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/controllers/adminProjectPreviewCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="3" column="197" selection-start-line="3" selection-start-column="192" selection-end-line="3" selection-end-column="197" />
-          <folding>
-            <element signature="e#0#46#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/controllers/projectsCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
